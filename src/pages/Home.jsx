@@ -1,7 +1,20 @@
+import { useNavigate } from "react-router-dom";
+
 const Home = () => {
+
+    const navigate = useNavigate();
+    const searchbtn = () =>  {
+      navigate('/medicalCourse')
+    }
+
     return ( 
         <div className="Home"> 
-            <div className="Search_box">검색창 </div>
+            <div className="Search_box">
+            <div style={{margin: "5vh", display: "flex"}}>
+        <input style={{width : "290px", height : "40px"}} placeholder="병원/진료과를 검색해보세요"type="text"/>
+        <button style={{width : "60px", height : "45px"}} onClick={searchbtn}>검색</button>   
+        </div>
+            </div>
             <br/>
             <div className="Temperature">기온 날씨</div>
             <br/>
@@ -14,4 +27,4 @@ const Home = () => {
      );
 }
  
-export default Home;g
+export default Home;
