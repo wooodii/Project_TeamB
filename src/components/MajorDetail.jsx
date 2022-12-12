@@ -3,9 +3,10 @@ import { useContext, useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import Pagination from 'react-js-pagination';
 import styled from "styled-components";
+import DataContext from "../data/DataContext";
 
 const MajorDetail = () => {
-    const { category, hospitalData, } = useContext(Context);
+    const { category, hospitalData, } = useContext(DataContext);
     const [page, setPage] = useState(1);
     const navigate = useNavigate();
     let { id } = useParams();

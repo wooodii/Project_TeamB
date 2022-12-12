@@ -1,11 +1,12 @@
 import { useContext, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import  Context  from '../App';
+import DataContext from "../data/DataContext";
 
 
 const MajorDetailInfo = () => {
     const {id, majorid} = useParams();    
-    const {category,hospitalData} = useContext(Context);
+    const {category,hospitalData} = useContext(DataContext);
     const majorfilter = 
     hospitalData.filter(major => major.진료과목내용명.includes(category[id].name)); 
     

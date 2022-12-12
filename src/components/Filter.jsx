@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import { createContext, useContext, useState } from "react";
 import categorydata from "../data/categorydata";
 import categorydata1 from "../data/categorydata1";
-import { Context } from "../App";
+import DataContext from "../data/DataContext";
+
 
 const Filter = () => {
-    const { category, setCategory } = useContext(Context);
+    const { category, setCategory } = useContext(DataContext);
     const [isFilter, setIsFilter] = useState(false);
     // 필터버튼 이벤트 함수
     const handleBtns = (e) => {

@@ -2,9 +2,10 @@ import { Context } from "../App";
 import { useParams, Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import Reservation from "./Reservation";
+import DataContext from "../data/DataContext";
 
 const PlaceDetailInfo = () => {
-    const { category, hospitalData } = useContext(Context);
+    const { category, hospitalData } = useContext(DataContext);
     const { id, placeid } = useParams();
     const placefilter = hospitalData.filter(place => place.주소.includes(category[id].name));
 

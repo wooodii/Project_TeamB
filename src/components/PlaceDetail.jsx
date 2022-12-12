@@ -3,8 +3,9 @@ import { useContext, useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import Pagination from 'react-js-pagination';
 import styled from "styled-components";
+import DataContext from "../data/DataContext";
 const PlaceDetail = () => {
-    const { category, hospitalData } = useContext(Context);
+    const { category, hospitalData } = useContext(DataContext);
     const [limit, setLimit] = useState(0);
     const [page, setPage] = useState(1);
     let { id } = useParams();

@@ -26,8 +26,8 @@ function App() {
   const [hospitalData, setHospitalData] = useState(Hospital);
 
   return (
-      <div className="App ">
-        <DataProvider>
+    <div className="App ">
+      <DataProvider>
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route path='/home' element={<Home />} />
@@ -35,19 +35,19 @@ function App() {
             <Route path='/mypage' element={<MyPage />} />
             <Route path='/signup' element={<SignUp />}></Route>
             <Route path='/searchhospital' element={<SearchBar />}></Route>
-            {/* <Route path='/filter' element={<Filter />}>
-              <Route path='/placedetail/:id/' element={<PlaceDetail />}></Route>
-              <Route path='/majordetail/:id/' element={<MajorDetail />}></Route>
-              <Route path='/majordetail/:id/:majorid' element={<MajorDetailInfo />} > </Route>
-              <Route path='/placedetail/:id/:placeid' element={<PlaceDetailInfo />} > </Route>
-              <Route path='/reservation/:bookid' element={<Reservation />}></Route>
-            </Route> */}
-            <Route path='/main' element={<Main/>}/>
-            <Route path='/loginc' element={<Login_C/>}/>
+            <Route path='/filter' element={<Filter />}>
+              <Route path='/filter/placedetail/:id/' element={<PlaceDetail />}></Route>
+              <Route path='/filter/majordetail/:id/' element={<MajorDetail />}></Route>
+              <Route path='/filter/majordetail/:id/:majorid' element={<MajorDetailInfo />} > </Route>
+              <Route path='/filter/placedetail/:id/:placeid' element={<PlaceDetailInfo />} > </Route>
+            </Route>
+            <Route path='/reservation/:bookid' element={<Reservation />}></Route>
+            <Route path='/main' element={<Main />} />
+            <Route path='/loginc' element={<Login_C />} />
           </Route>
         </Routes>
       </DataProvider>
-      </div>
+    </div>
     // </Context.Provider>
   );
 }
