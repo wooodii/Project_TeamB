@@ -1,0 +1,6 @@
+.nav {width: 360px; margin-top: 20px; border-bottom: 1px solid #ccc;}
+.nav .nav_box {margin-left: 20px;}
+.nav .nav_box button {float: left;display: block; padding: 10px; font-size: 14px; color: #ccc;
+background: #fff;}
+.nav .nav_box button.active {color: #000;}
+

@@ -1,9 +1,17 @@
+import SearchBar_Home from "../components/SearchBar";
+import Weather from "../components/Weather";
+import SearchBar from "./MedicalCourse";
+
 const Home = () => {
     return ( 
         <div className="Home"> 
-            <div className="Search_box">검색창 </div>
+            <div className="Search_box">
+                <SearchBar_Home/>
+            </div>
             <br/>
-            <div className="Temperature">기온 날씨</div>
+            <div className="Temperature">기온 날씨
+                <Weather/>
+            </div>
             <br/>
             <div className="Questionnaire">문진표 작성버튼</div>    
             <br/>
@@ -14,4 +22,4 @@ const Home = () => {
      );
 }
  
-export default Home;g
+export default Home;

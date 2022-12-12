@@ -1,0 +1,9 @@
+.first_box {width: 360px; height: 400px; position: relative;}
+.first_box ul li {}
+.first_box ul li.title { font-size: 16px; font-weight: bold; padding: 10px 0;}
+.first_box ul li.bold {font-weight: bold; font-size: 14px;}
+.plus_btn {
+    position: absolute; bottom: 30px; right: 30px;
+    width: 50px; height: 50px; 
+    border-radius: 50%; background: #ffec48;
+}
