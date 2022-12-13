@@ -18,6 +18,7 @@ import Reservation from './components/Reservation';
 import { DataProvider } from './data/DataContext';
 import Main from './pages/Main';
 import Login_C from './pages/Login';
+import Question from './components/Question';
 
 export const Context = createContext;
 
@@ -30,11 +31,12 @@ function App() {
             <Route path='/home' element={<Home />} />
             <Route path='/history' element={<History />} />
             <Route path='/mypage' element={<MyPage />} />
-            <Route path='/signup' element={<SignUp />}></Route>
-            <Route path='/searchhospital' element={<SearchBar />}></Route>
+            <Route path='/signup' element={<SignUp />}/>
+            <Route path='/searchhospital' element={<SearchBar />}/>
+            <Route path='/question' element={<Question/>}/>
             <Route path='/filter' element={<Filter />}></Route>
-            <Route path='placedetail/:id/' element={<PlaceDetail />}></Route>
-            <Route path='/majordetail/:id/' element={<MajorDetail />}></Route>
+            <Route path='placedetail/:id/' element={<PlaceDetail />}/>
+            <Route path='/majordetail/:id/' element={<MajorDetail />}/>
             <Route path='/majordetail/:id/:majorid' element={<MajorDetailInfo />} > </Route>
             <Route path='/placedetail/:id/:placeid' element={<PlaceDetailInfo />} > </Route>
             <Route path='/reservation/:bookid' element={<Reservation />}></Route>

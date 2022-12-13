@@ -1,25 +1,18 @@
 /** 
  *  배너 > 짧은 건강정보 제공하는 컴포넌트
  *  데이터: 국가건강정보포털 openapi에서 parsing */
-
 // import slick > slider사용 위함
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-
 // import styled-components
 import styled from 'styled-components'
-
 // import data
 import { dailyInfo } from "../data/dailyInfo"; 
-
-
 const HealthInfo = () => {
-
     // 당일 날짜출력
     let date = new Date();
     let days = ["일", "월", "화", "수", "목", "금", "토"];
-    
     // slick 속성
     const settings = {
         dots: true,
@@ -59,10 +52,11 @@ export default HealthInfo;
 
 // styled-components
 const StyledSlider = styled(Slider)`
-height: 300px;
+margin-top :20px;
+height: 200px;
 width: 100%;
 position: relative;
-border: 2px solid lightgray;
+border: 2px solid black;
 
 .slideList > p {
   padding: 5px 15px;

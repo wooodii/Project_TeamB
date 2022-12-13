@@ -1,8 +1,14 @@
 import SearchBar_Home from "../components/SearchBar";
 import Weather from "../components/Weather";
-import SearchBar from "./MedicalCourse";
 
+import HealthInfo from '../components/HealthInfo'
+import { useNavigate } from "react-router-dom";
 const Home = () => {
+    const navigate = useNavigate();
+    const navQustion = ()=>{
+        navigate('/question');
+    }
+    
     return ( 
         <div className="Home"> 
             <div className="Search_box">
@@ -12,12 +18,16 @@ const Home = () => {
             <div className="Temperature">기온 날씨
                 <Weather/>
             </div>
+            <div>
+                <HealthInfo/>
+            </div>
             <br/>
-            <div className="Questionnaire">문진표 작성버튼</div>    
+            <div className="Questionnaire">
+            <button onClick={navQustion}> 문진표 작성</button>
+                </div>    
             <br/>
-            <div className="Reserve">예약 버튼</div>    
-            <br/>
-            <div className="Search_near">주변 병원 찾기 </div>    
+
+
         </div>
      );
 }
