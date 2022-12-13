@@ -6,14 +6,15 @@ import styled from "styled-components";
 import DataContext from "../data/DataContext";
 
 const MajorDetail = () => {
-    const { category, hospitalData, } = useContext(DataContext);
+    const {state,action}= useContext(DataContext);
+
     const [page, setPage] = useState(1);
     const navigate = useNavigate();
-    let { id } = useParams();
+    const { id } = useParams();
 
     // 과목별 필터링
-    const idFilter = hospitalData
-        .filter(major => major.진료과목내용명.includes(category[id].name));
+    const idFilter = state.hospitalData
+        .filter(major => major.진료과목내용명.includes(state.category[id].name));
 
     // 페이지 핸들링 함수
     const handlePageChange = (page) => {
@@ -23,7 +24,7 @@ const MajorDetail = () => {
 
     return (
         <div>
-            <h2>{category[id].name}</h2>
+            <h2>{state.category[id].name}</h2>
             <div className="detail__title">
                 <h4>진료과목</h4>기준으로 <br />
                 검색된 병원 목록입니다

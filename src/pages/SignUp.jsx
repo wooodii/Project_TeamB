@@ -4,15 +4,12 @@ import DataContext from "../data/DataContext";
 
 
 const SignUp = () => {
-
     const [userId, setUserId] = useState('');
     const [userPw, setUserPw] = useState('');
     const [username, setUsername] = useState('');
     const [pwConfirm, setPwConfirm] = useState('');
-
     const data = useContext(DataContext);
     const navigate = useNavigate();
-
     const handleSubmit = (e) => {
         e.preventDefault();
         const newUser = data.state.user.concat({ userId:userId, userPw:userPw, username:username });
@@ -52,10 +49,8 @@ const SignUp = () => {
                 onChange={(e) => setPwConfirm(e.target.value)}
                 /> <br />
                 {userPw !== pwConfirm && <p>비밀번호가 일치하지 않습니다.</p>}
-
                 <input type="submit" />
             </form>
-
         </div>
     );
 }

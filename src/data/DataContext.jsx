@@ -2,8 +2,6 @@
 import { createContext, useState } from "react";
 import Hospital from '../json/Hospital.json'
 
-
-
 const DataContext = createContext();
 
 // DataProvider를 여기서 작성 후 value값을 이미 가진 컴포넌트 내보내기

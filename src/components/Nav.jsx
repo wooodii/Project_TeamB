@@ -25,7 +25,6 @@ const Nav_C = () => {
         third: <Preview content={preview3} />,
         fourth: <Notice />,
     };
-
     const list = lists.map((el) => (
         <button key={el.id} onClick={handleClickButton} className={content === el.name ? "active" : null} name={el.name}>{el.title}</button>
     ))
