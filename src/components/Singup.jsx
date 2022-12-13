@@ -11,7 +11,7 @@ const Singup_C = () => {
     const logOut = () => {
 		data.action.setLogin(false) 
         data.action.setIsMeasures(false)
-		navigate("/");
+		navigate("/main");
 	}
     
     return (  
@@ -27,8 +27,8 @@ const Singup_C = () => {
                         ):(
                             <>
                                 <div className="infant_img">
-                                <Link to ="/Login">
-                                <img src={process.env.PUBLIC_URL + "./images/user.png"} alt="아이프로필" />
+                                <Link to ="/loginc">
+                                <img src={process.env.PUBLIC_URL + "../images/user.png"} alt="아이프로필" />
                                 </Link>
                                 </div>
                                 <h1>우리 아이 등록</h1>

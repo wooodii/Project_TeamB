@@ -20,7 +20,7 @@ const Login_C = () => {
             return alert("생년월일을 선택해주세요.");
         }
         action.setInfant({name: name, age: age, gender: gender})
-        navigate('/');
+        navigate('/main');
         data.action.setLogin(true); 
     }
     function getToday(){
