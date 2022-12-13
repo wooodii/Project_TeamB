@@ -15,17 +15,14 @@ const ReviewModal = () => {
   const data = useContext(DataContext);
   const [countStar, setCountStar] = useState();
   const [textInput, setTextInput] = useState();
-
   const [radioValue, setRadioValue] = useState();
   const [kindValue, setkindValue] = useState();
   const [techValue, setTechValue] = useState();
   const [visitValue, setVisitValue] = useState();
-
   const [btn1, setBtn1] = useState();
   const [btn2, setBtn2] = useState();
   const [btn3, setBtn3] = useState();
   const [yesNo, setYesNoBtn] = useState();
-
   const radios = [
     { name: '효과없어요', value: '1' },
     { name: '보통이에요', value: '2' },
@@ -43,14 +40,11 @@ const ReviewModal = () => {
     { name: '보통이에요', value: '8' },
     { name: '신규장비에요', value: '9' }
   ]
-
   const visit = [
     { name: '네', print : "재방문할래요", value: '10' },
     { name: '아니요', print : "", value: '11' }
   ]
-
   const [show, setShow] = useState(false);
-
   const AddReview = () => {
     data.action.setComments([...data.state.comments, {
       Id : 1, 
@@ -65,11 +59,9 @@ const ReviewModal = () => {
     setShow(false); 
   };
   const handleShow = () => setShow(true);
-  
   const getCountStar = (count) => {
     setCountStar(count)  
   }
-
   return (
     <div>
       <Button

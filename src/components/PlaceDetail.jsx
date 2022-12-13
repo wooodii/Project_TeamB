@@ -5,13 +5,13 @@ import Pagination from 'react-js-pagination';
 import styled from "styled-components";
 import DataContext from "../data/DataContext";
 const PlaceDetail = () => {
-    const { category, hospitalData } = useContext(DataContext);
+    const {state,aciton}= useContext(DataContext);
     const [limit, setLimit] = useState(0);
     const [page, setPage] = useState(1);
     let { id } = useParams();
 
     // 지역별 필터링 
-    const idFilter = hospitalData.filter(place => place.주소.includes(category[id].name));
+    const idFilter = state.hospitalData.filter(place => place.주소.includes(state.category[id].name));
 
     // 페이지 핸들링 함수
     const handlePageChange = (page) => {
@@ -20,7 +20,7 @@ const PlaceDetail = () => {
 
     return (
         <div>
-            <h2>{category[id].name}</h2>
+            <h2>{state.category[id].name}</h2>
             <div className="detail__title">
                 <h4>지역별</h4>기준으로 <br />
                 검색된 병원 목록입니다

@@ -7,16 +7,17 @@ import DataContext from "../data/DataContext";
 
 
 const Filter = () => {
-    const { category, setCategory } = useContext(DataContext);
+    const {state,action}= useContext(DataContext);
     const [isFilter, setIsFilter] = useState(false);
+
     // 필터버튼 이벤트 함수
     const handleBtns = (e) => {
         setIsFilter == true ? setIsFilter(false) : setIsFilter(true);
         let word = e.target.value;
         if (word === 'Major') {
-            setCategory(categorydata);
+            action.setCategory(categorydata);
         } else if (word === 'Place') {
-            setCategory(categorydata1);
+            action.setCategory(categorydata1);
         }
     }
     return (
@@ -29,12 +30,13 @@ const Filter = () => {
                 <div className="category__container">
                     {
                         isFilter == true ?
-                            category == categorydata1 ? categorydata1.map((item, id) => {
+                            state.category == categorydata1 ? categorydata1.map((item, id) => {
                                 return (
                                     <div key={id} className="category__box">
                                         <Link className="linktext" to={'/placedetail/' + id + '/'}>
                                             <span>{item.icon}</span>
                                             <h4>{item.name}</h4>
+                                            
                                         </Link>
                                     </div>
                                 )
