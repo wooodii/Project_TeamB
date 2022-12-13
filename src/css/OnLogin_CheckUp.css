@@ -1,6 +1,7 @@
 .box {width: 360px; position: relative; background: #f5f6f8;}
 .box .padding_box {padding: 65px 10px 10px 10px;}
 .s_title {font-size: 20px; text-align-last: center; font-weight: bold; padding-bottom: 20px; }
+.today {font-size: 15px; color: #ccc;}
 
 /* 버튼 */
 .btn_box { overflow: hidden; position: absolute; top: 15px; right: 15px; background: #ecedef; border-radius: 25px; padding: 2px;}
@@ -13,9 +14,9 @@
 .progressbar_box .progressbar {}
 
 /* 탭메뉴 */
-.tab {background: #fff; padding: 10px; border-radius: 10px;}
+.tab {background: #fff; padding: 10px; margin-bottom: 20px; border-radius: 10px;}
 .tab li {float: left; width: 33%;}
-.tab li a {display: block; font-size: 16px; text-align: center; padding: 5px 15px; color: #ccc; }
+.tab li a {display: block; font-size: 15px; text-align: center; padding: 5px 15px; color: #ccc; }
 .tab li.active a {color: #000; border-radius: 10px; background: #fdf8be;  }
 .i_tab {background: #fff; padding: 10px; border-radius: 10px;}
 .i_tab li {float: left; width: 33%;}
@@ -25,10 +26,11 @@
 /* 건강검진리스트 */
 .h_box { width: 360px; padding: 10px; position: relative; background: #fff; margin: 15px -10px;}
 .h_box .left_box {float: left;}
-.h_box .left_box .h_title {padding-top: 10px; font-size: 16px; font-weight: bold;}
-.h_box .left_box p { color: #ccc; }
+.h_box .left_box p {font-size: 14px;}
+.h_box .left_box .h_title { font-size: 16px; font-weight: bold;}
+.h_box .left_box p.h_notice { color: #ccc; }
 /* 아이콘 */
 .h_box .right_box {float: right;}
 .h_box .right_box .icon {font-size: 22px; padding: 15px; background: #fbed68; color: #2d3a4b; border-radius: 50%;}
 .h_box .right_box .icon.active {color: #fff; background: #2d3a4b;  border-radius: 50%;}
-.h_box .check {text-align: center; color: #000;}
+.h_box .check {text-align: center; color: #000; margin: none;}

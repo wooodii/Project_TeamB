@@ -3,4 +3,6 @@
 .nav .nav_box button {float: left;display: block; padding: 10px; font-size: 14px; color: #ccc;
 background: #fff;}
 .nav .nav_box button.active {color: #000;}
-
+a { text-decoration: none;}
+dl,ul,li,ol,menu {list-style: none;}
+button {border: 0;}

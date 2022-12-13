@@ -6,11 +6,11 @@ import { useState } from 'react';
 import CheckUp from './CheckUp';
 import Notice from './Notice';
 
-const Nav = () => {
-    const preview3 = useSelector((state)=>(state.growth.preview3))  
-      
+const Nav_C = () => {
+    const preview3 = useSelector((state) => (state.growth.preview3))
+
     const lists = [
-        { id:1, title:"건강피드", name:"first"}, { id:2, title:"검진/접종", name:"second"}, { id:3, title:"성장관리", name:"third"}, { id:4, title:"체온관리", name:"fourth"},
+        { id: 1, title: "건강피드", name: "first" }, { id: 2, title: "검진/접종", name: "second" }, { id: 3, title: "성장관리", name: "third" }, { id: 4, title: "체온관리", name: "fourth" },
     ]
 
     const [content, setContent] = useState("first");
@@ -20,16 +20,16 @@ const Nav = () => {
         setContent(name);
     };
     const selectComponent = {
-        first:  <HealthChart/>,
-        second: <CheckUp/>,
-        third:  <Preview content={preview3}/>,
+        first: <HealthChart />,
+        second: <CheckUp />,
+        third: <Preview content={preview3} />,
         fourth: <Notice />,
-      };
+    };
 
-      const list = lists.map((el) => (
+    const list = lists.map((el) => (
         <button key={el.id} onClick={handleClickButton} className={content === el.name ? "active" : null} name={el.name}>{el.title}</button>
     ))
-    return (  
+    return (
         <>
             <div className="nav clearfix">
                 <div className='nav_box'>
@@ -37,10 +37,10 @@ const Nav = () => {
                 </div>
             </div>
             <>
-            {content && <>{selectComponent[content]}</>}
+                {content && <>{selectComponent[content]}</>}
             </>
         </>
     );
 }
- 
-export default Nav;
+
+export default Nav_C;

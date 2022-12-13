@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import DataContext from "../context/DataContext";
+import DataContext from "../data/DataContext";
 
 import '../css/health_Modal.css'
 

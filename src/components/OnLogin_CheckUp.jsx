@@ -1,4 +1,4 @@
-import DataContext from "../context/DataContext";
+import DataContext from "../data/DataContext";
 import { useState, useContext } from "react";
 import { useSelector } from 'react-redux';
 
@@ -12,26 +12,48 @@ import '../css/OnLogin_CheckUp.css'
 const OnLogin_CheckUp = () => {
     const data = useContext(DataContext);
     const hchecks = useSelector((state)=>(state.checkUp.hchecks))  
-
+    const [onHcheck,setOnHcheck] = useState("")
     const [btn,setBtn] = useState(true);
     const [dname,setDName] = useState("")
 
     const health_check = function(){
-        if(data.state.month >= 71){
-            data.action.setHcheck(7);
-        } else if (data.state.month >= 60){
-            data.action.setHcheck(6);
-        } else if (data.state.month >= 48){
-            data.action.setHcheck(5);
-        } else if (data.state.month >= 36){
-            data.action.setHcheck(4);
-        } else if (data.state.month >= 24){
-            data.action.setHcheck(3);
-        } else if (data.state.month >= 12){
-            data.action.setHcheck(2);
-        } else if (data.state.month >= 6){
-            data.action.setHcheck(1);
+        if(data.state.month >= 66){
+            data.action.setHcheck(7)
+        } else if(data.state.month > 60 ){
+            data.action.setHcheck(7)
+            setOnHcheck("현재 건강검진 기간이 아닙니다")
+        } else if(data.state.month >= 54 ){
+            data.action.setHcheck(6)
+        } else if(data.state.month > 48 ){
+            data.action.setHcheck(6)
+            setOnHcheck("현재 건강검진 기간이 아닙니다")
+        } else if(data.state.month >= 42 ){
+            data.action.setHcheck(5)
+        } else if(data.state.month > 36 ){
+            data.action.setHcheck(5)
+            setOnHcheck("현재 건강검진 기간이 아닙니다")
+        } else if(data.state.month >= 30){
+            data.action.setHcheck(4)
+        } else if(data.state.month > 24){
+            data.action.setHcheck(4)
+            setOnHcheck("현재 건강검진 기간이 아닙니다")
+        } else if(data.state.month >= 18){
+            data.action.setHcheck(3)
+        } else if(data.state.month > 12){
+            data.action.setHcheck(3)
+            setOnHcheck("현재 건강검진 기간이 아닙니다")
+        } else if(data.state.month >= 9){
+            data.action.setHcheck(2)
+        } else if(data.state.month > 6){
+            data.action.setHcheck(2)
+            setOnHcheck("현재 건강검진 기간이 아닙니다")
+        } else if(data.state.month >= 4){
+            data.action.setHcheck(1)
+        } else if(data.state.month >= 0){
+            data.action.setHcheck(1)
+            setOnHcheck("현재 건강검진 기간이 아닙니다")
         }
+        
     }
     const inoculation_check = function(){
         if(data.state.month > 144) {
@@ -66,7 +88,10 @@ const OnLogin_CheckUp = () => {
             setDName("결핵, B형간염")
         } 
     }
-    health_check()
+    
+    useEffect(() => {
+        health_check()
+    },[data.state.month])
     useEffect(() => {
         inoculation_check()
     },[dname])
@@ -78,60 +103,85 @@ const OnLogin_CheckUp = () => {
         const { name } = e.target;
         setContent(name);
     };
-
+    const date = new Date();
+    function getHcheck_date(h_month) {
+        const i_date = new Date(data.state.infant.age)
+        const Hcheck_date = new Date(
+                                    i_date.getFullYear(),
+                                    (i_date.getMonth()+h_month),
+                                    i_date.getDate()
+                                )
+        return Hcheck_date.getFullYear() + "." + (Hcheck_date.getMonth()+1) + "." + Hcheck_date.getDate() 
+    }
     const selectComponent = {
         first:  <>
                     {hchecks.filter((el)=> el.id < data.state.hcheck).map((el)=>(
-                    <div className="h_box clearfix" key={el.id}>
-                        <div className="left_box">
-                            <h2 className="h_title">{el.id}차 건강검진</h2>
-                            <p>생후 {el.s_month}개월 ~ {el.e_month}개월</p>
-                        </div>
-                        <div className="right_box">
-                            <FontAwesomeIcon className="icon active" icon={faStethoscope} />
-                            <p className="check">검진완료</p>
-                        </div>
-                    </div>
+                        <>
+                            <p className="today">{date.getFullYear()+"/"+(date.getMonth()+1)+"/"+date.getDate()}</p>
+                            <div className="h_box clearfix" key={el.id}>
+                                <div className="left_box">
+                                    <h2 className="h_title">{el.id}차 건강검진</h2>
+                                    <p className="h_notice">생후 {el.s_month}개월 ~ {el.e_month}개월</p>
+                                    <p>검진기간: {getHcheck_date(el.s_month)} ~ {getHcheck_date(el.e_month)}</p>
+                                </div>
+                                <div className="right_box">
+                                    <FontAwesomeIcon className="icon active" icon={faStethoscope} />
+                                    <p className="check">검진완료</p>
+                                </div>
+                            </div>
+                        </>
                     ))}
                     {hchecks.filter((el)=> el.id >= data.state.hcheck).map((el)=>(
-                    <div className="h_box clearfix" key={el.id}>
-                        <div className="left_box">
-                            <h2 className="h_title">{el.id}차 건강검진</h2>
-                            <p>생후 {el.s_month}개월 ~ {el.e_month}개월</p>
-                        </div>
-                        <div className="right_box">
-                            <FontAwesomeIcon className="icon" icon={faStethoscope} />
-                            <p className="check">검진필요</p>
-                        </div>
-                    </div>
+                        <>
+                            <p className="today">{date.getFullYear()+"/"+(date.getMonth()+1)+"/"+date.getDate()}</p>
+                            <div className="h_box clearfix" key={el.id}>
+                                <div className="left_box">
+                                    <h2 className="h_title">{el.id}차 건강검진</h2>
+                                    <p className="h_notice">생후 {el.s_month}개월 ~ {el.e_month}개월</p>
+                                    <p>검진기간: {getHcheck_date(el.s_month)} ~ {getHcheck_date(el.e_month)}</p>
+                                </div>
+                                <div className="right_box">
+                                    <FontAwesomeIcon className="icon" icon={faStethoscope} />
+                                    <p className="check">검진필요</p>
+                                </div>
+                            </div>
+                        </>
                     ))}
                 </>,
         second: <>
                     {hchecks.filter((el)=> el.id >= data.state.hcheck).map((el)=>(
-                    <div className="h_box clearfix" key={el.id}>
-                        <div className="left_box">
-                            <h2 className="h_title">{el.id}차 건강검진</h2>
-                            <p>생후 {el.s_month}개월 ~ {el.e_month}개월</p>
-                        </div>
-                        <div className="right_box">
-                            <FontAwesomeIcon className="icon" icon={faStethoscope} />
-                            <p className="check">검진필요</p>
-                        </div>
-                    </div>
+                        <>
+                            <p className="today">{date.getFullYear()+"/"+(date.getMonth()+1)+"/"+date.getDate()}</p>
+                            <div className="h_box clearfix" key={el.id}>
+                                <div className="left_box">
+                                    <h2 className="h_title">{el.id}차 건강검진</h2>
+                                    <p className="h_notice">생후 {el.s_month}개월 ~ {el.e_month}개월</p>
+                                    <p>검진기간: {getHcheck_date(el.s_month)} ~ {getHcheck_date(el.e_month)}</p>
+                                </div>
+                                <div className="right_box">
+                                    <FontAwesomeIcon className="icon" icon={faStethoscope} />
+                                    <p className="check">검진필요</p>
+                                </div>
+                            </div>
+                        </>
                     ))}
                 </>,
         third:  <>
                     {hchecks.filter((el)=> el.id < data.state.hcheck).map((el)=>(
-                    <div className="h_box clearfix">
-                        <div className="left_box">
-                            <h2 className="h_title">{el.id}차 건강검진</h2>
-                            <p>생후 {el.s_month}개월 ~ {el.e_month}개월</p>
-                        </div>
-                        <div className="right_box">
-                            <FontAwesomeIcon className="icon active" icon={faStethoscope} />
-                            <p className="check">검진완료</p>
-                        </div>
-                    </div>
+                        <>
+                            <p className="today">{date.getFullYear()+"/"+(date.getMonth()+1)+"/"+date.getDate()}</p>
+                            <div className="h_box clearfix" key={el.id}>
+                                <div className="left_box">
+                                    <h2 className="h_title">{el.id}차 건강검진</h2>
+                                    <p className="h_notice">생후 {el.s_month}개월 ~ {el.e_month}개월</p>
+                                    <p>검진기간: {getHcheck_date(el.s_month)} ~ {getHcheck_date(el.e_month)}</p>
+                                </div>
+                                <div className="right_box">
+                                    <FontAwesomeIcon className="icon active" icon={faStethoscope} />
+                                    <p className="check">검진완료</p>
+                                </div>
+                            </div>
+                        </>
                     ))}
                 </>,
         fourth: <>
@@ -160,15 +210,15 @@ const OnLogin_CheckUp = () => {
                 </div>
                 {btn ? (
                     <> 
-                        <h2 className="s_title">현재 {data.state.hcheck}차 건강검진 기간입니다</h2>
+                        <h2 className="s_title">{onHcheck ? <>{onHcheck}</> :<>현재 {data.state.hcheck}차 건강검진 기간입니다</>}</h2>
                         <div className="progressbar_box clearfix">
                             <p >검진율</p>
-                            <ProgressBar className="progressbar" now={parseInt(data.state.hcheck*14.29) } label={`${parseInt(data.state.hcheck*14.29)}%`} variant="warning" />
+                            <ProgressBar className="progressbar" now={parseInt((data.state.hcheck-1)*14.29) } label={`${parseInt((data.state.hcheck-1)*14.29)}%`} variant="warning" />
                         </div>
                         <ul className="tab clearfix">
                             <li className={content=='first' && "active"}><a href="#" name="first" onClick={handleClickButton}>전체 7</a></li>
-                            <li className={content=='second' && "active"}><a href="#" name="second" onClick={handleClickButton}>미검진 {7-data.state.hcheck}</a></li>
-                            <li className={content=='third' && "active"}><a href="#" name="third" onClick={handleClickButton}>검진완료 {data.state.hcheck}</a></li>
+                            <li className={content=='second' && "active"}><a href="#" name="second" onClick={handleClickButton}>미검진 {8-data.state.hcheck}</a></li>
+                            <li className={content=='third' && "active"}><a href="#" name="third" onClick={handleClickButton}>검진완료 {data.state.hcheck-1}</a></li>
                         </ul>
                         {content && <>{selectComponent[content]}</>}
                     </>

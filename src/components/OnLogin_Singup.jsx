@@ -1,4 +1,4 @@
-import DataContext from "../context/DataContext";
+import DataContext from "../data/DataContext";
 import { useContext } from "react";
 import "../css/OnLogin_Singup.css"
 
@@ -10,9 +10,9 @@ const OnLogin_Singup = () => {
         <>
             <div className="infant_img clearfix">
             {data.state.infant.gender == "남" ? (
-                <img src={process.env.PUBLIC_URL + "./images/male.jpg"} alt="남자아이프로필" />
+                <img src={process.env.PUBLIC_URL + "../images/male.jpg"} alt="남자아이프로필" />
             ):(
-                <img src={process.env.PUBLIC_URL + "./images/female.jpg"} alt="여자아이프로필" />
+                <img src={process.env.PUBLIC_URL + "../images/female.jpg"} alt="여자아이프로필" />
             )}
             </div>
             <ul>

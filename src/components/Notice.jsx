@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useContext} from "react";
-import DataContext from "../context/DataContext";
+import DataContext from "../data/DataContext";
 import Preview from './Preview';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";

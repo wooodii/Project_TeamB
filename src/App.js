@@ -1,27 +1,54 @@
+
+import { createContext, useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-// 전역 style.css
-import GlobalStyles from './GlobalStyles';
-// 라우터 import
-import {Routes, Route} from 'react-router-dom'
-
-import { DataProvider } from "./context/DataContext";
-
+import History from './pages/History';
+import Home from './pages/Home';
+import Layout from './pages/Layout';
+import SearchBar from './pages/MedicalCourse';
+import MyPage from './pages/Mypage';
+import SignUp from './pages/SignUp';
+import Hospital from './json/Hospital.json'
+import Filter from './components/Filter';
+import MajorDetail from './components/MajorDetail';
+import MajorDetailInfo from './components/MajorDetailInfo';
+import PlaceDetail from './components/PlaceDetail';
+import PlaceDetailInfo from './components/PlaceDetailInfo';
+import Reservation from './components/Reservation';
+import { DataProvider } from './data/DataContext';
 import Main from './pages/Main';
-import Login from './pages/Login';
+import Login_C from './pages/Login';
+
+export const Context = createContext;
 
 function App() {
+  const [category, setCategory] = useState();
+  const [hospitalData, setHospitalData] = useState(Hospital);
+
   return (
-    <div>
+    <div className="App ">
       <DataProvider>
-        <GlobalStyles />
         <Routes>
-          {/* 홈페이지 설정 */}
-          <Route path="/" element={<Main />}></Route>
-          {/* 로그인페이지 설정 */}
-          <Route path="/Login" element={<Login />}></Route>
+          <Route path='/' element={<Layout />}>
+            <Route path='/home' element={<Home />} />
+            <Route path='/history' element={<History />} />
+            <Route path='/mypage' element={<MyPage />} />
+            <Route path='/signup' element={<SignUp />}></Route>
+            <Route path='/searchhospital' element={<SearchBar />}></Route>
+            <Route path='/filter' element={<Filter />}>
+              <Route path='/filter/placedetail/:id/' element={<PlaceDetail />}></Route>
+              <Route path='/filter/majordetail/:id/' element={<MajorDetail />}></Route>
+              <Route path='/filter/majordetail/:id/:majorid' element={<MajorDetailInfo />} > </Route>
+              <Route path='/filter/placedetail/:id/:placeid' element={<PlaceDetailInfo />} > </Route>
+            </Route>
+            <Route path='/reservation/:bookid' element={<Reservation />}></Route>
+            <Route path='/main' element={<Main />} />
+            <Route path='/loginc' element={<Login_C />} />
+          </Route>
         </Routes>
       </DataProvider>
     </div>
+    // </Context.Provider>
   );
 }
 

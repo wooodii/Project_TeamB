@@ -1,17 +1,17 @@
 import '../css/Singup.css'
 import { Link, useNavigate } from 'react-router-dom';
-import DataContext from "../context/DataContext";
+import DataContext from "../data/DataContext";
 import { useContext } from "react";
 import OnLogin_Singup from './OnLogin_Singup';
 
-const Singup = () => {
+const Singup_C = () => {
     const data = useContext(DataContext);
     const navigate = useNavigate();
     
     const logOut = () => {
 		data.action.setLogin(false) 
         data.action.setIsMeasures(false)
-		navigate("/");
+		navigate("/main");
 	}
     
     return (  
@@ -27,8 +27,8 @@ const Singup = () => {
                         ):(
                             <>
                                 <div className="infant_img">
-                                <Link to ="/Login">
-                                <img src={process.env.PUBLIC_URL + "./images/user.png"} alt="아이프로필" />
+                                <Link to ="/loginc">
+                                <img src={process.env.PUBLIC_URL + "../images/user.png"} alt="아이프로필" />
                                 </Link>
                                 </div>
                                 <h1>우리 아이 등록</h1>
@@ -41,4 +41,4 @@ const Singup = () => {
     );
 }
  
-export default Singup;
+export default Singup_C;

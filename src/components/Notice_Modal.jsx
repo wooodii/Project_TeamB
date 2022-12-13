@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import DataContext from "../context/DataContext";
+import DataContext from "../data/DataContext";
 import '../css/Notice_Modal.css'
 
 const Notice_Modal = (props) => {
