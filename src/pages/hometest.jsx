@@ -28,11 +28,11 @@ const HomeT = () => {
                 </div>    
             <br/>
 
-            <button>버튼1</button>
+            <button className={style.Btn_L}>버튼</button>
             <br/>
-            <button>버튼2</button>
+            <button className={style.Btn_M}>버튼</button>
             <br/>
-            <button>버튼3</button>
+            <button className={style.Btn_S}>버튼</button>
 
         </div>
      );
