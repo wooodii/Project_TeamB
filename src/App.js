@@ -19,6 +19,7 @@ import { DataProvider } from './data/DataContext';
 import Main from './pages/Main';
 import Login_C from './pages/Login';
 import Question from './components/Question';
+import FirebaseSignUp from './pages/FirebaseSignUp';
 
 export const Context = createContext;
 
@@ -28,10 +29,10 @@ function App() {
       <DataProvider>
         <Routes>
           <Route path='/' element={<Layout />}>
-            <Route path='/home' element={<Home />} />
+            <Route index element={<Home />} />
             <Route path='/history' element={<History />} />
             <Route path='/mypage' element={<MyPage />} />
-            <Route path='/signup' element={<SignUp />}/>
+            <Route path='/usersignup' element={<FirebaseSignUp />} />
             <Route path='/searchhospital' element={<SearchBar />}/>
             <Route path='/question' element={<Question/>}/>
             <Route path='/filter' element={<Filter />}></Route>
