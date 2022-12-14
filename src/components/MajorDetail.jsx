@@ -1,11 +1,11 @@
-import  Context  from "../App";
+import styles from '../css/Detail.module.css'
 import { useContext, useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import Pagination from 'react-js-pagination';
 import styled from "styled-components";
 import DataContext from "../data/DataContext";
 
-const MajorDetail = () => {
+const MajorDetail = () => { 
     const {state,action}= useContext(DataContext);
 
     const [page, setPage] = useState(1);
@@ -24,8 +24,9 @@ const MajorDetail = () => {
 
     return (
         <div>
+            <div className={styles.title}>
             <h2>{state.category[id].name}</h2>
-            <div className="detail__title">
+            
                 <h4>진료과목</h4>기준으로 <br />
                 검색된 병원 목록입니다
             </div>
@@ -35,13 +36,14 @@ const MajorDetail = () => {
                         if (!(majorid >= 0 && majorid < 10)) {
                             return null;
                         }
-                        return (
+                        return ( 
                             <div key={majorid} item={item}>
-                                <Link className="linktext" to={'/majordetail/' + id + '/' + (majorid + 10 * (page - 1))}>
-                                    <div className="detail__box">
+                                <div className={styles.box}>
+                                <Link className={styles.link} to={'/majordetail/' + id + '/' + (majorid + 10 * (page - 1))}>
+                                    
                                         <h4>{item.사업장}</h4>
                                         <p>{item.주소}</p>
-                                        <div className="detail__box2">
+                                        <div className={styles.box2}>
                                             <div>의료인수 <br />
                                                 {item.의료인수}
                                             </div>
@@ -51,9 +53,9 @@ const MajorDetail = () => {
                                             <div>병상수 <br />
                                                 {item.병상수}
                                             </div>
-                                        </div>
-                                    </div>
+                                        </div>                            
                                 </Link>
+                                </div>
                             </div>
                         )
                     })

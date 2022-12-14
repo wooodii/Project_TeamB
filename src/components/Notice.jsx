@@ -17,7 +17,7 @@ const Notice = () => {
     const temp = data.state.measures.temperature;
     const fever = function() {
         if(temp >= 39 ){
-            setName("고열")
+            setName("고열") 
         } else if(temp >= 37.5 ){
             setName("미열")
         } else if(temp >= 35.5){
