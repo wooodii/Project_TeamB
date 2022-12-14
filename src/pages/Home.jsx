@@ -12,6 +12,7 @@ const Home = () => {
     return ( 
         <div className="Home"> 
             <div className="Search_box">
+                test
                 <SearchBar_Home/>
             </div>
             <br/>
