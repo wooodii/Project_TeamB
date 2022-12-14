@@ -3,7 +3,8 @@ import Weather from "../components/Weather";
 
 import HealthInfo from '../components/HealthInfo'
 import { useNavigate } from "react-router-dom";
-const Home = () => {
+import style from '../css/base.module.css'
+const HomeT = () => {
     const navigate = useNavigate();
     const navQustion = ()=>{
         navigate('/question');
@@ -11,25 +12,30 @@ const Home = () => {
     
     return ( 
         <div className="Home"> 
-            <div className="Search_box">
-                <SearchBar_Home/>
+            <div className={style.Box_L}>검색바 
+
             </div>
             <br/>
-            <div className="Temperature">기온 날씨
-                <Weather/>
+            <div className={style.Box_M}>기온 날씨
+
             </div>
             <div>
-                <HealthInfo/>
+
             </div>
             <br/>
-            <div className="Questionnaire">
+            <div className={style.Box_S}>
             <button onClick={navQustion}> 문진표 작성</button>
                 </div>    
             <br/>
 
+            <button>버튼1</button>
+            <br/>
+            <button>버튼2</button>
+            <br/>
+            <button>버튼3</button>
 
         </div>
      );
 }
  
-export default Home;
+export default HomeT;

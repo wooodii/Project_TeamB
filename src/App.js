@@ -19,6 +19,7 @@ import { DataProvider } from './data/DataContext';
 import Main from './pages/Main';
 import Login_C from './pages/Login';
 import Question from './components/Question';
+import HomeT from './pages/hometest';
 
 export const Context = createContext;
 
@@ -28,7 +29,7 @@ function App() {
       <DataProvider>
         <Routes>
           <Route path='/' element={<Layout />}>
-            <Route path='/home' element={<Home />} />
+            <Route path='home' element={<HomeT />} />
             <Route path='/history' element={<History />} />
             <Route path='/mypage' element={<MyPage />} />
             <Route path='/signup' element={<SignUp />}/>
