@@ -5,14 +5,12 @@ import Hospital from '../json/Hospital.json';
 import SearchHosptial from './SearchHospital';
 import { useState } from 'react';
 const AreaMenu = ({area, setKind, setArea, kind, setSearch}) => {
-
     return (
         <>
         <Dropdown onClick={() => {setSearch(null); setKind(null); }}>
         <Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary">
           {area ? area : "지역"}
         </Dropdown.Toggle>
-
         <Dropdown.Menu variant="dark">
           <Dropdown.Item 
             onClick={() => { setArea("서울"); 

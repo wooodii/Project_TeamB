@@ -1,36 +1,100 @@
-body {
-  text-align: center;
-  
-  height: 100vh;
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * { 
+ font-family: 'Noto Sans KR', sans-serif;
 }
 
-.Wrapper{
+ /* Global */
+ :root {
+  /* 변수선언 : --변수명:  */
 
+  /* Color */
+  --color-white: #ffffff;
+  --color-light-white: #eeeeee;
+  --color-dark-white: #bdbdbd;
+  --color-green: #1b4542;
+  --color-dark-grey: #4d4d4d;
+  --color-grey: #616161;
+  --color-light-grey: #7c7979;
+  --color-orange: #feb546;
+  --color-black: #000000;
+
+  /* Font size */
+  --font-large: 48px;
+  --font-medium: 28px;
+  --font-regular: 18px; 
+  --font-small: 16px;
+  --font-micro: 14px;
+
+  /* Font weight */
+  --weight-bold: 700;
+  --weight-semi-bold: 600;
+  --weight-regular: 400;
+
+  /* Size */
+  --size-border-radius : 4px;
+}
+
+/* Typography */
+/* 사용법: var(변수이름) */
+
+h1 {
+font-size: var(--font-large);
+font-weight: var(--weight-bold);
+color: var(--color-black);
+margin: 16px 0px;
+}
+
+h2 {
+font-size: var(--font-medium);
+font-weight: var(--weight-semi-bold);
+color: var(--color-black);
+margin: 8px 0;
+}
+
+h3 {
+font-size: var(--font-regular);
+font-weight: var(--weight-regular);
+color: var(--color-black);
+margin: 8px 0;
+}
+
+p {
+font-size: var(--font-regular);
+font-weight: var(--weight-regular);
+color: var(--color-black);
+margin: 4px 0;
+}
+
+
+body {
+  height: 100vh;
+  font-family: 'Noto Sans KR' !important;
+  height: 100vh;
+  max-width: 420px;
 }
 
 .GNB {
   position: fixed;
-  background-color:rgb(55, 168, 129) ;
+  background-color:var(--color-green);
   border-radius:6px;
   font-size: 1.5em;
   bottom: 1px;
   width: 100%;
   height: 70px;
+  text-align: center;
 }
 
-.Home div{
-  margin-bottom: 20px;
-}
 
 .Search_box{
-  height: 200px;
+  height: 100px;
   border-radius:6px;
   border: 2px solid black;
   margin-top: 20px;
 }
 
 .Temperature{
-  height: 100px;
+  height: x;
   border-radius:6px;
   border: 2px solid black;
 }
