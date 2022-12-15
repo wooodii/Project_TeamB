@@ -30,6 +30,7 @@ function App() {
       <DataProvider>
         <Routes>
           <Route path='/' element={<Layout />}>
+            <Route index element={<Home />} />
             <Route path='home' element={<HomeT />} />
             <Route path='/history' element={<History />} />
             <Route path='/mypage' element={<MyPage />} />
