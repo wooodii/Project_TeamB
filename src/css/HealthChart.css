@@ -5,5 +5,6 @@
 .plus_btn {
     position: absolute; bottom: 100px; right: 100px;
     width: 50px; height: 50px; 
-    border-radius: 50%; background: #ffec48;
+    border-radius: 50%; background: #1b4542;
 }
+.font_plus {position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
