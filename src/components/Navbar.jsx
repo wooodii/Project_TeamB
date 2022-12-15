@@ -1,17 +1,24 @@
+import { useNavigate } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav"
-import Navbar from "react-bootstrap/Navbar"
+import { Link } from "react-router-dom";
+
 const NavbarComp = () => {
+    
+    const navigate = useNavigate();
     return (
-        <Container>
-            <Navbar bg="dark" variant="dark">
-                <Nav className="GNB"  >
+        <div className="GNB">
+            <Link to='/home'>홈</Link>
+            <Link to='/history'>진료내역</Link>
+            <Link to='/mypage'>마이페이지</Link>
+        </div>
+        /* <Nav className="GNB"  >
                     <Nav.Link href="home">홈</Nav.Link>
                     <Nav.Link href="history">진료내역</Nav.Link>
                     <Nav.Link href="mypage">마이페이지</Nav.Link>
-                </Nav>
-            </Navbar>
-        </Container>
+                </Nav> */
+
+
     );
 }
 
