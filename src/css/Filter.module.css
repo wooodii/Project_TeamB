@@ -14,7 +14,7 @@
   
   
   .btn {
-    padding: 24px;
+    padding: 16px; 
     border: solid var(--color-green);
     border-radius: var(--size-border-radius);
     background-color: var(--color-green);
@@ -32,7 +32,7 @@
   .category__box { 
     border: solid 1px var(--color-green);
     border-radius: var(--size-border-radius);
-    padding: 20px; 
+    padding: 2px; 
     margin: 8px 4px;
     flex-grow: 1;
     flex-shrink: 1; 
