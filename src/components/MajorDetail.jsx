@@ -27,8 +27,8 @@ const MajorDetail = () => {
             <div className={styles.title}>
             <h2>{state.category[id].name}</h2>
             
-                <h4>진료과목</h4>기준으로 <br />
-                검색된 병원 목록입니다
+                기준으로 <br />
+                검색된 병원 목록입니다    
             </div>
             {
                 idFilter.slice(10 * (page - 1), 10 * (page - 1) + 10)

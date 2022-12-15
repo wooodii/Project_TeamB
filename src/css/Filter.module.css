@@ -10,10 +10,10 @@
     display: flex;
     justify-content: space-evenly;
     margin: 16px;
-  }
+  } 
   
   
-  .btn {
+  .btn { 
     padding: 12px;  
     border: solid var(--color-green);
     border-radius: var(--size-border-radius);
@@ -34,7 +34,7 @@
     border-radius: var(--size-border-radius);
     padding: 2px;
     margin: 8px 4px;
-    flex-grow: 1;
+    flex-grow: 1; 
     flex-shrink: 1; 
     height: 60px;
     width: 80px;  
@@ -45,4 +45,5 @@
   .text { 
     font-size: small;
     font-weight: 700;
+    margin: auto;
   }
