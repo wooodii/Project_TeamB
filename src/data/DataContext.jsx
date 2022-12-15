@@ -20,19 +20,15 @@ const DataProvider = ({ children }) => {
     const [login, setLogin] = useState(true)
     const [hcheck, setHcheck] = useState(0);
     const [icheck, setIcheck] = useState(0);
-
     const age = String(infant.age)
     const date1 = new Date(infant.age);
     const date2 = new Date();
     const diffDate = date1.getTime() - date2.getTime();
-
     const date = Math.floor(Math.abs(diffDate / (1000 * 60 * 60 * 24)));
     const month = Math.floor(Math.abs(diffDate / (1000 * 60 * 60 * 24 * 30)));
-
     // 종헌 
     const [category, setCategory] = useState();
     const [hospitalData, setHospitalData] = useState(Hospital);
-
     // 서아
     // 전체 유저 데이터
     //로그인 후 계속 사용될 유저정보 

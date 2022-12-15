@@ -1,8 +1,6 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import DataContext from "../data/DataContext";
-
 import '../css/Login.css'
 const Login_C = () => {
     const {action} = useContext(DataContext)
@@ -28,7 +26,6 @@ const Login_C = () => {
         const year = date.getFullYear();
         const month = ("0" + (1 + date.getMonth())).slice(-2);
         const day = ("0" + date.getDate()).slice(-2);
-
         return year + "-" + month + "-" + day;
     }
     function get71MonthAgo(){
@@ -36,7 +33,6 @@ const Login_C = () => {
         const year = (date.getFullYear()-5);
         const month = ("0" + (date.getMonth()-10)).slice(-2);
         const day = ("0" + (date.getDate()+1)).slice(-2);
-
         return year + "-" + month + "-" + day;
     }
     return (  
