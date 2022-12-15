@@ -27,8 +27,6 @@ const Home = () => {
     
     return ( 
         <div className="Home">
-            {data.state.isLoginned ? (
-                <>
                     <div className="Search_box">
                         <SearchBar_Home/>
                     </div>
@@ -44,13 +42,6 @@ const Home = () => {
                         <button onClick={navQustion}> 문진표 작성</button>
                     </div>    
                     <br/>
-                </>
-            ):(
-                <>
-                <FirebaseSignUp />
-                <FirebaseLogin />
-                </>
-            )}
         </div>
     );
 }

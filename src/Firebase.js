@@ -7,17 +7,17 @@ import { getAuth , createUserWithEmailAndPassword, signInWithEmailAndPassword,on
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCFOHZVX5duRNL6nDHUAp9YxOcpPc4GelE",
-    authDomain: "teamb-1bdda.firebaseapp.com",
-    projectId: "teamb-1bdda",
-    storageBucket: "teamb-1bdda.appspot.com",
-    messagingSenderId: "409296128775",
-    appId: "1:409296128775:web:8dc59b330155304641d3a2"
-  };
+  apiKey: "AIzaSyCnmsl4VFQYFuVZHo47GFnf_oS-G1rda80",
+  authDomain: "health-app-2729f.firebaseapp.com",
+  projectId: "health-app-2729f",
+  storageBucket: "health-app-2729f.appspot.com",
+  messagingSenderId: "562868614979",
+  appId: "1:562868614979:web:4db46f9cd124bf3dc7a1f6"
+};
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 export const db = getFirestore(app);
 const firebaseAuth = getAuth(app);
-export { firebaseAuth };
+export { firebaseAuth,createUserWithEmailAndPassword };

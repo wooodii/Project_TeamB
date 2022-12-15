@@ -21,6 +21,8 @@ import Login_C from './pages/Login';
 import Question from './components/Question';
 import FirebaseSignUp from './pages/FirebaseSignUp';
 import HomeT from './pages/hometest';
+import FirebaseLogin from './components/FirebaseLogin';
+import Review from './pages/Review';
 export const Context = createContext;
 
 function App() {
@@ -44,6 +46,8 @@ function App() {
             <Route path='/reservation/:bookid' element={<Reservation />}></Route>
             <Route path='/main' element={<Main />} />
             <Route path='/loginc' element={<Login_C />} />
+            <Route path='/firebaselogin' element={<FirebaseLogin />} />
+            <Route path='/review' element={<Review />}></Route>
           </Route>
         </Routes>
       </DataProvider>

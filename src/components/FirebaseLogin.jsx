@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { firebaseAuth,} from "../Firebase";
-import { getAuth ,  signInWithEmailAndPassword,onAuthStateChanged } from "firebase/auth";
+import { getAuth , createUserWithEmailAndPassword, signInWithEmailAndPassword,onAuthStateChanged } from "firebase/auth";
 import {setDoc, collection, doc, getDocs} from "firebase/firestore"
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
 
 const FirebaseLogin = () => {
     const [email, setEmail] = useState("");

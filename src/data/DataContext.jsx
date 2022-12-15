@@ -96,7 +96,7 @@ const DataProvider = ({ children }) => {
     const value =
     {
         state: { user, loginUser, comments, commentCount,infant, login, hcheck, icheck, date, month, age, measures, ismeasures,category,hospitalData, isLoginned },
-        action: { setUser, setLoginUser,setInfant, setLogin, setHcheck, setIcheck, setMesures, setIsMeasures ,setCategory,setHospitalData, setIsLoginned}
+        action: { setUser, setLoginUser,setInfant, setLogin, setHcheck, setIcheck, setMesures, setIsMeasures ,setCategory,setHospitalData, setIsLoginned,setComments}
     };
 
     // DataProvider를 사용할 때, DataContext.Provider를 불러 사용하게끔
