@@ -19,11 +19,8 @@ import { DataProvider } from './data/DataContext';
 import Main from './pages/Main';
 import Login_C from './pages/Login';
 import Question from './components/Question';
-<<<<<<< HEAD
 import FirebaseSignUp from './pages/FirebaseSignUp';
-=======
 import HomeT from './pages/hometest';
->>>>>>> c732e5f4dbc786f9d781e0734219aacbf744e51c
 
 export const Context = createContext;
 
@@ -33,11 +30,8 @@ function App() {
       <DataProvider>
         <Routes>
           <Route path='/' element={<Layout />}>
-<<<<<<< HEAD
             <Route index element={<Home />} />
-=======
             <Route path='home' element={<HomeT />} />
->>>>>>> c732e5f4dbc786f9d781e0734219aacbf744e51c
             <Route path='/history' element={<History />} />
             <Route path='/mypage' element={<MyPage />} />
             <Route path='/usersignup' element={<FirebaseSignUp />} />
