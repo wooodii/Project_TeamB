@@ -38,7 +38,7 @@ const Filter = () => {
                                     <div key={id} className={styles.category__box}>
                                         <Link className={styles.link} to={'/placedetail/' + id + '/'}>
                                             <span>{item.icon}</span>
-                                            <h4>{item.name}</h4>
+                                            <h4 className={styles.text}>{item.name}</h4>
                                             
                                         </Link>
                                     </div>
@@ -48,7 +48,7 @@ const Filter = () => {
                                     <div key={id} className={styles.category__box}>
                                         <Link className={styles.link} to={'/majordetail/' + id + '/'}>
                                             <span>{item.icon}</span>
-                                            <h4>{item.name}</h4>
+                                            <h4 className={styles.text}>{item.name}</h4>
                                         </Link>
                                     </div>
                                 )

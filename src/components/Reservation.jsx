@@ -44,8 +44,8 @@ const Reservation = () => {
                 </div>
                 <button onClick={ReservationBtn}>예약</button>
             </div>
-        </div>
+        </div> 
     );
-}
+} 
 
 export default Reservation; 

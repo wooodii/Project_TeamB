@@ -14,7 +14,7 @@
   
   
   .btn {
-    padding: 16px; 
+    padding: 12px;  
     border: solid var(--color-green);
     border-radius: var(--size-border-radius);
     background-color: var(--color-green);
@@ -23,21 +23,26 @@
     font-weight: var(--weight-bold);
   }
   
-  .container{ 
+  .container{  
     display: flex;
     flex-wrap: wrap;
     
-  }
+  } 
 
   .category__box { 
     border: solid 1px var(--color-green);
     border-radius: var(--size-border-radius);
-    padding: 2px; 
+    padding: 2px;
     margin: 8px 4px;
     flex-grow: 1;
     flex-shrink: 1; 
-    height: 90px;
-    width: 100px;  
+    height: 60px;
+    width: 80px;  
     display: flex;
-    align-items: center;    
+    align-items: center; 
+    
+  }
+  .text { 
+    font-size: small;
+    font-weight: 700;
   }
