@@ -2,7 +2,8 @@
  */
 // background 어둡게하기
 import { useEffect, useState } from "react";
-import { firebaseAuth, createUserWithEmailAndPassword,db } from "../Firebase";
+import { firebaseAuth,db, } from "../Firebase";
+import { getAuth , createUserWithEmailAndPassword, signInWithEmailAndPassword,onAuthStateChanged } from "firebase/auth";
 import {setDoc, collection, doc, getDocs} from "firebase/firestore"
 import { useNavigate } from "react-router-dom";
 
