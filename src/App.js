@@ -17,7 +17,7 @@ import PlaceDetailInfo from './components/PlaceDetailInfo';
 import Reservation from './components/Reservation';
 import { DataProvider } from './data/DataContext';
 import Main from './pages/Main';
-import Login_C from './pages/Login';
+import Login_C from './pages/Login_C';
 import Question from './components/Question';
 import FirebaseSignUp from './pages/FirebaseSignUp';
 import HomeT from './pages/hometest';
