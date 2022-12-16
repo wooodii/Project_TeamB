@@ -34,11 +34,6 @@ const CourseMenu = ({kind, setKind, setSearch, setArea}) => {
             <Dropdown.Item href="#/action-4" onClick={() => { setKind("한방내과")
             } } >한방내과</Dropdown.Item>
             <Dropdown.Item href="#/action-4" onClick={() => { setKind("한방재활의학과")
-              Hospital.filter((value) => {
-                if (value.진료과목내용명.includes("한방재활의학과")) {
-                  return <SearchHosptial 사업장={value.사업장} 전화번호={value.전화번호} 주소={value.주소} />;
-                }
-            });
             } } >한방재활의학과</Dropdown.Item>
         </Dropdown.Menu>
         </Dropdown>

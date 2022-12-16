@@ -2,9 +2,9 @@
 
     const categorydata = [
         {
-            icon : '',
+            icon : "../img/mydoctor.png",
             id : 0,
-            name : '내과',
+            name : '내과', 
         },
 
         {

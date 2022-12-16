@@ -7,6 +7,7 @@ import DataContext from "../data/DataContext";
 
 
 
+
 const Filter = () => {
     const {state,action}= useContext(DataContext);
     const [isFilter, setIsFilter] = useState(false);
@@ -47,14 +48,18 @@ const Filter = () => {
                                 return (
                                     <div key={id} className={styles.category__box}>
                                         <Link className={styles.link} to={'/majordetail/' + id + '/'}>
-                                            <span>{item.icon}</span>
+                                            <img url="../img/mydoctor.png" alt="" />
                                             <h4 className={styles.text}>{item.name}</h4>
-                                        </Link>
+                                        </Link> 
+                                        
+                                        
                                     </div>
                                 )
                             }) : null
                     }
+                    
                 </div>
+                <img src="../img/mydoctor.png" alt="" />
             </div>
         </>
     );
