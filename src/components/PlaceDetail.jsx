@@ -1,14 +1,15 @@
-import { Context } from "../App";
+import styles from '../css/Detail.module.css'
 import { useContext, useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import Pagination from 'react-js-pagination';
 import styled from "styled-components";
 import DataContext from "../data/DataContext";
+
 const PlaceDetail = () => {
     const {state,aciton}= useContext(DataContext);
     const [limit, setLimit] = useState(0);
     const [page, setPage] = useState(1);
-    let { id } = useParams();
+    let { id } = useParams(); 
 
     // 지역별 필터링 
     const idFilter = state.hospitalData.filter(place => place.주소.includes(state.category[id].name));
@@ -16,14 +17,15 @@ const PlaceDetail = () => {
     // 페이지 핸들링 함수
     const handlePageChange = (page) => {
         setPage(page)
-    }
+    } 
 
     return (
         <div>
-            <h2>{state.category[id].name}</h2>
-            <div className="detail__title">
-                <h4>지역별</h4>기준으로 <br />
+            <div className={styles.title}>
+            <h2>{state.category[id].name}</h2>            
+                기준으로 
                 검색된 병원 목록입니다
+                
             </div>
             {
                 idFilter.slice(10 * (page - 1), 10 * (page - 1) + 10).map((item, placeid) => {
@@ -32,19 +34,26 @@ const PlaceDetail = () => {
                     }
                     return (
                         <div key={placeid} item={item}>
-                            <Link className="linktext" to={'/placedetail/' + id + '/' + (placeid + 10 * (page - 1))}>
-                                <div className="detail__box">
+                            <Link className={styles.link} to={'/placedetail/' + id + '/' + (placeid + 10 * (page - 1))}>
+                                <div className={styles.box}>
                                     <h4>{item.사업장}</h4>
                                     <p>{item.주소}</p>
-                                    <div className="detail__box2">
+                                    <hr />
+                                    <div className={styles.box2}>
                                         <div>의료인수 <br />
+                                            <span>
                                             {item.의료인수}
+                                            </span>                                        
                                         </div>
                                         <div>입원실수 <br />
+                                            <span>
                                             {item.입원실수}
+                                            </span>
                                         </div>
                                         <div>병상수 <br />
+                                            <span>
                                             {item.병상수}
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
@@ -95,7 +104,7 @@ ul.pagination li:first-child{ border-radius: 5px 0 0 5px; }
 ul.pagination li:last-child{ border-radius: 0 5px 5px 0; }
 ul.pagination li a { text-decoration: none; color: black; font-size: 1rem; }
 ul.pagination li.active a { color: white; }
-ul.pagination li.active { background-color: orange; }
+ul.pagination li.active { background-color: #1b4542; }
 ul.pagination li a:hover,
 ul.pagination li a.active { color: blue; }
 `
