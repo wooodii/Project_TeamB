@@ -11,7 +11,7 @@ const Home = () => {
     const data = useContext(DataContext);
     
     const user = localStorage.getItem("currentUser")
-    console.log("user",data.action)
+    console.log("user", data.action)
     useEffect(()=>{
         if(user){
             data.action.setIsLoginned(true)
