@@ -30,7 +30,7 @@ const CourseMenu = ({kind, setKind, setSearch, setArea}) => {
             } } >재활의학과</Dropdown.Item>
             <Dropdown.Item onClick={() => { setKind("한방내과")
             } } >한방내과</Dropdown.Item>
-            <Dropdown.Item onClick={() => { setKind("한방재활의학과")
+            <Dropdown.Item href="#/action-4" onClick={() => { setKind("한방재활의학과")
             } } >한방재활의학과</Dropdown.Item>
         </Dropdown.Menu>
         </Dropdown>

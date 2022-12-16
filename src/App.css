@@ -1,12 +1,11 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
 .notosanskr * { 
- font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
  /* Global */
- :root {
-  
+  :root {
   /* 변수선언 : --변수명:  */
 
   /* Color */
@@ -33,39 +32,9 @@
   --weight-regular: 400;
 
   /* Size */
-  --size-border-radius : 4px;
+  --size-border-radius : 16px;
 }
 
-/* Typography */
-/* 사용법: var(변수이름) */
-
-h1 {
-font-size: var(--font-large);
-font-weight: var(--weight-bold);
-color: var(--color-black);
-margin: 16px 0px;
-}
-
-h2 {
-font-size: var(--font-medium);
-font-weight: var(--weight-semi-bold);
-color: var(--color-black);
-margin: 8px 0;
-}
-
-h3 {
-font-size: var(--font-regular);
-font-weight: var(--weight-regular);
-color: var(--color-black);
-margin: 8px 0;
-}
-
-p {
-font-size: var(--font-regular);
-font-weight: var(--weight-regular);
-color: var(--color-black);
-margin: 4px 0;
-}
 
 
 body {
@@ -75,72 +44,12 @@ body {
   max-width: 420px;
 }
 
-.GNB {
-  position: fixed;
-  background-color:var(--color-green);
-  border-radius:6px;
-  font-size: 1.5em;
-  bottom: 1px;
-  width: 100%;
-  height: 70px;
-  text-align: center;
-}
 
 
-.Search_box{
-  height: 100px;
-  border-radius:6px;
-  border: 2px solid black;
-  margin-top: 20px;
-}
 
-.Temperature{
-  height: x;
-  border-radius:6px;
-  border: 2px solid black;
-}
 
-.Questionnaire{
-  height: 100px;
-  border-radius:6px;
-  border: 2px solid black;
-}
 
-.Reserve{
-  height: 100px;
-  border-radius:6px;
-  border: 2px solid black;
-}
 
-.Search_near{
-  height: 100px;
-  border-radius:6px;
-  border: 2px solid black;
-}
 
-.Reserve_box{
-  height: 100px;
-  border-radius:6px;
-  border: 2px solid black;
-}
 
-.Mypage_first{
-  height: 150px;
-  border-radius:6px;
-  border: 2px solid black;
-}
-.Mypage_second{
-  height: 150px;
-  border-radius:6px;
-  border: 2px solid black;
-}
-.Mypage_third{
-  height: 150px;
-  border-radius:6px;
-  border: 2px solid black;
-}
-.Mypage_forth{
-  height: 200px;
-  border-radius:6px;
-  border: 2px solid black;
-}
+

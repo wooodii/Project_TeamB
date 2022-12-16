@@ -7,6 +7,11 @@ const DataContext = createContext();
 const DataProvider = ({ children }) => {
     
     //창욱
+    const [h_name,setH_name] = useState("");
+    const [h_num,setH_num] = useState("");
+    const [h_address,setH_address] = useState("");
+    const [h_major,setH_major] = useState("");
+
     const [infant, setInfant] = useState({ name: "홍길동", age: "2021-01-24", gender: "남" })
     const [measures, setMesures] = useState({
         height: 0,
@@ -17,7 +22,7 @@ const DataProvider = ({ children }) => {
     const [isLoginned, setIsLoginned] = useState(false)
     const [ismeasures, setIsMeasures] = useState(false)
     const [login, setLogin] = useState(true)
-    const [hcheck, setHcheck] = useState(0);
+    const [hcheck, setHcheck] = useState(0); 
     const [icheck, setIcheck] = useState(0);
     const age = String(infant.age)
     const date1 = new Date(infant.age);
@@ -95,8 +100,8 @@ const DataProvider = ({ children }) => {
     // 사용할 value값들을 state(초기값)과 action(변경값) 분리해서 넣기
     const value =
     {
-        state: { user, loginUser, comments, commentCount,infant, login, hcheck, icheck, date, month, age, measures, ismeasures,category,hospitalData, isLoginned },
-        action: { setUser, setLoginUser,setInfant, setLogin, setHcheck, setIcheck, setMesures, setIsMeasures ,setCategory,setHospitalData, setIsLoginned,setComments}
+        state: {h_major, h_name, h_num, h_address, user, loginUser, comments, commentCount,infant, login, hcheck, icheck, date, month, age, measures, ismeasures,category,hospitalData, isLoginned },
+        action: {setH_major,setH_name, setH_num,setH_address, setUser, setLoginUser,setInfant, setLogin, setHcheck, setIcheck, setMesures, setIsMeasures ,setCategory,setHospitalData, setIsLoginned,setComments}
     };
 
     // DataProvider를 사용할 때, DataContext.Provider를 불러 사용하게끔

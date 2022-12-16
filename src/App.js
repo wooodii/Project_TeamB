@@ -17,12 +17,13 @@ import PlaceDetailInfo from './components/PlaceDetailInfo';
 import Reservation from './components/Reservation';
 import { DataProvider } from './data/DataContext';
 import Main from './pages/Main';
-import Login_C from './pages/Login';
+import Login_C from './pages/Login_C';
 import Question from './components/Question';
 import FirebaseSignUp from './pages/FirebaseSignUp';
 import HomeT from './pages/hometest';
 import FirebaseLogin from './components/FirebaseLogin';
 import Review from './pages/Review';
+import DetailInfo from './pages/DetailInfo';
 export const Context = createContext;
 
 function App() {
@@ -32,7 +33,6 @@ function App() {
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path='home' element={<HomeT />} />
             <Route path='/history' element={<History />} />
             <Route path='/mypage' element={<MyPage />} />
             <Route path='/usersignup' element={<FirebaseSignUp />} />
@@ -48,7 +48,8 @@ function App() {
             <Route path='/loginc' element={<Login_C />} />
             <Route path='/firebaselogin' element={<FirebaseLogin />} />
             <Route path='/review' element={<Review />}></Route>
-          </Route> 
+            <Route path='/detailinfo' element={<DetailInfo />}></Route>
+          </Route>
         </Routes>
       </DataProvider>
     </div>

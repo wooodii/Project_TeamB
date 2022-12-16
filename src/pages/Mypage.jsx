@@ -29,7 +29,13 @@ const MyPage = () => {
         navigate('/');
     }
 
-
+    useEffect(()=>{
+      if(user){
+        data.action.setIsLoginned(true)
+      } else {
+        data.action.setIsLoginned(false)
+      }
+    },[user])
     return ( 
         <div className="Mypage"> 
         {data.state.isLoginned ? (
@@ -47,6 +53,7 @@ const MyPage = () => {
             <div className="Mypage_third"></div>
             <hr/>
             <div className="Mypage_forth"></div>
+
           </>
         ):(
           <>
@@ -69,5 +76,6 @@ const MyPage = () => {
 }
  
 export default MyPage;
+
 
 

@@ -28,7 +28,7 @@ const Singup_C = () => {
                             <>
                                 <div className="infant_img">
                                 <Link to ="/loginc">
-                                <img src={process.env.PUBLIC_URL + "../images/user.png"} alt="아이프로필" />
+                                <img src={`${process.env.PUBLIC_URL}/images/user.png`} alt="아이프로필" />
                                 </Link>
                                 </div>
                                 <h1>우리 아이 등록</h1>
