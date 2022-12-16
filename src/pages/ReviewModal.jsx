@@ -7,7 +7,7 @@ import Col from "react-bootstrap/esm/Col";
 import CommentInput from "../components/CommentInput";
 import { Form } from "react-bootstrap";
 import { useContext } from "react";
-import DataContext from "../Context/DataContext";
+import DataContext from "../data/DataContext";
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 

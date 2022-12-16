@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 
 const Question = () => {
-    const [height,setHeight] = useState()
-    const [weight,setWeight] = useState()
+    const [height,setHeight] = useState();
+    const [weight,setWeight] = useState();
     const [onclick,setOnclick] = useState(false)
     const [onclick2,setOnclick2] = useState(false)
     useEffect(() => {
         let fever_check = document.getElementById("fever_check");
         fever_check.checked = true;
-      }, []);
+    }, []);
     useEffect(() => {
     let rash_check = document.getElementById("rash_check");
     rash_check.checked = true;
@@ -18,6 +18,7 @@ const Question = () => {
         pill_check.checked = true;
     }, []);
 
+    
     return (  
         <>
         <form onSubmit={null}>
@@ -74,5 +75,5 @@ const Question = () => {
         </>
     );
 }
- 
+
 export default Question;

@@ -7,6 +7,9 @@
 
 .layer ul.modal_title li {border-bottom: 1px solid #ccc;}
 .layer ul.modal_title li:last-child{border: none; position: relative;}
-.layer ul.modal_title li a {display: block; font-size: 14px; text-align: center; padding: 14px 0;}
-.measure_box {}
-.measure_box input {}
+.layer ul.modal_title li a {display: block; font-size: 14px; text-align: center; padding: 14px 0; color: #000;}
+.layer ul.modal_title li a:hover {color: skyblue;}
+.measure_box {position: absolute; width: 200px; height: 90px; background: #fff;  z-index: 120; border-radius: 25px;}
+.measure_box input {width: 180px; margin: 10px 10px 0 10px;}
+.measure_box button {display: block; margin: 10px auto; border-radius: 25px; color: #fff; background: #1b4542; padding: 5px 15px;}
+.measure_box button:hover {color: #ccc;}

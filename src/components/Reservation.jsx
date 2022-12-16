@@ -8,20 +8,33 @@ import PlaceDetailInfo from "./PlaceDetailInfo";
 import DataContext from "../data/DataContext";
 
 const Reservation = () => {
+    
+
     const {state,action}=useContext(DataContext);
     const { bookid } = useParams();
     const location = useLocation(); 
     const [startDate, setStartDate] = useState(new Date());
+
     const [login, setLogin] = useState(true);
+
+
     let navigate = useNavigate();
+
+
+    // 예약정보 저장하기
+
+
+
     const ReservationBtn = () => {
-        if (login) {    
+
+        if (state.isLoginned) {
             alert('예약이 완료되었습니다');
             alert('마이페이지에서 확인해주세요');
-            navigate('/mypage');
-            
-        } else { 
+            navigate('/mypage')
+        } else {
+
             alert('로그인이 필요합니다');
+            navigate('/firebaselogin')
             // navigate('로그인 화면주소')
 
         }

@@ -6,29 +6,28 @@ const DataContext = createContext();
 
 // DataProvider를 여기서 작성 후 value값을 이미 가진 컴포넌트 내보내기
 const DataProvider = ({ children }) => {
+    
     //창욱
     const [infant, setInfant] = useState({ name: "홍길동", age: "2021-01-24", gender: "남" })
     const [measures, setMesures] = useState({
         height: 0,
         weight: 0, temperature: 0, medicine: ""
     })
+    //로그인 확인
+    const [isLoginned, setIsLoginned] = useState(false)
     const [ismeasures, setIsMeasures] = useState(false)
     const [login, setLogin] = useState(true)
     const [hcheck, setHcheck] = useState(0); 
     const [icheck, setIcheck] = useState(0);
-
     const age = String(infant.age)
     const date1 = new Date(infant.age);
     const date2 = new Date();
     const diffDate = date1.getTime() - date2.getTime();
-
     const date = Math.floor(Math.abs(diffDate / (1000 * 60 * 60 * 24)));
     const month = Math.floor(Math.abs(diffDate / (1000 * 60 * 60 * 24 * 30)));
-
     // 종헌 
     const [category, setCategory] = useState();
     const [hospitalData, setHospitalData] = useState(Hospital);
-
     // 서아
     // 전체 유저 데이터
     //로그인 후 계속 사용될 유저정보 
@@ -50,7 +49,6 @@ const DataProvider = ({ children }) => {
                 fever: false,
             },
         },
-
     ]);
 
 
@@ -95,8 +93,8 @@ const DataProvider = ({ children }) => {
     // 사용할 value값들을 state(초기값)과 action(변경값) 분리해서 넣기
     const value =
     {
-        state: { user, loginUser, comments, commentCount,infant, login, hcheck, icheck, date, month, age, measures, ismeasures,category,hospitalData },
-        action: { setUser, setLoginUser,setInfant, setLogin, setHcheck, setIcheck, setMesures, setIsMeasures ,setCategory,setHospitalData}
+        state: { user, loginUser, comments, commentCount,infant, login, hcheck, icheck, date, month, age, measures, ismeasures,category,hospitalData, isLoginned },
+        action: { setUser, setLoginUser,setInfant, setLogin, setHcheck, setIcheck, setMesures, setIsMeasures ,setCategory,setHospitalData, setIsLoginned,setComments}
     };
 
     // DataProvider를 사용할 때, DataContext.Provider를 불러 사용하게끔

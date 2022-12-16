@@ -57,7 +57,7 @@ const Notice = () => {
                 )}
                <button className='plus_btn' onClick={()=>{
                     setShow(true)
-                }}><FontAwesomeIcon icon={faPlus} /></button>
+                }}><FontAwesomeIcon style={{color:"white"}} icon={faPlus} /></button>
                 {show && <Notice_Modal setShow={setShow} />}
             </>
         ):(
@@ -71,7 +71,7 @@ const Notice = () => {
                         </ul>
                         <button className='plus_btn' onClick={()=>{
                             setShow(true)
-                        }}><FontAwesomeIcon icon={faPlus} /></button>
+                        }}><div className='font_plus'><FontAwesomeIcon style={{color:"white"}} icon={faPlus} /></div></button>
                         {show && <Notice_Modal setShow={setShow} />}
                 </div>  
                 </>

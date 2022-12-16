@@ -1,0 +1,17 @@
+.starColor{
+    color : blue;
+}
+
+button{
+    all :unset;
+}
+
+.starColorNull{
+    color : "lightgray"
+}
+
+
+/*write review*/
+.btnColor{
+    background-color: red;
+}

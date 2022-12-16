@@ -1,9 +1,7 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import DataContext from "../data/DataContext";
-
-import '../css/Login.css'
+import '../css/Login_C.css'
 const Login_C = () => {
     const {action} = useContext(DataContext)
     const data = useContext(DataContext)
@@ -20,7 +18,7 @@ const Login_C = () => {
             return alert("생년월일을 선택해주세요.");
         }
         action.setInfant({name: name, age: age, gender: gender})
-        navigate('/');
+        navigate('/main');
         data.action.setLogin(true); 
     }
     function getToday(){
@@ -28,7 +26,6 @@ const Login_C = () => {
         const year = date.getFullYear();
         const month = ("0" + (1 + date.getMonth())).slice(-2);
         const day = ("0" + date.getDate()).slice(-2);
-
         return year + "-" + month + "-" + day;
     }
     function get71MonthAgo(){
@@ -36,34 +33,38 @@ const Login_C = () => {
         const year = (date.getFullYear()-5);
         const month = ("0" + (date.getMonth()-10)).slice(-2);
         const day = ("0" + (date.getDate()+1)).slice(-2);
-
         return year + "-" + month + "-" + day;
     }
     return (  
         <div className="first_box">
             <h2 className="login_title">우리아이 등록</h2>
-            <form onSubmit={loginInfant}>
-                <label>이름:</label>
-                <input type="text" onChange={
-                    (e)=>{
-                        setName(e.target.value)
-                    }
-                } />
-                <input type="date" min={get71MonthAgo()} max={getToday()} pattern="yyyy-MM-dd" onChange={
-                    (e)=>{
-                        setAge(e.target.value)
-                    }
-                } /> 
-                <button onClick={(e)=>{
-                    e.preventDefault();
-                    setGender("남")
-                }}>남성</button>
-                <button onClick={(e)=>{
-                    e.preventDefault();
-                    setGender("여")
-                }}>여성</button>
-                <input type="submit" value="작성" />
-            </form>
+            <div className="ilogin_box">
+                <div className="login_form">
+                    <form onSubmit={loginInfant}>
+                        <label >이름</label>
+                        <input type="text" placeholder="  이름" onChange={
+                            (e)=>{
+                                setName(e.target.value)
+                            }
+                        } />
+                        <label >생년월일</label>
+                        <input type="date" min={get71MonthAgo()} max={getToday()} pattern="yyyy-MM-dd" onChange={
+                            (e)=>{
+                                setAge(e.target.value)
+                            }
+                        } /> 
+                        <button className="gender_btn" onClick={(e)=>{
+                            e.preventDefault();
+                            setGender("남")
+                        }}>남성</button>
+                        <button className="gender_btn" onClick={(e)=>{
+                            e.preventDefault();
+                            setGender("여")
+                        }}>여성</button>
+                        <input type="submit" value="작성" />
+                    </form>
+                </div>
+            </div>
         </div>
     );
 }
