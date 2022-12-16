@@ -5,6 +5,7 @@
     border-radius: 16px;
     padding: 6px;
     font-size: small;
+    text-align: center;
 }
 
 .link {
@@ -21,7 +22,7 @@
     border-radius: 14px;
     margin: 20px 14px;
     padding: 12px 12px;
-    
+    text-align: center;
 } 
 .box h4 {
     font-size: large;

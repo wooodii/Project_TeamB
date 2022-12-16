@@ -1,11 +1,11 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
 .notosanskr * { 
- font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
  /* Global */
- :root {
+  :root {
   /* 변수선언 : --변수명:  */
 
   /* Color */
@@ -32,39 +32,9 @@
   --weight-regular: 400;
 
   /* Size */
-  --size-border-radius : 4px;
+  --size-border-radius : 16px;
 }
 
-/* Typography */
-/* 사용법: var(변수이름) */
-
-h1 {
-font-size: var(--font-large);
-font-weight: var(--weight-bold);
-color: var(--color-black);
-margin: 16px 0px;
-}
-
-h2 {
-font-size: var(--font-medium);
-font-weight: var(--weight-semi-bold);
-color: var(--color-black);
-margin: 8px 0;
-}
-
-h3 {
-font-size: var(--font-regular);
-font-weight: var(--weight-regular);
-color: var(--color-black);
-margin: 8px 0;
-}
-
-p {
-font-size: var(--font-regular);
-font-weight: var(--weight-regular);
-color: var(--color-black);
-margin: 4px 0;
-}
 
 
 body {
@@ -74,35 +44,6 @@ body {
   max-width: 420px;
 }
 
-  :root {
-    /* Color */
-    --color-white: #ffffff;
-    --color-light-white: #eeeeee;
-    --color-dark-white: #bdbdbd;
-    --color-green: #1b4542;
-    --color-dark-grey: #4d4d4d;
-    --color-grey: #616161;
-    --color-light-grey: #7c7979;
-    --color-orange: #feb546;
-    --color-black: #000000;
-
-
-    /* Font size */
-    --font-large: 48px;
-    --font-medium: 28px;
-    --font-regular: 18px; 
-    --font-small: 16px;
-    --font-micro: 14px;
-
-    /* Font weight */
-    --weight-bold: 700;
-    --weight-semi-bold: 600;
-    --weight-regular: 400;
-
-    /* Size */
-    --size-border-radius : 16px;
-}
- 
 
 
 
