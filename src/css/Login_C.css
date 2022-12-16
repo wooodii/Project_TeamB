@@ -1,0 +1,28 @@
+.login_title { font-size: 20px; text-align: center; padding: 10px; border-bottom: 1px solid #ccc;}
+.ilogin_box {position: absolute; top: 47px; left: 0; background: #eff0f4; width: 360px;}
+/* 로그인폼 */
+.login_form {width: 320px; height: 500px; background: #fff; padding: 15px; margin: 20px; border-radius: 25px; }
+label {margin-left: 4px; font-size: 20px;}
+input[type=text] {
+    display: block;
+    margin: 10px 0;
+    width: 290px;
+    height: 50px;
+    border: solid 1px #1b4542;
+    border-radius: 10px;
+}
+input[type=date] {
+    margin: 10px 0;
+    width: 290px;
+    height: 50px;
+    border: solid 1px #1b4542;
+    border-radius: 10px;
+}
+.gender_btn {
+    background: #1b4542; color: #fff; width: 130px; text-align: center;
+    margin-left: 10px; margin-top: 5px; padding: 15px 0; border-radius: 15px;
+    font-size: 18px; font-weight: bold;
+}
+.gender_btn:hover {color: #ccc;}
+  
+  

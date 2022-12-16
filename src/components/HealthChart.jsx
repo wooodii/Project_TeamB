@@ -41,7 +41,7 @@ const HealthChart = () => {
                 }  
                     <button className='plus_btn' onClick={()=>{
                                 setShow(true)
-                    }}><FontAwesomeIcon icon={faPlus} /></button>
+                    }}><div className='font_plus'><FontAwesomeIcon style={{color:"white"}} icon={faPlus} /></div></button>
                     {show && <Health_Modal setShow={setShow}/>}
                 </>
             ):(
@@ -57,7 +57,7 @@ const HealthChart = () => {
 
                             <button className='plus_btn' onClick={()=>{
                                 setShow(true)
-                            }}><FontAwesomeIcon icon={faPlus} /></button>
+                            }}><div className='font_plus'><FontAwesomeIcon style={{color:"white"}} icon={faPlus} /></div></button>
                             {show && <Health_Modal setShow={setShow}/>}
                         </div>  
                     </>

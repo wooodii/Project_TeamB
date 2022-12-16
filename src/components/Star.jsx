@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { HiStar } from "react-icons/hi";
 import '../css/Star.css';
@@ -12,6 +13,7 @@ const Star = (props) => {
         { gradeId : 4, grade : 4 },
         { gradeId : 5, grade : 5 }
     ])
+
     const starIcon = <HiStar />
     const [click, setClick] = useState([false, false, false, false, false]);
     
@@ -62,7 +64,7 @@ const Star = (props) => {
             <button onClick={(e) => {starClick(e, 4); setCountStar(star[4].grade); sendCountStar(star[4].grade)}}
             className={click[4] ? "starColor" : "starColorNull"}>{starIcon}</button>
             <span style={{marginLeft : "1em", fontSize : "0.8em"}}> 
-                    {countStar} / 5</span > 
+                    {countStar} / 5</span >
         </div>
     );
 }
