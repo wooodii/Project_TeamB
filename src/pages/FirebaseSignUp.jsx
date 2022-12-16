@@ -1,11 +1,12 @@
 /** firebase auth회원가입
  */
 // background 어둡게하기
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { firebaseAuth,db, } from "../Firebase";
 import { getAuth , createUserWithEmailAndPassword, signInWithEmailAndPassword,onAuthStateChanged } from "firebase/auth";
 import {setDoc, collection, doc, getDocs} from "firebase/firestore"
 import { useNavigate } from "react-router-dom";
+import DataContext from "../data/DataContext";
 
 const FirebaseSignUp = () => {
     const [email, setEmail] = useState("");
@@ -21,6 +22,7 @@ const FirebaseSignUp = () => {
         const data = await getDocs(usersCollectionRef);
         await setDoc(doc(db, "users", user.uid), {...data.docs[0].data(), uid:user.uid, name:name});
         localStorage.setItem("currentUser", user.uid);
+        data.action.setIsLoginned(true)
         navigate("/");
     }
 

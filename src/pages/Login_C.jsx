@@ -61,7 +61,7 @@ const Login_C = () => {
                             e.preventDefault();
                             setGender("여")
                         }}>여성</button>
-                        <input type="submit" value="작성" />
+                        <input className="infant_submit" type="submit" value="작성" />
                     </form>
                 </div>
             </div>

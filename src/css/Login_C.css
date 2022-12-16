@@ -1,8 +1,7 @@
 .login_title { font-size: 20px; text-align: center; padding: 10px; border-bottom: 1px solid #ccc;}
 .ilogin_box {position: absolute; top: 47px; left: 0; background: #eff0f4; width: 360px;}
 /* 로그인폼 */
-.login_form {width: 320px; height: 500px; background: #fff; padding: 15px; margin: 20px; border-radius: 25px; }
-label {margin-left: 4px; font-size: 20px;}
+.login_form {width: 320px; height: 330px; background: #fff; padding: 15px; margin: 20px; border-radius: 25px; position: relative;}
 .infant_name_input {
     display: block;
     margin: 10px 0;
@@ -25,6 +24,11 @@ label {margin-left: 4px; font-size: 20px;}
 .female_btn {
     background: #1b4542; color: #fff; width: 135px; text-align: center;
     padding: 15px 0; border-radius: 15px; font-size: 18px; font-weight: bold; margin-left: 18px;
+}
+.infant_submit {
+    width: 290px; height: 50px; font-size: 24px; border-radius: 15px; border: solid 1px #1b4542;
+    background: #fff; color: #1b4542;
+    position: absolute; bottom: 10px; left: 15px;
 }
   
   
