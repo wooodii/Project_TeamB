@@ -24,8 +24,8 @@ const SearchBar = () => {
     const offset = (page -1) * limit; 
 
     return (
-        <div style={{ width: "100%", height: "300px", border: "2px solid black" }}>
-            <div style={{display : "flex", marginTop : "5vh"}}>
+        <div  style={{ width: "100%", height: "300px", border: "2px solid black" }}>
+            <div  style={{display : "flex", marginTop : "5vh"}}>
             <CourseMenu setKind={setKind} kind={kind} setArea={setArea} setSearch={setSearch}/>
             <AreaMenu area={area} setArea={setArea} setSearch={setSearch} setKind={setKind}/>    
             
@@ -48,10 +48,10 @@ const SearchBar = () => {
                 return value
             }
            }).slice(offset, offset + limit).map((index) => {
-                return <SearchHosptial 사업장={index.사업장} 전화번호 = {index.전화번호} 주소={index.주소} />
+                return <SearchHosptial 진료과목내용명={index.진료과목내용명}  사업장={index.사업장} 전화번호 = {index.전화번호} 주소={index.주소} />
             })}
         </div> 
-        <div>
+        <div >
             <Pagination
               total={Hospital.length}
               limit={limit}

@@ -23,6 +23,7 @@ import FirebaseSignUp from './pages/FirebaseSignUp';
 import HomeT from './pages/hometest';
 import FirebaseLogin from './components/FirebaseLogin';
 import Review from './pages/Review';
+import DetailInfo from './pages/DetailInfo';
 export const Context = createContext;
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
             <Route path='/loginc' element={<Login_C />} />
             <Route path='/firebaselogin' element={<FirebaseLogin />} />
             <Route path='/review' element={<Review />}></Route>
+            <Route path='/detailinfo' element={<DetailInfo />}></Route>
           </Route>
         </Routes>
       </DataProvider>
