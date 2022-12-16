@@ -27,7 +27,7 @@ const MajorDetail = () => {
             <div className={styles.title}>
             <h2>{state.category[id].name}</h2>
             
-                기준으로 <br />
+                기준으로 
                 검색된 병원 목록입니다    
             </div>
             {
@@ -43,6 +43,7 @@ const MajorDetail = () => {
                                     
                                         <h4>{item.사업장}</h4>
                                         <p>{item.주소}</p>
+                                        <hr />
                                         <div className={styles.box2}>
                                             <div>의료인수 <br />
                                                 {item.의료인수}
@@ -102,7 +103,7 @@ ul.pagination li:first-child{ border-radius: 5px 0 0 5px; }
 ul.pagination li:last-child{ border-radius: 0 5px 5px 0; }
 ul.pagination li a { text-decoration: none; color: black; font-size: 1rem; }
 ul.pagination li.active a { color: white; }
-ul.pagination li.active { background-color: orange; }
+ul.pagination li.active { background-color: #1b4542; }
 ul.pagination li a:hover,
 ul.pagination li a.active { color: blue; }
 `

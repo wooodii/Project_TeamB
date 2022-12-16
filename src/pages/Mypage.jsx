@@ -9,7 +9,7 @@ const MyPage = () => {
             <hr/>
             <div className="Mypage_forth"></div>
         </div>
-     );
+    );
 }
- 
+
 export default MyPage;

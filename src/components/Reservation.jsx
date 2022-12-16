@@ -12,16 +12,18 @@ const Reservation = () => {
     const { bookid } = useParams();
     const location = useLocation(); 
     const [startDate, setStartDate] = useState(new Date());
-    const [login, setLogin] = useState(false);
+    const [login, setLogin] = useState(true);
     let navigate = useNavigate();
     const ReservationBtn = () => {
-        if (login) {   
+        if (login) {    
             alert('예약이 완료되었습니다');
             alert('마이페이지에서 확인해주세요');
-
+            navigate('/mypage');
+            
         } else { 
             alert('로그인이 필요합니다');
             // navigate('로그인 화면주소')
+
         }
     }
 
