@@ -46,13 +46,19 @@ const MajorDetail = () => {
                                         <hr />
                                         <div className={styles.box2}>
                                             <div>의료인수 <br />
+                                                <span>
                                                 {item.의료인수}
+                                                </span>
                                             </div>
                                             <div>입원실수 <br />
+                                                <span>
                                                 {item.입원실수}
+                                                </span>                    
                                             </div>
                                             <div>병상수 <br />
+                                                <span>
                                                 {item.병상수}
+                                                </span>
                                             </div>
                                         </div>                            
                                 </Link>
