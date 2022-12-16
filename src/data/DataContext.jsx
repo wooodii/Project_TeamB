@@ -7,7 +7,6 @@ const DataContext = createContext();
 // DataProvider를 여기서 작성 후 value값을 이미 가진 컴포넌트 내보내기
 const DataProvider = ({ children }) => {
     
-
     //창욱
     const [infant, setInfant] = useState({ name: "홍길동", age: "2021-01-24", gender: "남" })
     const [measures, setMesures] = useState({
@@ -50,7 +49,6 @@ const DataProvider = ({ children }) => {
                 fever: false,
             },
         },
-
     ]);
 
 

@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { useState } from "react";
 import Col from "react-bootstrap/esm/Col";
 import Row from "react-bootstrap/esm/Row";
 import Star from "../components/Star";
