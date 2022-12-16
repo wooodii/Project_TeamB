@@ -1,14 +1,13 @@
-import { useEffect } from 'react';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import AreaMenu from '../components/AreaMenu';
 import CourseMenu from '../components/CourseMenu';
-import SearchHosptial from '../components/SearchHospital';
 import Hospital from '../json/Hospital.json';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Pagination from '../components/Pagenation';
+import SearchHosptial from '../components/SearchHosptial';
+import '../css/CourseMenu.css'
 
 const SearchBar = () => {
     const [search, setSearch] = useState();
@@ -28,8 +27,7 @@ const SearchBar = () => {
             <div  style={{display : "flex", marginTop : "5vh"}}>
             <CourseMenu setKind={setKind} kind={kind} setArea={setArea} setSearch={setSearch}/>
             <AreaMenu area={area} setArea={setArea} setSearch={setSearch} setKind={setKind}/>    
-            
-            <InputGroup className="mb-3">
+            <InputGroup>
             <Form.Control
             onChange={e => {setSearch(e.target.value); setKind(null); setArea(null)}}
             placeholder="병원/진료과 검색" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
