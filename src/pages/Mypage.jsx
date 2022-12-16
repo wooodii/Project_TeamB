@@ -47,6 +47,7 @@ const MyPage = () => {
             <div className="Mypage_third"></div>
             <hr/>
             <div className="Mypage_forth"></div>
+
           </>
         ):(
           <>
@@ -69,5 +70,6 @@ const MyPage = () => {
 }
  
 export default MyPage;
+
 
 

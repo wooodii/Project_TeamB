@@ -4,7 +4,6 @@ import { createContext } from "react";
 const DataContext = createContext(); 
 const DataProvider = ({children}, props) => {
     const [user, setUser] = useState({name : "sss",  review :  null, likelist : []});
-    
 
     // 리뷰작성
     const [comments, setComments] = useState([
@@ -15,8 +14,6 @@ const DataProvider = ({children}, props) => {
         },
     ]);
     const [commentCount, setCommentCount] = useState(2); 
-    
-
 
     // 재방문버튼
     const value = {

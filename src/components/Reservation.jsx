@@ -12,8 +12,12 @@ const Reservation = () => {
 
     const {state,action}=useContext(DataContext);
     const { bookid } = useParams();
-    const location = useLocation();
+    const location = useLocation(); 
     const [startDate, setStartDate] = useState(new Date());
+
+    const [login, setLogin] = useState(true);
+
+
     let navigate = useNavigate();
 
 
@@ -22,14 +26,17 @@ const Reservation = () => {
 
 
     const ReservationBtn = () => {
+
         if (state.isLoginned) {
             alert('예약이 완료되었습니다');
             alert('마이페이지에서 확인해주세요');
             navigate('/mypage')
         } else {
+
             alert('로그인이 필요합니다');
             navigate('/firebaselogin')
             // navigate('로그인 화면주소')
+
         }
     }
 
@@ -48,12 +55,12 @@ const Reservation = () => {
                         dateFormat="yyyy.MM.dd (eee)" // 시간 포맷 변경
                         showPopperArrow={false}       // 화살표 변경
                         minDate={new Date()}          // 오늘 날짜 전은 선택 못하게
-                    />
+                    /> 
                 </div>
                 <button onClick={ReservationBtn}>예약</button>
             </div>
-        </div>
+        </div> 
     );
-}
+} 
 
 export default Reservation; 
