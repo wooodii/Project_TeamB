@@ -48,7 +48,7 @@ function App() {
             <Route path='/loginc' element={<Login_C />} />
             <Route path='/firebaselogin' element={<FirebaseLogin />} />
             <Route path='/review' element={<Review />}></Route>
-          </Route>
+          </Route> 
         </Routes>
       </DataProvider>
     </div>

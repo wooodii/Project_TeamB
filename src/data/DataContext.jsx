@@ -1,7 +1,6 @@
 // 전역 Context 사용, value값도 이 파일에서 지정 후 내보내기
 import { createContext, useState } from "react";
 import Hospital from '../json/Hospital.json'
-
 const DataContext = createContext();
 
 // DataProvider를 여기서 작성 후 value값을 이미 가진 컴포넌트 내보내기
@@ -13,6 +12,7 @@ const DataProvider = ({ children }) => {
         height: 0,
         weight: 0, temperature: 0, medicine: ""
     })
+    
     //로그인 확인
     const [isLoginned, setIsLoginned] = useState(false)
     const [ismeasures, setIsMeasures] = useState(false)
@@ -25,9 +25,11 @@ const DataProvider = ({ children }) => {
     const diffDate = date1.getTime() - date2.getTime();
     const date = Math.floor(Math.abs(diffDate / (1000 * 60 * 60 * 24)));
     const month = Math.floor(Math.abs(diffDate / (1000 * 60 * 60 * 24 * 30)));
+    
     // 종헌 
     const [category, setCategory] = useState();
     const [hospitalData, setHospitalData] = useState(Hospital);
+    
     // 서아
     // 전체 유저 데이터
     //로그인 후 계속 사용될 유저정보 

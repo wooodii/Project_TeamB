@@ -1,0 +1,18 @@
+/*CourseMenu*/
+.menuToggle{ background-color:  #1b4542  !important; color : #ffffff  !important;}
+.memuToggle:hover {background-color:  #1b4542  !important; color : #ffffff !important; }
+.menuToggle_item {background-color:  #1b4542; color : #ffffff;} 
+
+/*AreaMenu*/
+.areaToggle{background-color:  #1b4542; color : #ffffff;}
+
+
+/*MedicalCourse*/ 
+.courseBox{
+    height: 100vh;
+    font-family: 'Noto Sans KR' !important;
+    height: 100vh;
+    max-width: 420px;
+    background-color: antiquewhite;
+}
+
