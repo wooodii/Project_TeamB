@@ -42,22 +42,22 @@ const Login_C = () => {
                 <div className="login_form">
                     <form onSubmit={loginInfant}>
                         <label >이름</label>
-                        <input type="text" placeholder="  이름" onChange={
+                        <input type="text" className="infant_name_input" placeholder="  이름" onChange={
                             (e)=>{
                                 setName(e.target.value)
                             }
                         } />
                         <label >생년월일</label>
-                        <input type="date" min={get71MonthAgo()} max={getToday()} pattern="yyyy-MM-dd" onChange={
+                        <input type="date" className="infant_date_input" min={get71MonthAgo()} max={getToday()} pattern="yyyy-MM-dd" onChange={
                             (e)=>{
                                 setAge(e.target.value)
                             }
                         } /> 
-                        <button className="gender_btn" onClick={(e)=>{
+                        <button className="male_btn" onClick={(e)=>{
                             e.preventDefault();
                             setGender("남")
                         }}>남성</button>
-                        <button className="gender_btn" onClick={(e)=>{
+                        <button className="female_btn" onClick={(e)=>{
                             e.preventDefault();
                             setGender("여")
                         }}>여성</button>
