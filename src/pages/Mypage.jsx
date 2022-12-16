@@ -29,7 +29,13 @@ const MyPage = () => {
         navigate('/');
     }
 
-
+    useEffect(()=>{
+      if(user){
+        data.action.setIsLoginned(true)
+      } else {
+        data.action.setIsLoginned(false)
+      }
+    },[user])
     return ( 
         <div className="Mypage"> 
         {data.state.isLoginned ? (

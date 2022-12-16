@@ -19,7 +19,7 @@ const Home = () => {
             data.action.setIsLoginned(false)
         }
     },[user]);
-    
+    console.log(data.state.isLoginned);
     const navigate = useNavigate();
     const navQustion = ()=>{
         navigate('/question');
