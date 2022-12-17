@@ -13,9 +13,9 @@ const Reservation = () => {
     const {state,action}=useContext(DataContext);
     const { bookid } = useParams();
     const location = useLocation(); 
-    const [startDate, setStartDate] = useState(new Date());
 
-    const [login, setLogin] = useState(true);
+
+
 
 
     let navigate = useNavigate();
@@ -51,8 +51,8 @@ const Reservation = () => {
                 <div>
                     <h4>예약하실 날짜를 선택해주세요</h4>
                     <DatePicker
-                        selected={startDate}
-                        onChange={(date) => setStartDate(date)}
+                        selected={state.startDate}
+                        onChange={(date) => action.setStartDate(date)}
                         locale={ko}                   // 한글로 변경
                         dateFormat="yyyy.MM.dd (eee)" // 시간 포맷 변경
                         showPopperArrow={false}       // 화살표 변경

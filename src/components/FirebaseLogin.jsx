@@ -4,8 +4,12 @@ import { getAuth , createUserWithEmailAndPassword, signInWithEmailAndPassword,on
 import {setDoc, collection, doc, getDocs} from "firebase/firestore"
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
+import DataContext from "../data/DataContext";
+
 
 const FirebaseLogin = () => {
+    const data = useContext(DataContext);
+    
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
@@ -14,7 +18,9 @@ const FirebaseLogin = () => {
         const newUser = await signInWithEmailAndPassword(firebaseAuth, email, password);
         const user = newUser.user;
         localStorage.setItem("currentUser", user.uid);
+        data.action.setIsLoginned(true);
         navigate("/")
+        
     }
 
     return (  

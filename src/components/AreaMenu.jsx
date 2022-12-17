@@ -1,17 +1,17 @@
 import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Hospital from '../json/Hospital.json';
-import SearchHosptial from './SearchHospital';
-import { useState } from 'react';
-const AreaMenu = ({area, setKind, setArea, kind, setSearch}) => {
+import '../css/CourseMenu.css';
+
+const AreaMenu = ({area, setKind, setArea, setSearch}) => {
     return (
         <>
         <Dropdown onClick={() => {setSearch(null); setKind(null); }}>
-        <Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary">
-          {area ? area : "지역"}
-        </Dropdown.Toggle>
-        <Dropdown.Menu variant="dark">
+
+          <Dropdown.Toggle className="areaToggle" id="areaToggle_id" variant="">
+            {area ? area : "지역"}
+          </Dropdown.Toggle>
+        
+        <Dropdown.Menu variant="">
           <Dropdown.Item 
             onClick={() => { setArea("서울"); 
             }}>서울특별시</Dropdown.Item>

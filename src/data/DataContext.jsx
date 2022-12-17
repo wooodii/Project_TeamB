@@ -1,18 +1,23 @@
 // 전역 Context 사용, value값도 이 파일에서 지정 후 내보내기
 import { createContext, useState } from "react";
 import Hospital from '../json/Hospital.json'
-
 const DataContext = createContext();
 
 // DataProvider를 여기서 작성 후 value값을 이미 가진 컴포넌트 내보내기
 const DataProvider = ({ children }) => {
     
     //창욱
+    const [h_name,setH_name] = useState("");
+    const [h_num,setH_num] = useState("");
+    const [h_address,setH_address] = useState("");
+    const [h_major,setH_major] = useState("");
+
     const [infant, setInfant] = useState({ name: "홍길동", age: "2021-01-24", gender: "남" })
     const [measures, setMesures] = useState({
         height: 0,
         weight: 0, temperature: 0, medicine: ""
     })
+    
     //로그인 확인
     const [isLoginned, setIsLoginned] = useState(false)
     const [ismeasures, setIsMeasures] = useState(false)
@@ -25,9 +30,12 @@ const DataProvider = ({ children }) => {
     const diffDate = date1.getTime() - date2.getTime();
     const date = Math.floor(Math.abs(diffDate / (1000 * 60 * 60 * 24)));
     const month = Math.floor(Math.abs(diffDate / (1000 * 60 * 60 * 24 * 30)));
+    
     // 종헌 
     const [category, setCategory] = useState();
     const [hospitalData, setHospitalData] = useState(Hospital);
+    const [startDate, setStartDate] = useState(new Date());
+    
     // 서아
     // 전체 유저 데이터
     //로그인 후 계속 사용될 유저정보 
@@ -93,8 +101,8 @@ const DataProvider = ({ children }) => {
     // 사용할 value값들을 state(초기값)과 action(변경값) 분리해서 넣기
     const value =
     {
-        state: { user, loginUser, comments, commentCount,infant, login, hcheck, icheck, date, month, age, measures, ismeasures,category,hospitalData, isLoginned },
-        action: { setUser, setLoginUser,setInfant, setLogin, setHcheck, setIcheck, setMesures, setIsMeasures ,setCategory,setHospitalData, setIsLoginned,setComments}
+        state: {startDate,h_major, h_name, h_num, h_address, user, loginUser, comments, commentCount,infant, login, hcheck, icheck, date, month, age, measures, ismeasures,category,hospitalData, isLoginned },
+        action: {setStartDate,setH_major,setH_name, setH_num,setH_address, setUser, setLoginUser,setInfant, setLogin, setHcheck, setIcheck, setMesures, setIsMeasures ,setCategory,setHospitalData, setIsLoginned,setComments}
     };
 
     // DataProvider를 사용할 때, DataContext.Provider를 불러 사용하게끔
