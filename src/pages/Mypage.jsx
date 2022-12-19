@@ -4,12 +4,14 @@ import { db } from "../Firebase";
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import DataContext from "../data/DataContext";
-
+import DatePicker from "react-datepicker";
+import { ko } from "date-fns/esm/locale";
 
 const MyPage = () => {
     const data = useContext(DataContext);
     const navigate = useNavigate();
     const [name,setName] = useState();
+    console.log(data.state.startDate)
     const user = localStorage.getItem("currentUser")
     const getSingleData = async () => {
         const docRef = doc(db, "users", user);
@@ -46,8 +48,13 @@ const MyPage = () => {
                 <button onClick={()=>{logOut()}}>로그아웃</button>
             </div>
             <hr/>
-            <div className="Mypage_second">
-              <h1>예약확인하기</h1>
+            <div className="Mypage_second">  
+              <h1>예약 확인</h1>
+                <h2>{data.state.location.state.사업장}</h2>
+                <h4>{data.state.location.state.주소}</h4>
+                <p>{data.state.location.state.전화번호}</p>
+                <p>{data.state.startDate}</p>
+                <p>{data.state.location.state.영업상태}</p>
             </div>
             <hr/>
             <div className="Mypage_third"></div>
@@ -63,7 +70,8 @@ const MyPage = () => {
               </div>
               <hr/>
               <div className="Mypage_second">
-                <h1>예약하기</h1>
+                <h1>예약하기
+                </h1>
               </div>
               <hr/>
               <div className="Mypage_third"></div>
@@ -72,7 +80,7 @@ const MyPage = () => {
           </>
         )}
         </div>  
-     );
+    ); 
 }
  
 export default MyPage;
