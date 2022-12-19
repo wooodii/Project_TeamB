@@ -24,7 +24,7 @@ import HomeT from './pages/hometest';
 import FirebaseLogin from './components/FirebaseLogin';
 import Review from './pages/Review';
 import DetailInfo from './pages/DetailInfo';
-export const Context = createContext;
+
 
 function App() {
   return (

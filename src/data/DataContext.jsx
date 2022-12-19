@@ -1,5 +1,6 @@
 // 전역 Context 사용, value값도 이 파일에서 지정 후 내보내기
 import { createContext, useState } from "react";
+import { useLocation } from "react-router-dom";
 import Hospital from '../json/Hospital.json'
 const DataContext = createContext();
 
@@ -34,6 +35,13 @@ const DataProvider = ({ children }) => {
     // 종헌 
     const [category, setCategory] = useState();
     const [hospitalData, setHospitalData] = useState(Hospital);
+
+    const [startDate, setStartDate] = useState(new Date());
+
+    const location = useLocation(); 
+
+
+
     
     // 서아
     // 전체 유저 데이터
@@ -92,7 +100,7 @@ const DataProvider = ({ children }) => {
             btn3: "신규장비에요",
             review: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
             yesNo: "재방문할래요"
-        }
+        } 
     ]);
 
     const [commentCount, setCommentCount] = useState(2);
@@ -100,8 +108,13 @@ const DataProvider = ({ children }) => {
     // 사용할 value값들을 state(초기값)과 action(변경값) 분리해서 넣기
     const value =
     {
-        state: {h_major, h_name, h_num, h_address, user, loginUser, comments, commentCount,infant, login, hcheck, icheck, date, month, age, measures, ismeasures,category,hospitalData, isLoginned },
-        action: {setH_major,setH_name, setH_num,setH_address, setUser, setLoginUser,setInfant, setLogin, setHcheck, setIcheck, setMesures, setIsMeasures ,setCategory,setHospitalData, setIsLoginned,setComments}
+
+        state: {location,startDate,h_major, h_name, h_num, h_address, user, loginUser, comments, commentCount,infant, login, hcheck, icheck, date, month, age, measures, ismeasures,category,hospitalData, isLoginned },
+
+
+        
+        action: {setStartDate,setH_major,setH_name, setH_num,setH_address, setUser, setLoginUser,setInfant, setLogin, setHcheck, setIcheck, setMesures, setIsMeasures ,setCategory,setHospitalData, setIsLoginned,setComments}
+
     };
 
     // DataProvider를 사용할 때, DataContext.Provider를 불러 사용하게끔
