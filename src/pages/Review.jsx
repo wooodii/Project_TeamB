@@ -28,7 +28,7 @@ const Review = () => {
             <div style={{ overflow: "auto", width : "100%", height : "setPeople"}}>
                 <Row style={{ backgroundColor : "lightgray", borderRadius : "10px", width : "340px", marginLeft : "3vw"}}>
                 <Row>
-                {data.state.comments.map((id, index) => (
+                {data.state.comments.map((id) => (
                     <div style={{border : "2px solid black", borderRadius : "10px", margin : "0.5em"}}>
                         <Row>
                             <Star setCount={id.countStar}/>

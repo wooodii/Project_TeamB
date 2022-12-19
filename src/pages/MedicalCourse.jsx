@@ -6,8 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Pagination from '../components/Pagenation';
-import SearchHosptial from '../components/SearchHosptial';
 import '../css/CourseMenu.css'
+import SearchHosptial from '../components/SearchHospital';
 
 const SearchBar = () => {
     const [search, setSearch] = useState();
@@ -23,18 +23,18 @@ const SearchBar = () => {
     const offset = (page -1) * limit; 
 
     return (
-        <div  style={{ width: "100%", height: "300px", border: "2px solid black" }}>
+        <div className='searchContainer'>
             <div  style={{display : "flex", marginTop : "5vh"}}>
             <CourseMenu setKind={setKind} kind={kind} setArea={setArea} setSearch={setSearch}/>
             <AreaMenu area={area} setArea={setArea} setSearch={setSearch} setKind={setKind}/>    
             <InputGroup>
-            <Form.Control
+            <Form.Control className='searchbar'
             onChange={e => {setSearch(e.target.value); setKind(null); setArea(null)}}
             placeholder="병원/진료과 검색" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
             </InputGroup>
             </div>
         
-        <div style={{margin: "4vh", width: "88%", height:"100px", border: "2px solid black"}}>
+        <div className='printBox'>
            {Hospital.filter((value) => {
             if(searchFin == ""){
                 return value
