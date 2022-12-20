@@ -52,7 +52,7 @@ const SearchBar = () => {
             })}
         </div> 
         
-        <div style={{position :"fixed", bottom: "3vh", left :"38vw"}}>
+        <div style={{position:"fixed", bottom: "25px", left :"170px"}}>
         <Pagination  
               total={Hospital.length}
               limit={limit}

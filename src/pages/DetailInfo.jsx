@@ -1,5 +1,4 @@
-import { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext } from "react";
 import DataContext from "../data/DataContext";
 
 const DetailInfo = () => {
@@ -16,11 +15,16 @@ const DetailInfo = () => {
                 </div>
                 
                 <div style ={{marginTop : "5vh"}}>
-                    <h4 style={{textAlign : "center", padding : "0 20px"}}>진료과목</h4>
-                    <p>{data.state.h_major}</p>
+                    <h4 style={{textAlign : "center"}}>진료과목</h4>
+                    <p style={{ padding : "0 20px"}}>{data.state.h_major}</p>
                 </div>
 
-                <button style={{border : "2px solid black", display : "block"}}>예약하기</button>
+                <div>
+                    <button style={{ width : "395px", marginTop : "3vh", 
+                                    borderRadius : "5px", padding : "1vh", 
+                                     backgroundColor : "#1b4542", color : "white"}}> 
+                                     예약하기</button>
+                </div>
             </div>
         </div>  
         );

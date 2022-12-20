@@ -16,15 +16,10 @@ const Reservation = () => {
     const [startDate, setStartDate] = useState(new Date());
 
     const [login, setLogin] = useState(true);
-
-
     let navigate = useNavigate();
 
 
     // 예약정보 저장하기
-
-
-
     const ReservationBtn = () => {
 
         if (state.isLoginned) {
@@ -65,4 +60,4 @@ const Reservation = () => {
     );
 } 
 
-export default Reservation; 
+export default Reservation;
