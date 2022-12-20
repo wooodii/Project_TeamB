@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import Reservation from "./Reservation";
 import DataContext from "../data/DataContext";
+import ReserveMap from "./Detail_map";
 
 const PlaceDetailInfo = () => {
     const { state,action } = useContext(DataContext);
@@ -17,7 +18,7 @@ const PlaceDetailInfo = () => {
                 <p> {placefilter[placeid].전화번호}</p>
             </div>
             <div className={styles.mapbox}>
-                병원 지도 api
+                <ReserveMap address={placefilter[placeid].주소}/>
             </div>
             <div className={styles.detail}>
                 <h4> 진료과목</h4>

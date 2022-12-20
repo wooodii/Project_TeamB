@@ -31,7 +31,6 @@ const MyPage = () => {
         localStorage.clear(); 
         navigate('/'); 
     }
-    
     useEffect(()=>{
       if(user){
         data.action.setIsLoginned(true)
@@ -49,6 +48,7 @@ const MyPage = () => {
                 <button onClick={()=>{logOut()}}>로그아웃</button>
             </div> 
             <hr/> 
+
             <div className="Mypage_second">    
               <h1>예약 확인</h1> 
                 <h2>{data.state.location.state.사업장}</h2>
@@ -67,6 +67,7 @@ const MyPage = () => {
  
           </> 
         ):( 
+
           <> 
             <div className="Mypage_first">
                   {/* 프로필,이름 */}
@@ -79,6 +80,9 @@ const MyPage = () => {
               </div>
               <hr/>
               <div className="Mypage_third"></div>
+              <Link to='/medicine'>복약관리</Link>
+
+
               <hr/>
               <div className="Mypage_forth"></div>
           </>
