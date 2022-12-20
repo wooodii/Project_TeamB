@@ -23,7 +23,7 @@ const Reservation = () => {
             <div>
                 {
                     state.mypageData ? (
-                    <div>
+                    <div className={styles.titlebox}>
                         <h2>예약정보</h2> 
                     <hr />
                     <h4> 
@@ -32,7 +32,7 @@ const Reservation = () => {
                         </div>
                     ) : 
                         (
-                        <div>
+                        <div className={styles.titlebox}>
                             <h2>예약정보</h2> 
                     <hr />
                     <h4> 

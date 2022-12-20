@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import DataContext from "../data/DataContext";
 import DatePicker from "react-datepicker";
-import { ko } from "date-fns/esm/locale";
+import styles from '../css/mypage.module.css'
 import { faSquareParking } from "@fortawesome/free-solid-svg-icons";
 
 const MyPage = () => {
@@ -49,8 +49,13 @@ const MyPage = () => {
             <hr/> 
 
             <div className="Mypage_second">
-              
-              <h1>예약 확인</h1>  
+            
+                
+                
+            </div>    
+            <hr/>  
+            <div className={styles.box3}>
+            <h1>예약 확인</h1>  
                 {
                   data.state.mypageData ? (
                     <div>
@@ -76,11 +81,7 @@ const MyPage = () => {
                     </div>
                   )
                 }
-                
-                
-            </div>    
-            <hr/>  
-            <div className="Mypage_third"></div> 
+              </div> 
             <hr/>
 
 
@@ -89,7 +90,7 @@ const MyPage = () => {
                 <button> 고객센터 </button>
           </>
         ):(
->>>>>>> 848a17a772925842faf84f0c20f438170cd53894
+
 
           <> 
             <div className="Mypage_first">
@@ -97,14 +98,13 @@ const MyPage = () => {
                   <Link to='/firebaselogin'>로그인</Link>
               </div>
               <hr/>
-              <div className="Mypage_second">
-
-                <h1>예약하기</h1>
-
+              <div className="Mypage_second">                
               </div>
               <hr/>
-              <div className="Mypage_third"></div>
-              <Link to='/medicine'>복약관리</Link>
+              <div className="Mypage_third">                  
+              
+              </div>
+              <Link to='/medicine'></Link>
 
 
               <hr/>
@@ -116,7 +116,7 @@ const MyPage = () => {
         </div>  
     ); 
 }
- 
+
 export default MyPage;
 
 
