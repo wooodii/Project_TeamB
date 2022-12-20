@@ -17,13 +17,13 @@ const ReserveMap = (props) => {
                 setState({
                     center: { lat: newAddress.y, lng: newAddress.x }
                 })
-            }
+            } 
         };
         geocoder.addressSearch(`${props.address}`, callback);
     }
     useEffect(() => {
         moveMap()
-    }, [])
+    }, []) 
     return (
         <Map
             center={state.center}

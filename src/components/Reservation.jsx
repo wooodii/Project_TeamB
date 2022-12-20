@@ -24,13 +24,28 @@ const Reservation = () => {
     return (
         <div>
             <div>
-            <div className={styles.titlebox}>
-                <h2>예약정보</h2> 
-                <hr />
-                <h4> 
-                    <br />{state.location.state.사업장}</h4>
-                <h5> <br />{state.location.state.주소}</h5>
-            </div>                
+                {
+                    state.mypageData ? (
+                    <div>
+                        <h2>예약정보</h2> 
+                    <hr />
+                    <h4> 
+                    <br />{state.mypageData.사업장}</h4>
+                    <h5> <br />{state.mypageData.주소}</h5>
+                        </div>
+                    ) : 
+                        (
+                        <div>
+                            <h2>예약정보</h2> 
+                    <hr />
+                    <h4> 
+                    <br />{state.mypageData2.사업장}</h4>
+                    <h5> <br />{state.mypageData2.주소}</h5>
+                        </div>
+                    )
+                }
+
+                        
                 <div className={styles.mapbox}>
                     <h4 >예약하실 날짜를 선택해주세요</h4>
                     <DatePicker className={styles.date}
@@ -46,7 +61,7 @@ const Reservation = () => {
                 { /* 로그인 일 때 페이지이동 및 데이터 전달 */
                     state.isLoginned == true ? 
                     (<div className={styles.linkbox} >
-                        <Link className={styles.link} state={state.location.state} to='/mypage'> 
+                        <Link className={styles.link}  to='/mypage'> 
                         <button  onClick={ReservationBtn} value='onLogin'>예약</button>
                     </Link>
                     </div>)                
