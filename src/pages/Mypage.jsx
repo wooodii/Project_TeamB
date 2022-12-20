@@ -30,7 +30,6 @@ const MyPage = () => {
         localStorage.clear(); 
         navigate('/'); 
     }
-
     useEffect(()=>{
       if(user){
         data.action.setIsLoginned(true)
@@ -49,19 +48,21 @@ const MyPage = () => {
             </div> 
             <hr/> 
             <div className="Mypage_second">  
-              <h1>예약 확인</h1> 
-                <h2>{data.state.location.state.사업장}</h2>
-                <h4>{data.state.location.state.주소}</h4> 
+
+              <h1>예약 확인</h1>
+                {/* <h2>{data.state.location.state.사업장}</h2>
+                <h4>{data.state.location.state.주소}</h4>
                 <p>{data.state.location.state.전화번호}</p>
                 <p>{data.state.startDate}</p>
-                <p>{data.state.location.state.영업상태}</p>
-            </div> 
+                <p>{data.state.location.state.영업상태}</p> */}
+            </div>
+
             <hr/>
             <div className="Mypage_third"></div>
+                <Link to='/medicine'>복약관리</Link>
             <hr/>
             <div className="Mypage_forth"></div>
 
-          </> 
         ):(
           <> 
             <div className="Mypage_first">
@@ -75,6 +76,9 @@ const MyPage = () => {
               </div>
               <hr/>
               <div className="Mypage_third"></div>
+              <Link to='/medicine'>복약관리</Link>
+
+
               <hr/>
               <div className="Mypage_forth"></div>
           </>
