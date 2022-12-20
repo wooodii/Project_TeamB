@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import Reservation from "./Reservation";
 import DataContext from "../data/DataContext";
 import ReserveMap from "./Detail_map";
+import Review from "../pages/Review";
 
 const PlaceDetailInfo = () => {
     const { state,action } = useContext(DataContext);
@@ -29,6 +30,7 @@ const PlaceDetailInfo = () => {
                     예약하기
                 </Link>
             </div>
+            <Review/>
         </div>
     );
 }

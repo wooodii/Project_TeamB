@@ -7,10 +7,7 @@ import { ko } from "date-fns/esm/locale";
 import DataContext from "../data/DataContext";
 
 const Reservation = () => {
-    
-
     const {state,action}=useContext(DataContext);
-    
     const ReservationBtn = (e) => {
         let btnValue = e.target.value;
         if (btnValue == 'onLogin') {

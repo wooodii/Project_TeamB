@@ -25,6 +25,7 @@ import FirebaseLogin from './components/FirebaseLogin';
 import Review from './pages/Review';
 import DetailInfo from './pages/DetailInfo';
 import Medicine from './pages/Medicine';
+import EditProfile from './pages/EditProfile';
 
 
 
@@ -40,12 +41,6 @@ function App() {
             <Route path='/usersignup' element={<FirebaseSignUp />} />
             <Route path='/searchhospital' element={<SearchBar />}/>
             <Route path='/question' element={<Question/>}/>
-            <Route path='/filter' element={<Filter />}></Route>
-            <Route path='placedetail/:id/' element={<PlaceDetail />}/>
-            <Route path='/majordetail/:id/' element={<MajorDetail />}/>
-            <Route path='/majordetail/:id/:majorid' element={<MajorDetailInfo />} > </Route>
-            <Route path='/placedetail/:id/:placeid' element={<PlaceDetailInfo />} > </Route>
-            <Route path='/reservation/:bookid' element={<Reservation />}></Route>
             <Route path='/main' element={<Main />} />
             <Route path='/loginc' element={<Login_C />} />
             <Route path='/firebaselogin' element={<FirebaseLogin />} />
@@ -53,6 +48,13 @@ function App() {
             <Route path='/detailinfo' element={<DetailInfo />}></Route>
             <Route path='/medicine' element={<Medicine/>}></Route>
           </Route>
+            <Route path='/filter' element={<Filter />}></Route>
+            <Route path='placedetail/:id/' element={<PlaceDetail />}/>
+            <Route path='/majordetail/:id/' element={<MajorDetail />}/>
+            <Route path='/majordetail/:id/:majorid' element={<MajorDetailInfo />} > </Route>
+            <Route path='/placedetail/:id/:placeid' element={<PlaceDetailInfo />} > </Route>
+            <Route path='/reservation/:bookid' element={<Reservation />}></Route>
+            <Route path='/editprofile' element={<EditProfile/>}></Route>
         </Routes>
       </DataProvider>
     </div>
