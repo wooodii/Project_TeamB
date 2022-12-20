@@ -26,7 +26,6 @@ const MyPage = () => {
       useEffect(()=>{
         getSingleData()
       },[])
-
     const logOut =()=>{
         localStorage.clear(); 
         navigate('/'); 
@@ -44,7 +43,7 @@ const MyPage = () => {
           <>
             <div className="Mypage_first">
                 {/* 프로필,이름 */}
-                <p>{name}</p>
+                <p>{name} <button onClick={()=>{navigate('/editprofile')}}>수정버튼</button> </p> 
                 <button onClick={()=>{logOut()}}>로그아웃</button>
             </div> 
             <hr/> 
@@ -63,10 +62,12 @@ const MyPage = () => {
             <hr/>  
             <div className="Mypage_third"></div> 
             <hr/>
-            <div className="Mypage_forth"></div> 
- 
-          </> 
-        ):( 
+
+            <div className="Mypage_forth"></div>  
+                 {/* 이부분은 버튼만있고 따로 기능없습니다 */}
+                <button> 고객센터 </button>
+          </>
+        ):(
 
           <> 
             <div className="Mypage_first">
@@ -75,8 +76,9 @@ const MyPage = () => {
               </div>
               <hr/>
               <div className="Mypage_second">
-                <h1>예약하기 
-                </h1>
+
+                <h1>예약하기</h1>
+
               </div>
               <hr/>
               <div className="Mypage_third"></div>
@@ -85,6 +87,8 @@ const MyPage = () => {
 
               <hr/>
               <div className="Mypage_forth"></div>
+              {/* 이부분은 버튼만있고 따로 기능없습니다 */}
+              <button> 고객센터 </button>
           </>
         )}
         </div>  
