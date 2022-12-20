@@ -14,6 +14,7 @@ const SearchBar = () => {
     const [searchFin, setSearchFin] = useState();
     const [kind, setKind] = useState();
     const [area, setArea] = useState();
+
     // pagenation 
     // 페이지당 게시물 수 
     const [limit, setLimit] = useState(5);
@@ -24,7 +25,8 @@ const SearchBar = () => {
 
     return (
         <div className='searchContainer'>
-            <div  style={{display : "flex", marginTop : "5vh"}}>
+
+            <div style={{display : "flex", margin : "5vh 2vh 0 2vh"}}>
             <CourseMenu setKind={setKind} kind={kind} setArea={setArea} setSearch={setSearch}/>
             <AreaMenu area={area} setArea={setArea} setSearch={setSearch} setKind={setKind}/>    
             <InputGroup>
@@ -49,8 +51,9 @@ const SearchBar = () => {
                 return <SearchHosptial 진료과목내용명={index.진료과목내용명}  사업장={index.사업장} 전화번호 = {index.전화번호} 주소={index.주소} />
             })}
         </div> 
-        <div >
-            <Pagination
+        
+        <div style={{position :"fixed", bottom: "3vh", left :"38vw"}}>
+        <Pagination  
               total={Hospital.length}
               limit={limit}
               page={page}
