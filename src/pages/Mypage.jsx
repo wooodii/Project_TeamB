@@ -69,8 +69,7 @@ const MyPage = () => {
               </div>
               <hr/>
               <div className="Mypage_second">
-                <h1>예약하기
-                </h1>
+                <h1>예약하기</h1>
               </div>
               <hr/>
               <div className="Mypage_third"></div>
@@ -79,6 +78,7 @@ const MyPage = () => {
 
               <hr/>
               <div className="Mypage_forth"></div>
+              {/* 이부분은 버튼만있고 따로 기능없습니다 */}
               <button> 고객센터 </button>
           </>
         )}

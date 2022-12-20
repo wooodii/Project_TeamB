@@ -1,89 +1,96 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
-.notosanskr * { 
- font-family: 'Noto Sans KR', sans-serif;
-}
-.body{
-    text-align: center;
+.notosanskr * {
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
-.Box_L_G{
-    color: white;
-    background-color:  #1b4542;
-    border-radius: 50px;
-    width: 85%;
-    height: 200px;
-    text-align: center;
-}
-.Box_M_G{
-    color: white;
-    background-color:  #1b4542;
-    border-radius: 50px;
-    width: 85%;
-    height: 150px;
-    text-align: center;
-}
-.Box_S_G{
-    color: white;
-    background-color:  #1b4542;
-    border-radius: 50px;
-    width: 85%;
-    height: 100px;
-    text-align: center;
+.body {
+  text-align: center;
 }
 
-.Box_L_O{
-  color: black;
-  background-color:  #feb546;
+.Box_L_G {
+  color: white;
+  background-color: #1b4542;
   border-radius: 50px;
   width: 85%;
   height: 200px;
   text-align: center;
 }
-.Box_M_O{
-  color: black;
-  background-color:  #feb546;
+
+.Box_M_G {
+  color: white;
+  background-color: #1b4542;
   border-radius: 50px;
   width: 85%;
   height: 150px;
   text-align: center;
-
 }
-.Box_S_O{
-  color: black;
-  background-color:  #feb546;
+
+.Box_S_G {
+  color: white;
+  background-color: #1b4542;
   border-radius: 50px;
   width: 85%;
   height: 100px;
   text-align: center;
 }
 
-.Box_L_W{
+.Box_L_O {
   color: black;
-  background-color:  #bdbdbd;
+  background-color: #feb546;
   border-radius: 50px;
   width: 85%;
   height: 200px;
   text-align: center;
 }
-.Box_M_W{
+
+.Box_M_O {
   color: black;
-  background-color:  #bdbdbd;
+  background-color: #feb546;
   border-radius: 50px;
   width: 85%;
   height: 150px;
   text-align: center;
+
 }
-.Box_S_W{
+
+.Box_S_O {
   color: black;
-  background-color:  #bdbdbd;
+  background-color: #feb546;
   border-radius: 50px;
   width: 85%;
   height: 100px;
   text-align: center;
 }
 
-.Btn_L_G{
+.Box_L_W {
+  color: black;
+  background-color: #bdbdbd;
+  border-radius: 50px;
+  width: 85%;
+  height: 200px;
+  text-align: center;
+}
+
+.Box_M_W {
+  color: black;
+  background-color: #bdbdbd;
+  border-radius: 50px;
+  width: 85%;
+  height: 150px;
+  text-align: center;
+}
+
+.Box_S_W {
+  color: black;
+  background-color: #bdbdbd;
+  border-radius: 50px;
+  width: 85%;
+  height: 100px;
+  text-align: center;
+}
+
+.Btn_L_G {
   color: white;
   width: 90px;
   height: 40px;
@@ -91,7 +98,8 @@
   background-color: #1b4542;
   text-align: center;
 }
-.Btn_M_G{
+
+.Btn_M_G {
   color: white;
   width: 70px;
   height: 35px;
@@ -99,58 +107,69 @@
   background-color: #1b4542;
   text-align: center;
 }
-.Btn_S_G{
+
+.Btn_S_G {
   color: white;
   width: 50px;
-  height: 30px; 
+  height: 30px;
   border-radius: 15px;
   background-color: #1b4542;
   text-align: center;
 }
 
-.Btn_L_O{
+.Btn_L_O {
+  color: black;
   width: 90px;
   height: 40px;
   border-radius: 15px;
   background-color: #feb546;
   text-align: center;
 }
-.Btn_M_O{
+
+.Btn_M_O {
   color: black;
   width: 70px;
   height: 35px;
   border-radius: 15px;
   background-color: #feb546;
-  text-align: center;    
+  text-align: center;
 }
-.Btn_S_G{
+
+.Btn_S_O {
+  color: black;
   width: 50px;
-  height: 30px; 
+  height: 30px;
   border-radius: 15px;
   background-color: #feb546;
   text-align: center;
 }
 
-.Btn_L_W{
-  color: white;
+.Btn_L_W {
+  color: black;
   width: 90px;
   height: 40px;
   border-radius: 15px;
   background-color: #bdbdbd;
   text-align: center;
 }
-.Btn_M_W{
+
+.Btn_M_W {
   color: black;
   width: 70px;
   height: 35px;
   border-radius: 14px;
   background-color: #bdbdbd;
-  text-align: center;    
+  text-align: center;
 }
-.Btn_S_W{
+
+.Btn_S_W {
+  width: black;
   width: 50px;
-  height: 30px; 
+  height: 30px;
   border-radius: 12px;
   background-color: #bdbdbd;
   text-align: center;
 }
+
+/* 버튼 눌렀을때 */
+.Btn_S_W:active {}

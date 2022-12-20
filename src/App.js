@@ -26,6 +26,7 @@ import Review from './pages/Review';
 import DetailInfo from './pages/DetailInfo';
 import Medicine from './pages/Medicine';
 import EditProfile from './pages/EditProfile';
+import SearchNear from './components/SearchNear';
 
 
 
@@ -35,7 +36,7 @@ function App() {
       <DataProvider>
         <Routes>
           <Route path='/' element={<Layout />}>
-            <Route index element={<Home />} />
+            <Route index element={<Home/>} />
             <Route path='/history' element={<History />} />
             <Route path='/mypage' element={<MyPage />} />
             <Route path='/usersignup' element={<FirebaseSignUp />} />
@@ -46,7 +47,6 @@ function App() {
             <Route path='/firebaselogin' element={<FirebaseLogin />} />
             <Route path='/review' element={<Review />}></Route>
             <Route path='/detailinfo' element={<DetailInfo />}></Route>
-            <Route path='/medicine' element={<Medicine/>}></Route>
           </Route>
             <Route path='/filter' element={<Filter />}></Route>
             <Route path='placedetail/:id/' element={<PlaceDetail />}/>
@@ -55,6 +55,8 @@ function App() {
             <Route path='/placedetail/:id/:placeid' element={<PlaceDetailInfo />} > </Route>
             <Route path='/reservation/:bookid' element={<Reservation />}></Route>
             <Route path='/editprofile' element={<EditProfile/>}></Route>
+            <Route path='/searchnear' element={<SearchNear/>}></Route>
+            <Route path='/medicine' element={<Medicine/>}></Route>
         </Routes>
       </DataProvider>
     </div>
