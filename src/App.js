@@ -24,6 +24,8 @@ import HomeT from './pages/hometest';
 import FirebaseLogin from './components/FirebaseLogin';
 import Review from './pages/Review';
 import DetailInfo from './pages/DetailInfo';
+import Medicine from './pages/Medicine';
+
 
 
 function App() {
@@ -49,6 +51,7 @@ function App() {
             <Route path='/firebaselogin' element={<FirebaseLogin />} />
             <Route path='/review' element={<Review />}></Route>
             <Route path='/detailinfo' element={<DetailInfo />}></Route>
+            <Route path='/medicine' element={<Medicine/>}></Route>
           </Route>
         </Routes>
       </DataProvider>
