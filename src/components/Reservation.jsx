@@ -47,13 +47,16 @@ const Reservation = () => {
                     state.isLoginned == true ? 
                     (<div className={styles.linkbox} >
                         <Link className={styles.link} state={state.location.state} to='/mypage'> 
-                        <button className={styles.linkbox} onClick={ReservationBtn} value='onLogin'>예약</button>
+                        <button  onClick={ReservationBtn} value='onLogin'>예약</button>
                     </Link>
                     </div>)                
                     :  
-                    (<Link className={styles.link} to='/firebaselogin'> 
-                    <button className={styles.linkbox} onClick={ReservationBtn} value='offLogin'>예약</button>
-                    </Link> )
+                    (<div className={styles.linkbox}>
+                    <Link className={styles.link} to='/firebaselogin'> 
+                    <button  onClick={ReservationBtn} value='offLogin'>예약</button>
+                    </Link>
+                    </div>
+                    )
                 }
             </div>
         </div> 
