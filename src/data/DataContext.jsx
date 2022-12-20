@@ -119,7 +119,7 @@ const DataProvider = ({ children }) => {
 
     // DataProvider를 사용할 때, DataContext.Provider를 불러 사용하게끔
     // 이때, {children}은 Provider데이터를 공용으로 쓰는 컴포넌트들
-    return (
+    return ( 
         <DataContext.Provider value={value}>
             {children}
         </DataContext.Provider>
