@@ -47,9 +47,8 @@ const MyPage = () => {
                 <button onClick={()=>{logOut()}}>로그아웃</button>
             </div> 
             <hr/> 
-
             <div className="Mypage_second">
-              secondPage
+              Link to='/main'>건강피드</Link>
             </div>
 
             <hr/>  
@@ -85,10 +84,14 @@ const MyPage = () => {
               </div> 
             <hr/>
 
-            <div className="Mypage_forth"></div>  
-                 {/* 이부분은 버튼만있고 따로 기능없습니다 */}
+            <div className="Mypage_third"></div>
+                <Link to='/medicine'>복약관리</Link>
+            <hr/>
+            <div className="Mypage_forth"></div>
+            {/* 이부분은 버튼만있고 따로 기능없습니다 */}
                 <button> 고객센터 </button>
-          </>
+            </>
+
         ):(
 
 
@@ -98,7 +101,10 @@ const MyPage = () => {
                   <Link to='/firebaselogin'>로그인</Link>
               </div>
               <hr/>
-              <div className="Mypage_second">                
+
+              <div className="Mypage_second">
+                <Link to='/main'>건강피드</Link>
+
               </div>
               <hr/>
               <div className="Mypage_third">                  

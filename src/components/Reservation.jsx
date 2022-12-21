@@ -1,10 +1,11 @@
 import styles from '../css/Reservation.module.css'
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { ko } from "date-fns/esm/locale";
 import DataContext from "../data/DataContext";
+
 
 const Reservation = () => {
     const {state,action}=useContext(DataContext);
@@ -13,12 +14,13 @@ const Reservation = () => {
         let btnValue = e.target.value;
         if (btnValue == 'onLogin') {
             alert('예약이 완료되었습니다');
-            alert('마이페이지에서 확인해주세요');             
+            alert('마이페이지에서 확인해주세요'); 
         } else {
             alert('로그인이 필요합니다');            
         }
     }
-
+    
+    
     return (
         <div>
             <div>
