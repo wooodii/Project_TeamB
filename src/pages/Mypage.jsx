@@ -48,7 +48,7 @@ const MyPage = () => {
             </div> 
             <hr/> 
             <div className="Mypage_second">
-              Link to='/main'>건강피드</Link>
+              <Link to='/main'>건강피드</Link>
             </div>
 
             <hr/>  
