@@ -5,8 +5,6 @@ const History = () => {
 
     // 진료내역 확인 state
     const [ishistory, setIshistory] = useState(false);
-
-
     const navigate = useNavigate()
 
     const navFilter =()=>{
