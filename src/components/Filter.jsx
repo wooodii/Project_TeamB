@@ -22,7 +22,7 @@ const Filter = () => {
             action.setCategory(categorydata1);
         }
     }
-
+    
     return (
         <>
             <div className=''>

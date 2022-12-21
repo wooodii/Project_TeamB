@@ -10,27 +10,27 @@ const CourseMenu = ({kind, setKind, setSearch, setArea}) => {
             {kind ? kind : "진료과목"}
           </Dropdown.Toggle>
         
-          <Dropdown.Menu>
+          <Dropdown.Menu variant=''>
             <Dropdown.Item className="menuToggle_item"
             onClick={() => {setKind("내과")
             } }>내과</Dropdown.Item>
-            <Dropdown.Item  onClick={() => { setKind("신경과")
+            <Dropdown.Item  className="menuToggle_item"  onClick={() => { setKind("신경과")
             } } > 신경과 </Dropdown.Item>
-            <Dropdown.Item onClick={() => { setKind("외과")
+            <Dropdown.Item  className="menuToggle_item" onClick={() => { setKind("외과")
             } }  >외과</Dropdown.Item>
-            <Dropdown.Item onClick={() => { setKind("정형외과")
+            <Dropdown.Item  className="menuToggle_item" onClick={() => { setKind("정형외과")
             } } >정형외과</Dropdown.Item>
-            <Dropdown.Item onClick={() => { setKind("신경외과")
+            <Dropdown.Item  className="menuToggle_item" onClick={() => { setKind("신경외과")
             } } >신경외과</Dropdown.Item>
-            <Dropdown.Item onClick={() => { setKind("마취통증의학과")
+            <Dropdown.Item  className="menuToggle_item" onClick={() => { setKind("마취통증의학과")
             } } >마취통증의학과</Dropdown.Item>
-            <Dropdown.Item onClick={() => { setKind("피부과")
+            <Dropdown.Item  className="menuToggle_item" onClick={() => { setKind("피부과")
             } } >피부과</Dropdown.Item>
-            <Dropdown.Item onClick={() => { setKind("재활의학과")
+            <Dropdown.Item  className="menuToggle_item" onClick={() => { setKind("재활의학과")
             } } >재활의학과</Dropdown.Item>
-            <Dropdown.Item onClick={() => { setKind("한방내과")
+            <Dropdown.Item  className="menuToggle_item" onClick={() => { setKind("한방내과")
             } } >한방내과</Dropdown.Item>
-            <Dropdown.Item href="#/action-4" onClick={() => { setKind("한방재활의학과")
+            <Dropdown.Item  className="menuToggle_item" onClick={() => { setKind("한방재활의학과")
             } } >한방재활의학과</Dropdown.Item>
         </Dropdown.Menu>
         </Dropdown>

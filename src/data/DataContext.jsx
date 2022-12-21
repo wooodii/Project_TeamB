@@ -35,7 +35,8 @@ const DataProvider = ({ children }) => {
     // 종헌 
     const [category, setCategory] = useState();
     const [hospitalData, setHospitalData] = useState(Hospital);
-
+    const [mypageData,setMypageData] = useState(); 
+    const [mypageData2,setMypageData2] =useState();
     const [startDate, setStartDate] = useState(new Date());
 
     const location = useLocation(); 
@@ -109,17 +110,17 @@ const DataProvider = ({ children }) => {
     const value =
     {
 
-        state: {location,startDate,h_major, h_name, h_num, h_address, user, loginUser, comments, commentCount,infant, login, hcheck, icheck, date, month, age, measures, ismeasures,category,hospitalData, isLoginned },
+        state: {mypageData2,mypageData,location,startDate,h_major, h_name, h_num, h_address, user, loginUser, comments, commentCount,infant, login, hcheck, icheck, date, month, age, measures, ismeasures,category,hospitalData, isLoginned },
 
 
         
-        action: {setStartDate,setH_major,setH_name, setH_num,setH_address, setUser, setLoginUser,setInfant, setLogin, setHcheck, setIcheck, setMesures, setIsMeasures ,setCategory,setHospitalData, setIsLoginned,setComments}
+        action: {setMypageData2,setMypageData,setStartDate,setH_major,setH_name, setH_num,setH_address, setUser, setLoginUser,setInfant, setLogin, setHcheck, setIcheck, setMesures, setIsMeasures ,setCategory,setHospitalData, setIsLoginned,setComments}
 
     };
 
     // DataProvider를 사용할 때, DataContext.Provider를 불러 사용하게끔
     // 이때, {children}은 Provider데이터를 공용으로 쓰는 컴포넌트들
-    return (
+    return ( 
         <DataContext.Provider value={value}>
             {children}
         </DataContext.Provider>
