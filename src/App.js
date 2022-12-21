@@ -27,7 +27,11 @@ import DetailInfo from './pages/DetailInfo';
 import Medicine from './pages/Medicine';
 import EditProfile from './pages/EditProfile';
 import SearchNear from './components/SearchNear';
+
 import Opening from './pages/Opening';
+
+import Reservation2 from './components/Reservation2';
+
 
 
 
@@ -58,6 +62,7 @@ function App() {
             <Route path='/editprofile' element={<EditProfile/>}></Route>
             <Route path='/searchnear' element={<SearchNear/>}></Route>
             <Route path='/medicine' element={<Medicine/>}></Route>
+            <Route path='/reservation2' element={<Reservation2/>}></Route>
         </Routes>
       </DataProvider>
     </div>

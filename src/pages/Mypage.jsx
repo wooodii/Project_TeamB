@@ -43,7 +43,7 @@ const MyPage = () => {
           <>
             <div className="Mypage_first">
                 {/* 프로필,이름 */}
-                <p>{name} <button onClick={()=>{navigate('/editprofile')}}>수정버튼</button> </p> 
+                <p>{name} <button onClick={()=>{navigate('/editprofile')}}>정보수정</button> </p> 
                 <button onClick={()=>{logOut()}}>로그아웃</button>
             </div> 
             <hr/> 
@@ -53,7 +53,7 @@ const MyPage = () => {
             <hr/>  
             <div className={styles.box3}>
             <h1>예약 확인</h1>  
-                {
+                {/* {
                   data.state.mypageData ? (
                     <div>
                       <h2>{data.state.mypageData.사업장}</h2>
@@ -77,24 +77,27 @@ const MyPage = () => {
                 <p>{data.state.mypageData2.영업상태}</p> */}
                     </div>
                   )
-                }
+                } */}
+                {}
               </div> 
             <hr/>
+
             <div className="Mypage_forth"></div>  
                  {/* 이부분은 버튼만있고 따로 기능없습니다 */}
+
                 <button> 고객센터 </button>
-          </>
+            </>
         ):(
-
-
           <> 
             <div className="Mypage_first">
                   {/* 프로필,이름 */}
                   <Link to='/firebaselogin'>로그인</Link>
               </div>
               <hr/>
+
               <div className="Mypage_second">
                 <Link to='/main'>건강피드</Link>
+
               </div>
               <hr/>
               <div className="Mypage_third">                  

@@ -38,11 +38,7 @@ const DataProvider = ({ children }) => {
     const [mypageData,setMypageData] = useState(); 
     const [mypageData2,setMypageData2] =useState();
     const [startDate, setStartDate] = useState(new Date());
-
     const location = useLocation(); 
-
-
-
     
     // 서아
     // 전체 유저 데이터
@@ -88,7 +84,6 @@ const DataProvider = ({ children }) => {
         }
     );
 
-
     // 지현
     // 리뷰작성
     const [comments, setComments] = useState([
@@ -99,7 +94,7 @@ const DataProvider = ({ children }) => {
             btn1: "효과좋아요",
             btn2: "친절해요",
             btn3: "신규장비에요",
-            review: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            review: "a",
             yesNo: "재방문할래요"
         } 
     ]);
