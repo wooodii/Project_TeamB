@@ -72,8 +72,8 @@ const ReviewModal = () => {
   return (
     <div>
       <Button
-        style={{ marginLeft: "10em" }}
-        variant="primary"
+        style={{ marginLeft: "10em", backgroundColor : "#1b4542", color : "white" }}
+        variant=""
         onClick={handleShow}>
         리뷰작성
       </Button>

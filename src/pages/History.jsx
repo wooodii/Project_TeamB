@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 const History = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const navFilter =()=>{
         navigate('/filter')
     }
@@ -14,6 +14,8 @@ const History = () => {
             <div className="Search_near"> </div>  
                 <button onClick={()=>{navigate('/searchnear')}}>주변 병원 찾기 </button>
             <hr/>
+
+            
         </div>
      );
 }
