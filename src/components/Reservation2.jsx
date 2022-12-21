@@ -6,8 +6,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import { ko } from "date-fns/esm/locale";
 import DataContext from "../data/DataContext";
 
-const Reservation = () => {
-    const {state,action}=useContext(DataContext);
+const Reservation2 = () => {
+    const {state,action}= useContext(DataContext);
 
     const ReservationBtn = (e) => {
         let btnValue = e.target.value;
@@ -19,6 +19,10 @@ const Reservation = () => {
         }
     }
 
+    const getH_data = (e) => {
+        e.preventDefault();
+    }
+
     return (
         <div>
             <div>
@@ -28,8 +32,8 @@ const Reservation = () => {
                         <h2>예약정보</h2> 
                     <hr />
                     <h4> 
-                    <br />{state.mypageData.사업장}</h4>
-                    <h5> <br />{state.mypageData.주소}</h5>
+                    <br />{state.h_name}</h4>
+                    <h5> <br />{state.h_address}</h5>
                         </div>
                     ) : 
                         (
@@ -37,12 +41,11 @@ const Reservation = () => {
                             <h2>예약정보</h2> 
                     <hr />
                     <h4> 
-                    <br />{state.mypageData2.사업장}</h4>
-                    <h5> <br />{state.mypageData2.주소}</h5>
+                    <br />{state.h_name}</h4>
+                    <h5> <br />{state.h_address}</h5>
                         </div>
                     )
                 }
-
                         
                 <div className={styles.mapbox}>
                     <h4 >예약하실 날짜를 선택해주세요</h4>
@@ -58,7 +61,7 @@ const Reservation = () => {
                         
                 { /* 로그인 일 때 페이지이동 및 데이터 전달 */
                     state.isLoginned == true ? 
-                    (<div className={styles.linkbox} >
+                    (<div onClick={getH_data} className={styles.linkbox} >
                         <Link className={styles.link}  to='/mypage'> 
                         <button  onClick={ReservationBtn} value='onLogin'>예약</button>
                     </Link>
@@ -76,4 +79,4 @@ const Reservation = () => {
     );
 } 
 
-export default Reservation;
+export default Reservation2;
