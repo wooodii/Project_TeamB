@@ -10,6 +10,7 @@ import { faList, faHouse } from "@fortawesome/free-solid-svg-icons";
 import { Col, Container, Row } from "react-bootstrap";
 
 const NavbarComp = () => {
+
     const navigate = useNavigate();
 
     return (

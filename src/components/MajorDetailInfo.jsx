@@ -27,7 +27,9 @@ const MajorDetailInfo = () => {
         {majorfilter[majorid].진료과목내용명} 
         </div> 
         <div className={styles.linkbox}>
-        <Link state={majorfilter[majorid]} to={'/reservation/'+majorid} className={styles.link}>
+        <Link onClick={()=>{
+            action.setMypageData(majorfilter[majorid])
+        }}  to={'/reservation/'+majorid} className={styles.link}>
             예약하기 
         </Link>
         </div>

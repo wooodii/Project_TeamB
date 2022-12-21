@@ -17,10 +17,16 @@ const FirebaseLogin = () => {
     
     const createUser = async () => {
         const newUser = await signInWithEmailAndPassword(firebaseAuth, email, password);
-        const user = newUser.user;
-        localStorage.setItem("currentUser", user.uid);
-        data.action.setIsLoginned(true);
-        navigate("/") 
+        try {
+            const user = newUser.user;
+            localStorage.setItem("currentUser", user.uid);
+            data.action.setIsLoginned(true);
+            navigate("/") 
+        } catch(error) {
+            console.log(error.code);
+            console.log(error.message);
+        }
+        
     }
 
     return (  

@@ -18,7 +18,7 @@ const PlaceDetailInfo = () => {
                 <p> {placefilter[placeid].주소}에 위치한 병원입니다</p>
                 <p> {placefilter[placeid].전화번호}</p>
             </div>
-            <div className={styles.mapbox}>
+            <div className={styles.mapbox}> 
                 <ReserveMap address={placefilter[placeid].주소}/>
             </div>
             <div className={styles.detail}>
@@ -26,7 +26,9 @@ const PlaceDetailInfo = () => {
                 {placefilter[placeid].진료과목내용명}
             </div>
             <div className={styles.linkbox}>
-                <Link state={placefilter[placeid]} to={'/reservation/' + placeid} className={styles.link}>
+                <Link onClick={()=>{
+                action.setMypageData2(placefilter[placeid])
+            }} to={'/reservation/' + placeid} className={styles.link}>
                     예약하기
                 </Link>
             </div>

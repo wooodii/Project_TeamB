@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import DataContext from "../data/DataContext";
 import DatePicker from "react-datepicker";
-import { ko } from "date-fns/esm/locale";
+import styles from '../css/mypage.module.css'
 import { faSquareParking } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "react-bootstrap";
 import "../css/Mypage.css";
@@ -14,7 +14,7 @@ const MyPage = () => {
     const data = useContext(DataContext);
     const navigate = useNavigate();
     const [name,setName] = useState();
-    console.log(data.state.startDate) 
+    
     const user = localStorage.getItem("currentUser")
     const getSingleData = async () => {
         const docRef = doc(db, "users", user);
@@ -45,7 +45,7 @@ const MyPage = () => {
           <>
             <div className="Mypage_first">
                 {/* 프로필,이름 */}
-                <p>{name} <button onClick={()=>{navigate('/editprofile')}}>수정버튼</button> </p> 
+                <p>{name} <button onClick={()=>{navigate('/editprofile')}}>정보수정</button> </p> 
                 <button onClick={()=>{logOut()}}>로그아웃</button>
             </div> 
             <hr/> 
@@ -64,20 +64,23 @@ const MyPage = () => {
           </>
         ):(
 
+
           <> 
             <div className="Mypage_first">
                   {/* 프로필,이름 */}
                   <Link to='/firebaselogin'>로그인</Link>
               </div>
               <hr/>
-              <div className="Mypage_second">
 
-                <h1>예약하기</h1>
+              <div className="Mypage_second">
+                <Link to='/main'>건강피드</Link>
 
               </div>
               <hr/>
-              <div className="Mypage_third"></div>
-              <Link to='/medicine'>복약관리</Link>
+              <div className="Mypage_third">                  
+              
+              </div>
+              <Link to='/medicine'></Link>
 
 
               <hr/>
