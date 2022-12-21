@@ -7,6 +7,7 @@ import FirebaseSignUp from "./FirebaseSignUp";
 import { useContext } from "react";
 import { useEffect } from "react";
 import FirebaseLogin from "../components/FirebaseLogin";
+import { Navbar } from "react-bootstrap";
 const Home = () => {
     const data = useContext(DataContext);
     
@@ -19,7 +20,7 @@ const Home = () => {
             data.action.setIsLoginned(false)
         }
     },[user]);
-    
+    console.log(data.state.isLoginned);
     const navigate = useNavigate();
     const navQustion = ()=>{
         navigate('/question');
@@ -27,8 +28,6 @@ const Home = () => {
     
     return ( 
         <div className="Home">
-            {data.state.isLoginned ? (
-                <>
                     <div className="Search_box">
                         <SearchBar_Home/>
                     </div>
@@ -44,13 +43,7 @@ const Home = () => {
                         <button onClick={navQustion}> 문진표 작성</button>
                     </div>    
                     <br/>
-                </>
-            ):(
-                <>
-                <FirebaseSignUp />
-                <FirebaseLogin />
-                </>
-            )}
+                    
         </div>
     );
 }

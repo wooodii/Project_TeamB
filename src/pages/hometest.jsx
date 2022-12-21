@@ -12,30 +12,30 @@ const HomeT = () => {
     
     return ( 
         <div className="Home"> 
-            <div className={style.Box_L}>검색바 
+            <div className={style.Box_L_G}>검색바 
 
             </div>
             <br/>
-            <div className={style.Box_M}>기온 날씨
+            <div className={style.Box_L_O}>기온 날씨
 
             </div>
             <div>
 
             </div>
             <br/>
-            <div className={style.Box_S}>
+            <div className={style.Box_S_W}>
             <button onClick={navQustion}> 문진표 작성</button>
                 </div>    
             <br/>
 
-            <button className={style.Btn_L}>버튼</button>
+            <button className={style.Btn_L_G}>버튼</button>
             <br/>
-            <button className={style.Btn_M}>버튼</button>
+            <button className={style.Btn_M_O}>버튼</button>
             <br/>
-            <button className={style.Btn_S}>버튼</button>
+            <button className={style.Btn_S_W}>버튼</button>
 
         </div>
-     );
+    );
 }
- 
+
 export default HomeT;

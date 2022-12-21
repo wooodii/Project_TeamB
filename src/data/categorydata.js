@@ -1,16 +1,17 @@
 
+
     const categorydata = [
         {
-            icon : '',
+            icon : "../img/mydoctor.png",
             id : 0,
-            name : '내과',
+            name : '내과', 
         },
 
         {
             icon : '',
             id : 1,
             name : '소아청소년과'
-        },
+        }, 
 
         {
             icon : '',
@@ -124,3 +125,4 @@
     ]
 
     export default categorydata;
+    

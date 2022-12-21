@@ -1,12 +1,12 @@
 // 데이터 : openweathermap 사이트
 
 // 날씨 정보 주는 컴포넌트
-// 현재는 위치 입력받아 해당위치 출력중 > 
+// 현재는 위치 입력받아 해당위치 출력중 
 
 import { useState } from "react";
 import styled from "styled-components";
-import axios from "axios";
 import { useEffect } from "react";
+import styles from "../css/base.module.css";
 
 const Weather = () => {
     // js처리방식 : 위>아래 라서 url과 ( 받아온 키값, 위치값) 순서가 중요함
@@ -19,7 +19,7 @@ const Weather = () => {
             let lat = positon.coords.latitude;
             let lon = positon.coords.longitude;
             console.log('현재위치',lat,lon);
-            getWeather(lat,lon)
+            getWeather(lat,lon);
             
         });
     }
@@ -38,6 +38,7 @@ const Weather = () => {
         getCurrentLocation()
     },[])
     return (
+        <div className={styles.Box_L_G}>
         <WeatherWrap>
             <div className="weatherContentWrap">
                 <br />
@@ -74,6 +75,7 @@ const Weather = () => {
                 }
             </div>
         </WeatherWrap>
+        </div>
     );
 }
 

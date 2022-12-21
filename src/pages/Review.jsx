@@ -1,9 +1,8 @@
 import { useContext } from "react";
-import { useState } from "react";
 import Col from "react-bootstrap/esm/Col";
 import Row from "react-bootstrap/esm/Row";
 import Star from "../components/Star";
-import DataContext from "../Context/DataContext";
+import DataContext from "../data/DataContext";
 import ReviewModal from "./ReviewModal";
 
 const Review = () => {

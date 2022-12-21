@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-
+import styles from "../css/DetailInfo.module.css"
 import DataContext from "../data/DataContext";
 
 
@@ -12,20 +12,22 @@ const MajorDetailInfo = () => {
     
     return (     
     <div>
-        <div className="detail__title">  
-            <h4> {majorfilter[majorid].사업장}</h4>
+        <div className={styles.title}>  
+            <h2> {majorfilter[majorid].사업장}</h2>
+            <hr />
             <p> {majorfilter[majorid].주소}</p>
             <p> {majorfilter[majorid].전화번호}</p>
         </div>
-        <div className="detail__mapbox"> 
+        <div className={styles.mapbox}> 
             병원 지도 api
         </div> 
-        <div className="detail__info">
+        <div className={styles.detail}>
         <h4>진료 과목</h4>
+        <hr />
         {majorfilter[majorid].진료과목내용명} 
         </div> 
-        <div className="linkbox">
-        <Link state={majorfilter[majorid]} to={'/reservation/'+majorid} className="linktext">
+        <div className={styles.linkbox}>
+        <Link state={majorfilter[majorid]} to={'/reservation/'+majorid} className={styles.link}>
             예약하기 
         </Link>
         </div>

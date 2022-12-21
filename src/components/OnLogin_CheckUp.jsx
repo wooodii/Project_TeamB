@@ -99,7 +99,8 @@ const OnLogin_CheckUp = () => {
     // 탭메뉴
     const [content, setContent] = useState("first");
 
-    const handleClickButton = e => {
+    const handleClickButton = (e) => {
+        e.preventDefault();
         const { name } = e.target;
         setContent(name);
     };
@@ -212,8 +213,8 @@ const OnLogin_CheckUp = () => {
                     <> 
                         <h2 className="s_title">{onHcheck ? <>{onHcheck}</> :<>현재 {data.state.hcheck}차 건강검진 기간입니다</>}</h2>
                         <div className="progressbar_box clearfix">
-                            <p >검진율</p>
-                            <ProgressBar className="progressbar" now={parseInt((data.state.hcheck-1)*14.29) } label={`${parseInt((data.state.hcheck-1)*14.29)}%`} variant="warning" />
+                            <p >검진율 </p>
+                            <div className="progressbar"><ProgressBar now={parseInt((data.state.hcheck-1)*14.29) } label={`${parseInt((data.state.hcheck-1)*14.29)}%`} variant="success" /></div>
                         </div>
                         <ul className="tab clearfix">
                             <li className={content=='first' && "active"}><a href="#" name="first" onClick={handleClickButton}>전체 7</a></li>
@@ -226,8 +227,8 @@ const OnLogin_CheckUp = () => {
                     <>
                         <h2 className="s_title">현재 {dname}건의 접종기간입니다</h2>
                         <div className="progressbar_box clearfix">
-                            <p >접종률 </p>
-                            <ProgressBar now={parseInt(data.state.icheck*2.44)} label={`${parseInt(data.state.icheck*2.44)}%`} variant="warning"/>
+                            <p > 접종률 </p>
+                            <div className="progressbar"><ProgressBar now={parseInt(data.state.icheck*2.44)} label={`${parseInt(data.state.icheck*2.44)}%`} variant="success"/></div>
                         </div>
                         <ul className="i_tab clearfix">
                             <li className={content=='fourth' && "active"}><a href="#" name="fourth" onClick={handleClickButton}>전체 41</a></li>
