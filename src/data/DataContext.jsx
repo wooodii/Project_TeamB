@@ -39,6 +39,8 @@ const DataProvider = ({ children }) => {
     const [mypageData2,setMypageData2] =useState();
     const [startDate, setStartDate] = useState(new Date());
     const location = useLocation(); 
+    const [isbook, setIsbook] = useState(false); 
+
     
     // 서아
     // 전체 유저 데이터
@@ -105,11 +107,11 @@ const DataProvider = ({ children }) => {
     const value =
     {
 
-        state: {mypageData2,mypageData,location,startDate,h_major, h_name, h_num, h_address, user, loginUser, comments, commentCount,infant, login, hcheck, icheck, date, month, age, measures, ismeasures,category,hospitalData, isLoginned },
+        state: {isbook,mypageData2,mypageData,location,startDate,h_major, h_name, h_num, h_address, user, loginUser, comments, commentCount,infant, login, hcheck, icheck, date, month, age, measures, ismeasures,category,hospitalData, isLoginned },
 
 
         
-        action: {setMypageData2,setMypageData,setStartDate,setH_major,setH_name, setH_num,setH_address, setUser, setLoginUser,setInfant, setLogin, setHcheck, setIcheck, setMesures, setIsMeasures ,setCategory,setHospitalData, setIsLoginned,setComments}
+        action: {setIsbook,setMypageData2,setMypageData,setStartDate,setH_major,setH_name, setH_num,setH_address, setUser, setLoginUser,setInfant, setLogin, setHcheck, setIcheck, setMesures, setIsMeasures ,setCategory,setHospitalData, setIsLoginned,setComments}
 
     };
 

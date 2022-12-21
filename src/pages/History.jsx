@@ -12,15 +12,21 @@ const History = () => {
     }
 
     return ( 
-        <div className="History_Page">                                        
+        <div className="History_Page">    
+
             <div className={styles.box3}>
-                {data.state.isLoginned ? (
+                
             <>
                 <div className="Mypage_first">
-                <h2 >예약내역</h2>
+                
                 {
+                    data.state.isbook == true ? 
+                    (
+                    <>
+                    {
                     data.state.mypageData ? (
                         <div>
+                            <h2 >예약내역</h2>
                         <h2>{data.state.mypageData.사업장}</h2>
                         <h4>{data.state.mypageData.주소}</h4> 
                         <p>전화번호 : {data.state.mypageData.전화번호}</p>
@@ -29,6 +35,10 @@ const History = () => {
                             
                             }</p> 
                         <p>{data.state.mypageData.영업상태}</p>
+                        <div className="Mypage_second">
+                        <button onClick={()=>{navigate('/searchnear')}}>주변 병원 찾기 </button>                    
+                        </div>    
+                        
                         </div>
                     ) : (
                         <div>
@@ -40,36 +50,41 @@ const History = () => {
                     
                     }</p>
                     <p>{data.state.mypageData2.영업상태}</p>
+                    <div className="Mypage_second">
+                        <button onClick={()=>{navigate('/searchnear')}}>주변 병원 찾기 </button>                    
+                        </div>
                         </div>
                     )
                 }
+                        </>
+                    ): (
+                        <>
+                        <div className="Mypage_first">
+                        <button onClick={navFilter}>예약하기</button>                    
+                        </div>
+                        <hr />
+                        <div className="Mypage_second">
+                        <button onClick={()=>{navigate('/searchnear')}}>주변 병원 찾기 </button>                    
+                        </div>
+                        </>
+                        )
+                }                
                 </div> 
                 <hr/> 
 
-                <div className="Mypage_second">
-                    <button onClick={()=>{navigate('/searchnear')}}>주변 병원 찾기 </button>                    
-                </div>    
-                <hr/> 
+
+            
             </>
-            ):( 
-            <> 
-                <div className="Mypage_first">
-                    <button onClick={navFilter}>예약하기</button>                    
-                </div>
-                <hr/>
-                <div className="Mypage_second">   
-                <button onClick={()=>{navigate('/searchnear')}}>주변 병원 찾기 </button>             
-                </div>
-                <hr/>
-                <div className="Mypage_third">                  
-                
-                </div>
-                
-                <hr/>
+            
+            <>  
                 
             </>
-        )}
-                </div>    
+                
+                </div> 
+
+                
+
+
         </div>
     );
 }

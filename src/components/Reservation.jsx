@@ -10,14 +10,10 @@ import DataContext from "../data/DataContext";
 const Reservation = () => {
     const {state,action}=useContext(DataContext);
 
-    const ReservationBtn = (e) => {
-        let btnValue = e.target.value;
-        if (btnValue == 'onLogin') {
+    const ReservationBtn = (e) => {        
             alert('예약이 완료되었습니다');
-            alert('마이페이지에서 확인해주세요'); 
-        } else {
-            alert('로그인이 필요합니다');            
-        }
+            alert('진료내역에서 확인해주세요'); 
+            action.setIsbook(true);                
     }
     
     
@@ -58,21 +54,17 @@ const Reservation = () => {
                     />  
                 </div> 
                         
-                { /* 로그인 일 때 페이지이동 및 데이터 전달 */
-                    state.isLoginned == true ? 
-                    (<div className={styles.linkbox} >
-                        <Link className={styles.link}  to='/mypage'> 
+                
+                    
+                    <div className={styles.linkbox} >
+                        <Link className={styles.link}  to='/history'> 
                         <button  onClick={ReservationBtn} value='onLogin'>예약</button>
                     </Link>
-                    </div>)                
-                    :  
-                    (<div className={styles.linkbox}>
-                    <Link className={styles.link} to='/firebaselogin'> 
-                    <button  onClick={ReservationBtn} value='offLogin'>예약</button>
-                    </Link>
-                    </div>
-                    )
-                }
+                    </div>           
+                    
+                    
+                    
+                
             </div>
         </div> 
     );
