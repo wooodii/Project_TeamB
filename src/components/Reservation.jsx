@@ -4,57 +4,72 @@ import { useContext, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { ko } from "date-fns/esm/locale";
-import PlaceDetailInfo from "./PlaceDetailInfo";
 import DataContext from "../data/DataContext";
 
 const Reservation = () => {
-    
-
     const {state,action}=useContext(DataContext);
-    const { bookid } = useParams();
-    const location = useLocation(); 
-    const [startDate, setStartDate] = useState(new Date());
-
-    const [login, setLogin] = useState(true);
-    let navigate = useNavigate();
-
-
-    // 예약정보 저장하기
-    const ReservationBtn = () => {
-
-        if (state.isLoginned) {
+    const ReservationBtn = (e) => {
+        let btnValue = e.target.value;
+        if (btnValue == 'onLogin') {
             alert('예약이 완료되었습니다');
-            alert('마이페이지에서 확인해주세요');
-            navigate('/mypage')
+            alert('마이페이지에서 확인해주세요');             
         } else {
-
-            alert('로그인이 필요합니다');
-            navigate('/firebaselogin')
-            // navigate('로그인 화면주소')
-
+            alert('로그인이 필요합니다');            
         }
     }
 
     return (
         <div>
             <div>
-            <div className={styles.title}>
-                <h2>예약하기</h2>
-                <h4>병원이름 :{location.state.사업장}</h4>
-                <h5>병원주소 :{location.state.주소}</h5>
-            </div>                
-                <div>
-                    <h4>예약하실 날짜를 선택해주세요</h4>
-                    <DatePicker
-                        selected={startDate}
-                        onChange={(date) => setStartDate(date)}
+                {
+                    state.mypageData ? (
+                    <div className={styles.titlebox}>
+                        <h2>예약정보</h2> 
+                    <hr />
+                    <h4> 
+                    <br />{state.mypageData.사업장}</h4>
+                    <h5> <br />{state.mypageData.주소}</h5>
+                        </div>
+                    ) : 
+                        (
+                        <div className={styles.titlebox}>
+                            <h2>예약정보</h2> 
+                    <hr />
+                    <h4> 
+                    <br />{state.mypageData2.사업장}</h4>
+                    <h5> <br />{state.mypageData2.주소}</h5>
+                        </div>
+                    )
+                }
+
+                        
+                <div className={styles.mapbox}>
+                    <h4 >예약하실 날짜를 선택해주세요</h4>
+                    <DatePicker className={styles.date}
+                        selected={state.startDate}
+                        onChange={(date) => action.setStartDate(date)}
                         locale={ko}                   // 한글로 변경
                         dateFormat="yyyy.MM.dd (eee)" // 시간 포맷 변경
                         showPopperArrow={false}       // 화살표 변경
                         minDate={new Date()}          // 오늘 날짜 전은 선택 못하게
-                    /> 
-                </div>
-                <button onClick={ReservationBtn}>예약</button>
+                    />  
+                </div> 
+                        
+                { /* 로그인 일 때 페이지이동 및 데이터 전달 */
+                    state.isLoginned == true ? 
+                    (<div className={styles.linkbox} >
+                        <Link className={styles.link}  to='/mypage'> 
+                        <button  onClick={ReservationBtn} value='onLogin'>예약</button>
+                    </Link>
+                    </div>)                
+                    :  
+                    (<div className={styles.linkbox}>
+                    <Link className={styles.link} to='/firebaselogin'> 
+                    <button  onClick={ReservationBtn} value='offLogin'>예약</button>
+                    </Link>
+                    </div>
+                    )
+                }
             </div>
         </div> 
     );

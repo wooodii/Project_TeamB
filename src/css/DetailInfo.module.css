@@ -5,7 +5,8 @@
 
 .title h2 {
     font-weight: 700;    
-    
+    font-size: larger;
+    margin: 24px 0px;
 }
 
 .title p {
@@ -30,7 +31,7 @@
     font-size: large;
 }
 
-.link:hover {
+.link:hover { 
     color: var(--color-green);
 }
 
@@ -41,4 +42,5 @@
     text-align: center;
     padding: 6px; 
     background-color: var();
+
 }

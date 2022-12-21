@@ -96,11 +96,11 @@ const PaginationBox = styled.div`
 .pagination { display: flex; justify-content: center; margin-top: 15px;}
 ul { list-style: none; padding: 0; }
 ul.pagination li {
-    display: inline-block; 
-    width: 30px;
+    display: inline-block;
+    width: 30px; 
     height: 30px; 
     border: 1px solid #e2e2e2;
-    displaynpm: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1rem; 

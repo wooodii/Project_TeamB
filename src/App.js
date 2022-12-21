@@ -24,7 +24,11 @@ import HomeT from './pages/hometest';
 import FirebaseLogin from './components/FirebaseLogin';
 import Review from './pages/Review';
 import DetailInfo from './pages/DetailInfo';
-export const Context = createContext;
+import Medicine from './pages/Medicine';
+import EditProfile from './pages/EditProfile';
+import SearchNear from './components/SearchNear';
+
+
 
 function App() {
   return (
@@ -32,24 +36,27 @@ function App() {
       <DataProvider>
         <Routes>
           <Route path='/' element={<Layout />}>
-            <Route index element={<Home />} />
+            <Route index element={<Home/>} />
             <Route path='/history' element={<History />} />
             <Route path='/mypage' element={<MyPage />} />
             <Route path='/usersignup' element={<FirebaseSignUp />} />
             <Route path='/searchhospital' element={<SearchBar />}/>
             <Route path='/question' element={<Question/>}/>
-            <Route path='/filter' element={<Filter />}></Route>
-            <Route path='placedetail/:id/' element={<PlaceDetail />}/>
-            <Route path='/majordetail/:id/' element={<MajorDetail />}/>
-            <Route path='/majordetail/:id/:majorid' element={<MajorDetailInfo />} > </Route>
-            <Route path='/placedetail/:id/:placeid' element={<PlaceDetailInfo />} > </Route>
-            <Route path='/reservation/:bookid' element={<Reservation />}></Route>
             <Route path='/main' element={<Main />} />
             <Route path='/loginc' element={<Login_C />} />
             <Route path='/firebaselogin' element={<FirebaseLogin />} />
             <Route path='/review' element={<Review />}></Route>
             <Route path='/detailinfo' element={<DetailInfo />}></Route>
           </Route>
+            <Route path='/filter' element={<Filter />}></Route>
+            <Route path='placedetail/:id/' element={<PlaceDetail />}/>
+            <Route path='/majordetail/:id/' element={<MajorDetail />}/>
+            <Route path='/majordetail/:id/:majorid' element={<MajorDetailInfo />} > </Route>
+            <Route path='/placedetail/:id/:placeid' element={<PlaceDetailInfo />} > </Route>
+            <Route path='/reservation/:bookid' element={<Reservation />}></Route>
+            <Route path='/editprofile' element={<EditProfile/>}></Route>
+            <Route path='/searchnear' element={<SearchNear/>}></Route>
+            <Route path='/medicine' element={<Medicine/>}></Route>
         </Routes>
       </DataProvider>
     </div>
