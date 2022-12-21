@@ -12,19 +12,13 @@ const History = () => {
     }
     return ( 
         <div className="History_Page">
-            {/* 진료내역 삼항연산자 */}
-            {ishistory ? (
-                <>
-                    <div>진료내역</div>
-                </>
-            ):(
-                <>
-                    <div className="Reserve">
-                    <button onClick={navFilter}>예약하기</button>
-                    </div>    
-                    <div className="Search_near">주변 병원 찾기 </div>  
-                </>
-            )}  
+            <div className="Reserve">
+                <button onClick={navFilter}>예약하기</button>
+                </div>    
+            <hr/>
+            <div className="Search_near"> </div>  
+                <button onClick={()=>{navigate('/searchnear')}}>주변 병원 찾기 </button>
+            <hr/>
         </div>
      );
 }

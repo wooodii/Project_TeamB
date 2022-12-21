@@ -4,7 +4,7 @@ import DataContext from "../data/DataContext";
 
 const Medicine = () => {
     const data = useContext(DataContext);
-
+    
     useEffect(()=>{
         console.log(data.state.user[0].medicine);
     },[])
