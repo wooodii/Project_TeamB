@@ -4,8 +4,8 @@
 // 현재는 위치 입력받아 해당위치 출력중 
 
 import { useState } from "react";
-import styled from "styled-components";
 import { useEffect } from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import styles from "../css/base.module.css";
 
 const Weather = () => {
@@ -38,15 +38,13 @@ const Weather = () => {
         getCurrentLocation()
     },[])
     return (
-        <div className={styles.Box_L_G}>
-        <WeatherWrap>
-            <div className="weatherContentWrap">
-                <br />
-                <h4> 날씨 정보 🌤 <span style={{ color: 'red', fontSize: 'medium' }}>now</span></h4>
-                <br />
+        <Container>
+            <Row className={styles.Box_L_G_2}>
+                <Col><h4> 날씨 정보 🌤 </h4></Col>
+                <Col>
                 {
                     Object.keys(result).length !== 0 && (
-                        <ResultWrap>
+                        <div>
                             <div className="city">📍 :  {result.name}</div>
                             <div className="temperature">
                                 🌡 :
@@ -69,35 +67,14 @@ const Weather = () => {
                                 }
                                 {result.weather[0].main}
                             </div>
-
-                        </ResultWrap>
+                        </div>
                     )
                 }
-            </div>
-        </WeatherWrap>
-        </div>
+                </Col>
+            </Row>
+        </Container>
     );
 }
 
 export default Weather;
 
-
-// styled components 사용
-const WeatherWrap = styled.div`
-    width:100px;
-    border-radius:8px;
-    .weatherContentWrap {
-        text-align:center;
-        margin-bottom:5px;
-    }
-    .weatherContentWrap > input {
-        padding:2px;
-        border:1px solid lightgray;
-        border-radius:8px;
-    }
-`;
-
-const ResultWrap = styled.div`
-    padding:10px;  
-    border-radius:8px;
-`;

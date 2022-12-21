@@ -1,9 +1,8 @@
 /* 마이페이지 > 고객센터
-* 모양만 있는 버튼 디자인
-*/
+* 모양만 있는 버튼 디자인 */
 .Btn_L_G {
-    color: darkslategray;
-    width: 100px;
+    color: rgb(38, 63, 63);
+    width: 80%;
     height: 50px;
     border-radius: 10px;
     background-color: #ceccd6;

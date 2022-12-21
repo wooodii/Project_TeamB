@@ -9,6 +9,8 @@ import "slick-carousel/slick/slick-theme.css";
 import styled from 'styled-components'
 // import data
 import { dailyInfo } from "../data/dailyInfo"; 
+import styles from "../css/base.module.css";
+
 const HealthInfo = () => {
     // 당일 날짜출력
     let date = new Date();
@@ -26,8 +28,8 @@ const HealthInfo = () => {
     
     return (
       <StyledSlider>
-        <>
-        <div className="title-box">
+      <div>
+        <div>
         <h4>5대 질병 행동요령</h4>
         <p>{date.getFullYear()}/{date.getMonth()+1}/{date.getDate()} {days[date.getDay()]}</p>        
         </div> 
@@ -41,7 +43,7 @@ const HealthInfo = () => {
             ))
           }
         </Slider>
-        </>
+        </div>
       </StyledSlider>
     );
 }
@@ -50,19 +52,19 @@ export default HealthInfo;
 
 
 
-// styled-components
+// 이 컴포넌트는 styled-components 사용 권장
+// 슬릭 기본 화살표랑 dots 설정 제거
 const StyledSlider = styled(Slider)`
 margin-top :20px;
 height: 200px;
 width: 100%;
 position: relative;
-border: 2px solid black;
+border: 3px solid lightgray;
+border-radius: 10px;
 
 .slideList > p {
   padding: 5px 15px;
 }
-
-
 
 .slick-prev::before, .slick-next::before 
 {

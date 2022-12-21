@@ -7,7 +7,7 @@ import DataContext from "../data/DataContext";
 import DatePicker from "react-datepicker";
 import styles from '../css/mypage.module.css'
 import { faSquareParking } from "@fortawesome/free-solid-svg-icons";
-import { Button } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import "../css/Mypage.css";
 
 const MyPage = () => {
@@ -86,11 +86,18 @@ const MyPage = () => {
               <hr/>
               <div className="Mypage_forth"></div>
               {/* 이부분은 버튼만있고 따로 기능없습니다 */}
-              <button> 고객센터 </button>
-              <div className="Btn_L_G">1:1채팅상담</div>
-              <div className="Btn_L_G">사용자 설문</div>
-              <div className="Btn_L_G">약관 보기</div>
-              <div className="Btn_L_G">버전</div>
+              <p> 고객센터 </p>
+              <br />
+              <Container style={{textAlign:"center"}}>
+                <Row>
+                  <Col className="Btn_L_G">1:1채팅상담</Col>
+                  <Col className="Btn_L_G">사용자 설문</Col>
+                </Row>
+                <Row>
+                  <Col className="Btn_L_G">약관 보기</Col>
+                  <Col className="Btn_L_G">버전</Col>
+                </Row>
+              </Container>
           </>
         )}
         </div>  
