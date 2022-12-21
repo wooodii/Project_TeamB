@@ -35,13 +35,10 @@ const DataProvider = ({ children }) => {
     // 종헌 
     const [category, setCategory] = useState();
     const [hospitalData, setHospitalData] = useState(Hospital);
-
+    const [mypageData,setMypageData] = useState(); 
+    const [mypageData2,setMypageData2] =useState();
     const [startDate, setStartDate] = useState(new Date());
-
     const location = useLocation(); 
-
-
-
     
     // 서아
     // 전체 유저 데이터
@@ -87,7 +84,6 @@ const DataProvider = ({ children }) => {
         }
     );
 
-
     // 지현
     // 리뷰작성
     const [comments, setComments] = useState([
@@ -98,7 +94,7 @@ const DataProvider = ({ children }) => {
             btn1: "효과좋아요",
             btn2: "친절해요",
             btn3: "신규장비에요",
-            review: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            review: "a",
             yesNo: "재방문할래요"
         } 
     ]);
@@ -109,11 +105,11 @@ const DataProvider = ({ children }) => {
     const value =
     {
 
-        state: {location,startDate,h_major, h_name, h_num, h_address, user, loginUser, comments, commentCount,infant, login, hcheck, icheck, date, month, age, measures, ismeasures,category,hospitalData, isLoginned },
+        state: {mypageData2,mypageData,location,startDate,h_major, h_name, h_num, h_address, user, loginUser, comments, commentCount,infant, login, hcheck, icheck, date, month, age, measures, ismeasures,category,hospitalData, isLoginned },
 
 
         
-        action: {setStartDate,setH_major,setH_name, setH_num,setH_address, setUser, setLoginUser,setInfant, setLogin, setHcheck, setIcheck, setMesures, setIsMeasures ,setCategory,setHospitalData, setIsLoginned,setComments}
+        action: {setMypageData2,setMypageData,setStartDate,setH_major,setH_name, setH_num,setH_address, setUser, setLoginUser,setInfant, setLogin, setHcheck, setIcheck, setMesures, setIsMeasures ,setCategory,setHospitalData, setIsLoginned,setComments}
 
     };
 

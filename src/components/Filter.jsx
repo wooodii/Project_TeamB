@@ -22,7 +22,7 @@ const Filter = () => {
             action.setCategory(categorydata1);
         }
     }
-
+    
     return (
         <>
             <div className=''>
@@ -38,7 +38,7 @@ const Filter = () => {
                                     
                                     <div key={id} className={styles.category__box}>
                                         <Link className={styles.link} to={'/placedetail/' + id + '/'}>
-                                            <span>{item.icon}</span>
+                                            <img className={styles.img} src={require('../img/place1.png')}  />
                                             <h4 className={styles.text}>{item.name}</h4>
                                             
                                         </Link>
@@ -48,7 +48,7 @@ const Filter = () => {
                                 return (
                                     <div key={id} className={styles.category__box}>
                                         <Link className={styles.link} to={'/majordetail/' + id + '/'}>
-                                            <img url="../img/mydoctor.png" alt="" />
+                                            <img className={styles.img} src={require(`../img/${item.icon}`)} />
                                             <h4 className={styles.text}>{item.name}</h4>
                                         </Link> 
                                         

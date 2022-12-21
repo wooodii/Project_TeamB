@@ -6,14 +6,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Pagination from '../components/Pagenation';
-import SearchHosptial from '../components/SearchHosptial';
 import '../css/CourseMenu.css'
+import SearchHosptial from '../components/SearchHospital';
 
 const SearchBar = () => {
     const [search, setSearch] = useState();
     const [searchFin, setSearchFin] = useState();
     const [kind, setKind] = useState();
     const [area, setArea] = useState();
+
     // pagenation 
     // 페이지당 게시물 수 
     const [limit, setLimit] = useState(5);
@@ -23,18 +24,19 @@ const SearchBar = () => {
     const offset = (page -1) * limit; 
 
     return (
-        <div  style={{ width: "100%", height: "300px", border: "2px solid black" }}>
-            <div  style={{display : "flex", marginTop : "5vh"}}>
+        <div className='searchContainer'>
+
+            <div style={{display : "flex", margin : "5vh 2vh 0 2vh"}}>
             <CourseMenu setKind={setKind} kind={kind} setArea={setArea} setSearch={setSearch}/>
             <AreaMenu area={area} setArea={setArea} setSearch={setSearch} setKind={setKind}/>    
             <InputGroup>
-            <Form.Control
+            <Form.Control className='searchbar'
             onChange={e => {setSearch(e.target.value); setKind(null); setArea(null)}}
             placeholder="병원/진료과 검색" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
             </InputGroup>
             </div>
         
-        <div style={{margin: "4vh", width: "88%", height:"100px", border: "2px solid black"}}>
+        <div className='printBox'>
            {Hospital.filter((value) => {
             if(searchFin == ""){
                 return value
@@ -49,8 +51,9 @@ const SearchBar = () => {
                 return <SearchHosptial 진료과목내용명={index.진료과목내용명}  사업장={index.사업장} 전화번호 = {index.전화번호} 주소={index.주소} />
             })}
         </div> 
-        <div >
-            <Pagination
+        
+        <div style={{position:"fixed", bottom: "25px", left :"170px"}}>
+        <Pagination  
               total={Hospital.length}
               limit={limit}
               page={page}
