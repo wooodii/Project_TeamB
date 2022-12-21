@@ -1,14 +1,12 @@
+
 import { useNavigate,Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import DataContext from "../data/DataContext";
 import styles from "../css/history.module.css"
 
 const History = () => {
-
-
     const data = useContext(DataContext);
     const navigate = useNavigate();
-
     const navFilter =()=>{
         navigate('/filter')
     }
