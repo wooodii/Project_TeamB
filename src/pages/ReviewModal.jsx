@@ -10,6 +10,8 @@ import { useContext } from "react";
 import DataContext from "../data/DataContext";
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
+import '../css/ReviewModal.css'; 
+
 
 const ReviewModal = () => {
   const data = useContext(DataContext);
@@ -23,6 +25,7 @@ const ReviewModal = () => {
   const [btn2, setBtn2] = useState();
   const [btn3, setBtn3] = useState();
   const [yesNo, setYesNoBtn] = useState();
+
   const radios = [
     { name: '효과없어요', value: '1' },
     { name: '보통이에요', value: '2' },
@@ -44,6 +47,8 @@ const ReviewModal = () => {
     { name: '네', print : "재방문할래요", value: '10' },
     { name: '아니요', print : "", value: '11' }
   ]
+
+  
   const [show, setShow] = useState(false);
   const AddReview = () => {
     data.action.setComments([...data.state.comments, {
@@ -59,9 +64,11 @@ const ReviewModal = () => {
     setShow(false); 
   };
   const handleShow = () => setShow(true);
+
   const getCountStar = (count) => {
     setCountStar(count)  
-  }
+  };
+
   return (
     <div>
       <Button
@@ -92,7 +99,7 @@ const ReviewModal = () => {
                   key={idx}
                   id={`radio-${idx}`}
                   type="radio"
-                  variant={'outline-success'}
+                  variant={idx % 2 ? 'outline-success' : 'outline-success'}
                   name="radio"
                   value={radio.value}
                   checked={radioValue === radio.value}
@@ -112,8 +119,8 @@ const ReviewModal = () => {
                       key={idx}
                       id={`kindness-${idx}`}
                       type="radio"
-                      variant={idx % 2 ? 'outline-success' : 'outline-success'}
                       name="kindness"
+                      variant={idx % 2 ? 'outline-success' : 'outline-success'}
                       value={kindness.value}
                       checked={kindValue === kindness.value}
                       onChange={(e) => setkindValue(e.currentTarget.value)}
