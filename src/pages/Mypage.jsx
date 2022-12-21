@@ -49,7 +49,7 @@ const MyPage = () => {
             <hr/> 
             <div className="Mypage_second">  
 
-              <h1>예약 확인</h1>
+              <Link to='/main'>건강피드</Link>
                 {/* <h2>{data.state.location.state.사업장}</h2>
                 <h4>{data.state.location.state.주소}</h4>
                 <p>{data.state.location.state.전화번호}</p>
@@ -62,7 +62,7 @@ const MyPage = () => {
                 <Link to='/medicine'>복약관리</Link>
             <hr/>
             <div className="Mypage_forth"></div>
-
+            </>
         ):(
           <> 
             <div className="Mypage_first">
@@ -71,8 +71,7 @@ const MyPage = () => {
               </div>
               <hr/>
               <div className="Mypage_second">
-                <h1>예약하기
-                </h1>
+                <Link to='/main'>건강피드</Link>
               </div>
               <hr/>
               <div className="Mypage_third"></div>
