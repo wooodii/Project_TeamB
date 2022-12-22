@@ -12,9 +12,9 @@ const NavbarComp = () => {
     return (
 
         <div className="GNB">
-            <Link to='/'>홈</Link>
-            <Link to='/history'>진료내역</Link>
-            <Link to='/mypage'>마이페이지</Link>
+            <Link className="GNB__text" to='/'>홈</Link>
+            <Link className="GNB__text" to='/history'>진료내역</Link>
+            <Link className="GNB__text" to='/mypage'>마이페이지</Link>
         </div>
     );
 }
