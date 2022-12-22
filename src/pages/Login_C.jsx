@@ -10,6 +10,11 @@ const Login_C = () => {
     const [gender,setGender] = useState("남");
     const navigate = useNavigate()
 
+    const [active,setActive] = useState(true);
+    const handleActive = () => {
+        setActive(!active);
+    }
+
     const loginInfant = (e) => {
         e.preventDefault();
         if (!name) {
@@ -53,12 +58,14 @@ const Login_C = () => {
                                 setAge(e.target.value)
                             }
                         } /> 
-                        <button className="male_btn" onClick={(e)=>{
+                        <button className={ active ? "active male_btn" : "male_btn"} onClick={(e)=>{
                             e.preventDefault();
+                            handleActive();
                             setGender("남")
                         }}>남성</button>
-                        <button className="female_btn" onClick={(e)=>{
+                        <button className={ active ? "female_btn" : "active female_btn"} onClick={(e)=>{
                             e.preventDefault();
+                            handleActive();
                             setGender("여")
                         }}>여성</button>
                         <input className="infant_submit" type="submit" value="작성" />

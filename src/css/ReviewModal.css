@@ -4,5 +4,22 @@
 }
 
 .reviewBtn:hover{
-    color : "red"
+    color :  #ffffff !important;
+}
+
+/*Review */
+.reviewBox{
+    overflow-y: scroll;
+    width :"100%";
+    height : "300px";
+    margin-top: "1em";
+    -ms-overflow-style: none;
+}
+
+.reviewBox::-webkit-scrollbar {
+    overflow-y: scroll;
+    width :"100%";
+    height : "300px";
+    margin-top: "1em";
+    display: none; /* 크롬, 사파리, 오페라, 엣지 */
 }
