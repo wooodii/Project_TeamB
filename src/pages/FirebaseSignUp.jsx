@@ -16,15 +16,30 @@ const FirebaseSignUp = () => {
     const navigate = useNavigate();
 
     const usersCollectionRef = collection(db, "users")
-    
+
     const createUser = async () => {
-        const newUser = await createUserWithEmailAndPassword(firebaseAuth, email, password);
-        const user = newUser.user;
-        const data = await getDocs(usersCollectionRef);
-        await setDoc(doc(db, "users", user.uid), {...data.docs[0].data(), uid:user.uid, name:name});
-        navigate("/")
-        localStorage.setItem("currentUser", user.uid);
-        data.action.setIsLoginned(true)  
+        try{
+            const newUser = await createUserWithEmailAndPassword(firebaseAuth, email, password);
+            const user = newUser.user;
+            const data = await getDocs(usersCollectionRef);
+            await setDoc(doc(db, "users", user.uid), {...data.docs[0].data(), uid:user.uid, name:name});
+            navigate("/")
+            localStorage.setItem("currentUser", user.uid);
+            data.action.setIsLoginned(true)  
+        } catch (err) {
+            const errorCode = err.code;
+            if(!email) {
+                alert("이메일을 입력해주세요")
+            } else if(!password) {
+                alert("비밀번호를 입력해주세요")
+            } else if(errorCode == "auth/weak-password"){
+                alert("비밀번호를 6자리 이상 입력해주세요")
+            }  else if(errorCode == "auth/invalid-email") {
+                alert("이메일형식을 지켜주세요")
+            } else if(errorCode == "auth/email-already-in-use") {
+                alert("이미 사용중인 이메일 입니다")
+            }
+        }  
     }
 
 
@@ -33,7 +48,7 @@ const FirebaseSignUp = () => {
             <h2 className="F_login_title">회원가입</h2>
             <form className="F_input_box" onSubmit={(e)=>{e.preventDefault();createUser()}}>
                 <p>이메일</p>
-                <input type="text" placeholder="이메일" onChange={(e)=>{setEmail(e.target.value)}}/>
+                <input type="text" placeholder="example@nav.com" onChange={(e)=>{setEmail(e.target.value)}}/>
                 <p>비밀번호</p>
                 <input type="password" onChange={ (e)=>{setPassword(e.target.value)}} />
                 <p>이름</p>

@@ -30,8 +30,6 @@ import SearchNear from './components/SearchNear';
 import Reservation2 from './components/Reservation2';
 
 
-
-
 function App() {
   return (
     <div className="App ">
@@ -60,6 +58,7 @@ function App() {
             <Route path='/searchnear' element={<SearchNear/>}></Route>
             <Route path='/medicine' element={<Medicine/>}></Route>
             <Route path='/reservation2' element={<Reservation2/>}></Route>
+            
         </Routes>
       </DataProvider>
     </div>
