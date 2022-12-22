@@ -30,6 +30,7 @@ import SearchNear from './components/SearchNear';
 import Reservation2 from './components/Reservation2';
 import Opening from './pages/Opening';
 
+
 function App() {
   return (
     <div className="App ">
