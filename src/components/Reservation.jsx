@@ -28,8 +28,8 @@ const Reservation = () => {
                     <br />{state.mypageData.사업장}</h4>
                     <h5> <br />{state.mypageData.주소}</h5>
                         </div>
-                    ) : 
-                        (
+                    ) :  
+                        ( 
                         <div className={styles.titlebox}>
                             <h2>예약정보</h2> 
                     <hr />

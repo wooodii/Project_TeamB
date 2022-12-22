@@ -16,15 +16,25 @@ const FirebaseLogin = () => {
     const navigate = useNavigate();
     
     const createUser = async () => {
-        const newUser = await signInWithEmailAndPassword(firebaseAuth, email, password);
         try {
+            const newUser = await signInWithEmailAndPassword(firebaseAuth, email, password);
             const user = newUser.user;
             localStorage.setItem("currentUser", user.uid);
             data.action.setIsLoginned(true);
             navigate("/") 
-        } catch(error) {
-            console.log(error.code);
-            console.log(error.message);
+        } catch(err) {
+            const errorCode = err.code;
+            if(!email){
+                alert("이메일을 입력해주세요")
+            } else if(!password) {
+                alert("비밀번호를 입력해주세요")
+            } else if(errorCode == "auth/invalid-email") {
+                alert("이메일형식을 지켜주세요")
+            } else if(errorCode == "auth/wrong-password") {
+                alert("비밀번호가 틀립니다")
+            } else if(errorCode == "auth/user-not-found") {
+                alert("가입되지 않은 이메일입니다")
+            }
         }
         
     }
@@ -37,7 +47,7 @@ const FirebaseLogin = () => {
                 <input type="text" placeholder="이메일" onChange={(e)=>{setEmail(e.target.value)}}/>
                 <p className="password_input">비밀번호</p>
                 <input type="password" onChange={ (e)=>{setPassword(e.target.value)}} />
-                <input className="F_submit" type="submit" value="로그인" />
+                <input className="F_submit_login" type="submit" value="로그인" />
                 <Link to="/usersignup" className="F_signup_btn">회원가입</Link>
             </form>
         </div>

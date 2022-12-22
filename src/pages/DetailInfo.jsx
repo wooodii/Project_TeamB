@@ -26,8 +26,8 @@ const DetailInfo = () => {
                 <div>
                     <button onClick={() => {navigate('/reservation2')}} style={{ width : "395px", marginTop : "3vh", 
                                     borderRadius : "5px", padding : "1vh", 
-                                     backgroundColor : "#1b4542", color : "white"}}> 
-                                     예약하기</button >
+                                    backgroundColor : "#1b4542", color : "white"}}> 
+                                    예약하기</button >
                 </div>
 
                 <div>

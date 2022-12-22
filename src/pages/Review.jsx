@@ -9,11 +9,13 @@ const Review = () => {
     const data = useContext(DataContext);
     const [revisit, setRevisit] = useState();
 
+
     useEffect(() => {
         setRevisit(
             data.state.comments.length
         )
     }, [data.state.comments.length]);
+
 
     return (
         <>
