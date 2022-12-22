@@ -8,7 +8,7 @@ import Layout from './pages/Layout';
 import SearchBar from './pages/MedicalCourse';
 import MyPage from './pages/Mypage';
 import SignUp from './pages/SignUp';
-import Hospital from './json/Hospital.json'
+import Hospital from './json/Hospital.json';
 import Filter from './components/Filter';
 import MajorDetail from './components/MajorDetail';
 import MajorDetailInfo from './components/MajorDetailInfo';
@@ -31,7 +31,6 @@ import Reservation2 from './components/Reservation2';
 import Opening from './pages/Opening';
 
 
-
 function App() {
   return (
     <div className="App ">
@@ -48,7 +47,6 @@ function App() {
             <Route path='/loginc' element={<Login_C />} />
             <Route path='/firebaselogin' element={<FirebaseLogin />} />
             <Route path='/review' element={<Review />}></Route>
-
           </Route>
             <Route path='/filter' element={<Filter />}></Route>
             <Route path='placedetail/:id/' element={<PlaceDetail />}/>

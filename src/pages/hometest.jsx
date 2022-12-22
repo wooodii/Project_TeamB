@@ -16,7 +16,7 @@ const HomeT = () => {
 
             </div>
             <br/>
-            <div className={style.Box_M_O}>기온 날씨
+            <div className={style.Box_L_O}>기온 날씨
 
             </div>
             <div>
@@ -35,7 +35,7 @@ const HomeT = () => {
             <button className={style.Btn_S_W}>버튼</button>
 
         </div>
-     );
+    );
 }
- 
+
 export default HomeT;

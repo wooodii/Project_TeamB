@@ -10,7 +10,7 @@ const Review = () => {
     const [revisit, setRevisit] = useState();
 
     // useEffect(() => {
-    //     setRevisit(data.state.comments.map((id, index) => (index+1)))
+    //     setRevisit(data.state.comments.map((idindex, ) => (index+1)))
     // }, [revisit])
 
     return (

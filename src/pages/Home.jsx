@@ -7,11 +7,12 @@ import FirebaseSignUp from "./FirebaseSignUp";
 import { useContext } from "react";
 import { useEffect } from "react";
 import FirebaseLogin from "../components/FirebaseLogin";
+import { Navbar } from "react-bootstrap";
 const Home = () => {
     const data = useContext(DataContext);
     
     const user = localStorage.getItem("currentUser")
-    console.log("user",data.action)
+    console.log("user", data.action)
     useEffect(()=>{
         if(user){
             data.action.setIsLoginned(true)
@@ -37,11 +38,6 @@ const Home = () => {
                     <div>
                         <HealthInfo/>
                     </div>
-                    <br/>
-                    <div className="Questionnaire">
-                        <button onClick={navQustion}> 문진표 작성</button>
-                    </div>    
-                    <br/>
         </div>
     );
 }
