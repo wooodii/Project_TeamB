@@ -31,7 +31,6 @@ import Reservation2 from './components/Reservation2';
 import Opening from './pages/Opening';
 
 
-
 function App() {
   return (
     <div className="App ">
@@ -60,6 +59,7 @@ function App() {
             <Route path='/searchnear' element={<SearchNear/>}></Route>
             <Route path='/medicine' element={<Medicine/>}></Route>
             <Route path='/reservation2' element={<Reservation2/>}></Route>
+
             <Route path='/splash' element={<Opening/>}></Route>
             <Route path='/detailinfo' element={<DetailInfo />}></Route>
 
