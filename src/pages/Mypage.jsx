@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { doc,getDoc} from "firebase/firestore"
+import { doc, getDoc } from "firebase/firestore"
 import { db } from "../Firebase";
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -9,27 +9,19 @@ import styles from '../css/mypage.module.css'
 import { faSquareParking } from "@fortawesome/free-solid-svg-icons";
 
 const MyPage = () => {
-    const data = useContext(DataContext);
-    const navigate = useNavigate();
-    const [name,setName] = useState();
-    
-    const user = localStorage.getItem("currentUser")
-    const getSingleData = async () => {
-        const docRef = doc(db, "users", user);
-        const docSnap = await getDoc(docRef);
-        console.log(docSnap.data().history.date)
-        if (docSnap.exists()) {
-          setName(docSnap.data().name);
-        }
-      };
-      console.log(name)
-      useEffect(()=>{
-        getSingleData()
-      },[])
-    const logOut =()=>{
-        localStorage.clear(); 
-        navigate('/'); 
+  const data = useContext(DataContext);
+  const navigate = useNavigate();
+  const [name, setName] = useState();
+
+  const user = localStorage.getItem("currentUser")
+  const getSingleData = async () => {
+    const docRef = doc(db, "users", user);
+    const docSnap = await getDoc(docRef);
+    console.log(docSnap.data().history.date)
+    if (docSnap.exists()) {
+      setName(docSnap.data().name);
     }
+  }
     useEffect(()=>{
       if(user){
         data.action.setIsLoginned(true)
@@ -38,38 +30,54 @@ const MyPage = () => {
       }
     },[user])
     return (  
-        <div className="Mypage"> 
+      <div className="Mypage"> 
+      {data.state.isLoginned ? (
+        <>
+          <div className="Mypage_first">
+              {/* 프로필,이름 */}
+              <p>{name} <button onClick={()=>{navigate('/editprofile')}}>정보수정</button> </p> 
+              <button onClick={()=>{navigate('/')}}>로그아웃</button>
+          </div> 
+          <hr/> 
+          <div className="Mypage_second">
+          <Link to='/main'>건강피드</Link>        
+          </div>    
+          <hr/>  
+          <div className={styles.box3}>
 
-                <button> 고객센터 </button>
-            
-        
-          <> 
-            <div className="Mypage_first">
-                  {/* 프로필,이름 */}
-                  <Link to='/firebaselogin'>로그인</Link>
-              </div>
-              <hr/>
+            </div> 
+          <hr/>
 
-              <div className="Mypage_second">
-                <Link to='/main'>건강피드</Link>
+          <div className="Mypage_forth"></div>  
+               {/* 이부분은 버튼만있고 따로 기능없습니다 */}
 
-              </div>
-              <hr/>
-              <div className="Mypage_third">                  
-              
-              </div>
-              <Link to='/medicine'></Link>
-
-
-              <hr/>
-              <div className="Mypage_forth"></div>
-              {/* 이부분은 버튼만있고 따로 기능없습니다 */}
               <button> 고객센터 </button>
           </>
-        
-        </div>  
-    ); 
+      ):(
+        <> 
+          <div className="Mypage_first">
+                {/* 프로필,이름 */}
+                <Link to='/firebaselogin'>로그인</Link>
+            </div>
+            <hr/>
+            <div className="Mypage_second">
+              <Link to='/main'>건강피드</Link>
+            </div>
+            <hr/>
+            <div className="Mypage_third">                  
+            
+            </div>
+            <Link to='/medicine'></Link>
+            <hr/>
+            <div className="Mypage_forth"></div>
+            {/* 이부분은 버튼만있고 따로 기능없습니다 */}
+            <button> 고객센터 </button>
+        </>
+      )}
+      </div>  
+  ); 
 }
+
 
 export default MyPage;
 
