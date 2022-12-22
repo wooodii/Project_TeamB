@@ -24,6 +24,10 @@ const MyPage = () => {
       setName(docSnap.data().name);
     }
   }
+  const logOut = ()=>{
+    localStorage.clear();
+    navigate('/mypage')
+  }
     useEffect(()=>{
       if(user){
         data.action.setIsLoginned(true)
@@ -38,7 +42,7 @@ const MyPage = () => {
           <div className="Mypage_first">
               {/* 프로필,이름 */}
               <p>{name} <button onClick={()=>{navigate('/editprofile')}}>정보수정</button> </p> 
-              <button onClick={()=>{navigate('/')}}>로그아웃</button>
+              <button onClick={()=>{logOut()}}>로그아웃</button>
           </div> 
           <hr/> 
           <div className="Mypage_second">
@@ -46,9 +50,7 @@ const MyPage = () => {
           </div>    
           <hr/>  
           <div className={styles.box3}>
-
             </div> 
-
           <hr/>
 
           <div className="Mypage_forth"></div>  
