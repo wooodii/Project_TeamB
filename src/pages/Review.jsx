@@ -9,11 +9,11 @@ import '../css/ReviewModal.css';
 const Review = () => {
     const data = useContext(DataContext);
     const [revisit, setRevisit] = useState();
-
+    /*
     useEffect(() => {
         setRevisit(data.state.comments.map((id, index) => (index+1)))
     }, [revisit])
-
+    */
     return (
         <>
        

@@ -1,6 +1,6 @@
 .box3 {
     text-align: center;
-    
+    margin: 16px 0px;
 }
 
 .box3 h1{
@@ -16,5 +16,5 @@
     font-size: smaller;
     font-weight: 400;
     margin: 2px;
-}
+} 
 
