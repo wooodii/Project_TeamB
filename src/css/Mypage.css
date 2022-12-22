@@ -1,0 +1,14 @@
+/* 마이페이지 > 고객센터
+* 모양만 있는 버튼 디자인 형태만 구현*/
+.Btn_L_G {
+    color: rgb(28, 44, 44);
+    width: 80%;
+    height: 50px;
+    margin: 8px 6px;
+    border-radius: 10px;
+    background-color: #dedce4;
+    text-align: center;
+}
+.Btn_L_G > p {
+    padding-top: 12px;
+}
