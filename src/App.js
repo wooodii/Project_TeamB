@@ -8,7 +8,7 @@ import Layout from './pages/Layout';
 import SearchBar from './pages/MedicalCourse';
 import MyPage from './pages/Mypage';
 import SignUp from './pages/SignUp';
-import Hospital from './json/Hospital.json'
+import Hospital from './json/Hospital.json';
 import Filter from './components/Filter';
 import MajorDetail from './components/MajorDetail';
 import MajorDetailInfo from './components/MajorDetailInfo';
