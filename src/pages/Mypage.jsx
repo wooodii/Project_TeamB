@@ -7,7 +7,7 @@ import DataContext from "../data/DataContext";
 import DatePicker from "react-datepicker";
 import styles from '../css/mypage.module.css'
 import { faSquareParking } from "@fortawesome/free-solid-svg-icons";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import "../css/Mypage.css";
 
 const MyPage = () => {
@@ -31,10 +31,12 @@ const MyPage = () => {
   useEffect(() => {
     if (user) {
       data.action.setIsLoginned(true)
+      getSingleData();
     } else {
       data.action.setIsLoginned(false)
     }
   }, [user])
+
   return (
     <div className="Mypage">
       {data.state.isLoginned ? (
@@ -45,14 +47,18 @@ const MyPage = () => {
             <button onClick={() => { logOut() }}>로그아웃</button>
           </div>
           <hr />
-          <div className="Mypage_second">
-            <Link to='/main'>건강피드</Link>
-          </div>
+          <Container>
+            <Row>
+              <Col className="Btn_L_G"><button onClick={()=>{navigate('/main')}}>건강피드</button></Col>
+            </Row>
+          </Container>
           <hr />
-          <div className={styles.box3}>
-          </div>
+          <Container>
+            <Row>
+              <Col className="Btn_L_G"><button onClick={()=>{navigate('/medicine')}}>복약관리</button></Col>
+            </Row>
+          </Container>
           <hr />
-
           <div className="Mypage_forth"></div>
           {/* 이부분은 버튼만있고 따로 기능없습니다 */}
           <Container>
@@ -75,14 +81,17 @@ const MyPage = () => {
             <Link to='/firebaselogin'>로그인</Link>
           </div>
           <hr />
-          <div className="Mypage_second">
-            <Link to='/main'>건강피드</Link>
-          </div>
+          <Container>
+            <Row>
+              <Col className="Btn_L_G"><button onClick={()=>{navigate('/main')}}>건강피드</button></Col>
+            </Row>
+          </Container>
           <hr />
-          <div className="Mypage_third">
-
-          </div>
-          <Link to='/medicine'></Link>
+          <Container>
+            <Row>
+              <Col className="Btn_L_G"><button onClick={()=>{navigate('/medicine')}}>복약관리</button></Col>
+            </Row>
+          </Container>
           <hr />
           <div className="Mypage_forth">
             {/* 이부분은 버튼만있고 따로 기능없습니다 */}

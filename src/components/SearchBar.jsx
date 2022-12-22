@@ -10,7 +10,9 @@ const SearchBar_Home = () => {
         navigate('/searchhospital')
     }
     return (
-        <div style={{border:"2px solid darkgray", backgroundColor:"#ddd", borderRadius:"6px"}}>
+        <div style={{border:"2px solid darkgray", backgroundColor:"#ddd", borderRadius:"6px",
+        marginTop:"30px"
+        }}>
             <InputGroup className="pb-5 pt-5">
                 <Form.Control
                     onClick={clickSearchBar}
