@@ -16,7 +16,6 @@ const Reservation = () => {
             action.setIsbook(true);                
     }
     
-    
     return (
         <div>
             <div>

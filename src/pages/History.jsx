@@ -19,7 +19,6 @@ const History = () => {
                 
             <>
                 <div className="Mypage_first">
-                
                 {
                     data.state.isbook == true ? 
                     (
@@ -41,7 +40,10 @@ const History = () => {
                         </div>    
                         
                         </div>
-                    ) : (
+                    ) || (
+                        data.state.setTreatmentDetail
+                    )     
+                    : (
                         <div>
                         <h2>{data.state.mypageData2.사업장}</h2>
                         <h4>{data.state.mypageData2.주소}</h4> 
@@ -69,7 +71,10 @@ const History = () => {
                         </div>
                         </>
                         )
-                }                
+                }
+
+                
+                                
                 </div> 
                 <hr/> 
 

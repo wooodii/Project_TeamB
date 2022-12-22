@@ -8,12 +8,16 @@ import '../css/ReviewModal.css';
 const Review = () => {
     const data = useContext(DataContext);
     const [revisit, setRevisit] = useState();
-    // useEffect(() => {
-    //     setRevisit(data.state.comments.map((id, index) => (index+1)))
-    // }, [revisit])
+
+    useEffect(() => {
+        setRevisit(
+            data.state.comments.length
+        )
+    }, [data.state.comments.length]);
+
     return (
         <>
-         <div style={{ width: "390px", maxHeight: "400px", marginTop : "5em"}}>
+         <div style={{ width: "390px", height: "400px", marginTop : "5em"}}>
              <hr />
             <Row style={{marginTop : "2vh"}}> 
                 <Col xs={3} style={{marginBottom : "2vh"}}>
@@ -26,14 +30,14 @@ const Review = () => {
                 </Col>
             </Row>
             <Row style={{marginLeft : "55px"}}>
-                 <div> 이 병원을 {revisit} 명이 재방문하고 싶어해요 </div>
+                <div> 이 병원을 {revisit} 명이 재방문하고 싶어해요 </div>
             </Row>
             <Row className="reviewBox">
-                <Row style={{ border : "3px solid #1b4542", borderRadius : "10px", maxWidth : "340px", marginLeft : "50px", marginTop : "20px"}}>   
+                <Row className='reviewBoxPrint' style={{ msOverflowStyle: "none",  border : "3px solid #1b4542", scrollbarWidth : "none", overflowY: "scroll", borderRadius : "10px", height : "500px", maxWidth : "340px", marginLeft : "50px", marginTop : "20px"}}>   
                     {data.state.comments.map((id) => (
-                        <div style={{backgroundColor : "#B7CFC6", borderRadius : "10px", marginTop : "10px", marginBottom : "10px"}}>
+                        <div style={{backgroundColor : "#B7CFC6", borderRadius : "10px", marginTop : "10px", marginBottom : "10px", maxHeight : "200px"}}>
                             <Row>
-                                <div style={{margin : " 10px 10px 10px 75px"}}>
+                                <div style={{margin : "10px 10px 10px 75px"}}>
                                     <Star setCount={id.countStar}/>
                                 </div>
                             </Row>
@@ -54,7 +58,9 @@ const Review = () => {
                             </Row>
                             <Row>
                                 <div style={{marginRight : "5px"}}>
-                                    <div style={{backgroundColor : "white", margin : "10px", borderRadius : "10px", padding : "5px", fontSize : "0.9em" }}>  {id.review} </div>
+                                    <div style={{backgroundColor : "white", maxHeight : "150px", 
+                                                    margin : "10px", borderRadius : "10px", 
+                                                    padding : "5px", fontSize : "0.9em" }}>  {id.review} </div>
                                 </div>
                             </Row>
                         </div>
