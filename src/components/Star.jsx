@@ -40,6 +40,7 @@ const Star = (props) => {
         }
     }
     
+    
     // useEffect로 
     useEffect(() => {      
         let clickState = [...click];
@@ -47,8 +48,8 @@ const Star = (props) => {
             clickState[i] = true;
         }
         setClick(clickState);
-    }, [click])
-
+    }, [])
+    
     console.log(countStar);
 
     return (

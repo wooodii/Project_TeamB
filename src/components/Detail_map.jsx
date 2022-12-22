@@ -7,7 +7,8 @@ const ReserveMap = (props) => {
         // 초기위치 
         center: { lat: 37.49676871972202, lng: 127.02474726969814 },
         // 지도위치 변경시 panto ( 부드럽게 이동 )사용 
-        isPanto: true
+        isPanto: true,
+        zoomable:false
     })
     const moveMap = () => {
         const geocoder = new kakao.maps.services.Geocoder();
@@ -28,6 +29,7 @@ const ReserveMap = (props) => {
         <Map
             center={state.center}
             isPanto={state.isPanto}
+            zoomable={state.Zoomable}
             level={3}
             style={{
                 width: "100%",
@@ -37,12 +39,11 @@ const ReserveMap = (props) => {
             {!state.isLoading && (
                 <MapMarker position={state.center}>
                     <div style={{ padding: "5px", color: "#000" }}>
-                        {state.errMsg ? state.errMsg : "현재위치가 맞나요?"}
+                        {state.errMsg ? state.errMsg : `${props.name}`}
                     </div>
                 </MapMarker>
             )}
         </Map>
     );
 }
-
 export default ReserveMap
