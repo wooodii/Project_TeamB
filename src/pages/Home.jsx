@@ -38,12 +38,6 @@ const Home = () => {
                     <div>
                         <HealthInfo/>
                     </div>
-                    <br/>
-                    <div className="Questionnaire">
-                        <button onClick={navQustion}> 문진표 작성</button>
-                    </div>    
-                    <br/>
-                    
         </div>
     );
 }

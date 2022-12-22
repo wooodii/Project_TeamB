@@ -5,15 +5,13 @@
 
 import { useState } from "react";
 import { useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
 import styles from "../css/base.module.css";
+
 
 const Weather = () => {
     // js처리방식 : 위>아래 라서 url과 ( 받아온 키값, 위치값) 순서가 중요함
     const API_KEY = "df39660fc891b75f918b22159e9ad35e";
-    const [location, setLocation] = useState('');
     const [result, setResult] = useState({});
-    const [loading , setLoading] = useState(false);
     const getCurrentLocation = () => {
         navigator.geolocation.getCurrentPosition((positon) => {
             let lat = positon.coords.latitude;
@@ -38,21 +36,21 @@ const Weather = () => {
         getCurrentLocation()
     },[])
     return (
-        <Container>
-            <Row className={styles.Box_L_G_2}>
-                <Col><h4> 날씨 정보 🌤 </h4></Col>
-                <Col>
-                {
-                    Object.keys(result).length !== 0 && (
-                        <div>
-                            <div className="city">📍 :  {result.name}</div>
-                            <div className="temperature">
-                                🌡 :
-                                {result.main.temp}˚C
-                            </div>
-                            <div className="sky">
-                                {/* '즉시발동함수'로 jsx{}에서 중첩조건문 사용 */}
-                                {
+        <div className={styles.wrapper}>
+            <div className={styles.one}>
+                <h4> 날씨 정보 🌤 </h4>
+            </div>
+            <div className={styles.two}>
+            {
+                Object.keys(result).length !== 0 && (
+                    <div>
+                        <h5 className="city">📍 :  {result.name}</h5>
+                        <h5 className="temperature">
+                            🌡 : {result.main.temp}˚C
+                        </h5>
+                        <h5 className="sky">
+                        {/* '즉시발동함수'로 jsx{}에서 중첩조건문 사용 */}
+                            {
                                     (function () {
                                         if (result.weather[0].main === 'Clear') {
                                             return (" 🌞 ")
@@ -66,13 +64,12 @@ const Weather = () => {
                                     })()
                                 }
                                 {result.weather[0].main}
-                            </div>
-                        </div>
+                        </h5>
+                    </div>
                     )
                 }
-                </Col>
-            </Row>
-        </Container>
+            </div>
+        </div>
     );
 }
 

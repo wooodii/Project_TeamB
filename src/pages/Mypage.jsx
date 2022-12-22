@@ -57,10 +57,21 @@ const MyPage = () => {
                 <h3>복약관리</h3>
             </div> 
             <hr/>
-            <div className="Mypage_forth"></div>  
+            <div className="Mypage_forth">  
                  {/* 이부분은 버튼만있고 따로 기능없습니다 */}
-                <button> 고객센터 </button>
-                <Button>dd</Button>
+                <Container>
+                  <span> 고객센터 </span>
+                  <br />
+                <Row>
+                  <Col className="Btn_L_G"><p>1:1채팅 상담</p></Col>
+                  <Col className="Btn_L_G"><p>사용자 설문</p></Col>
+                </Row>
+                <Row>
+                  <Col className="Btn_L_G"><p>약관 보기</p></Col>
+                  <Col className="Btn_L_G"><p>버전</p></Col>
+                </Row>
+              </Container>
+            </div>
           </>
         ):(
 
@@ -84,20 +95,21 @@ const MyPage = () => {
 
 
               <hr/>
-              <div className="Mypage_forth"></div>
-              {/* 이부분은 버튼만있고 따로 기능없습니다 */}
-              <p> 고객센터 </p>
-              <br />
-              <Container style={{textAlign:"center"}}>
+              <div className="Mypage_forth">  
+                 {/* 이부분은 버튼만있고 따로 기능없습니다 */}
+                <Container>
+                  <span> 고객센터 </span>
+                  <br />
                 <Row>
-                  <Col className="Btn_L_G">1:1채팅상담</Col>
-                  <Col className="Btn_L_G">사용자 설문</Col>
+                  <Col className="Btn_L_G"><p>1:1채팅 상담</p></Col>
+                  <Col className="Btn_L_G"><p>사용자 설문</p></Col>
                 </Row>
                 <Row>
-                  <Col className="Btn_L_G">약관 보기</Col>
-                  <Col className="Btn_L_G">버전</Col>
+                  <Col className="Btn_L_G"><p>약관 보기</p></Col>
+                  <Col className="Btn_L_G"><p>버전</p></Col>
                 </Row>
               </Container>
+            </div>
           </>
         )}
         </div>  

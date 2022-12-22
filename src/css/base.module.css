@@ -18,16 +18,35 @@
 }
 
 /* 서아 > 홈 박스 정렬 수정용 */
-.Box_L_G_2 {
+.wrapper {
+  display: grid;
   color: white;
   background-color: #1b4542;
-  display: flex;
-  align-items: center;
+  border-radius: 50px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(100px, auto);
   text-align: center;
-  border-radius: 12px;
-  width: 100%;
-  height: 150px;
 }
+.one {
+  grid-column: 1 / 1;
+  grid-row: 1;
+}
+.one h4 {
+  padding-top: 33px;
+  padding-left: 40px;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.two {
+  grid-column: 2 / 4;
+  grid-row: 1;
+  text-align: center;
+}
+.two h5 {
+  padding-top: 3px;
+  padding-right: 5px;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+/*여기까지 Weather*/
 
 .Box_M_G {
   color: white;
