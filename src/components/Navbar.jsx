@@ -14,6 +14,7 @@ const NavbarComp = () => {
     const navigate = useNavigate();
 
     return (
+
         <div className="footer">
         <Container>
         <Row>
@@ -27,6 +28,7 @@ const NavbarComp = () => {
             <Col><button onClick={()=>{navigate('/mypage')}}>마이페이지</button></Col>
         </Row>
         </Container>
+
         </div>
     );
 }
