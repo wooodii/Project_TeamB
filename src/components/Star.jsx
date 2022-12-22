@@ -14,7 +14,7 @@ const Star = (props) => {
         { gradeId : 5, grade : 5 }
     ])
 
-    const starIcon = <HiStar />
+    const starIcon = <HiStar/>
     const [click, setClick] = useState([false, false, false, false, false]);
     
     // 처음 countStar 초기값이 없다면 0 설정
@@ -40,6 +40,7 @@ const Star = (props) => {
         }
     }
     
+    
     // useEffect로 
     useEffect(() => {      
         let clickState = [...click];
@@ -48,28 +49,28 @@ const Star = (props) => {
         }
         setClick(clickState);
     }, [])
-
+    
     console.log(countStar);
 
     return (
         <div>            
-            <button style={{color : "gray"}} value="click1" 
+            <button value="click1" 
                     onClick={(e) => {starClick(e, 0); setCountStar(star[0].grade); sendCountStar(star[0].grade)}}
                     className={click[0] ? "starColor" : "starColorNull"}>{starIcon}</button>
-            <button  style={{color : "gray"}}  
+            <button   
                     onClick={(e) => {starClick(e, 1); setCountStar(star[1].grade); sendCountStar(star[1].grade)}}
                     className={click[1] ? "starColor" : "starColorNull"}>{starIcon}</button>
-            <button  style={{color : "gray"}}  
+            <button  
                     onClick={(e) => {starClick(e, 2); setCountStar(star[2].grade); sendCountStar(star[2].grade)}}
                     className={click[2] ? "starColor" : "starColorNull"}>{starIcon}</button>
-            <button style={{color : "gray"}} 
+            <button 
                     onClick={(e) => {starClick(e, 3); setCountStar(star[3].grade); sendCountStar(star[3].grade)}}
                     className={click[3] ? "starColor" : "starColorNull"}> {starIcon}</button>
-            <button style={{color : "gray"}}  
+            <button 
                     onClick={(e) => {starClick(e, 4); setCountStar(star[4].grade); sendCountStar(star[4].grade)}}
                     className={click[4] ? "starColor" : "starColorNull"}>{starIcon}</button>
             <span style={{marginLeft : "1em", fontSize : "0.8em"}}> 
-                    {countStar} / 5</span >
+                    {countStar} / 5 </span >
         </div>
     );
 }

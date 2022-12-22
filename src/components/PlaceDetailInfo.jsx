@@ -19,7 +19,7 @@ const PlaceDetailInfo = () => {
                 <p> {placefilter[placeid].전화번호}</p>
             </div>
             <div className={styles.mapbox}> 
-                <ReserveMap address={placefilter[placeid].주소}/>
+                <ReserveMap name={placefilter[placeid].사업장} address={placefilter[placeid].주소}/>
             </div>
             <div className={styles.detail}>
                 <h4> 진료과목</h4>
