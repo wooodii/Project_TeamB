@@ -55,7 +55,18 @@ const MyPage = () => {
 
           <div className="Mypage_forth"></div>  
                {/* 이부분은 버튼만있고 따로 기능없습니다 */}
-
+               <Container>
+                  <span> 고객센터 </span>
+                  <br />
+                <Row>
+                  <Col className="Btn_L_G"><p>1:1채팅 상담</p></Col>
+                  <Col className="Btn_L_G"><p>사용자 설문</p></Col>
+                </Row>
+                <Row>
+                  <Col className="Btn_L_G"><p>약관 보기</p></Col>
+                  <Col className="Btn_L_G"><p>버전</p></Col>
+                </Row>
+              </Container>
               <button> 고객센터 </button>
           </>
       ):(
