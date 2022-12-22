@@ -21,69 +21,63 @@ const MyPage = () => {
     if (docSnap.exists()) {
       setName(docSnap.data().name);
     }
-  };
-  console.log(name)
-  useEffect(() => {
-    getSingleData()
-  }, [])
-  const logOut = () => {
-    localStorage.clear();
-    navigate('/');
   }
-  useEffect(() => {
-    if (user) {
-      data.action.setIsLoginned(true)
-    } else {
-      data.action.setIsLoginned(false)
-    }
-  }, [user])
-  return (
-    <div className="Mypage">
+    useEffect(()=>{
+      if(user){
+        data.action.setIsLoginned(true)
+      } else {
+        data.action.setIsLoginned(false)
+      }
+    },[user])
+    return (  
+      <div className="Mypage"> 
       {data.state.isLoginned ? (
         <>
           <div className="Mypage_first">
-            {/* 프로필,이름 */}
-            <p>{name} <button onClick={() => { navigate('/editprofile') }}>정보수정</button> </p>
-            <button onClick={() => { logOut() }}>로그아웃</button>
-          </div>
-          <hr />
+              {/* 프로필,이름 */}
+              <p>{name} <button onClick={()=>{navigate('/editprofile')}}>정보수정</button> </p> 
+              <button onClick={()=>{navigate('/')}}>로그아웃</button>
+          </div> 
+          <hr/> 
           <div className="Mypage_second">
-            <Link to='/main'>건강피드</Link>
-          </div>
-          <hr />
+          <Link to='/main'>건강피드</Link>        
+          </div>    
+          <hr/>  
           <div className={styles.box3}>
-            <h1>예약 확인</h1>
-          </div>
-          <hr />
-          <div className="Mypage_forth"></div>
-          {/* 이부분은 버튼만있고 따로 기능없습니다 */}
-          <button> 고객센터 </button>
-        </>
-      ) : (
-        <>
+
+            </div> 
+          <hr/>
+
+          <div className="Mypage_forth"></div>  
+               {/* 이부분은 버튼만있고 따로 기능없습니다 */}
+
+              <button> 고객센터 </button>
+          </>
+      ):(
+        <> 
           <div className="Mypage_first">
-            {/* 프로필,이름 */}
-            <Link to='/firebaselogin'>로그인</Link>
-          </div>
-          <hr />
-          <div className="Mypage_second">
-            <Link to='/main'>건강피드</Link>
-          </div>
-          <hr />
-          <div className="Mypage_third">
-          </div>
-          <Link to='/medicine'></Link>
-
-
-          <hr />
-          <div className="Mypage_forth"></div>
-          {/* 이부분은 버튼만있고 따로 기능없습니다 */}
-          <button> 고객센터 </button>
+                {/* 프로필,이름 */}
+                <Link to='/firebaselogin'>로그인</Link>
+            </div>
+            <hr/>
+            <div className="Mypage_second">
+              <Link to='/main'>건강피드</Link>
+            </div>
+            <hr/>
+            <div className="Mypage_third">                  
+            
+            </div>
+            <Link to='/medicine'></Link>
+            <hr/>
+            <div className="Mypage_forth"></div>
+            {/* 이부분은 버튼만있고 따로 기능없습니다 */}
+            <button> 고객센터 </button>
         </>
       )}
-    </div>
-  );
+      </div>  
+  ); 
 }
+
 
 export default MyPage;
 

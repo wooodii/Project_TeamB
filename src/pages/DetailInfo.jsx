@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ReserveMap from "../components/Detail_map";
 import DataContext from "../data/DataContext";
 import Review from '../pages/Review';

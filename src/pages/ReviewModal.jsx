@@ -12,7 +12,6 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import '../css/ReviewModal.css'; 
 
-
 const ReviewModal = () => {
   const data = useContext(DataContext);
   const [countStar, setCountStar] = useState();
@@ -48,7 +47,6 @@ const ReviewModal = () => {
     { name: '아니요', print : "", value: '11' }
   ]
 
-  
   const [show, setShow] = useState(false);
   const AddReview = () => {
     data.action.setComments([...data.state.comments, {
@@ -65,9 +63,9 @@ const ReviewModal = () => {
   };
   const handleShow = () => setShow(true);
 
-  const getCountStar = (count) => {
-    setCountStar(count)  
-  };
+  // const getCountStar = (count) => {
+  //   setCountStar(count)  
+  // };
 
   return (
     <div>
@@ -77,6 +75,7 @@ const ReviewModal = () => {
         onClick={handleShow}>
         리뷰작성
       </Button>
+      
       <Modal show={show} onHide={AddReview}>
         <Form>
           <Modal.Header>
@@ -178,8 +177,7 @@ const ReviewModal = () => {
                       value={visit.value}
                       checked={visitValue === visit.value}
                       onChange={(e) => setVisitValue(e.currentTarget.value)}
-                      onClick={() => {setYesNoBtn(visit.print)}}
-                      >
+                      onClick={() => {setYesNoBtn(visit.print)}}>
                       {visit.name}
                       </ToggleButton>
                   ))}

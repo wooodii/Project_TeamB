@@ -8,7 +8,7 @@ const ReserveMap = (props) => {
         center: { lat: 37.49676871972202, lng: 127.02474726969814 },
         // 지도위치 변경시 panto ( 부드럽게 이동 )사용 
         isPanto: true,
-        Zoomable:false
+        zoomable:false
     })
     const moveMap = () => {
         const geocoder = new kakao.maps.services.Geocoder();
@@ -29,7 +29,7 @@ const ReserveMap = (props) => {
         <Map
             center={state.center}
             isPanto={state.isPanto}
-            Zoomable={state.Zoomable}
+            zoomable={state.Zoomable}
             level={3}
             style={{
                 width: "100%",

@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import styles from "../css/DetailInfo.module.css"
 import DataContext from "../data/DataContext";
+import ReserveMap from "./Detail_map";
 
 
 const MajorDetailInfo = () => {
@@ -19,7 +20,7 @@ const MajorDetailInfo = () => {
             <p> {majorfilter[majorid].전화번호}</p>
         </div>
         <div className={styles.mapbox}> 
-            병원 지도 api
+            <ReserveMap name={majorfilter[majorid].사업장} address={majorfilter[majorid].주소}/>
         </div> 
         <div className={styles.detail}>
         <h4>진료 과목</h4>

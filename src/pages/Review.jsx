@@ -1,18 +1,19 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Col from "react-bootstrap/esm/Col";
 import Row from "react-bootstrap/esm/Row";
 import Star from "../components/Star";
 import DataContext from "../data/DataContext";
 import ReviewModal from "./ReviewModal";
-
+import '../css/ReviewModal.css';
 const Review = () => {
     const data = useContext(DataContext);
-    // const [revisit, setRevisit] = useState();
-
+    const [revisit, setRevisit] = useState();
+    // useEffect(() => {
+    //     setRevisit(data.state.comments.map((id, index) => (index+1)))
+    // }, [revisit])
     return (
         <>
-       
-         <div style={{ width: "390px", height: "844px", marginTop : "5em"}}>
+         <div style={{ width: "390px", maxHeight: "400px", marginTop : "5em"}}>
              <hr />
             <Row style={{marginTop : "2vh"}}> 
                 <Col xs={3} style={{marginBottom : "2vh"}}>
@@ -21,22 +22,20 @@ const Review = () => {
                     </Row>
                 </Col>
                 <Col xs={9}> 
-                <ReviewModal /> 
+                <ReviewModal />
                 </Col>
             </Row>
-
             <Row style={{marginLeft : "55px"}}>
-                 <div> 이 병원을 {data.state.comments.map((id, index) => (index+1))}명이 재방문하고 싶어해요 </div>
+                 <div> 이 병원을 {revisit} 명이 재방문하고 싶어해요 </div>
             </Row>
-
-            <Row style={{ overflow: "auto", width : "100%"}}>
-                <Row style={{ border : "3px solid #1b4542", borderRadius : "10px", maxWidth : "340px", marginLeft : "50px", marginTop : "20px"}}> 
-                    
-
+            <Row className="reviewBox">
+                <Row style={{ border : "3px solid #1b4542", borderRadius : "10px", maxWidth : "340px", marginLeft : "50px", marginTop : "20px"}}>   
                     {data.state.comments.map((id) => (
-                        <div style={{backgroundColor : "#feb546", borderRadius : "10px", marginTop : "10px", marginBottom : "10px"}}>
+                        <div style={{backgroundColor : "#B7CFC6", borderRadius : "10px", marginTop : "10px", marginBottom : "10px"}}>
                             <Row>
-                                <Star setCount={id.countStar}/>
+                                <div style={{margin : " 10px 10px 10px 75px"}}>
+                                    <Star setCount={id.countStar}/>
+                                </div>
                             </Row>
                             <Row style={{display : "flex"}}>
                                 <div>
@@ -44,7 +43,7 @@ const Review = () => {
                                                 fontSize : "0.7em", margin : "0.3em", 
                                                     backgroundColor : "white",  borderRadius : "10px"}}> 진료결과 |  {id.btn1} </span>
                                     <span style={{padding : "0.2em 0.5em", fontSize : "0.7em",
-                                                margin : "0.3em", backgroundColor : "white", borderRadius : "10px"}}> 서비스 |{id.btn2} </span>
+                                                margin : "0.3em", backgroundColor : "white", borderRadius : "10px"}}> 서비스 | {id.btn2} </span>
                                 </div>
                                 <div>
                                     <span style={{padding : "0.2em 0.5em", backgroundColor : "white", 
@@ -54,15 +53,14 @@ const Review = () => {
                                 </div>
                             </Row>
                             <Row>
-                                <div style={{backgroundColor : "white", margin : "10px", borderRadius : "10px", padding : "5px" }}>  
-                                {id.review}
+                                <div style={{marginRight : "5px"}}>
+                                    <div style={{backgroundColor : "white", margin : "10px", borderRadius : "10px", padding : "5px", fontSize : "0.9em" }}>  {id.review} </div>
                                 </div>
                             </Row>
                         </div>
                         ) )}
                 </Row>
             </Row>
-            
         </div>
         </>
     );
