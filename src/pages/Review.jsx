@@ -8,9 +8,11 @@ import '../css/ReviewModal.css';
 const Review = () => {
     const data = useContext(DataContext);
     const [revisit, setRevisit] = useState();
+
     // useEffect(() => {
     //     setRevisit(data.state.comments.map((idindex, ) => (index+1)))
     // }, [revisit])
+
     return (
         <>
          <div style={{ width: "390px", maxHeight: "400px", marginTop : "5em"}}>

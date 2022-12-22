@@ -49,14 +49,14 @@ const MajorDetail = () => {
                                                 <span>
                                                 {item.의료인수}
                                                 </span>
-                                            </div>
+                                            </div> 
                                             <div>입원실수 <br />
-                                                <span>
+                                                <span> 
                                                 {item.입원실수}
                                                 </span>                    
                                             </div>
                                             <div>병상수 <br />
-                                                <span>
+                                                <span> 
                                                 {item.병상수}
                                                 </span>
                                             </div>
