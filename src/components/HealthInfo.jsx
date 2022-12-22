@@ -28,21 +28,23 @@ const HealthInfo = () => {
     
     return (
       <StyledSlider>
-      <div>
-        <div>
-        <h4>5대 질병 행동요령</h4>
-        <p>{date.getFullYear()}/{date.getMonth()+1}/{date.getDate()} {days[date.getDay()]}</p>        
-        </div> 
-        {/* map()으로 json의 data하나씩 출력 */}
-        <Slider {...settings}>
-          {dailyInfo.map((list, idx)=> (
-            <div className="slideList" key={idx}>
-              <h2>{list.dissNm}</h2>
-              <p>{list.dissRiskXpln}</p>
-            </div>
-            ))
-          }
-        </Slider>
+        <div className="s-wrapper">
+          <div className="s-title">
+          <h4>5대 질병 행동요령</h4>
+          <p>{date.getFullYear()}/{date.getMonth()+1}/{date.getDate()} {days[date.getDay()]}</p>        
+          </div> 
+          {/* map()으로 json의 data하나씩 출력 */}
+          <div className="s-slick">
+            <Slider {...settings}>
+              {dailyInfo.map((list, idx)=> (
+                <div className="slideList" key={idx}>
+                  <h2>{list.dissNm}</h2>
+                  <p>{list.dissRiskXpln}</p>
+                </div>
+                ))
+              }
+            </Slider>
+          </div>
         </div>
       </StyledSlider>
     );
@@ -56,16 +58,34 @@ export default HealthInfo;
 // 슬릭 기본 화살표랑 dots 설정 제거
 const StyledSlider = styled(Slider)`
 margin-top :20px;
-height: 200px;
+height: 180px;
 width: 100%;
 position: relative;
-border: 3px solid lightgray;
 border-radius: 10px;
 
-.slideList > p {
+.slideList > h2 {
   padding: 5px 15px;
 }
 
+.slideList > p {
+  padding: 5px 23px;
+}
+.s-wrapper {
+  color: black;
+  background-color: #eee;
+  border-radius: 70px;
+  width: 85%;
+  height: 200px;
+  text-align: center;
+}
+.s-title {
+  margin-top:15px;
+  text-align:center;
+}
+.s-slick {
+  margin-top:15px;
+}
+
 .slick-prev::before, .slick-next::before 
 {
 opacity: 0;
@@ -75,4 +95,6 @@ display: none;
 {
 opacity: 0;
 display: none;
+
+
 }`

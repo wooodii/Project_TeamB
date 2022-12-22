@@ -18,9 +18,9 @@ const NavbarComp = () => {
         <div className="footer">
         <Container>
         <Row>
-            <Col><FontAwesomeIcon icon={faHouse} size="2x" /></Col>
-            <Col><FontAwesomeIcon icon={faList} size="2x" /></Col>
-            <Col><FontAwesomeIcon icon={faUser} size="2x" /></Col>
+            <Col onClick={()=>{navigate('/')}}><FontAwesomeIcon icon={faHouse} size="2x" /></Col>
+            <Col onClick={()=>{navigate('/history')}}><FontAwesomeIcon icon={faList} size="2x" /></Col>
+            <Col button onClick={()=>{navigate('/mypage')}}><FontAwesomeIcon icon={faUser} size="2x" /></Col>
         </Row>
         <Row>
             <Col><button onClick={()=>{navigate('/')}}>홈</button></Col>
