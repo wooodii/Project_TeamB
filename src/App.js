@@ -27,9 +27,6 @@ import DetailInfo from './pages/DetailInfo';
 import Medicine from './pages/Medicine';
 import EditProfile from './pages/EditProfile';
 import SearchNear from './components/SearchNear';
-
-import Opening from './pages/Opening';
-
 import Reservation2 from './components/Reservation2';
 
 
