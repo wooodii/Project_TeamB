@@ -8,7 +8,7 @@ import Layout from './pages/Layout';
 import SearchBar from './pages/MedicalCourse';
 import MyPage from './pages/Mypage';
 import SignUp from './pages/SignUp';
-import Hospital from './json/Hospital.json'
+import Hospital from './json/Hospital.json';
 import Filter from './components/Filter';
 import MajorDetail from './components/MajorDetail';
 import MajorDetailInfo from './components/MajorDetailInfo';
@@ -28,7 +28,7 @@ import Medicine from './pages/Medicine';
 import EditProfile from './pages/EditProfile';
 import SearchNear from './components/SearchNear';
 import Reservation2 from './components/Reservation2';
-
+import Opening from './pages/Opening';
 
 function App() {
   return (
@@ -46,7 +46,7 @@ function App() {
             <Route path='/loginc' element={<Login_C />} />
             <Route path='/firebaselogin' element={<FirebaseLogin />} />
             <Route path='/review' element={<Review />}></Route>
-            <Route path='/detailinfo' element={<DetailInfo />}></Route>
+
           </Route>
             <Route path='/filter' element={<Filter />}></Route>
             <Route path='placedetail/:id/' element={<PlaceDetail />}/>
@@ -58,7 +58,10 @@ function App() {
             <Route path='/searchnear' element={<SearchNear/>}></Route>
             <Route path='/medicine' element={<Medicine/>}></Route>
             <Route path='/reservation2' element={<Reservation2/>}></Route>
-            
+
+            <Route path='/splash' element={<Opening/>}></Route>
+            <Route path='/detailinfo' element={<DetailInfo />}></Route>
+
         </Routes>
       </DataProvider>
     </div>

@@ -5,18 +5,16 @@ import Star from "../components/Star";
 import DataContext from "../data/DataContext";
 import ReviewModal from "./ReviewModal";
 import '../css/ReviewModal.css';
-
 const Review = () => {
     const data = useContext(DataContext);
     const [revisit, setRevisit] = useState();
 
-    useEffect(() => {
-        setRevisit(data.state.comments.map((id, index) => (index+1)))
-    }, [revisit])
+    // useEffect(() => {
+    //     setRevisit(data.state.comments.map((id, index) => (index+1)))
+    // }, [revisit])
 
     return (
         <>
-       
          <div style={{ width: "390px", maxHeight: "400px", marginTop : "5em"}}>
              <hr />
             <Row style={{marginTop : "2vh"}}> 
@@ -29,14 +27,11 @@ const Review = () => {
                 <ReviewModal />
                 </Col>
             </Row>
-
             <Row style={{marginLeft : "55px"}}>
                  <div> 이 병원을 {revisit} 명이 재방문하고 싶어해요 </div>
             </Row>
-
             <Row className="reviewBox">
-                <Row style={{ border : "3px solid #1b4542", borderRadius : "10px", maxWidth : "340px", marginLeft : "50px", marginTop : "20px"}}> 
-                    
+                <Row style={{ border : "3px solid #1b4542", borderRadius : "10px", maxWidth : "340px", marginLeft : "50px", marginTop : "20px"}}>   
                     {data.state.comments.map((id) => (
                         <div style={{backgroundColor : "#B7CFC6", borderRadius : "10px", marginTop : "10px", marginBottom : "10px"}}>
                             <Row>
@@ -68,7 +63,6 @@ const Review = () => {
                         ) )}
                 </Row>
             </Row>
-            
         </div>
         </>
     );

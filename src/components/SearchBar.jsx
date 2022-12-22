@@ -10,8 +10,8 @@ const SearchBar_Home = () => {
         navigate('/searchhospital')
     }
     return (
-        <div>
-            <InputGroup className="mb-3">
+        <div style={{border:"2px solid darkgray", backgroundColor:"#ddd", borderRadius:"6px"}}>
+            <InputGroup className="pb-5 pt-5">
                 <Form.Control
                     onClick={clickSearchBar}
                     placeholder="병원/진료과 검색" aria-label="Recipient's username" aria-describedby="basic-addon2" />
