@@ -15,9 +15,9 @@ const Reservation2 = () => {
         action.setIsbook(true);              
     }
 
-    
+
     return (
-        <div>
+        <div> 
             <div>
                 {
                     state.mypageData ? (
