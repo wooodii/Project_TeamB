@@ -20,4 +20,14 @@
     margin: 2px;
 } 
 
-
+.btn {
+    margin-top: 10px;
+    width: black;
+    width: 60px;
+    height: 30px;
+    border-radius: 12px;
+    background-color: #bdbdbd;
+    text-align: center;
+    font-size: small;
+    font-weight: 500;
+}

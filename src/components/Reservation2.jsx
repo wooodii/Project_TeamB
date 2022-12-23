@@ -14,6 +14,8 @@ const Reservation2 = () => {
         alert('예약내역에서 확인해주세요'); 
         action.setIsbook(true);              
     }
+
+    
     return (
         <div>
             <div>

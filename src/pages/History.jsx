@@ -9,7 +9,7 @@ const History = () => {
     const data = useContext(DataContext);
     const navigate = useNavigate();
     const navFilter =()=>{
-        navigate('/filter');
+        navigate('/filter'); 
     } 
     
     if (data.state.mypageData) {
@@ -20,7 +20,7 @@ const History = () => {
     console.log(data.state.h_name);
 
 
-    return ( 
+    return (   
         <div className="History_Page">    
 
             <div className={styles.box3}>                
@@ -42,12 +42,16 @@ const History = () => {
                             
                             }</p> 
                         <p>{data.state.treatmentDetail.영업상태}</p>
+                        <button className={styles.btn} onClick={()=>{
+                        window.location.reload();
+                        alert('예약이 취소되었습니다.')
+                        }}>예약취소</button>
                         <hr /> 
                         <div className="Mypage_second">
                         <button onClick={()=>{navigate('/searchnear')}}>주변 병원 찾기 </button>                    
                         </div>                            
                         </div>
-                    )  
+                    )   
                     : (
                         <div>
                         <h2>{data.state.h_name}</h2>
@@ -58,12 +62,16 @@ const History = () => {
                     
                     }</p>
                     <p>영업/영업중</p>
+                    <button className={styles.btn} onClick={()=>{
+                        window.location.reload();
+                        alert('예약이 취소되었습니다.')
+                        }}>예약취소</button>
                     <hr />
                     <div className="Mypage_second">
                         <button onClick={()=>{navigate('/searchnear')}}>주변 병원 찾기 </button>                    
                         </div>
                         </div> 
-                    )
+                    ) 
                 }
                         </>
                         
@@ -83,6 +91,7 @@ const History = () => {
 
                 </div> 
                 <hr />
+                
 
             </>
                 </div> 
