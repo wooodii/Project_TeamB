@@ -57,8 +57,8 @@ const Notice = () => {
                 )}
                <button className='plus_btn' onClick={()=>{
                     setShow(true)
-                }}><FontAwesomeIcon style={{color:"white"}} icon={faPlus} /></button>
-                {show && <Notice_Modal setShow={setShow} />}
+                }}><div className='font_plus'><FontAwesomeIcon style={{color:"white"}} icon={faPlus} /></div></button>
+                {show && <Notice_Modal setShow={setShow}/>}
             </>
         ):(
             data.state.login ? (

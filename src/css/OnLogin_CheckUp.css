@@ -1,4 +1,4 @@
-.box {width: 360px; position: relative; background: #f5f6f8;}
+.box {width: 390px; position: relative; background: #f5f6f8;}
 .box .padding_box {padding: 65px 10px 10px 10px;}
 .s_title {font-size: 20px; text-align-last: center; font-weight: bold; padding-bottom: 20px; }
 .today {font-size: 15px; color: #ccc;}
@@ -25,7 +25,7 @@
 .i_tab li.active a {color: #fff; border-radius: 10px; background: #1b4542;  }
 
 /* 건강검진리스트 */
-.h_box { width: 360px; padding: 10px; position: relative; background: #fff; margin: 15px -10px; overflow: hidden;}
+.h_box { width: 390px; padding: 10px; position: relative; background: #fff; margin: 15px -10px; overflow: hidden;}
 .h_box .left_box {float: left;}
 .h_box .left_box p {font-size: 14px; margin: 0; padding-top: 10px;}
 .h_box .left_box .h_title { font-size: 16px; font-weight: bold; margin: 0; padding-bottom: 10px;}

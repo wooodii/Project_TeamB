@@ -35,34 +35,30 @@ const Health_Modal = (props) => {
                                     {show == info.id && 
                                                  <div className="measure_box">
                                                     <input type="text"onChange={inputDesc}/>
-                                                    <button name={info.name} onClick={changeMeasures}>완료</button>
+                                                    <button name={info.name} onClick={changeMeasures}>{input ? "완료" : "취소"}</button>
                                                 </div>
                                     }
                                 </>
                             ))
                         }
-                        {input ? (
-                            <>
-                                <li>
-                                    <a href="#" className='close' onClick={()=>{
-                                        props.setShow(false)
-                                        data.action.setIsMeasures(true)
-                                    }}>
-                                        완료
-                                    </a>
-                                </li>
-                            </>
-                        ):(
-                            <>
-                                <li>
-                                    <a href="#" className='close' onClick={()=>{
-                                        props.setShow(false)
-                                    }}>
-                                        취소
-                                    </a>
-                                </li>
-                            </>
-                        )}
+                        <li >
+                            <a href="#" className='close' onClick={()=>{
+                                props.setShow(false)
+                            }}>
+                                취소
+                            </a>
+                            <a href="#" className='push' onClick={()=>{
+                                if(input){
+                                    props.setShow(false)
+                                    data.action.setIsMeasures(true)
+                                } else {
+                                    props.setShow(false)
+                                    data.action.setIsMeasures(false)
+                                }
+                            }}>
+                                완료
+                            </a>
+                        </li>
                     </ul>
             </div>
         </div> 

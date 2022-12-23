@@ -22,7 +22,9 @@ const Nav_C = () => {
     const selectComponent = {
         first: <HealthChart />,
         second: <CheckUp />,
-        third: <Preview content={preview3} />,
+        third: <div className='first_box'>
+                <Preview content={preview3} />
+                </div>,
         fourth: <Notice />,
     };
     const list = lists.map((el) => (
