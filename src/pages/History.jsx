@@ -11,6 +11,14 @@ const History = () => {
     const navFilter =()=>{
         navigate('/filter');
     } 
+    
+    if (data.state.mypageData) {
+        data.action.setTreatmentDetail(data.state.mypageData);
+    } else if (data.state.mypageData2) {
+        data.action.setTreatmentDetail(data.state.mypageData2);
+    }
+    console.log(data.state.h_name);
+
 
     return ( 
         <div className="History_Page">    
@@ -18,58 +26,55 @@ const History = () => {
             <div className={styles.box3}>                
             <>
                 <div className="Mypage_first">         
-                {
-                    data.state.isbook == true ? 
+                { 
+                    data.state.isbook  ? 
                     ( 
                     <>
                     { 
-                    data.state.mypageData ? (
+                    data.state.treatmentDetail ? (
                         <div>
                             <h1 >예약내역</h1> 
-                        <h2>{data.state.mypageData.사업장}</h2>
-                        <h4>{data.state.mypageData.주소}</h4> 
-                        <p>전화번호 : {data.state.mypageData.전화번호}</p>
+                        <h2>{data.state.treatmentDetail.사업장}</h2>
+                        <h4>{data.state.treatmentDetail.주소}</h4> 
+                        <p>전화번호 : {data.state.treatmentDetail.전화번호}</p>
                         <p> <span>예약일 : </span>
                             {String(data.state.startDate).substring(16,0)
                             
                             }</p> 
-                        <p>{data.state.mypageData.영업상태}</p>
+                        <p>{data.state.treatmentDetail.영업상태}</p>
                         <hr /> 
                         <div className="Mypage_second">
                         <button onClick={()=>{navigate('/searchnear')}}>주변 병원 찾기 </button>                    
-                        </div>    
-                        
-
+                        </div>                            
                         </div>
-                    ) || (
-                        data.state.setTreatmentDetail
-                    )     
+                    )  
                     : (
                         <div>
-                        <h2>{data.state.mypageData2.사업장}</h2>
-                        <h4>{data.state.mypageData2.주소}</h4> 
-                        <p>전화번호 : {data.state.mypageData2.전화번호}</p>
+                        <h2>{data.state.h_name}</h2>
+                        <h4>{data.state.h_address}</h4> 
+                        <p>전화번호 : {data.state.h_num}</p>
                         <p> <span>예약일 : </span>
                     {String(data.state.startDate).substring(16,0)
                     
                     }</p>
-                    <p>{data.state.mypageData2.영업상태}</p>
+                    <p>영업/영업중</p>
                     <hr />
                     <div className="Mypage_second">
                         <button onClick={()=>{navigate('/searchnear')}}>주변 병원 찾기 </button>                    
                         </div>
-                        </div>
+                        </div> 
                     )
                 }
                         </>
-                    ): (
+                        
+                    ): ( 
                         <>
                         <div className="Mypage_first">
-                        <button onClick={navFilter}>예약하기</button>                    
+                        <button className="Btn_L_G" onClick={navFilter}>예약하러 가기(병원찾기)</button>                    
                         </div>
                         <hr />
                         <div className="Mypage_second">
-                        <button onClick={()=>{navigate('/searchnear')}}>주변 병원 찾기 </button>                    
+                        <button  className="Btn_L_G" onClick={()=>{navigate('/searchnear')}}>주변 병원 찾기 </button>                    
                         </div>
                         </>
 
@@ -77,7 +82,8 @@ const History = () => {
                 }
 
                 </div> 
-                <hr/> 
+                <hr />
+
             </>
                 </div> 
         </div>

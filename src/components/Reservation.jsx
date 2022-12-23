@@ -12,7 +12,7 @@ const Reservation = () => {
 
     const ReservationBtn = (e) => {        
             alert('예약이 완료되었습니다');
-            alert('진료내역에서 확인해주세요'); 
+            alert('예약내역에서 확인해주세요'); 
             action.setIsbook(true);                
     }
     return (
