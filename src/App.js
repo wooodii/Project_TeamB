@@ -31,24 +31,25 @@ import Reservation2 from './components/Reservation2';
 import Opening from './pages/Opening';
 
 
+
 function App() {
   return (
     <div className="App ">
       <DataProvider>
         <Routes>
+            <Route index element={<Opening/>}></Route>
           <Route path='/' element={<Layout />}>
-            <Route index element={<Home/>} />
+            <Route path='/home' element={<Home/>} />
             <Route path='/history' element={<History />} />
             <Route path='/mypage' element={<MyPage />} />
-            <Route path='/usersignup' element={<FirebaseSignUp />} />
-            <Route path='/searchhospital' element={<SearchBar />}/>
-            <Route path='/question' element={<Question/>}/>
-            <Route path='/main' element={<Main />} />
-            <Route path='/loginc' element={<Login_C />} />
-            <Route path='/firebaselogin' element={<FirebaseLogin />} />
             <Route path='/review' element={<Review />}></Route>
-
           </Route>
+            <Route path='/searchhospital' element={<SearchBar />}/>
+            <Route path='/loginc' element={<Login_C />} />
+            <Route path='/question' element={<Question/>}/>
+            <Route path='/usersignup' element={<FirebaseSignUp />} />
+            <Route path='/main' element={<Main />} />
+            <Route path='/firebaselogin' element={<FirebaseLogin />} />
             <Route path='/filter' element={<Filter />}></Route>
             <Route path='placedetail/:id/' element={<PlaceDetail />}/>
             <Route path='/majordetail/:id/' element={<MajorDetail />}/>
@@ -59,8 +60,6 @@ function App() {
             <Route path='/searchnear' element={<SearchNear/>}></Route>
             <Route path='/medicine' element={<Medicine/>}></Route>
             <Route path='/reservation2' element={<Reservation2/>}></Route>
-
-            <Route path='/splash' element={<Opening/>}></Route>
             <Route path='/detailinfo' element={<DetailInfo />}></Route>
 
         </Routes>

@@ -32,7 +32,7 @@ const Home = () => {
                         <SearchBar_Home/>
                     </div>
                     <br/>
-                    <div className="Temperature">기온 날씨
+                    <div className="Temperature">
                         <Weather/>
                     </div>
                     <div>

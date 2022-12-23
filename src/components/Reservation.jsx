@@ -12,11 +12,9 @@ const Reservation = () => {
 
     const ReservationBtn = (e) => {        
             alert('예약이 완료되었습니다');
-            alert('진료내역에서 확인해주세요'); 
+            alert('예약내역에서 확인해주세요'); 
             action.setIsbook(true);                
     }
-    
-    
     return (
         <div>
             <div>
@@ -29,8 +27,8 @@ const Reservation = () => {
                     <br />{state.mypageData.사업장}</h4>
                     <h5> <br />{state.mypageData.주소}</h5>
                         </div>
-                    ) : 
-                        (
+                    ) :  
+                        ( 
                         <div className={styles.titlebox}>
                             <h2>예약정보</h2> 
                     <hr />
@@ -40,8 +38,6 @@ const Reservation = () => {
                         </div>
                     )
                 }
-
-                        
                 <div className={styles.mapbox}>
                     <h4 >예약하실 날짜를 선택해주세요</h4>
                     <DatePicker className={styles.date}
@@ -53,18 +49,11 @@ const Reservation = () => {
                         minDate={new Date()}          // 오늘 날짜 전은 선택 못하게
                     />  
                 </div> 
-                        
-                
-                    
                     <div className={styles.linkbox} >
                         <Link className={styles.link}  to='/history'> 
                         <button  onClick={ReservationBtn} value='onLogin'>예약</button>
                     </Link>
-                    </div>           
-                    
-                    
-                    
-                
+                    </div>              
             </div>
         </div> 
     );

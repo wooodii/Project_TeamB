@@ -24,6 +24,7 @@ const ReviewModal = () => {
   const [btn2, setBtn2] = useState();
   const [btn3, setBtn3] = useState();
   const [yesNo, setYesNoBtn] = useState();
+  const [id, setId] = useState();
 
   const radios = [
     { name: '효과없어요', value: '1' },
@@ -50,7 +51,7 @@ const ReviewModal = () => {
   const [show, setShow] = useState(false);
   const AddReview = () => {
     data.action.setComments([...data.state.comments, {
-      Id : 1, 
+      Id : id+1, 
       name : "user",
       countStar : countStar,
       btn1 : btn1,
@@ -62,10 +63,6 @@ const ReviewModal = () => {
     setShow(false); 
   };
   const handleShow = () => setShow(true);
-
-  // const getCountStar = (count) => {
-  //   setCountStar(count)  
-  // };
 
   return (
     <div>
@@ -98,7 +95,7 @@ const ReviewModal = () => {
                   key={idx}
                   id={`radio-${idx}`}
                   type="radio"
-                  variant={idx % 2 ? 'outline-success' : 'outline-success'}
+                  variant={'outline-success'}
                   name="radio"
                   value={radio.value}
                   checked={radioValue === radio.value}

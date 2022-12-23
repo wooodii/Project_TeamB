@@ -26,7 +26,6 @@ const MajorDetail = () => {
         <div>
             <div className={styles.title}>
             <h2>{state.category[id].name}</h2>
-            
                 기준으로 
                 검색된 병원 목록입니다    
             </div>

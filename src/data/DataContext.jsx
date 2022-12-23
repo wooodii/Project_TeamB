@@ -41,7 +41,6 @@ const DataProvider = ({ children }) => {
     const location = useLocation(); 
     const [isbook, setIsbook] = useState(false); 
 
-    
     // 서아
     // 전체 유저 데이터
     //로그인 후 계속 사용될 유저정보 
@@ -101,17 +100,17 @@ const DataProvider = ({ children }) => {
         } 
     ]);
 
-    const [commentCount, setCommentCount] = useState(2);
+    const [treatmentDetail, setTreatmentDetail] = useState(); 
 
     // 사용할 value값들을 state(초기값)과 action(변경값) 분리해서 넣기
     const value =
     {
 
-        state: {isbook,mypageData2,mypageData,location,startDate,h_major, h_name, h_num, h_address, user, loginUser, comments, commentCount,infant, login, hcheck, icheck, date, month, age, measures, ismeasures,category,hospitalData, isLoginned },
+        state: {treatmentDetail, isbook,mypageData2,mypageData,location,startDate,h_major, h_name, h_num, h_address, user, loginUser, comments,infant, login, hcheck, icheck, date, month, age, measures, ismeasures,category,hospitalData, isLoginned },
 
 
         
-        action: {setIsbook,setMypageData2,setMypageData,setStartDate,setH_major,setH_name, setH_num,setH_address, setUser, setLoginUser,setInfant, setLogin, setHcheck, setIcheck, setMesures, setIsMeasures ,setCategory,setHospitalData, setIsLoginned,setComments}
+        action: {setTreatmentDetail, setIsbook,setMypageData2,setMypageData,setStartDate,setH_major,setH_name, setH_num,setH_address, setUser, setLoginUser,setInfant, setLogin, setHcheck, setIcheck, setMesures, setIsMeasures ,setCategory,setHospitalData, setIsLoginned,setComments}
 
     };
 

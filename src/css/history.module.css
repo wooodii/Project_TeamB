@@ -1,3 +1,4 @@
+
 .box3 {
     text-align: center;
     margin: 16px 0px;
@@ -6,7 +7,8 @@
 .box3 h1{
     font-size: large;
     font-weight: 700;
-    margin: 16px;
+    margin: 16px 0px;
+    
 }
 .box3 h2 {
     font-size: medium;
@@ -17,4 +19,5 @@
     font-weight: 400;
     margin: 2px;
 } 
+
 
