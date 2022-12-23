@@ -42,6 +42,7 @@ const MyPage = () => {
       {data.state.isLoginned ? (
         <>
           <div className="Mypage_first">
+
             {/* 프로필,이름 */}
             <p>{name} <button onClick={() => { navigate('/editprofile') }}>정보수정</button> </p>
             <button onClick={() => { logOut() }}>로그아웃</button>

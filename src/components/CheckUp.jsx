@@ -14,7 +14,9 @@ const CheckUp = () => {
                 <OnLogin_CheckUp/>
             </>
         ):(
-            <Preview content={preview2} />
+            <div className='first_box'>
+                <Preview content={preview2} />
+            </div>
         )}
         </>
     );

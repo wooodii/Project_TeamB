@@ -2,7 +2,16 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import DataContext from "../data/DataContext";
 import '../css/Login_C.css'
+
+import { db } from "../Firebase";
+import {setDoc,doc,collection,getDocs} from "firebase/firestore"
+
+
 const Login_C = () => {
+    
+
+
+
     const {action} = useContext(DataContext)
     const data = useContext(DataContext)
     const [name,setName] = useState("");
@@ -15,16 +24,17 @@ const Login_C = () => {
         setActive(!active);
     }
 
-    const loginInfant = (e) => {
-        e.preventDefault();
+    const loginInfant = () => {
         if (!name) {
             return alert("이름을 입력하세요.");
         } else if(!age) {
             return alert("생년월일을 선택해주세요.");
+        } else {
+            action.setInfant({name: name, age: age, gender: gender})
+            navigate('/main');
+            data.action.setLogin(true); 
         }
-        action.setInfant({name: name, age: age, gender: gender})
-        navigate('/main');
-        data.action.setLogin(true); 
+        
     }
     function getToday(){
         const date = new Date();
@@ -45,7 +55,7 @@ const Login_C = () => {
             <h2 className="login_title">우리아이 등록</h2>
             <div className="ilogin_box">
                 <div className="login_form">
-                    <form onSubmit={loginInfant}>
+                    <form onSubmit={()=>{loginInfant()}}>
                         <label >이름</label>
                         <input type="text" className="infant_name_input" placeholder="  이름" onChange={
                             (e)=>{

@@ -18,7 +18,9 @@ const Notice_Modal = (props) => {
     return (  
         <>
             <div className="layer_bg">
-                <div className="layer">
+                <div className="layer_notice">
+                    <div className="measure_box">
+                    <p>체온을 입력해주세요</p>
                     <input type="text" onChange={inputDesc} />
                     {input ? (
                         <>
@@ -32,6 +34,7 @@ const Notice_Modal = (props) => {
                     )
 
                     }
+                </div>
                 </div>
             </div>
         </>
