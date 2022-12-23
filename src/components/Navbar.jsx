@@ -18,12 +18,12 @@ const NavbarComp = () => {
         <div className="footer">
         <Container>
         <Row>
-            <Col onClick={()=>{navigate('/')}}><FontAwesomeIcon icon={faHouse} size="2x" /></Col>
+            <Col onClick={()=>{navigate('/home')}}><FontAwesomeIcon icon={faHouse} size="2x" /></Col>
             <Col onClick={()=>{navigate('/history')}}><FontAwesomeIcon icon={faList} size="2x" /></Col>
             <Col button onClick={()=>{navigate('/mypage')}}><FontAwesomeIcon icon={faUser} size="2x" /></Col>
         </Row>
         <Row>
-            <Col><button onClick={()=>{navigate('/')}}>홈</button></Col>
+            <Col><button onClick={()=>{navigate('/home')}}>홈</button></Col>
             <Col><button onClick={()=>{navigate('/history')}}>예약내역</button></Col>
             <Col><button onClick={()=>{navigate('/mypage')}}>마이페이지</button></Col>
         </Row>

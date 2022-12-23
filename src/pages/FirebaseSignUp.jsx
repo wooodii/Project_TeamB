@@ -23,7 +23,7 @@ const FirebaseSignUp = () => {
             const user = newUser.user;
             const data = await getDocs(usersCollectionRef);
             await setDoc(doc(db, "users", user.uid), {...data.docs[0].data(), uid:user.uid, name:name});
-            navigate("/")
+            navigate("/home")
             localStorage.setItem("currentUser", user.uid);
             data.action.setIsLoginned(true)  
         } catch (err) {

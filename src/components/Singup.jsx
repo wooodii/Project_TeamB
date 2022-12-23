@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import DataContext from "../data/DataContext";
 import { useContext } from "react";
 import OnLogin_Singup from './OnLogin_Singup';
-
 const Singup_C = () => {
     const data = useContext(DataContext);
     const navigate = useNavigate();
@@ -13,7 +12,6 @@ const Singup_C = () => {
         data.action.setIsMeasures(false)
 		navigate("/main");
 	}
-    
     return (  
         <header>
             <div className="container clearfix">

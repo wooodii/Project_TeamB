@@ -21,7 +21,7 @@ const FirebaseLogin = () => {
             const user = newUser.user;
             localStorage.setItem("currentUser", user.uid);
             data.action.setIsLoginned(true);
-            navigate("/") 
+            navigate("/home") 
         } catch(err) {
             const errorCode = err.code;
             if(!email){

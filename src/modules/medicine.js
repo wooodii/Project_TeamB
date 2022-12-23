@@ -11,14 +11,13 @@ const initialState = [
 // (변해야 하는 값이므로 const대신 let)
 let pillId = 3;
 
-
 // 들어갈 리듀서함수 내용
 function medicine (state=initialState, action) {
     switch(action.type) {
         case "addMedicine" :
         // 복약정보를 리스트에 추가할 것
         // Medicine.jsx에서 작성한 값(pills)을 들고와서 리스트에 추가
-        const newPills = {...action.payload, pills:pills }
+        const newPills = {...action.payload, pillId:pillId }
         pillId++;
         // 만들어진 객체를 기존 배열에 추가 > 새로 배열을 만들어 추가 : concat() 
         const newPillsArr = state.concat(newPills);

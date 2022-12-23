@@ -14,7 +14,6 @@ const Reservation2 = () => {
         alert('진료내역에서 확인해주세요'); 
         action.setIsbook(true);                
     }
-
     return (
         <div>
             <div>
@@ -38,7 +37,6 @@ const Reservation2 = () => {
                         </div>
                     )
                 }
-                        
                 <div className={styles.mapbox}>
                     <h4 >예약하실 날짜를 선택해주세요</h4>
                     <DatePicker className={styles.date}
@@ -49,8 +47,7 @@ const Reservation2 = () => {
                         showPopperArrow={false}       // 화살표 변경
                         minDate={new Date()}          // 오늘 날짜 전은 선택 못하게
                     />  
-                </div> 
-                        
+                </div>  
                 <div className={styles.linkbox} >
                         <Link className={styles.link}  to='/history'> 
                         <button  onClick={ReservationBtn} value='onLogin'>예약</button>
