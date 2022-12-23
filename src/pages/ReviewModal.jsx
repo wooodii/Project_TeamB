@@ -183,7 +183,8 @@ const ReviewModal = () => {
             </Row>
             <Row>
               <Button
-                style={{ width: "90%" }}
+              style={{width : "90%", marginLeft : "0.5em", marginTop : "10px"}}
+              className="submitButton"
                 variant="secondary"
                 onClick={AddReview}>
                 작성완료

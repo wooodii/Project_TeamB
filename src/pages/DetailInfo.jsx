@@ -23,11 +23,12 @@ const DetailInfo = () => {
                     <p style={{ padding : "0 20px"}}>{data.state.h_major}</p>
                 </div>
 
-                <div>
-                    <button onClick={() => {navigate('/reservation2')}} style={{ width : "395px", marginTop : "3vh", 
-                                    borderRadius : "5px", padding : "1vh", 
-                                    backgroundColor : "#1b4542", color : "white"}}> 
-                                    예약하기</button >
+                <div style={{margin : "5px"}}>
+                    <button onClick={() => {navigate('/reservation2')}} 
+                    style={{ width : "395px", margin : "", 
+                    borderRadius : "5px", padding : "1vh", 
+                    backgroundColor : "#1b4542", color : "white"}}> 
+                    <div style={{marginLeft : "165px"}}>예약하기 </div> </button >
                 </div>
 
                 <div>

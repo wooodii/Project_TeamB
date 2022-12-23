@@ -26,7 +26,7 @@ const History = () => {
             <div className={styles.box3}>                
             <>
                 <div className="Mypage_first">         
-                { 
+                {
                     data.state.isbook  ? 
                     ( 
                     <>

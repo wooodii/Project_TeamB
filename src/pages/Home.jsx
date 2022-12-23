@@ -3,11 +3,10 @@ import Weather from "../components/Weather";
 import DataContext from "../data/DataContext";
 import HealthInfo from '../components/HealthInfo'
 import { useNavigate } from "react-router-dom";
-import FirebaseSignUp from "./FirebaseSignUp";
 import { useContext } from "react";
 import { useEffect } from "react";
-import FirebaseLogin from "../components/FirebaseLogin";
-import { Navbar } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
+
 const Home = () => {
     const data = useContext(DataContext);
     
@@ -27,18 +26,27 @@ const Home = () => {
     }
     
     return ( 
-        <div className="Home">
-                    <div className="Search_box">
+        <Container className="Home" style={{
+            backgroundColor : "#F2CA99", maxWidth : "420px", height : "100vh" }}>
+                    <Row className="Search_box">
                         <SearchBar_Home/>
-                    </div>
+                    </Row>
                     <br/>
-                    <div className="Temperature">
+                    <Row className="Temperature">
                         <Weather/>
-                    </div>
-                    <div>
+                    </Row>
+                    <Row>
                         <HealthInfo/>
-                    </div>
-        </div>
+                    </Row>
+                    <Row>
+                        <div>
+                        <button 
+                        style={{display : "inline", backgroundColor : "#1F403A", 
+                        color : "white", borderRadius : "10px", padding : "10px"}}
+                        onClick={() => (navigate('/filter'))}>카테고리별 검색</button>
+                        </div>
+                    </Row>
+        </Container>
     );
 }
 export default Home;

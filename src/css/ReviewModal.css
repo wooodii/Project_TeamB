@@ -1,3 +1,4 @@
+/*ReviewModal*/
 .reviewBtn{
     background-color:  #1b4542  !important; 
     color : #ffffff !important; 
@@ -6,6 +7,12 @@
 .reviewBtn:hover{
     color :  #ffffff !important;
 }
+
+.submitButton{
+    background-color:  #1b4542  !important; 
+    color : #ffffff !important; 
+}
+
 
 /*Review */
 .reviewBox{
