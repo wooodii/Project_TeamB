@@ -9,7 +9,6 @@ import "slick-carousel/slick/slick-theme.css";
 import styled from 'styled-components'
 // import data
 import { dailyInfo } from "../data/dailyInfo"; 
-import styles from "../css/base.module.css";
 
 const HealthInfo = () => {
     // 당일 날짜출력
@@ -17,10 +16,10 @@ const HealthInfo = () => {
     let days = ["일", "월", "화", "수", "목", "금", "토"];
     // slick 속성
     const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         autoplay: true,
-        autoplaySpeed: 4000,
+        autoplaySpeed: 3000,
         speed: 2000,
         slidesToShow: 1,
         slidesToScroll: 1
@@ -31,7 +30,7 @@ const HealthInfo = () => {
         <div className="s-wrapper">
           <div className="s-title">
           <h4>5대 질병 행동요령</h4>
-          <p>{date.getFullYear()}/{date.getMonth()+1}/{date.getDate()} {days[date.getDay()]}</p>        
+          <p>{date.getFullYear()} {date.getMonth()+1} {date.getDate()} {days[date.getDay()]}</p>        
           </div> 
           {/* map()으로 json의 data하나씩 출력 */}
           <div className="s-slick">
@@ -70,12 +69,13 @@ border-radius: 10px;
 .slideList > p {
   padding: 5px 23px;
 }
+
 .s-wrapper {
   color: black;
-  background-color: #eee;
-  border-radius: 70px;
-  width: 85%;
-  height: 200px;
+  background-color: #fff;
+  border-radius: 10px;
+  max-width : 200px;
+  height: 250px;
   text-align: center;
 }
 .s-title {

@@ -41,8 +41,9 @@ const Star = (props) => {
         setClick(clickState);
     }, [])
     console.log(countStar);
+
     return (
-        <div>            
+        <div style={{display : "inline", backgroundColor :"#1b4542", borderRadius : "10px", padding : "0 5px 4px 5px", margin : "5px 2px 0 2px"}}>            
             <button value="click1" 
                     onClick={(e) => {starClick(e, 0); setCountStar(star[0].grade); sendCountStar(star[0].grade)}}
                     className={click[0] ? "starColor" : "starColorNull"}>{starIcon}</button>
@@ -58,7 +59,7 @@ const Star = (props) => {
             <button 
                     onClick={(e) => {starClick(e, 4); setCountStar(star[4].grade); sendCountStar(star[4].grade)}}
                     className={click[4] ? "starColor" : "starColorNull"}>{starIcon}</button>
-            <span style={{marginLeft : "1em", fontSize : "0.8em"}}> 
+            <span style={{marginLeft : "1em", fontSize : "0.8em", color : "white"}}> 
                     {countStar} / 5 </span >
         </div>
     );

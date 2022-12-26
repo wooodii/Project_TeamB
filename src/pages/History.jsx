@@ -22,13 +22,15 @@ const History = () => {
 
 
     return (   
-        <div >    
-            <h1 className={styles.title} >예약내역</h1>   
-            <div className={styles.container}>                            
-            <> 
-                <div >                     
-                { 
-                    data.state.isbook  ?  
+n
+        <div className="History_Page">    
+
+            <div className={styles.box3}>                
+            <>
+                <div className="Mypage_first">         
+                {
+                    data.state.isbook  ? 
+
                     ( 
                     <>  
                     { 

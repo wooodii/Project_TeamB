@@ -1,12 +1,9 @@
 // 데이터 : openweathermap 사이트
-
 // 날씨 정보 주는 컴포넌트
 // 현재는 위치 입력받아 해당위치 출력중 
-
 import { useState } from "react";
 import { useEffect } from "react";
 import styles from "../css/base.module.css";
-
 
 const Weather = () => {
     // js처리방식 : 위>아래 라서 url과 ( 받아온 키값, 위치값) 순서가 중요함
@@ -23,7 +20,6 @@ const Weather = () => {
     }
     // const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units
     //         =&lang=kr&appid=${API_KEY}`;
-    
 
     const getWeather = async (lat, lon) => {
         let url= `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
@@ -35,8 +31,9 @@ const Weather = () => {
     useEffect(()=>{
         getCurrentLocation()
     },[])
+    
     return (
-        <div className={styles.wrapper}>
+        <div style={{backgroundColor : "#1F403A", color : "white", borderRadius : "20px"}}>
             <div className={styles.one}>
                 <h4> 날씨 정보 🌤 </h4>
             </div>

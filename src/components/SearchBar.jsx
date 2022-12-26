@@ -2,21 +2,20 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { useNavigate } from 'react-router-dom';
 
-
-
 const SearchBar_Home = () => {
     const navigate = useNavigate();
     const clickSearchBar = ()=>{
         navigate('/searchhospital')
     }
+
+
     return (
-        <div style={{ backgroundColor:"#ddd", borderRadius:"6px",
-        marginTop:"0", padding: "0, 12px",
-        }}>
-            <InputGroup className="pb-5 pt-5">
+        <div>
+            <InputGroup style={{ backgroundColor:"#F2C572", borderRadius:"6px"}}>
                 <Form.Control
+                    style={{margin : "10px", borderRadius : "10px"}}
                     onClick={clickSearchBar}
-                    placeholder="병원/진료과 검색" aria-label="Recipient's username" aria-describedby="basic-addon2" />
+                    placeholder="근처 병원 검색하기" aria-label="Recipient's username" aria-describedby="basic-addon2" />
             </InputGroup>
         </div>
     );
