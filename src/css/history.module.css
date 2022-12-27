@@ -14,30 +14,26 @@
     font-size: xx-large;
 }
 
-
 .box {
     text-align: center;
     background-color: white;
     padding: 25px 40px;
-    margin: 20px;
+    margin: 20px 0px;
     border-radius: 16px;
-    
+    padding: 90px 40px;
 } 
-
 
 
 .box h2 {
-    font-size: medium;
+    margin-bottom: 20px;
+    font-size: large;
     font-weight: 600;
 }
 .box h4, p { 
-    font-size: smaller;
+    font-size: medium;
     font-weight: 400;
     margin: 2px;
 } 
-
-
-
 
 
 .btn {
@@ -55,5 +51,29 @@
 .btn:hover {
     transform:  scale(1.2);
     transition: all 300ms ease;
+}
+
+.btnbox { 
+    display: flex;
+    text-align: center;
+}
+.btn2 {
+    color: white;
+    width: 70%;
+    height: 50px; 
+    border-radius: 15px;
+    text-align: center;
+    margin: 250px 60px;
+    font-size: medium;
+    font-weight: 500; 
+    background-color: var(--color-green);
+    
+}
+
+.btn2:hover {
+    transform:  scale(1.1);
+    transition: all 100ms ease;
+    font-weight: 700;
+    
 }
 
