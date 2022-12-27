@@ -22,7 +22,7 @@ const History = () => {
 
 
     return (   
-n
+
         <div className="History_Page">    
 
             <div className={styles.box3}>                
@@ -51,12 +51,12 @@ n
                         window.location.reload();
                         alert('예약이 취소되었습니다.')
                         }}>예약취소</button>    
-                            </div>
+                            </div> 
                             
-                        </div> 
+                        </div>  
                     )     
                     : ( 
-                        <div >
+                        <div className={styles.box} >
                         <h2>{data.state.h_name}</h2>
                         <h4>{data.state.h_address}</h4> 
                         <hr />
@@ -78,8 +78,8 @@ n
                         
                     ): ( 
                         <>
-                        <div className="Mypage_first">
-                        <button className="Btn_L_G" onClick={navFilter}>예약하러 가기(병원찾기)</button>                    
+                        <div className={styles.btnbox}>
+                        <button className={styles.btn2} onClick={navFilter}>예약하러 가기(병원찾기)</button>                    
                         </div>                                            
                         </>
 

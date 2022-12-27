@@ -14,7 +14,7 @@
   
   
   .btn { 
-    padding: 12px;  
+    padding: 5px;  
     border: solid var(--color-green);
     border-radius: var(--size-border-radius);
     background-color: var(--color-green);
