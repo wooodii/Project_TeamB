@@ -3,7 +3,7 @@ import { useNavigate,Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import DataContext from "../data/DataContext";
 import styles from "../css/history.module.css"
-import { Container } from "react-bootstrap";
+
 
 
 const History = () => {
@@ -26,7 +26,7 @@ const History = () => {
         <div className="History_Page">    
 
             <div className={styles.box3}>                
-            <>
+            <>  
                 <div className="Mypage_first">         
                 {
                     data.state.isbook  ? 
@@ -74,12 +74,13 @@ const History = () => {
                         </div> 
                     ) 
                 }
-                        </>
+                
+                        </> 
                         
                     ): ( 
                         <>
                         <div className={styles.btnbox}>
-                        <button className={styles.btn2} onClick={navFilter}>예약하러 가기(병원찾기)</button>                    
+                        <button className={styles.btn2} onClick={navFilter}>예약하러 가기 (병원찾기)</button>                    
                         </div>                                            
                         </>
 

@@ -25,6 +25,7 @@
 
 
 .box h2 {
+    margin-bottom: 20px;
     font-size: large;
     font-weight: 600;
 }
@@ -57,16 +58,18 @@
     text-align: center;
 }
 .btn2 {
-    color: black;
+    color: white;
     width: 70%;
     height: 50px; 
     border-radius: 15px;
     text-align: center;
     margin: 250px 60px;
     font-size: medium;
-    font-weight: 500;
-    background-color: #dedce4;
+    font-weight: 500; 
+    background-color: var(--color-green);
+    
 }
+
 .btn2:hover {
     transform:  scale(1.1);
     transition: all 100ms ease;

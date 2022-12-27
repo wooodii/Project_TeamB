@@ -23,6 +23,7 @@
     font-weight: var(--weight-bold);
   }
   
+  
   .container{  
     display: flex;
     flex-wrap: wrap;
