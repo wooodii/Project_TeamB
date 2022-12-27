@@ -22,7 +22,6 @@ const History = () => {
 
 
     return (   
-n
         <div className="History_Page">    
 
             <div className={styles.box3}>                
