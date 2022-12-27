@@ -25,26 +25,36 @@ const Home = () => {
         navigate('/question');
     }
     
+    let date = new Date();
+    let days = ["일", "월", "화", "수", "목", "금", "토"];
+
     return ( 
-        <Container className="Home" style={{
-            backgroundColor : "#F2CA99", maxWidth : "420px", height : "100vh" }}>
-                    <Row className="Search_box">
+        <Container className="Home" style={{  maxWidth : "420px", height : "100vh"}}>
+                    <Row className="Search_box" style={{marginBottom : "2em", marginTop : "2em"}}>
                         <SearchBar_Home/>
                     </Row>
-                    <br/>
                     <Row className="Temperature">
+                        <h5 style={{marginLeft : "0.5em", fontSize : "1.3em"}}>오늘 날씨</h5>
                         <Weather/>
                     </Row>
+                    <hr />
                     <Row>
-                        <HealthInfo/>
+                        <Row>
+                            <div style={{display : "flex"}}>
+                            <h5 style={{marginLeft : "0.5em", fontSize : "1.3em"}}>건강 정보</h5>      
+                            <p style={{ marginLeft : "1em", borderRadius : "10px", padding : "4px 8px", fontSize : "0.8em", 
+                            backgroundColor : "#F2CA99"}}>{date.getFullYear()} {date.getMonth()+1} {date.getDate()} {days[date.getDay()]}</p>
+                            </div>
+                            
+                            <HealthInfo/>
+                        </Row>
                     </Row>
                     <Row>
-                        <div>
                         <button 
-                        style={{display : "inline", backgroundColor : "#1F403A", 
-                        color : "white", borderRadius : "10px", padding : "10px"}}
-                        onClick={() => (navigate('/filter'))}>카테고리별 검색</button>
-                        </div>
+                        style={{width : "360px", marginTop : "3em", marginLeft : "10px",
+                                display : "inline-block", color : "black", backgroundColor : "#F2CA99",
+                                borderRadius : "10px", padding : "10px"}}
+                        onClick={() => (navigate('/filter'))}> <p style={{marginLeft : "160px"}}> 병원 찾기</p> </button>
                     </Row>
         </Container>
     );
