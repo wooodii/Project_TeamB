@@ -27,7 +27,7 @@ const Singup_C = () => {
             <div className="container clearfix">
                 <div className="My_row">
                     <div className='header clearfix'>
-                        <a className='logout' href="#" onClick={navigate("/mypage")}><FontAwesomeIcon icon={faArrowLeft} /></a>
+                        <a className='logout' href="#" onClick={()=>{navigate("/mypage")}}><FontAwesomeIcon icon={faArrowLeft} /></a>
                         {data.state.login ? (
                             <>
                                 <OnLogin_Singup/>
