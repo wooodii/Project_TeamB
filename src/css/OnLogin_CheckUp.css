@@ -34,4 +34,4 @@
 .h_box .right_box {float: right;}
 .h_box .right_box .icon {font-size: 22px; padding: 15px; background: #fbed68; color: #2d3a4b; border-radius: 50%;}
 .h_box .right_box .icon.active {color: #fff; background: #1b4542;  border-radius: 50%;}
-.h_box .check { color: #000; margin: 0 0 0 -4px;}
+.h_box .check { color: #000; }

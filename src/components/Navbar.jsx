@@ -2,7 +2,7 @@
  * 메인 네브바 (하단 고정) : 수정 금지!
  */
 
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "../css/Nav.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";

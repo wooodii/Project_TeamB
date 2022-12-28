@@ -42,19 +42,34 @@ const MyPage = () => {
       {data.state.isLoginned ? (
         <>
           <div className="Mypage_first">
-
-            {/* 프로필,이름 */}
-            <p>{name} <button onClick={() => { navigate('/editprofile') }}>정보수정</button> </p>
-            <button onClick={() => { logOut() }}>로그아웃</button>
+            <ul>
+              <li>
+                <div className="userimg_box">
+                  <img className="userimg" src={`${process.env.PUBLIC_URL}/images/user.png`} alt="유저이미지" />
+                </div>
+              </li>
+              <li>
+                <b className="mypage_name">{name}</b>님
+              </li>
+              {/* <li>
+                <button className="Btn_L_G_2" onClick={() => { logOut() }}>로그아웃</button>
+              </li> */}
+            </ul>
           </div>
           <hr />
           <Container>
+            <Row>
+              <Col><h6>건강피드</h6></Col>
+            </Row>
             <Row>
               <Col className="Btn_L_G"><button onClick={()=>{navigate('/main')}}>건강피드</button></Col>
             </Row>
           </Container>
           <hr />
           <Container>
+            <Row>
+              <Col><h6>복약관리</h6></Col>
+            </Row>
             <Row>
               <Col className="Btn_L_G"><button onClick={()=>{navigate('/medicine')}}>복약관리</button></Col>
             </Row>
@@ -63,8 +78,9 @@ const MyPage = () => {
           <div className="Mypage_forth"></div>
           {/* 이부분은 버튼만있고 따로 기능없습니다 */}
           <Container>
-            <span> 고객센터 </span>
-            <br />
+            <Row>
+              <Col><h6>고객센터</h6></Col>
+            </Row>
             <Row>
               <Col className="Btn_L_G"><p>1:1채팅 상담</p></Col>
               <Col className="Btn_L_G"><p>사용자 설문</p></Col>
@@ -79,16 +95,26 @@ const MyPage = () => {
         <>
           <div className="Mypage_first">
             {/* 프로필,이름 */}
-            <Link to='/firebaselogin'>로그인</Link>
+            <Container>
+            <Row>
+              <Col className="Btn_L_G" style={{marginTop:"20px"}}><button  onClick={()=>{navigate('/firebaselogin')}}>로그인</button></Col>
+            </Row>
+          </Container>
           </div>
           <hr />
           <Container>
+            <Row>
+              <Col><h6>건강피드</h6></Col>
+            </Row>
             <Row>
               <Col className="Btn_L_G"><button onClick={()=>{navigate('/main')}}>건강피드</button></Col>
             </Row>
           </Container>
           <hr />
           <Container>
+            <Row>
+              <Col><h6>복약관리</h6></Col>
+            </Row>
             <Row>
               <Col className="Btn_L_G"><button onClick={()=>{navigate('/medicine')}}>복약관리</button></Col>
             </Row>

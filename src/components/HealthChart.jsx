@@ -1,6 +1,6 @@
 import Preview from './Preview';
 import { useSelector } from 'react-redux';
-import {useState, useContext} from "react";
+import {useState, useContext, useEffect} from "react";
 import DataContext from "../data/DataContext";
 import Health_Modal from './Health_Modal';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,6 +12,24 @@ const HealthChart = () => {
     const [show,setShow] = useState(false)
     const measures = data.state.measures;
     const date = new Date()
+
+    const [name,setName] = useState("");
+    const temp = data.state.measures.temperature;
+    const fever = function() {
+        if(temp >= 39 ){
+            setName("고열") 
+        } else if(temp >= 37.5 ){
+            setName("미열")
+        } else if(temp >= 35.5){
+            setName("정상")
+        } else {
+            setName("정상")
+        }
+    }
+    useEffect(() => {
+        fever()
+    },[temp])
+
     return (  
             <div className='first_box'>
             {data.state.ismeasures ? (
@@ -38,7 +56,14 @@ const HealthChart = () => {
                     <></>
                 )
                     
-                }  
+                }
+                {measures.temperature ? (
+                    <>
+                        <h2>체온관리에서 확인해주세요</h2>
+                    </>
+                ):(
+                    <></>
+                )} 
                     <button className='plus_btn' onClick={()=>{
                                 setShow(true)
                     }}><div className='font_plus'><FontAwesomeIcon style={{color:"white"}} icon={faPlus} /></div></button>
