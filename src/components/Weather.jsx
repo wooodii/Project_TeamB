@@ -3,6 +3,7 @@
 // 현재는 위치 입력받아 해당위치 출력중 
 import { useState } from "react";
 import { useEffect } from "react";
+import { Col, Row } from "react-bootstrap";
 import styles from "../css/base.module.css";
 
 const Weather = () => {
@@ -33,19 +34,20 @@ const Weather = () => {
     },[])
     
     return (
-        <div style={{backgroundColor : "#1F403A", color : "white", borderRadius : "20px"}}>
-            <div className={styles.one}>
-                <h4> 날씨 정보 🌤 </h4>
-            </div>
-            <div className={styles.two}>
+        <div style={{marginLeft : "10px", width : "95%"}}>
+            <Row className={styles.wrapper}>
             {
                 Object.keys(result).length !== 0 && (
-                    <div>
-                        <h5 className="city">📍 :  {result.name}</h5>
-                        <h5 className="temperature">
-                            🌡 : {result.main.temp}˚C
-                        </h5>
-                        <h5 className="sky">
+                    <div style={{fontSize : "0.7em", padding : "1em"}}>
+                        <Row style={{marginTop : "1em"}}>
+                        <Col>      
+                            <h5 className="city"> 📍  {result.name}</h5>
+                        </Col>
+
+                        <Col style={{display : "flex"}}>
+                         <h5 className="temperature">
+                            🌡 {result.main.temp}˚C
+                         / </h5>  　 <h5 className="sky">
                         {/* '즉시발동함수'로 jsx{}에서 중첩조건문 사용 */}
                             {
                                     (function () {
@@ -62,11 +64,17 @@ const Weather = () => {
                                 }
                                 {result.weather[0].main}
                         </h5>
+                        </Col>
+                        </Row>
+
+                        
                     </div>
                     )
                 }
-            </div>
+
+        </Row>
         </div>
+     
     );
 }
 

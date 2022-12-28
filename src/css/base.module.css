@@ -22,20 +22,24 @@
   display: grid;
   color: white;
   background-color: #1b4542;
-  border-radius: 50px;
+  border-radius: 20px;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(100px, auto);
   text-align: center;
+  margin-left: 20px;
 }
+
 .one {
   grid-column: 1 / 1;
   grid-row: 1;
 }
+
 .one h4 {
-  padding-top: 33px;
+  padding-top: 45px;
   padding-left: 40px;
   font-family: 'Noto Sans KR', sans-serif;
 }
+
 .two {
   grid-column: 2 / 4;
   grid-row: 1;
@@ -46,6 +50,7 @@
   padding-right: 5px;
   font-family: 'Noto Sans KR', sans-serif;
 }
+
 /*여기까지*/
 
 .Box_M_G {
