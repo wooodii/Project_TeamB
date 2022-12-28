@@ -6,8 +6,8 @@
     margin: 8px 6px;
     border-radius: 10px;
     text-align: center;
-    color: #000;
-    background-color: #ddd;
+    color: #fff;
+    background-color: #1b4542;
 }
 .Btn_L_G > p {
     padding-top: 12px;
@@ -16,9 +16,19 @@
     padding-top: 12px;
 }
 
+.Mypage_first ul {margin-top: 20px; padding: 0; text-align: center;}
 .mypage_name {font-size: 26px; display: inline-block; }
+.mypage_email {font-size: 16px; color: #ccc; margin-bottom: 10px;}
+.Mypage_first ul li ul.mylist {display: inline-block; margin-right: 15px;}
+.Mypage_first ul li ul.mylist li {
+    float: left; margin-top: 20px; position: relative; 
+}
+.Mypage_first ul li ul.mylist li a.mypage_num {position: absolute; top: -35px; left: 30px; font-weight: bold; font-size: 30px; color: #000; padding: 0;}
+.Mypage_first ul li ul.mylist li a {
+    color: #000; display: inline-block; font-size: 20px; padding : 10px 20px;
+}
 
-.Mypage_first ul {margin: 0; padding: 0; text-align: center;}
+
 /*로그아웃버튼 커스텀*/
 .Btn_L_G_2 {
     width: 80px; height: 40px;
@@ -27,8 +37,8 @@
     margin-right: 6px;
     float: right;
     text-align: center;
-    color: #000;
-    background-color: #ddd;
+    color: #fff;
+    background-color: #1b4542;
 }
 
 .userimg_box {width: 100px; height: 100px; border-radius: 70%; overflow: hidden; position: relative; display: inline-block;}

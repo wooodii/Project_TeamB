@@ -14,14 +14,15 @@ const MyPage = () => {
   const data = useContext(DataContext);
   const navigate = useNavigate();
   const [name, setName] = useState();
+  const [email,setEmail] = useState();
 
   const user = localStorage.getItem("currentUser")
   const getSingleData = async () => {
     const docRef = doc(db, "users", user);
     const docSnap = await getDoc(docRef);
-    console.log(docSnap.data().history.date)
     if (docSnap.exists()) {
       setName(docSnap.data().name);
+      setEmail(docSnap.data().email);
     }
   }
   const logOut = () => {
@@ -49,11 +50,30 @@ const MyPage = () => {
                 </div>
               </li>
               <li>
-                <b className="mypage_name">{name}</b>님
+                <b className="mypage_name">{name}</b>
               </li>
-              {/* <li>
+              <li>
+                <p className="mypage_email">{email}</p>
+              </li>
+              <li className="mylist_box">
+                <ul className="mylist clearfix">
+                    <li>
+                      <a className="mypage_num" href="#">0</a>
+                      <a  href="#">예약내역</a>
+                    </li>
+                    <li>
+                      <a className="mypage_num" href="#">0</a>
+                      <a   href="#">좋아요</a>
+                    </li>
+                    <li>
+                      <a className="mypage_num" href="#">0</a>
+                      <a href="#">리뷰</a>
+                    </li>
+                </ul>
+              </li>
+               {/* <li>
                 <button className="Btn_L_G_2" onClick={() => { logOut() }}>로그아웃</button>
-              </li> */}
+              </li>  */}
             </ul>
           </div>
           <hr />
