@@ -55,7 +55,7 @@ const Medicine = () => {
             <p>버튼을 클릭하여 복약정보를 등록하세요!</p>
         </div>
         <button className="addMed-btn med-form" onClick={openMedModal}>복약정보 추가</button>
-        <br />
+        
         {modalOpen ? (
         <MedicineModal 
         name={name} pillsCount={pillsCount} setpillsCount={setpillsCount}
@@ -66,7 +66,7 @@ const Medicine = () => {
         }
         <br />
         <div className="print-medList med-form">
-        <b>{name}</b>{" "}님의 복약정보
+        <b>{name}</b>{" "}님의 복약정보 <br />
         <Table striped>
                 <thead>
                     <tr>
@@ -104,6 +104,11 @@ const MedicineModal =(props)=> {
     const {modalOpen, setModalOpen} = props;
     //리덕스에서 값 가져오기 위함
     const dispatch = useDispatch();
+
+    const medicineForm =()=>{
+        
+    }
+
     return (
         <>
         <div className="med-form">
@@ -115,19 +120,29 @@ const MedicineModal =(props)=> {
             <div>
                 <FloatingLabel controlId="floatingInput"
                     label="복용하는 약의 이름" className="mb-3">
-                <Form.Control type="text" 
+                <Form.Control type="text"
                     style={{border:"none", borderBottom:"1px solid lightgray"}}
                     onChange={(e)=>{setPillsName(e.target.value)}} />
                 </FloatingLabel>
-                투여량: <input className="med-input" type="number" onChange={(e)=>{setpillsCount(e.target.value)}} />
-                투여 횟수: <input className="med-input" type="number" min='10' max='30' onChange={(e)=>{setPillsDose(e.target.value)}} />
+                　투여량: <input className="med-input" type="number" onChange={(e)=>{setpillsCount(e.target.value)}} /> 
+                　투여 횟수: <input className="med-input" type="number" min='10' max='30' onChange={(e)=>{setPillsDose(e.target.value)}} />
             </div>
             <br />
                 <button className="addMed-btn"
-                onClick={()=>{dispatch(addMedicine(
+                onClick={
+                    pillsName == ""
+                    ? null 
+                    : (
+                    ()=>{dispatch(addMedicine(
                     { pillsName: pillsName , pillsCount:pillsCount, pillsDose:pillsDose }
                     )); setModalOpen(!modalOpen); alert("등록 완료"); 
-                }} >등록하기</button>
+                    setPillsName(""); setpillsCount(0); setPillsDose(0);
+                    } 
+                    )
+                    
+                }
+                    >등록하기</button>
+                    
         </div>
     </>
     )
