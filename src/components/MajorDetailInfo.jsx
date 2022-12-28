@@ -15,7 +15,11 @@ const MajorDetailInfo = () => {
     return (     
     <div>
         <div className={styles.title}>  
-            <h2> {majorfilter[majorid].사업장}</h2>
+            <h2>
+                <div className={styles.imgbox}>
+                <img className={styles.img} src={require(`../img/hospital.png`)} />
+                </div>
+                {majorfilter[majorid].사업장}</h2>
             <hr />
             <p> {majorfilter[majorid].주소}</p>
             <p> {majorfilter[majorid].전화번호}</p>

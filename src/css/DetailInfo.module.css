@@ -45,3 +45,11 @@
     background-color: var(--color-green);
     border-radius: 5px;
 }
+
+.img {
+    width: 25px;
+}
+
+.imgbox { 
+    margin-bottom: 12px;
+}
