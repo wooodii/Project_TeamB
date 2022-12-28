@@ -19,8 +19,8 @@ const MajorDetail = () => {
     // 페이지 핸들링 함수
     const handlePageChange = (page) => {
         setPage(page);
-        navigate()
-    }
+        navigate() 
+    } 
 
     return (
         <div>
@@ -39,7 +39,7 @@ const MajorDetail = () => {
                             <div key={majorid} item={item}>
                                 <div className={styles.box}>
                                 <Link className={styles.link} to={'/majordetail/' + id + '/' + (majorid + 10 * (page - 1))}>
-                                    
+                                <img className={styles.img} src={require(`../img/mydoctor.png`)} />
                                         <h4>{item.사업장}</h4>
                                         <p>{item.주소}</p>
                                         <hr />
@@ -65,7 +65,7 @@ const MajorDetail = () => {
                             </div>
                         )
                     })
-            }
+            } 
             <PaginationBox>
 
                 <Pagination
