@@ -10,7 +10,7 @@
 .title {
     margin: 24px 6px;
     padding: 4px 2px;
-    font-weight: 700;
+    font-weight: 700; 
     font-size: xx-large;
 }
 
@@ -48,9 +48,9 @@
     font-weight: 500;
 }
 
-.btn:hover {
+.btn:hover { 
     transform:  scale(1.2);
-    transition: all 300ms ease;
+    transition: all 300ms ease; 
 }
 
 .btnbox { 
@@ -63,7 +63,7 @@
     height: 50px; 
     border-radius: 15px;
     text-align: center;
-    margin: 250px 60px;
+    margin: 270px 60px;
     font-size: medium;
     font-weight: 500; 
     background-color: var(--color-green);

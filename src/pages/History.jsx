@@ -27,12 +27,11 @@ const History = () => {
 
             <div className={styles.box3}>                
             <>  
-                <div className="Mypage_first">         
+                <div className="Mypage_first">          
                 {
                     data.state.isbook  ? 
-
-                    ( 
-                    <>  
+                    (  
+                    <>     
                     { 
                     data.state.treatmentDetail ? (
                         <div className={styles.box}>
