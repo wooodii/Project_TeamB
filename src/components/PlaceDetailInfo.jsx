@@ -14,7 +14,11 @@ const PlaceDetailInfo = () => {
     return (
         <div>
             <div className={styles.title}>
-                <h2> {placefilter[placeid].사업장}</h2>
+                <h2> 
+                    <div className={styles.imgbox}>
+                    <img className={styles.img} src={require(`../img/hospital.png`)} />
+                    </div>
+                    {placefilter[placeid].사업장}</h2>
                 <hr />
                 <p> {placefilter[placeid].주소}에 위치한 병원입니다</p>
                 <p> {placefilter[placeid].전화번호}</p>

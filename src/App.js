@@ -34,7 +34,7 @@ import Opening from './pages/Opening';
 
 function App() {
   return (
-    <div className="App ">
+    <div className="App ">  
       <DataProvider>
         <Routes>
             <Route index element={<Opening/>}></Route>
