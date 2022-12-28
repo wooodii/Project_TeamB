@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import DataContext from "../data/DataContext";
 import { useContext } from "react";
 import OnLogin_Singup from './OnLogin_Singup';
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
@@ -10,11 +11,7 @@ const Singup_C = () => {
     const data = useContext(DataContext);
     const navigate = useNavigate();
     
-    const logOut = () => {
-		data.action.setLogin(false) 
-        data.action.setIsMeasures(false)
-		navigate("/main");
-	}
+    
 
     const ischeckLogin = () => {
         const user = localStorage.getItem("currentUser")
@@ -30,7 +27,7 @@ const Singup_C = () => {
             <div className="container clearfix">
                 <div className="My_row">
                     <div className='header clearfix'>
-                        <button className='logout' onClick={()=>{logOut()}}>로그아웃</button>
+                        <a className='logout' href="#" onClick={()=>{navigate("/mypage")}}><FontAwesomeIcon icon={faArrowLeft} /></a>
                         {data.state.login ? (
                             <>
                                 <OnLogin_Singup/>

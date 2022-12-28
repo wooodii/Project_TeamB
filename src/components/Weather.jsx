@@ -40,14 +40,14 @@ const Weather = () => {
                 Object.keys(result).length !== 0 && (
                     <div style={{fontSize : "0.7em", padding : "1em"}}>
                         <Row style={{marginTop : "1em"}}>
-                        <Col>      
+                        <Col xs={5}>      
                             <h5 className="city"> 📍  {result.name}</h5>
                         </Col>
 
-                        <Col style={{display : "flex"}}>
+                        <Col xs={7} style={{display : "flex"}}>
                          <h5 className="temperature">
-                            🌡 {result.main.temp}˚C
-                         / </h5>  　 <h5 className="sky">
+                            🌡  {result.main.temp}˚C
+                          </h5>  　 <h5 className="sky">
                         {/* '즉시발동함수'로 jsx{}에서 중첩조건문 사용 */}
                             {
                                     (function () {

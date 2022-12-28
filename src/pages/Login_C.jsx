@@ -8,9 +8,6 @@ import {setDoc,doc,collection,getDocs} from "firebase/firestore"
 
 
 const Login_C = () => {
-    
- 
-
 
     const {action} = useContext(DataContext)
     const data = useContext(DataContext)
@@ -21,8 +18,12 @@ const Login_C = () => {
 
     const [active,setActive] = useState(true);
     const handleActive = () => {
-        setActive(!active);
+        setActive(true);
     }
+    const handleActiveF = () => {
+        setActive(false);
+    }
+    
 
     const loginInfant = () => {
         if (!name) {
@@ -75,7 +76,7 @@ const Login_C = () => {
                         }}>남성</button>
                         <button className={ active ? "female_btn" : "active female_btn"} onClick={(e)=>{
                             e.preventDefault();
-                            handleActive();
+                            handleActiveF();
                             setGender("여")
                         }}>여성</button>
                         <input className="infant_submit" type="submit" value="작성" />

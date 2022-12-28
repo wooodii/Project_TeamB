@@ -3,7 +3,7 @@
 .nav .nav_box button {float: left;display: block; padding: 10px; font-size: 16px; color: #ccc; width: 70px;
 background: #fff;}
 .nav .nav_box button.active {color: #000;}
-a { text-decoration: none;}
+a { text-decoration: none !important;}
 dl,ul,li,ol,menu {list-style: none;}
 button {border: 0;}
 
@@ -12,7 +12,10 @@ button {border: 0;}
     text-align: center;
     padding-top: 14px;
     bottom: 0;
-    height: 80px;
+    height: 60px;
     width: 100%;
-    background-color: #ddd;
+}
+
+.menubox:focus{
+    background-color : "red";
 }

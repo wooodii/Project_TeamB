@@ -37,3 +37,17 @@
     margin-left : "50px"; 
     margin-top : "20px";
 }
+
+.btnclick:focus{
+    background-color: #1b4542 !important;
+    color : #eee !important;
+}
+
+.btnclick:checked{
+    background-color: #1b4542 !important;
+    color : #eee !important;
+}
+.btnclick:active{
+    background-color: #1b4542 !important;
+    color : #eee !important;
+}
