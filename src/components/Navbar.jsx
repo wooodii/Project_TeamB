@@ -20,10 +20,11 @@ const NavbarComp = () => {
         <div className="footer">
         <Container>
         <Row style={{backgroundColor : "#1b4542", padding : "1em"}}>
-            <Col onClick={()=>{navigate('/history')}}>
+            <Col onClick={()=>{navigate('/history')}} className='menubox'>
                     <FontAwesomeIcon icon={faList} style={{color : "white", width : "0.8em"}} size="2x" />
                 {/* <button style={{color : "white", fontSize : "0.8em"}} onClick={()=>{navigate('/history')}}>예약내역</button> */}
             </Col>
+
             <Col onClick={()=>{navigate('/home');}}>
                 <FontAwesomeIcon icon={faHouse} style={{color : "white", width : "0.8em"}} size="2x" /> 
                 {/* <button style={{color : "white"}} onClick={()=>{navigate('/home')}}>홈</button> */}

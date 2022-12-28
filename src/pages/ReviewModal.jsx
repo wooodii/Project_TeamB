@@ -92,10 +92,11 @@ const ReviewModal = () => {
                 <ButtonGroup>
                   {radios.map((radio, idx) => (
                   <ToggleButton
+                  className="btnclick"
                   key={idx}
                   id={`radio-${idx}`}
                   type="radio"
-                  variant={'outline-success'}
+                  variant={''}
                   name="radio"
                   value={radio.value}
                   checked={radioValue === radio.value}
@@ -113,10 +114,11 @@ const ReviewModal = () => {
                       {kindness.map((kindness, idx) => (
                       <ToggleButton
                       key={idx}
+                      className="btnclick"
                       id={`kindness-${idx}`}
                       type="radio"
                       name="kindness"
-                      variant={idx % 2 ? 'outline-success' : 'outline-success'}
+                      variant='#1b4542'
                       value={kindness.value}
                       checked={kindValue === kindness.value}
                       onChange={(e) => setkindValue(e.currentTarget.value)}
@@ -135,10 +137,11 @@ const ReviewModal = () => {
                     <ButtonGroup>
                       {tech.map((tech, idx) => (
                       <ToggleButton
+                      className="btnclick"
                       key={idx}
                       id={`tech-${idx}`}
                       type="radio"
-                      variant={idx % 2 ? 'outline-success' : 'outline-success'}
+                      variant={'#1b4542'}
                       name="tech"
                       value={tech.value}
                       checked={techValue === tech.value}
@@ -166,10 +169,11 @@ const ReviewModal = () => {
                 <ButtonGroup>
                       {visit.map((visit, idx) => (
                       <ToggleButton
+                      className="btnclick"
                       key={idx}
                       id={`visit-${idx}`}
                       type="radio"
-                      variant={idx % 2 ? 'outline-success' : 'outline-success'}
+                      variant={'#1b4542'}
                       name="visit"
                       value={visit.value}
                       checked={visitValue === visit.value}
