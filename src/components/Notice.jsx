@@ -38,7 +38,7 @@ const Notice = () => {
     return (  
         <>
         {data.state.measures.temperature ? (
-            <div className='notice_box' style={name == "고열" ?  {background:"#ffb6b9"} : null}>                
+            <div className='notice_box' style={name == "고열" ?  {background:"#ffb6b9"} : name == "정상" ? {background:"#ccd8fc"} : null}>                
                 <div className='today_date'>
                     {date.getFullYear()+"/"+(date.getMonth()+1)+"/"+date.getDate()}
                 </div>
@@ -111,7 +111,7 @@ const Notice = () => {
                         <div className='temp_desc_box'>
                             <ul>
                                 <li className='happycat_box'>
-                                    <img className='happycat' src={`${process.env.PUBLIC_URL}/images/happycat.jpg`} alt="행복한 고양이" />
+                                    <img className='happycat' src={name == "정상" ? `${process.env.PUBLIC_URL}/images/happycat.jpg` : `${process.env.PUBLIC_URL}/images/unhappycat2.jpg`} alt="행복한 고양이" />
                                 </li>
                                 <li className='clearfix'>
                                     <div className='desc_font_box' style={{ background: "#ebfad9"}}>

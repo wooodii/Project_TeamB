@@ -13,6 +13,7 @@ const Notice_Modal = (props) => {
             ...data.state.measures, [e.target.name] : input
         })
         props.setShow(false)
+        data.action.setIsMeasures(true)
     }
     return (  
         <>

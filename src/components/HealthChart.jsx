@@ -38,7 +38,14 @@ const HealthChart = () => {
                     <></>
                 )
                     
-                }  
+                }
+                {measures.temperature ? (
+                    <>
+                        <h2>체온관리에서 확인해주세요</h2>
+                    </>
+                ):(
+                    <></>
+                )} 
                     <button className='plus_btn' onClick={()=>{
                                 setShow(true)
                     }}><div className='font_plus'><FontAwesomeIcon style={{color:"white"}} icon={faPlus} /></div></button>
