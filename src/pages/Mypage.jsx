@@ -44,8 +44,8 @@ const MyPage = () => {
           <div className="Mypage_first">
 
             {/* 프로필,이름 */}
-            <p>{name} <button onClick={() => { navigate('/editprofile') }}>정보수정</button> </p>
-            <button onClick={() => { logOut() }}>로그아웃</button>
+            <b className="mypage_name">{name}</b>님
+            <button className="Btn_L_G_2" onClick={() => { logOut() }}>로그아웃</button>
           </div>
           <hr />
           <Container>
@@ -63,8 +63,9 @@ const MyPage = () => {
           <div className="Mypage_forth"></div>
           {/* 이부분은 버튼만있고 따로 기능없습니다 */}
           <Container>
-            <span> 고객센터 </span>
-            <br />
+            <Row>
+              <Col><h6>고객센터</h6></Col>
+            </Row>
             <Row>
               <Col className="Btn_L_G"><p>1:1채팅 상담</p></Col>
               <Col className="Btn_L_G"><p>사용자 설문</p></Col>

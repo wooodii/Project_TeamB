@@ -29,7 +29,7 @@ const ReserveMap = (props) => {
         <Map
             center={state.center}
             isPanto={state.isPanto}
-            zoomable={state.Zoomable}
+            zoomable={state.Zoomable} 
             level={3}
             style={{
                 width: "100%",

@@ -36,10 +36,11 @@ const PlaceDetail = () => {
                         <div key={placeid} item={item}>
                             <Link className={styles.link} to={'/placedetail/' + id + '/' + (placeid + 10 * (page - 1))}>
                                 <div className={styles.box}>
+                                <img className={styles.img} src={require(`../img/mydoctor.png`)} />
                                     <h4>{item.사업장}</h4>
                                     <p>{item.주소}</p>
                                     <hr />
-                                    <div className={styles.box2}>
+                                    <div className={styles.box2}> 
                                         <div>의료인수 <br />
                                             <span>
                                             {item.의료인수}
