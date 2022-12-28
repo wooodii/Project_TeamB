@@ -5,7 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import { firebaseAuth,db, } from "../Firebase";
 import { getAuth , createUserWithEmailAndPassword, signInWithEmailAndPassword,onAuthStateChanged } from "firebase/auth";
 import {setDoc, collection, doc, getDocs} from "firebase/firestore"
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import DataContext from "../data/DataContext";
 
 const FirebaseSignUp = () => {
@@ -54,6 +54,7 @@ const FirebaseSignUp = () => {
                 <p>이름</p>
                 <input type="text" placeholder="이름" onChange={ (e)=>{setName(e.target.value)}} />
                 <input className="F_submit" type="submit" value="회원가입" />
+                <Link to="/firebaselogin" className="F_signup_btn">로그인</Link>
             </form>
         </div>
     );

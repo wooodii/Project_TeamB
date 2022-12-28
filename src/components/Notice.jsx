@@ -28,7 +28,9 @@ const Notice = () => {
             setName("미열")
         } else if(temp >= 35.5){
             setName("정상")
-        }    
+        } else {
+            setName("정상")
+        }
     }
     useEffect(() => {
         fever()
@@ -36,7 +38,7 @@ const Notice = () => {
     return (  
         <>
         {data.state.measures.temperature ? (
-            <div className='notice_box'>                
+            <div className='notice_box' style={name == "고열" ?  {background:"#ffb6b9"} : null}>                
                 <div className='today_date'>
                     {date.getFullYear()+"/"+(date.getMonth()+1)+"/"+date.getDate()}
                 </div>
@@ -54,9 +56,12 @@ const Notice = () => {
                 {name == "고열" ? 
                 (
                     <>
-                        <li className='temp_check'>{name} 상태로 병원 진료는 필요하지 않아요.</li>
+                        <li className='temp_check'>{name} 상태로 병원 진료가 필요합니다.</li>
                         <div className='temp_desc_box'>
                             <ul>
+                                <li className='happycat_box'>
+                                    <img className='happycat' src={`${process.env.PUBLIC_URL}/images/unhappycat.jpg`} alt="아픈 고양이" />
+                                </li>
                                 <li className='clearfix'>
                                     <div className='desc_font_box' style={{ background: "#ebfad9"}}>
                                         <div className='desc_font'>
@@ -68,7 +73,7 @@ const Notice = () => {
                                     </div>
                                 </li>
                                 <li className='clearfix'>
-                                    <div className='desc_font_box' style={{ background: "#fffbdb"}}>
+                                    <div className='desc_font_box' style={{ background: "#ffb6b9"}}>
                                         <div className='desc_font'>
                                             <FontAwesomeIcon icon={faTemperatureThreeQuarters} />
                                         </div>
@@ -88,7 +93,7 @@ const Notice = () => {
                                     </div>
                                 </li>
                                 <li className='clearfix'>
-                                    <div className='desc_font_box' style={{ background: "#fffbdb"}}>
+                                    <div className='desc_font_box' style={{ background: "#ffb6b9"}}>
                                         <div className='desc_font'>
                                             <FontAwesomeIcon icon={faShirt} />
                                         </div>
@@ -105,6 +110,9 @@ const Notice = () => {
                         <li className='temp_check'>{name} 상태로 병원 진료는 필요하지 않아요.</li>
                         <div className='temp_desc_box'>
                             <ul>
+                                <li className='happycat_box'>
+                                    <img className='happycat' src={`${process.env.PUBLIC_URL}/images/happycat.jpg`} alt="행복한 고양이" />
+                                </li>
                                 <li className='clearfix'>
                                     <div className='desc_font_box' style={{ background: "#ebfad9"}}>
                                         <div className='desc_font'>
@@ -149,9 +157,9 @@ const Notice = () => {
                         </div>
                     </>
                 )}
-               <button className='plus_btn' onClick={()=>{
+               <button className='plus_btn' style={{bottom:"-50px"}} onClick={()=>{
                     setShow(true)
-                }}><div className='font_plus'><FontAwesomeIcon style={{color:"white"}} icon={faPlus} /></div></button>
+                }}><div className='font_plus' ><FontAwesomeIcon style={{color:"white"}} icon={faPlus} /></div></button>
                 {show && <Notice_Modal setShow={setShow}/>}
             </div>
         ):(
@@ -165,7 +173,7 @@ const Notice = () => {
                         </ul>
                         <button className='plus_btn' onClick={()=>{
                             setShow(true)
-                        }}><div className='font_plus'><FontAwesomeIcon style={{color:"white"}} icon={faPlus} /></div></button>
+                        }}><div className='font_plus' ><FontAwesomeIcon style={{color:"white"}} icon={faPlus} /></div></button>
                         {show && <Notice_Modal setShow={setShow} />}
                 </div>  
                 </div>

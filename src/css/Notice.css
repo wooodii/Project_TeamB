@@ -9,7 +9,7 @@
 }
 
 .notice_box {background: #fff8b7; height: 800px;}
-.today_date {color: #bab990; padding: 10px;}
+.today_date {color: #000; padding: 10px;}
 .temp_box {text-align: center;  margin-bottom: 10px;}
 .temp_box .temp_font_box { 
     width: 50px; height: 50px; background: #fff; 
@@ -23,6 +23,8 @@
 .temp_check {text-align: center; list-style: circle; margin-bottom: 10px;}
 
 .temp_desc_box {background: #fff; margin: 20px; padding: 0 20px 20px 20px; border-radius: 25px;}
+.happycat_box {text-align: center; margin: 5px;}
+.happycat_box .happycat {width: 100px; height: 70px; text-align:center;}
 .temp_desc_box ul {margin: 0; padding: 0;}
 .temp_desc_box ul li {padding-top: 20px; font-size: 16px; position: relative;}
 .temp_desc_box ul li .desc_box {position: absolute; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 220px; margin-left: 35px;}

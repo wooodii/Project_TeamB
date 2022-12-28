@@ -50,11 +50,17 @@ const MyPage = () => {
           <hr />
           <Container>
             <Row>
+              <Col><h6>건강피드</h6></Col>
+            </Row>
+            <Row>
               <Col className="Btn_L_G"><button onClick={()=>{navigate('/main')}}>건강피드</button></Col>
             </Row>
           </Container>
           <hr />
           <Container>
+            <Row>
+              <Col><h6>복약관리</h6></Col>
+            </Row>
             <Row>
               <Col className="Btn_L_G"><button onClick={()=>{navigate('/medicine')}}>복약관리</button></Col>
             </Row>
@@ -80,16 +86,26 @@ const MyPage = () => {
         <>
           <div className="Mypage_first">
             {/* 프로필,이름 */}
-            <Link to='/firebaselogin'>로그인</Link>
+            <Container>
+            <Row>
+              <Col className="Btn_L_G" style={{marginTop:"20px"}}><button  onClick={()=>{navigate('/firebaselogin')}}>로그인</button></Col>
+            </Row>
+          </Container>
           </div>
           <hr />
           <Container>
+            <Row>
+              <Col><h6>건강피드</h6></Col>
+            </Row>
             <Row>
               <Col className="Btn_L_G"><button onClick={()=>{navigate('/main')}}>건강피드</button></Col>
             </Row>
           </Container>
           <hr />
           <Container>
+            <Row>
+              <Col><h6>복약관리</h6></Col>
+            </Row>
             <Row>
               <Col className="Btn_L_G"><button onClick={()=>{navigate('/medicine')}}>복약관리</button></Col>
             </Row>
