@@ -42,10 +42,19 @@ const MyPage = () => {
       {data.state.isLoginned ? (
         <>
           <div className="Mypage_first">
-
-            {/* 프로필,이름 */}
-            <b className="mypage_name">{name}</b>님
-            <button className="Btn_L_G_2" onClick={() => { logOut() }}>로그아웃</button>
+            <ul>
+              <li>
+                <div className="userimg_box">
+                  <img className="userimg" src={`${process.env.PUBLIC_URL}/images/user.png`} alt="유저이미지" />
+                </div>
+              </li>
+              <li>
+                <b className="mypage_name">{name}</b>님
+              </li>
+              {/* <li>
+                <button className="Btn_L_G_2" onClick={() => { logOut() }}>로그아웃</button>
+              </li> */}
+            </ul>
           </div>
           <hr />
           <Container>
