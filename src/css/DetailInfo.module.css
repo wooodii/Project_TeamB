@@ -17,7 +17,7 @@
 .mapbox {
     border: 1px solid black;
     height: 400px;
-    width: 390px;
+    width: 100%;
 }
 .detail {
     text-align: center;

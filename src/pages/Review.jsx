@@ -36,7 +36,7 @@ const Review = () => {
                 <div> 이 병원을 {revisit} 명이 재방문하고 싶어해요 </div>
             </Row>
             <Row className="reviewBox">
-                <Row className='reviewBoxPrint' style={{ msOverflowStyle: "none",  border : "3px solid #1b4542", scrollbarWidth : "none", overflowY: "scroll", borderRadius : "10px", height : "500px", maxWidth : "340px", marginLeft : "50px", marginTop : "20px"}}>   
+                <Row className='reviewBoxPrint' style={{ msOverflowStyle: "none",  border : "3px solid #1b4542", scrollbarWidth : "none", overflowY: "scroll", borderRadius : "10px", height : "500px", maxWidth : "340px", marginLeft : "40px", marginTop : "20px"}}>   
                     {data.state.comments.map((id) => (
                         <div style={{backgroundColor : "#B7CFC6", borderRadius : "10px", marginTop : "10px", marginBottom : "10px", maxHeight : "200px"}}>
                             <Row>
