@@ -10,6 +10,10 @@ import DataContext from "../data/DataContext";
 import { doc, getDoc } from "firebase/firestore"
 import { db } from "../Firebase";
 import "../css/Medicine.css";
+import { useNavigate } from "react-router-dom";
+// 뒤로가기 버튼
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 const Medicine = () => {
     const data = useContext(DataContext);
@@ -21,7 +25,7 @@ const Medicine = () => {
     // +리덕스로 medicine.js 값 가져와서 map으로 출력
     const medicine = useSelector((state)=>(state.medicine));
     const dispatch = useDispatch();
-
+    const navigate = useNavigate();
     // 복약정보 입력 모달창 관리 state입니다
     const [modalOpen, setModalOpen] = useState(false);
     // 복약정보 입력하기 버튼에 연결된 함수
@@ -38,7 +42,6 @@ const Medicine = () => {
         setName(docSnap.data().name);
         }
     }
-
     useEffect(() => {
         if (user) {
             data.action.setIsLoginned(true)
@@ -50,6 +53,7 @@ const Medicine = () => {
 
     return ( 
         <>
+        <span className="goback" onClick={()=>{navigate("/mypage")}}><FontAwesomeIcon icon={faArrowLeft} /></span>
         <div className="med-form">
             <h3>복약 관리</h3>
             <p>버튼을 클릭하여 복약정보를 등록하세요!</p>
@@ -105,10 +109,6 @@ const MedicineModal =(props)=> {
     //리덕스에서 값 가져오기 위함
     const dispatch = useDispatch();
 
-    const medicineForm =()=>{
-        
-    }
-
     return (
         <>
         <div className="med-form">
@@ -128,7 +128,7 @@ const MedicineModal =(props)=> {
                 　투여 횟수: <input className="med-input" type="number" min='10' max='30' onChange={(e)=>{setPillsDose(e.target.value)}} />
             </div>
             <br />
-                <button className="addMed-btn"
+            <button className="addMed-btn"
                 onClick={
                     pillsName == ""
                     ? null 
@@ -139,12 +139,8 @@ const MedicineModal =(props)=> {
                     setPillsName(""); setpillsCount(0); setPillsDose(0);
                     } 
                     )
-                    
-                }
-                    >등록하기</button>
-                    
+                }>등록하기</button>
         </div>
     </>
     )
 }
-

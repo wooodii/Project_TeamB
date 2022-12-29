@@ -42,49 +42,6 @@ const DataProvider = ({ children }) => {
     const [isbook, setIsbook] = useState(false); 
     const [userpro, setUserpro] = useState();
 
-    // 서아
-    // 전체 유저 데이터
-    //로그인 후 계속 사용될 유저정보 
-    // >> id/name/age/gender/questionnaire{}/medicine{}/
-    const [user, setUser] = useState([
-        {
-            id: 1,
-            userId: "seo",
-            userPw: "123",
-            username: "서",
-            age: 20,
-            gender: "F",
-            questionnaire: {
-                weight: 50,
-                height: 160,
-            },
-            medicine: {
-                cough: true,
-                fever: false,
-            },
-        },
-    ]);
-
-
-    // 로그인한 유저의 상태 state
-    const [loginUser, setLoginUser] = useState(
-        {
-            id: 1,
-            userId: "seo",
-            userPw: "123",
-            username: "서",
-            age: 20,
-            gender: "F",
-            questionnaire: {
-                weight: 50,
-                height: 160,
-            },
-            medicine: {
-                cough: true,
-                fever: false,
-            },
-        }
-    );
 
     // 지현
     // 리뷰작성
@@ -97,7 +54,17 @@ const DataProvider = ({ children }) => {
             btn2: "친절해요",
             btn3: "신규장비에요",
             review: "방문 후기를 20글자 이내로 작성해주세요",
-            yesNo: "재방문할래요"
+            yesNo: "재방문할래요",
+        },
+        {
+            Id: 2,
+            name: "huiseong",
+            countStar: 5,
+            btn1: "효과좋아요",
+            btn2: "친절해요",
+            btn3: "신규장비에요",
+            review: "좋았습니다",
+            yesNo: "재방문할래요",
         } 
     ]);
 
@@ -107,11 +74,13 @@ const DataProvider = ({ children }) => {
     const value =
     {
 
-        state: {userpro,treatmentDetail, isbook,mypageData2,mypageData,location,startDate,h_major, h_name, h_num, h_address, user, loginUser, comments,infant, login, hcheck, icheck, date, month, age, measures, ismeasures,category,hospitalData, isLoginned },
+
+        state: {treatmentDetail, isbook,mypageData2,mypageData,location,startDate,h_major, h_name, h_num, h_address, comments,infant, login, hcheck, icheck, date, month, age, measures, ismeasures,category,hospitalData, isLoginned },
 
 
         
-        action: {setUserpro,setTreatmentDetail, setIsbook,setMypageData2,setMypageData,setStartDate,setH_major,setH_name, setH_num,setH_address, setUser, setLoginUser,setInfant, setLogin, setHcheck, setIcheck, setMesures, setIsMeasures ,setCategory,setHospitalData, setIsLoginned,setComments}
+        action: {setTreatmentDetail, setIsbook,setMypageData2,setMypageData,setStartDate,setH_major,setH_name, setH_num,setH_address,setInfant, setLogin, setHcheck, setIcheck, setMesures, setIsMeasures ,setCategory,setHospitalData, setIsLoginned,setComments}
+
 
     };
 

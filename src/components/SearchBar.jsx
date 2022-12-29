@@ -11,7 +11,8 @@ const SearchBar_Home = () => {
 
     return (
         <div>
-            <InputGroup style={{borderRadius:"10px"}}>
+
+            <InputGroup style={{ borderRadius:"6px"}}>
 
                 <Form.Control
                     style={{margin : "10px", borderRadius : "15px", padding : "12px", backgroundColor : "#eee"}}

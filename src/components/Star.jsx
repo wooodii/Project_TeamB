@@ -39,8 +39,7 @@ const Star = (props) => {
             clickState[i] = true;
         }
         setClick(clickState);
-    }, [])
-    console.log(countStar);
+    }, []);
 
     return (
         <div style={{display : "inline", backgroundColor :"#1b4542", borderRadius : "10px", padding : "0 5px 4px 5px", margin : "5px 2px 0 2px"}}>            
