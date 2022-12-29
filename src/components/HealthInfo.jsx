@@ -53,13 +53,13 @@ const HealthInfo = () => {
                   </div>
                 </div>
                 ))
-              }
+              } 
             </Slider>
-          </div>
-        </div>
+          </div> 
+        </div> 
       </StyledSlider>
     );
-}
+} 
 export default HealthInfo;
 
 
