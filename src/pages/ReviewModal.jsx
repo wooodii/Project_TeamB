@@ -72,7 +72,7 @@ const ReviewModal = () => {
         onClick={handleShow}>
         리뷰작성
       </Button>
-      
+
       <Modal show={show} onHide={AddReview}>
         <Form>
           <Modal.Header>
@@ -92,6 +92,7 @@ const ReviewModal = () => {
                 <ButtonGroup>
                   {radios.map((radio, idx) => (
                   <ToggleButton
+                  className="btnclick"
                   key={idx}
                   id={`radio-${idx}`}
                   type="radio"
@@ -113,6 +114,7 @@ const ReviewModal = () => {
                       {kindness.map((kindness, idx) => (
                       <ToggleButton
                       key={idx}
+                      className="btnclick"
                       id={`kindness-${idx}`}
                       type="radio"
                       name="kindness"
@@ -135,6 +137,7 @@ const ReviewModal = () => {
                     <ButtonGroup>
                       {tech.map((tech, idx) => (
                       <ToggleButton
+                      className="btnclick"
                       key={idx}
                       id={`tech-${idx}`}
                       type="radio"
@@ -166,6 +169,7 @@ const ReviewModal = () => {
                 <ButtonGroup>
                       {visit.map((visit, idx) => (
                       <ToggleButton
+                      className="btnclick"
                       key={idx}
                       id={`visit-${idx}`}
                       type="radio"

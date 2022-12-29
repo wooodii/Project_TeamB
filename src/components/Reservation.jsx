@@ -15,7 +15,7 @@ const Reservation = () => {
             alert('예약내역에서 확인해주세요'); 
             action.setIsbook(true);                
     }
-    return (
+    return ( 
         <div>
             <div>
                 {
@@ -47,7 +47,7 @@ const Reservation = () => {
                         dateFormat="yyyy.MM.dd (eee)" // 시간 포맷 변경
                         showPopperArrow={false}       // 화살표 변경
                         minDate={new Date()}          // 오늘 날짜 전은 선택 못하게
-                    />  
+/>  
                 </div> 
                     <div className={styles.linkbox} >
                         <Link className={styles.link}  to='/history'> 

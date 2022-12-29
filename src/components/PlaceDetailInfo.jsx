@@ -11,15 +11,20 @@ const PlaceDetailInfo = () => {
     const { id, placeid } = useParams();
     const placefilter = state.hospitalData.filter(place => place.주소.includes(state.category[id].name));
 
-    return (
-        <div>
-            <div className={styles.title}>
-                <h2> {placefilter[placeid].사업장}</h2>
-                <hr />
+
+    return ( 
+        <div> 
+            <div className={styles.title}> 
+                <h2> 
+                    <div className={styles.imgbox}>
+                    <img className={styles.img} src={require(`../img/hospital.png`)} />
+                    </div>
+                    {placefilter[placeid].사업장}</h2>
+                <hr /> 
                 <p> {placefilter[placeid].주소}에 위치한 병원입니다</p>
                 <p> {placefilter[placeid].전화번호}</p>
             </div>
-            <div className={styles.mapbox}> 
+            <div className={styles.mapbox}>   
                 <ReserveMap name={placefilter[placeid].사업장} address={placefilter[placeid].주소}/>
             </div>
             <div className={styles.detail}>
@@ -35,7 +40,7 @@ const PlaceDetailInfo = () => {
             </div>
             <Review/>
         </div>
-    );
+    ); 
 }
 
 export default PlaceDetailInfo;

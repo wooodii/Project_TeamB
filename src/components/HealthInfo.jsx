@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import styled from 'styled-components'
 // import data
 import { dailyInfo } from "../data/dailyInfo"; 
+import { Col, Row } from "react-bootstrap";
 
 const HealthInfo = () => {
     // 당일 날짜출력
@@ -25,26 +26,40 @@ const HealthInfo = () => {
     
     return (
       <StyledSlider>
-        <div className="s-wrapper">
+        <div className="s-wrapper" style={{width : "100%"}}>
           <div className="s-title">
           </div> 
           {/* map()으로 json의 data하나씩 출력 */}
           <div className="s-slick">
             <Slider {...settings}>
               {dailyInfo.map((list, idx)=> (
-                <div style={{margin : "10em"}} className="slideList" key={idx}>
-                  <h3>{list.dissNm}</h3>
-                  <hr/>
-                  <p style={{backgroundColor : "#eeeeee", borderRadius : "10px", padding : "25px 10px", margin : "10px", fontSize : "0.9em"}}>{list.dissRiskXpln}</p>
+                <div style={{ width : "100%", display : "flex"}} className="slideList" key={idx}>
+                  <div style={{backgroundColor : "#eeeeee", borderRadius : "20px", 
+                        padding : "5px", margin : "0px 10px", fontSize : "0.9em"}}>
+                          <Row>
+                          <Col xs={3}>
+                          <div style={{borderRadius : "20px", width : "80px", height : "100px", backgroundColor : "white", margin : "5px"}}>
+                           <p style={{fontSize : "20px", display : "flex", marginTop : "10px"}}>  
+                               <span style={{display : "absolute", margin : "30px auto"}}> {list.dissNm}  </span>
+                          </p>
+                          </div>
+                          </Col>
+                          <Col xs={9} style={{marginTop : "15px", marginBottom : "5px", fontSize : "15px", padding : "10px 0"}}>
+                            <div style={{margin : "0 25px"}}>
+                            {list.dissRiskXpln}
+                            </div>
+                          </Col>
+                          </Row>
+                  </div>
                 </div>
                 ))
-              }
+              } 
             </Slider>
-          </div>
-        </div>
+          </div> 
+        </div> 
       </StyledSlider>
     );
-}
+} 
 export default HealthInfo;
 
 
@@ -60,20 +75,19 @@ position: relative;
 border-radius: 10px;
 
 .slideList > h2 {
-  padding: 5px 15px;
+  padding: 0px 15px;
 }
 
 .slideList > p {
-  padding: 5px 23px;
+  padding: 0px 23px;
 }
 
 .s-wrapper {
-  border : 2px solid black;
   color: black;
   background-color: #fff;
   border-radius: 10px;
-  max-width : 420px;
-  height: 200px;
+  max-width : 400px;
+
   text-align: center;
 }
 .s-title {

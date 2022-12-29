@@ -9,6 +9,8 @@ import styles from '../css/mypage.module.css'
 import { faSquareParking } from "@fortawesome/free-solid-svg-icons";
 import { Col, Container, Row } from "react-bootstrap";
 import "../css/Mypage.css";
+import ProfileUpdateModal from "../components/ProfileUpdateModal";
+
 
 const MyPage = () => {
   const data = useContext(DataContext);
@@ -38,6 +40,8 @@ const MyPage = () => {
     }
   }, [user])
 
+  const [show,setShow] = useState(false);
+
   return (
     <div className="Mypage">
       {data.state.isLoginned ? (
@@ -45,8 +49,21 @@ const MyPage = () => {
           <div className="Mypage_first">
             <ul>
               <li>
-                <div className="userimg_box">
-                  <img className="userimg" src={`${process.env.PUBLIC_URL}/images/user.png`} alt="유저이미지" />
+                <div  className="userimg_box">
+                { data.state.userpro ? 
+                  <div
+                  onClick={()=>{setShow(true)}}
+                  style={{
+                      width:"150px", 
+                      height :"150px", 
+                      backgroundImage: `url(${data.state.userpro})`,
+                      backgroundSize:"cover" }
+                    }></div>
+                  : 
+                  <img className="userimg"  onClick={()=>{setShow(true)}} src={`${process.env.PUBLIC_URL}/images/user.png`} alt="유저이미지" />
+}
+                  
+                  
                 </div>
               </li>
               <li>
@@ -55,8 +72,6 @@ const MyPage = () => {
               <li>
                 <p className="mypage_email">{email}</p>
               </li>
-              {/* <li className="mylist_box">
-                <ul className="mylist clearfix">
                     <li>
                       <a className="mypage_num" href="#">0</a>
                       <a href="#">예약내역</a>
@@ -70,8 +85,7 @@ const MyPage = () => {
                       <a href="#">리뷰</a>
                     </li>
                 </ul>
-              </li> */}
-              <li>
+
                 <button className="Btn_L_G_2" onClick={() => { logOut() }}>로그아웃</button>
               </li>
             </ul>
@@ -110,6 +124,7 @@ const MyPage = () => {
               <Col className="Btn_L_G"><p>버전</p></Col>
             </Row>
           </Container>
+          {show && <ProfileUpdateModal setShow={setShow}/>}
         </>
       ) : (
         <>

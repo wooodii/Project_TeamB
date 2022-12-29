@@ -38,16 +38,16 @@ const Nav = styled.nav`
 
 const Button = styled.button`
   border: none;
-  border-radius: 10px;
-  padding: 0.5em;
+  border-radius: 5px;
+  padding: 0.2em 1em;
   margin: 0;
   width : 0.5em;
-  background: #7c7979;
+  background: #1b4542;
   color: white;
   font-size: 1rem;
 
   &:hover {
-    background: #4d4d4d;
+    background: #1b4542;
     cursor: pointer;
     transform: translateY(-2px);
   }

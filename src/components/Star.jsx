@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { HiStar } from "react-icons/hi";
 import '../css/Star.css';
 const Star = (props) => {
-    const {setCount, setCountStarResult} = props;
+    const {setCount} = props;
     const [star, setStar] = useState([
         { gradeId : 1, grade : 1 },
         { gradeId : 2, grade : 2 },
@@ -27,10 +27,10 @@ const Star = (props) => {
         }
         setClick(clickState);
 
-        // props로 받아온 setCountStarResult
-        if(!setCountStarResult){
-            setCountStarResult(countStar);
-        }
+        // // props로 받아온 setCountStarResult
+        // if(!setCountStarResult){
+        //     setCountStarResult(countStar);
+        // }
     }
     // useEffect로 
     useEffect(() => {      
