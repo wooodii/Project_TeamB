@@ -38,13 +38,13 @@ const HealthInfo = () => {
                   <p style={{backgroundColor : "#eeeeee", borderRadius : "10px", padding : "25px 10px", margin : "10px", fontSize : "0.9em"}}>{list.dissRiskXpln}</p>
                 </div>
                 ))
-              }
+              } 
             </Slider>
-          </div>
-        </div>
+          </div> 
+        </div> 
       </StyledSlider>
     );
-}
+} 
 export default HealthInfo;
 
 

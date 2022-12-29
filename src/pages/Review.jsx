@@ -5,6 +5,7 @@ import Star from "../components/Star";
 import DataContext from "../data/DataContext";
 import ReviewModal from "./ReviewModal";
 import '../css/ReviewModal.css';
+
 const Review = () => {
     const data = useContext(DataContext);
     const [revisit, setRevisit] = useState();
@@ -19,8 +20,8 @@ const Review = () => {
 
     return (
         <>
-         <div style={{ width: "390px", height: "400px", marginTop : "5em"}}>
-             <hr />
+        <div style={{ width: "390px", height: "400px", marginTop : "5em"}}>
+            <hr />
             <Row style={{marginTop : "2vh"}}> 
                 <Col xs={3} style={{marginBottom : "2vh"}}>
                     <Row>
@@ -29,7 +30,7 @@ const Review = () => {
                 </Col>
                 <Col xs={9}> 
                 <ReviewModal />
-                </Col>
+                </Col> 
             </Row>
             <Row style={{marginLeft : "55px"}}>
                 <div> 이 병원을 {revisit} 명이 재방문하고 싶어해요 </div>

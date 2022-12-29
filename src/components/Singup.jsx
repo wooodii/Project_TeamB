@@ -18,7 +18,7 @@ const Singup_C = () => {
         if(user){
             navigate("/loginc")
         } else {
-            alert("로그인을 해주세요")
+            alert("로그인을 해주세요") 
             navigate("/firebaselogin")
         }
     }
