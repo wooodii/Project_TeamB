@@ -11,7 +11,9 @@ const ProfileUpdateModal = (props) => {
     const onLoadFile = (e) => {
 		// 이벤트객체의 타겟의 files를 통해서 원하는 파일을 가져올 수 있다
 		setFile(e.target.files[0])
-		imgShow.current.style.backgroundSize = "cover"
+		imgShow.current.style.backgroundSize = "100%"
+        imgShow.current.style.backgroundPosition = "center"
+        imgShow.current.style.backgroundRepeat = "no-repeat"
 		imgShow.current.style.backgroundImage = `url(${URL.createObjectURL(e.target.files[0])})`
 	}
 
@@ -27,7 +29,7 @@ const ProfileUpdateModal = (props) => {
         <div>
             <div className="layer_bg">
                 <div className="layer_profile">
-					<div ref={imgShow} style={{width:"200px", height :"200px", backgroundColor:"lightgray", margin:"50px 60px" }}></div>
+					<div ref={imgShow} style={{width:"200px", height :"200px", margin:"50px 60px" }}></div>
                     <Form.Group controlId="formFile" className="mt-5">
 						<div className='label_box'>
                         <Form.Label>추가할 이미지를 선택하세요</Form.Label>
