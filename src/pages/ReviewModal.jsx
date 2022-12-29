@@ -96,7 +96,7 @@ const ReviewModal = () => {
                   key={idx}
                   id={`radio-${idx}`}
                   type="radio"
-                  variant={''}
+                  variant={'outline-success'}
                   name="radio"
                   value={radio.value}
                   checked={radioValue === radio.value}
@@ -118,7 +118,7 @@ const ReviewModal = () => {
                       id={`kindness-${idx}`}
                       type="radio"
                       name="kindness"
-                      variant='#1b4542'
+                      variant={idx % 2 ? 'outline-success' : 'outline-success'}
                       value={kindness.value}
                       checked={kindValue === kindness.value}
                       onChange={(e) => setkindValue(e.currentTarget.value)}
@@ -141,7 +141,7 @@ const ReviewModal = () => {
                       key={idx}
                       id={`tech-${idx}`}
                       type="radio"
-                      variant={'#1b4542'}
+                      variant={idx % 2 ? 'outline-success' : 'outline-success'}
                       name="tech"
                       value={tech.value}
                       checked={techValue === tech.value}
@@ -173,7 +173,7 @@ const ReviewModal = () => {
                       key={idx}
                       id={`visit-${idx}`}
                       type="radio"
-                      variant={'#1b4542'}
+                      variant={idx % 2 ? 'outline-success' : 'outline-success'}
                       name="visit"
                       value={visit.value}
                       checked={visitValue === visit.value}

@@ -25,14 +25,14 @@ const HealthInfo = () => {
     
     return (
       <StyledSlider>
-        <div className="s-wrapper">
+        <div className="s-wrapper" style={{width : "100%"}}>
           <div className="s-title">
           </div> 
           {/* map()으로 json의 data하나씩 출력 */}
           <div className="s-slick">
             <Slider {...settings}>
               {dailyInfo.map((list, idx)=> (
-                <div style={{margin : "10em"}} className="slideList" key={idx}>
+                <div style={{ width : "100%"}} className="slideList" key={idx}>
                   <h3>{list.dissNm}</h3>
                   <hr/>
                   <p style={{backgroundColor : "#eeeeee", borderRadius : "10px", padding : "25px 10px", margin : "10px", fontSize : "0.9em"}}>{list.dissRiskXpln}</p>

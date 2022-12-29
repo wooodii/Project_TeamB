@@ -47,7 +47,12 @@
     background-color: #1b4542 !important;
     color : #eee !important;
 }
+
 .btnclick:active{
     background-color: #1b4542 !important;
     color : #eee !important;
+}
+
+.btn-check:checked+.btn{
+    background-color: #1b4542 !important;
 }

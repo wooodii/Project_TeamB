@@ -25,8 +25,8 @@ const DetailInfo = () => {
 
                 <div style={{margin : "5px"}}>
                     <button onClick={() => {navigate('/reservation2')}} 
-                    style={{ width : "395px", margin : "", 
-                    borderRadius : "5px", padding : "1vh", 
+                    style={{ width : "100%", margin : "", 
+                    borderRadius : "5px", padding : "10px 0", 
                     backgroundColor : "#1b4542", color : "white"}}> 
                     <div style={{marginLeft : "165px"}}>예약하기 </div> </button >
                 </div>
