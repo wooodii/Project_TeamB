@@ -178,9 +178,9 @@ const Notice = () => {
                 </div>  
                 </div>
             ):(
-                <>
+                <div className='notice_preview_box'>
                     <Preview content={preview4} />
-                </>
+                </div>
             )
         )}
         </>

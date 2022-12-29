@@ -85,10 +85,7 @@ const MyPage = () => {
                       <a href="#">리뷰</a>
                     </li>
                 </ul>
-
                 <button className="Btn_L_G_2" onClick={() => { logOut() }}>로그아웃</button>
-              </li>
-            </ul>
           </div>
           <hr />
           <Container>
