@@ -22,7 +22,7 @@ const DataProvider = ({ children }) => {
     //로그인 확인
     const [isLoginned, setIsLoginned] = useState(false)
     const [ismeasures, setIsMeasures] = useState(false)
-    const [login, setLogin] = useState(true)
+    const [login, setLogin] = useState(false)
     const [hcheck, setHcheck] = useState(0); 
     const [icheck, setIcheck] = useState(0);
     const age = String(infant.age)

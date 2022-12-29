@@ -55,25 +55,25 @@ const MyPage = () => {
               <li>
                 <p className="mypage_email">{email}</p>
               </li>
-              <li className="mylist_box">
+              {/* <li className="mylist_box">
                 <ul className="mylist clearfix">
                     <li>
                       <a className="mypage_num" href="#">0</a>
-                      <a  href="#">예약내역</a>
+                      <a href="#">예약내역</a>
                     </li>
                     <li>
                       <a className="mypage_num" href="#">0</a>
-                      <a   href="#">좋아요</a>
+                      <a href="#">좋아요</a>
                     </li>
                     <li>
                       <a className="mypage_num" href="#">0</a>
                       <a href="#">리뷰</a>
                     </li>
                 </ul>
-              </li>
-               {/* <li>
+              </li> */}
+              <li>
                 <button className="Btn_L_G_2" onClick={() => { logOut() }}>로그아웃</button>
-              </li>  */}
+              </li>
             </ul>
           </div>
           <hr />
