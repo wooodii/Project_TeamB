@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Star from "../components/Star";
@@ -44,11 +44,12 @@ const ReviewModal = () => {
     { name: '신규장비에요', value: '9' }
   ]
   const visit = [
-    { name: '네', print : "재방문할래요", value: '10' },
-    { name: '아니요', print : "", value: '11' }
+    { name: '네', print : "재방문할래요", value: '10'},
+    { name: '아니요', print : "", value: '11'}
   ]
 
   const [show, setShow] = useState(false);
+
   const AddReview = () => {
     data.action.setComments([...data.state.comments, {
       Id : id+1, 
@@ -58,11 +59,33 @@ const ReviewModal = () => {
       btn2 : btn2, 
       btn3 : btn3,
       review : textInput,
-      yesNo : yesNo 
+      yesNo : yesNo, 
   }]);
+
+  
+  // const test =  () => {
+  //   for(let i=0; i<data.state.comments.length; i++) {
+  //     if (data.state.comments[i].btn1 !== null ) {
+  //       return <Button
+  //         style={{width : "90%", marginLeft : "0.5em", marginTop : "10px"}}
+  //         className="submitButton"
+  //           variant="secondary"
+  //           onClick={AddReview}>
+  //           작성완료
+  //         </Button> 
+  //       }else {
+  //         return null;
+  //     }
+  //   }
+  // }
     setShow(false); 
   };
   const handleShow = () => setShow(true);
+
+  // useEffect(()=>{
+  //   console.log(data.state.comments[0].Id);
+  // }, [])
+
 
   return (
     <div>
@@ -130,7 +153,6 @@ const ReviewModal = () => {
                   </ButtonGroup>
                 </div>
             </Row>
-            
             <Row>
                 <div style={{ margin: "1vh" }}>
                     <h5> 시설 장비는 어떤가요?</h5>
@@ -185,14 +207,14 @@ const ReviewModal = () => {
                   </ButtonGroup>
               </div>
             </Row>
-            <Row>
-              <Button
+            <Button
               style={{width : "90%", marginLeft : "0.5em", marginTop : "10px"}}
               className="submitButton"
                 variant="secondary"
                 onClick={AddReview}>
                 작성완료
               </Button>
+            <Row>
             </Row>
             <Row></Row>
           </Modal.Body>

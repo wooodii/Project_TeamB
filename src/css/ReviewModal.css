@@ -32,11 +32,12 @@
     scrollbar-width : "none";
     overflow-y: "scroll";
     border-radius : "10px"; 
-    height : "500px";
+    height : fit-content;
     max-width : "340px"; 
     margin-left : "50px"; 
     margin-top : "20px";
 }
+
 
 .btnclick:focus{
     background-color: #1b4542 !important;

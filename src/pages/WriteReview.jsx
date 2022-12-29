@@ -54,7 +54,7 @@ const WriteReview = (props) => {
                 style={{ backgroundColor : btnColor, border : "none", marginRight: "0.5em"}}>효과없어요</Button>
                 
                 <Button onClick={() => {btnColor === "2" ? setBtnColor("green") : setBtnColor("blue");}} 
-                 style={{backgroundColor : btnColor, marginRight: "0.5em" }}>보통이에요</Button>
+                  style={{backgroundColor : btnColor, marginRight: "0.5em" }}>보통이에요</Button>
                 
                 <Button onClick={() => {btnColor === "3" ? setBtnColor("green") : setBtnColor("blue");}}  
                   style={{backgroundColor : btnColor, marginRight: "0.5em" }}>효과좋아요</Button>

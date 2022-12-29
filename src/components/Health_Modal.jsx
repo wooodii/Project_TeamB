@@ -33,10 +33,10 @@ const Health_Modal = (props) => {
                                         setShow(info.id)
                                     }}>{info.info} 등록</a></li>
                                     {show == info.id && 
-                                                 <div className="measure_box">
-                                                    <input type="text"onChange={inputDesc}/>
-                                                    <button name={info.name} onClick={changeMeasures}>{input ? "완료" : "취소"}</button>
-                                                </div>
+                                            <div className="measure_box">
+                                                <input type="text"onChange={inputDesc}/>
+                                                <button name={info.name} onClick={changeMeasures}>{input ? "완료" : "취소"}</button>
+                                            </div>
                                     }
                                 </>
                             ))

@@ -11,7 +11,7 @@ const SearchBar_Home = () => {
 
     return (
         <div>
-            <InputGroup style={{ backgroundColor:"#1F403A", borderRadius:"6px"}}>
+            <InputGroup style={{ borderRadius:"6px"}}>
                 <Form.Control
                     style={{margin : "10px", borderRadius : "10px"}}
                     onClick={clickSearchBar}
