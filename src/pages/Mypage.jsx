@@ -43,6 +43,7 @@ const MyPage = () => {
   const [show,setShow] = useState(false);
 
   return (
+
     <div className="Mypage">
       {data.state.isLoginned ? (
         <>
@@ -61,9 +62,7 @@ const MyPage = () => {
                     }></div>
                   : 
                   <img className="userimg"  onClick={()=>{setShow(true)}} src={`${process.env.PUBLIC_URL}/images/user.png`} alt="유저이미지" />
-}
-                  
-                  
+}     
                 </div>
               </li>
               <li>
