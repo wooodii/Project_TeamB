@@ -11,9 +11,11 @@ const SearchBar_Home = () => {
 
     return (
         <div>
+
             <InputGroup style={{ borderRadius:"6px"}}>
+
                 <Form.Control
-                    style={{margin : "10px", borderRadius : "10px"}}
+                    style={{margin : "10px", borderRadius : "15px", padding : "12px", backgroundColor : "#eee"}}
                     onClick={clickSearchBar}
                     placeholder="근처 병원 검색하기" aria-label="Recipient's username" aria-describedby="basic-addon2" />
             </InputGroup>

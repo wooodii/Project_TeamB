@@ -22,7 +22,7 @@ const DataProvider = ({ children }) => {
     //로그인 확인
     const [isLoginned, setIsLoginned] = useState(false)
     const [ismeasures, setIsMeasures] = useState(false)
-    const [login, setLogin] = useState(true)
+    const [login, setLogin] = useState(false)
     const [hcheck, setHcheck] = useState(0); 
     const [icheck, setIcheck] = useState(0);
     const age = String(infant.age)
@@ -40,6 +40,7 @@ const DataProvider = ({ children }) => {
     const [startDate, setStartDate] = useState(new Date());
     const location = useLocation(); 
     const [isbook, setIsbook] = useState(false); 
+    const [userpro, setUserpro] = useState();
 
 
     // 지현
@@ -73,11 +74,13 @@ const DataProvider = ({ children }) => {
     const value =
     {
 
+
         state: {treatmentDetail, isbook,mypageData2,mypageData,location,startDate,h_major, h_name, h_num, h_address, comments,infant, login, hcheck, icheck, date, month, age, measures, ismeasures,category,hospitalData, isLoginned },
 
 
         
         action: {setTreatmentDetail, setIsbook,setMypageData2,setMypageData,setStartDate,setH_major,setH_name, setH_num,setH_address,setInfant, setLogin, setHcheck, setIcheck, setMesures, setIsMeasures ,setCategory,setHospitalData, setIsLoginned,setComments}
+
 
     };
 

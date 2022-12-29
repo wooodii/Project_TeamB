@@ -6,7 +6,7 @@ import categorydata1 from "../data/categorydata1";
 import DataContext from "../data/DataContext";
 
 
-
+ 
 
 const Filter = () => {
     const {state,action}= useContext(DataContext);

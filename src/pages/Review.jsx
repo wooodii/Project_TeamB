@@ -5,6 +5,7 @@ import Star from "../components/Star";
 import DataContext from "../data/DataContext";
 import ReviewModal from "./ReviewModal";
 import '../css/ReviewModal.css';
+
 const Review = () => {
     const data = useContext(DataContext);
 
@@ -20,6 +21,7 @@ const Review = () => {
         <>
         <div style={{ width: "390px", height: "400px", marginTop : "5em"}}>
         <hr />
+
             <Row style={{marginTop : "2vh"}}> 
                 <Col xs={3} style={{marginBottom : "2vh"}}>
                     <Row>
@@ -28,13 +30,13 @@ const Review = () => {
                 </Col>
                 <Col xs={9}> 
                 <ReviewModal />
-                </Col>
+                </Col> 
             </Row>
             <Row style={{marginLeft : "55px"}}>
                 <div> 이 병원에 대해 {revisitCount} 명이 리뷰를 남겼어요 </div>
             </Row>
             <Row className="reviewBox">
-                <Row className='reviewBoxPrint' style={{ msOverflowStyle: "none",  border : "3px solid #1b4542", scrollbarWidth : "none", overflowY: "scroll", borderRadius : "10px", height : "500px", maxWidth : "340px", marginLeft : "50px", marginTop : "20px"}}>   
+                <Row className='reviewBoxPrint' style={{ msOverflowStyle: "none",  border : "3px solid #1b4542", scrollbarWidth : "none", overflowY: "scroll", borderRadius : "10px", height : "500px", maxWidth : "340px", marginLeft : "40px", marginTop : "20px"}}>   
                     {data.state.comments.map((id) => (
                         <div style={{backgroundColor : "#B7CFC6", borderRadius : "10px", marginTop : "10px", marginBottom : "10px", maxHeight : "200px"}}>
                             <Row>

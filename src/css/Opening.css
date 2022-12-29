@@ -20,7 +20,7 @@
     }
 
 
-.opening_SingUp_btn {
+.opening_SingUp_btn { 
     position: absolute; left: 51.5%; bottom: 13%; transform: translate(-50%, 0%); 
     background: #f0bf70; width: 160px; height: 50px;
     border-radius: 25px; box-sizing: border-box;

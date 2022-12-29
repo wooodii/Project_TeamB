@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import ReserveMap from "../components/Detail_map";
 import DataContext from "../data/DataContext";
 import Review from '../pages/Review';
-
+import styles from '../css/DetailInfo.module.css'
 const DetailInfo = () => {
     const data = useContext(DataContext);
     const navigate = useNavigate();
@@ -14,7 +14,7 @@ const DetailInfo = () => {
                 <p style={{textAlign : "center"}}> {data.state.h_address}에 위치한 병원입니다.</p>
                 <p style={{textAlign : "center"}}> {data.state.h_num}</p>
                 
-                <div style={{border : "2px solid black", height : "400px"}}>
+                <div className={styles.mapbox}>
                     <ReserveMap name={data.state.h_name} address={data.state.h_address}/>
                 </div>
                 
