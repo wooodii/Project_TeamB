@@ -72,7 +72,7 @@ const ReviewModal = () => {
         onClick={handleShow}>
         리뷰작성
       </Button>
-      
+
       <Modal show={show} onHide={AddReview}>
         <Form>
           <Modal.Header>

@@ -15,9 +15,9 @@ const Star = (props) => {
     const [click, setClick] = useState([false, false, false, false, false]);
     // 처음 countStar 초기값이 없다면 0 설정
     const [countStar, setCountStar] = useState(setCount ? setCount : 0);
-    // const sendCountStar = (countS) => {
-    //     props.getCountStar(countS)
-    // }
+    const sendCountStar = (countS) => {
+        props.getCountStar(countS)
+    }
     const starClick = (e, index) => {
         e.preventDefault();
         let clickState = [...click];
