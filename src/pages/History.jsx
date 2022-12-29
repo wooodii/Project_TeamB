@@ -1,29 +1,30 @@
 
-import { useNavigate,Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import DataContext from "../data/DataContext";
 import styles from "../css/history.module.css"
-
+import Banner from "../components/Banner";
+ 
 
 
 const History = () => {
     const data = useContext(DataContext);
     const navigate = useNavigate();
-    const navFilter =()=>{
-        navigate('/filter'); 
-    } 
-    
+    const navFilter = () => {
+        navigate('/filter');
+    }
+
     if (data.state.mypageData) {
         data.action.setTreatmentDetail(data.state.mypageData);
     } else if (data.state.mypageData2) {
         data.action.setTreatmentDetail(data.state.mypageData2);
-    } 
+    }
     console.log(data.state.h_name);
 
 
-    return (   
+    return (
 
-        <div className="History_Page">    
+        <div className="History_Page">
 
             <div className={styles.box3}>                
             <>  
@@ -51,7 +52,10 @@ const History = () => {
                         alert('예약이 취소되었습니다.')
                         }}>예약취소</button>    
                             </div> 
-                            
+                            <div className={styles.bannerbox}>
+
+                            <Banner/>
+                            </div>
                         </div>  
                     )     
                     : ( 
@@ -80,16 +84,14 @@ const History = () => {
                         <>
                         <div className={styles.btnbox}>
                         <button className={styles.btn2} onClick={navFilter}>예약하러 가기 (병원찾기)</button>                    
-                        </div>                                            
+                        </div>                                       
                         </>
 
-                        )
-                }
-                </div> 
-                
-
-            </>
-                </div> 
+                                )
+                        }
+                    </div>
+                </>
+            </div>
         </div>
     );
 }
