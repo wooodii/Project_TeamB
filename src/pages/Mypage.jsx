@@ -57,11 +57,16 @@ const MyPage = () => {
                   style={{
                       width:"150px", 
                       height :"150px", 
-                      backgroundImage: `url(${data.state.userpro})`,
-                      backgroundSize:"cover" }
-                    }></div>
+                      backgroundImage: `url(${data.state.userpro}) `,
+                      backgroundPosition:"center",
+                      backgroundRepeat:"no-repeat",
+                      backgroundSize:"130px",
+                      borderRadius:"50%",
+                      border: "1px solid #ccc"
+                              
+                    }}></div>
                   : 
-                  <img className="userimg"  onClick={()=>{setShow(true)}} src={`${process.env.PUBLIC_URL}/images/user.png`} alt="유저이미지" />
+                  <img className="userimg" style={{borderRadius:"50%"}}  onClick={()=>{setShow(true)}} src={`${process.env.PUBLIC_URL}/images/user.png`} alt="유저이미지" />
 }     
                 </div>
               </li>
@@ -71,20 +76,25 @@ const MyPage = () => {
               <li>
                 <p className="mypage_email">{email}</p>
               </li>
-                    <li>
-                      <a className="mypage_num" href="#">0</a>
-                      <a href="#">예약내역</a>
+                </ul>
+                <ul className="mypage_desc_box">
+                  <li className="mypage_desc">
+                      <a style={{fontSize:"24px"}} href="#">0</a>
+                      <a href="#" >예약내역</a>
                     </li>
-                    <li>
-                      <a className="mypage_num" href="#">0</a>
+                    <li className="mypage_desc">
+                      <a style={{fontSize:"24px"}} href="#">0</a>
                       <a href="#">좋아요</a>
                     </li>
-                    <li>
-                      <a className="mypage_num" href="#">0</a>
+                    <li className="mypage_desc">
+                      <a style={{fontSize:"24px"}} href="#">0</a>
                       <a href="#">리뷰</a>
                     </li>
                 </ul>
-                <button className="Btn_L_G_2" onClick={() => { logOut() }}>로그아웃</button>
+                <div style={{display:"flex",justifyContent: "center"}}>
+                  <button className="Btn_L_G_2" onClick={() => { logOut() }}>로그아웃</button>
+                </div>
+                
           </div>
           <hr />
           <Container>
