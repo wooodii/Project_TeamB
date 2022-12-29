@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import DataContext from "../data/DataContext";
 import styles from "../css/history.module.css"
+import Banner from "../components/Banner";
  
 
 
@@ -51,7 +52,10 @@ const History = () => {
                         alert('예약이 취소되었습니다.')
                         }}>예약취소</button>    
                             </div> 
-                            
+                            <div className={styles.bannerbox}>
+
+                            <Banner/>
+                            </div>
                         </div>  
                     )     
                     : ( 
@@ -80,7 +84,7 @@ const History = () => {
                         <>
                         <div className={styles.btnbox}>
                         <button className={styles.btn2} onClick={navFilter}>예약하러 가기 (병원찾기)</button>                    
-                        </div>                                            
+                        </div>                                       
                         </>
 
                                 )

@@ -1,5 +1,6 @@
 import Slider from "react-slick";
 
+
 const Banner = () => {
     const settings = {
         dots: false,
@@ -9,21 +10,20 @@ const Banner = () => {
         slidesToScroll: 1,
         arrows: false ,
         autoplay: true,
-        autoplaySpeed : 3000
+        autoplaySpeed : 4000
     }
     return ( 
-        <div style={{height:'100px',border:"1px solid black" , margin : "0 10px"}}>
+        <div style={{height:'100px' , margin : "0 10px"}}>
         <Slider {...settings}>
-          <div>
-            <img src="" alt="배너1" />
+          <div >
+            <a href="https://ncov.kdca.go.kr/"><img style={{width:"100%",  objectFit:'cover'}} src={require('../img/banner1.png')} alt="배너1" /></a>
+          </div>
+          <div >
+            <a href="https://www.gov.kr/portal/rcvfvrSvc/main"><img style={{width:"100%",  objectFit:'cover'}} src={require('../img/banner2.png')} alt="배너2" /></a>
           </div>
           <div>
-            <img src="" alt="배너2" />
+            <a href="https://helpline.kdca.go.kr/cdchelp/ph/ptlcontents/selectPtlConSent.do?schSno=110&menu=B0101"><img style={{width:"100%",  objectFit:'cover'}} src={require('../img/banner3.jpg')} alt="배너3" /></a>
           </div>
-          <div>
-            <img src="" alt="배너3" />
-          </div>
-         
         </Slider>
       </div>
      );
