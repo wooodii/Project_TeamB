@@ -44,6 +44,8 @@ const Health_Modal = (props) => {
                         <li >
                             <a href="#" className='close' onClick={()=>{
                                 props.setShow(false)
+                                data.action.setIsMeasures(false)
+
                             }}>
                                 취소
                             </a>
