@@ -52,21 +52,19 @@ const Home = () => {
                             <SearchBar_Home/>
                         </Col>
                     </Row>
-                    <hr/>
-                    <div style={{marginTop :"10px", fontSize : "22px", borderRadius : "10px", position : "relative"}}>                        
-                        <img style={{borderRadius : "15px", position : "absolute", zIndex : "-10", 
-                        objectFit: "cover", width : "100%", height : "150px", opacity : ".99"}} 
-                        src={`${process.env.PUBLIC_URL}/images/homeimg2.jpg`} alt="image" />
-                    </div>
-                        <div style={{marginLeft : "15px", borderRadius : "10px"}}>
-                            <p style={{ fontSize : "20px", marginTop : "40px"}}>
+                    <div style={{marginTop :"10px", fontSize : "22px", borderRadius : "10px", position : "relative", backgroundColor : "#B7CFC6", padding : "20px"}}>                        
+                       <div style={{marginLeft : "0px", borderRadius : "10px"}}>
+                            <p style={{ fontSize : "18px", marginTop : "0px"}}>
                             <b>{name} </b> 님, <br/>
-                            건강한 하루 되세요!</p>
+                            <p style={{fontSize : "17px"}}>건강한 하루 되세요! </p>
+                            </p>
                         </div>
+                    </div>
+                        
                     
-                    <Row style={{display : "flex", marginLeft : "3px", marginTop : "78px"}}>
+                    <Row style={{display : "flex", marginLeft : "3px", marginTop : "20px"}}>
                         <div style={{display : "relative",backgroundColor : "#eee", borderRadius : "10px", width : "80px", height : "70px", margin : "5px"}}>
-                            <p style={{margin : "25px 0 0 0", fontSize :"15px",}}>건강내역 </p>    
+                            <p style={{margin : "25px 0 0 0", fontSize :"15px",}}>건강피드</p>    
                         </div>
                         <div style={{display : "relative",backgroundColor : "#eee", borderRadius : "10px", width : "80px", height : "70px", margin : "5px"}}>
                             <p style={{margin : "25px 0 0 0", fontSize :"15px", }}>복약관리 </p>    
@@ -81,18 +79,21 @@ const Home = () => {
 
                     <hr/>
                     <Row className="Temperature">
-                        <h5 style={{marginLeft : "0.5em", fontSize : "1.3em", marginTop : "0px"}}>
+                        <h6 style={{marginLeft : "0.5em", fontSize : "1.3em", marginTop : "0px", fontSize : "17px"}}>
                             오늘 날씨
-                        </h5>
+                        </h6>
                         <Weather/>
                     </Row>
                     <hr />
                     <Row>
-                        <div style={{display : "flex"}}>
-                        <h5 style={{marginLeft : "0.5em", fontSize : "1.3em"}}>건강 정보</h5>
-                        <p style={{display : "inline-block", marginLeft : "1em", borderRadius : "10px", padding : "4px 8px", fontSize : "0.8em", 
+                        <Col xs={4} >
+                        <h6 style={{marginLeft : "0.5em", fontSize : "1.3em",  fontSize : "17px"}}> 건강 정보</h6>
+                        </Col>
+                        <Col xs={4} style={{padding : "0", marginLeft : "-40px"}}>
+                           <p style={{marginLeft :"-50px", display : "inline-block", marginLeft : "1em", borderRadius : "10px", padding : "4px 8px", fontSize : "0.6em", 
                         backgroundColor : "#1b4542", color : "white"}}>{date.getFullYear()} {date.getMonth()+1} {date.getDate()} {days[date.getDay()]}</p>
-                        </div>
+                        </Col>
+                        <Col xs={4}></Col>
                         <HealthInfo/>
                     </Row>
                         <button 
