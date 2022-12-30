@@ -157,7 +157,7 @@ const Notice = () => {
                         </div>
                     </>
                 )}
-               <button className='plus_btn' style={{bottom:"-50px"}} onClick={()=>{
+               <button className='plus_btn' style={{bottom:"-110px"}} onClick={()=>{
                     setShow(true)
                 }}><div className='font_plus' ><FontAwesomeIcon style={{color:"white"}} icon={faPlus} /></div></button>
                 {show && <Notice_Modal setShow={setShow}/>}

@@ -64,7 +64,7 @@ const Login_C = () => {
                             }
                         } />
                         <label >생년월일</label>
-                        <input type="date" className="infant_date_input" min={get71MonthAgo()} max={getToday()} pattern="yyyy-MM-dd" onChange={
+                        <input type="date" className="infant_date_input" data-placeholder="생년월일을 선택해주세요" required min={get71MonthAgo()} max={getToday()} pattern="yyyy-MM-dd" onChange={
                             (e)=>{
                                 setAge(e.target.value)
                             }
