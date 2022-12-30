@@ -72,14 +72,14 @@ const DataProvider = ({ children }) => {
 
     // 사용할 value값들을 state(초기값)과 action(변경값) 분리해서 넣기
     const value =
-    {
+    { 
 
 
-        state: {treatmentDetail, isbook,mypageData2,mypageData,location,startDate,h_major, h_name, h_num, h_address, comments,infant, login, hcheck, icheck, date, month, age, measures, ismeasures,category,hospitalData, isLoginned },
+        state: {userpro,treatmentDetail, isbook,mypageData2,mypageData,location,startDate,h_major, h_name, h_num, h_address, comments,infant, login, hcheck, icheck, date, month, age, measures, ismeasures,category,hospitalData, isLoginned },
 
 
         
-        action: {setTreatmentDetail, setIsbook,setMypageData2,setMypageData,setStartDate,setH_major,setH_name, setH_num,setH_address,setInfant, setLogin, setHcheck, setIcheck, setMesures, setIsMeasures ,setCategory,setHospitalData, setIsLoginned,setComments}
+        action: {setUserpro,setTreatmentDetail, setIsbook,setMypageData2,setMypageData,setStartDate,setH_major,setH_name, setH_num,setH_address,setInfant, setLogin, setHcheck, setIcheck, setMesures, setIsMeasures ,setCategory,setHospitalData, setIsLoginned,setComments}
 
 
     };

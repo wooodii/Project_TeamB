@@ -59,8 +59,8 @@ const History = () => {
                         </div>  
                     )     
                     : ( 
-                        <div>
-                        <div className={styles.box} >
+                        <div  className={styles.box}>
+                        <div className={styles.sbox} >
                         <h2>{data.state.h_name}</h2>
                         <h4>{data.state.h_address}</h4> 
                         <hr />
@@ -74,7 +74,7 @@ const History = () => {
                     <button className={styles.btn} onClick={()=>{
                         window.location.reload(); 
                         alert('예약이 취소되었습니다.')
-                        }}>예약취소</button>                                        
+                        }}>예약취소</button>                                    
                         </div>
                         <div className={styles.bannerbox}>
 
