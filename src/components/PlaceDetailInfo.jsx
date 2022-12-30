@@ -21,7 +21,7 @@ const PlaceDetailInfo = () => {
                     </div>
                     {placefilter[placeid].사업장}</h2>
                 <hr /> 
-                <p> {placefilter[placeid].주소}에 위치한 병원입니다</p>
+                <p> <span> {placefilter[placeid].주소}</span> 에 위치한 병원입니다</p>
                 <p> {placefilter[placeid].전화번호}</p>
             </div>
             <div className={styles.mapbox}>   

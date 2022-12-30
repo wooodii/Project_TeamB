@@ -51,8 +51,8 @@ const Reservation2 = () => {
                     />  
                 </div>  
                 <div className={styles.linkbox} >
-                        <Link className={styles.link}  to='/history'> 
-                        <button  onClick={ReservationBtn} value='onLogin'>예약</button>
+                        <Link  style={{margin : "0 10px"}} to='/history'> 
+                        <button className={styles.link} onClick={ReservationBtn} value='onLogin'>예약</button>
                         </Link>
                 </div> 
             </div>

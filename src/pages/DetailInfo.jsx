@@ -9,10 +9,16 @@ const DetailInfo = () => {
     const navigate = useNavigate();
     return (     
         <div> 
-            <div style={{height: "100vh", maxWidth : "420px"}}>  
-                <h2 style={{textAlign : "center", fontWeight : "700", padding : "6px"}}> {data.state.h_name}</h2>
-                <p style={{textAlign : "center"}}> {data.state.h_address}에 위치한 병원입니다.</p>
-                <p style={{textAlign : "center"}}> {data.state.h_num}</p>
+            <div  className={styles.title} style={{height: "100vh", maxWidth : "420px"}}>
+                <div className={styles.imgbox}>
+                <img className={styles.img} src={require(`../img/hospital.png`)} />
+                </div>
+                <h2 style={{textAlign : "center", fontWeight : "700", padding : "6px"}}> 
+                    {data.state.h_name}</h2>
+                <hr/>
+                <p style={{textAlign : "center", fontSize : "14px"}}> {data.state.h_address}</p>
+                <p style={{textAlign : "center",  fontSize : "14px"}}>  {data.state.h_num}</p>
+                <br/>
                 
                 <div className={styles.mapbox}>
                     <ReserveMap name={data.state.h_name} address={data.state.h_address}/>
@@ -22,13 +28,13 @@ const DetailInfo = () => {
                     <h4 style={{textAlign : "center"}}>진료과목</h4>
                     <p style={{ padding : "0 20px"}}>{data.state.h_major}</p>
                 </div>
-
-                <div style={{margin : "5px"}}>
+                <br/>
+                <div >
                     <button onClick={() => {navigate('/reservation2')}} 
                     style={{ width : "100%", margin : "", 
                     borderRadius : "5px", padding : "10px 0", 
                     backgroundColor : "#1b4542", color : "white"}}> 
-                    <div style={{marginLeft : "165px"}}>예약하기 </div> </button >
+                    <div style={{textAlign : "center"}}>예약하기 </div> </button >
                 </div>
 
                 <div>

@@ -25,28 +25,31 @@ const Review = () => {
             <Row style={{marginTop : "2vh"}}> 
                 <Col xs={4} style={{marginBottom : "2vh"}}>
                     <Row>
-                        <Col><h3 style={{marginLeft : "1em"}}>방문후기</h3></Col>
+                        <Col><h4 style={{marginLeft : "0em"}}>방문후기</h4></Col>
                     </Row>
                 </Col>
                 <Col xs={8}> 
-                <ReviewModal style={{marginLeft : "-10px"}}/>
+                <div>
+                <ReviewModal/>
+                </div>
                 </Col> 
             </Row>
-            <Row style={{marginLeft : "55px"}}>
-                <div> 이 병원에 대해 {revisitCount} 명이 후기를 남겼어요 </div>
+            <Row>
+                <div style={{textAlign : "center"}}> 이 병원에 대해 {revisitCount} 명이 후기를 남겼어요 </div>
             </Row>
             <Row className="reviewBox">
                 <Row className='reviewBoxPrint' 
                     style={{ msOverflowStyle: "none",  border : "3px solid #1b4542", 
                         scrollbarWidth : "none", overflowY: "scroll", borderRadius : "10px", 
-                            height : "500px", maxWidth : "340px", marginLeft : "35px", marginTop : "20px"}}>   
+                            height : "500px", maxWidth : "350px", marginLeft : "16px", marginTop : "20px"}}>   
                     {data.state.comments.map((id) => (
-                        <div style={{backgroundColor : "#B7CFC6", borderRadius : "10px", margin : "10px 10px 10px 10px", maxHeight : "200px"}}>
+                        <div style={{backgroundColor : "#B7CFC6", borderRadius : "10px", 
+                        margin : "10px 10px 10px 10px", maxHeight : "200px"}}>
                             <Row>
                                 {
                                     id.countStar 
                                     ?
-                                    <div style={{margin : "10px 10px 10px 75px"}}>
+                                    <div style={{margin : "10px 10px 10px 0px"}}>
                                     <Star setCount={id.countStar}/>
                                     </div> 
                                     : 
