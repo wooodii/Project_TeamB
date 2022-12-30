@@ -44,29 +44,46 @@ const Home = () => {
     return ( 
         <Container className="Home" style={{position: "relative", maxWidth : "420px", height : "100vh"}}>
 
-
                     <Row className="Search_box" style={{marginBottom : "1em", marginTop : "2em", display : "flex"}}>
-                        <Col xs={1}> <img style={{width : "35px", marginTop : "15px"}} src={mydoctor} alt="image"/></Col>
-                        <Col xs={11}><SearchBar_Home/></Col>
+                        <Col xs={1}> 
+                            <img style={{width : "33px", marginTop : "17px"}} src={mydoctor} alt="image"/>
+                        </Col>
+                        <Col xs={11}>
+                            <SearchBar_Home/>
+                        </Col>
+                    </Row>
+                    <hr/>
+                    <div style={{marginTop :"10px", fontSize : "22px", borderRadius : "10px", position : "relative"}}>                        
+                        <img style={{borderRadius : "15px", position : "absolute", zIndex : "-10", 
+                        objectFit: "cover", width : "100%", height : "150px", opacity : ".99"}} 
+                        src={`${process.env.PUBLIC_URL}/images/homeimg2.jpg`} alt="image" />
+                    </div>
+                        <div style={{marginLeft : "15px", borderRadius : "10px"}}>
+                            <p style={{ fontSize : "20px", marginTop : "40px"}}>
+                            <b>{name} </b> 님, <br/>
+                            건강한 하루 되세요!</p>
+                        </div>
+                    
+                    <Row style={{display : "flex", marginLeft : "3px", marginTop : "78px"}}>
+                        <div style={{display : "relative",backgroundColor : "#eee", borderRadius : "10px", width : "80px", height : "70px", margin : "5px"}}>
+                            <p style={{margin : "25px 0 0 0", fontSize :"15px",}}>건강내역 </p>    
+                        </div>
+                        <div style={{display : "relative",backgroundColor : "#eee", borderRadius : "10px", width : "80px", height : "70px", margin : "5px"}}>
+                            <p style={{margin : "25px 0 0 0", fontSize :"15px", }}>복약관리 </p>    
+                        </div>
+                        <div style={{display : "relative",backgroundColor : "#eee", borderRadius : "10px", width : "80px", height : "70px", margin : "5px"}}>
+                            <p style={{margin : "25px 0 0 0", fontSize :"15px", }}>예약내역 </p>    
+                        </div>
+                        <div style={{display : "relative",backgroundColor : "#eee", borderRadius : "10px", width : "80px", height : "70px", margin : "5px"}}>
+                            <p style={{margin : "25px 0 0 0", fontSize :"15px", }}>건강정보 </p>    
+                        </div>
                     </Row>
 
-                    <div style={{zIndex : "5", position : "absolute", top : "90px", left : "0", backgroundColor : "#bdbdbd", borderRadius : "20px", marginLeft : "12px"}}>
-                        <img style={{objectFit: "cover", width : "390px", height : "150px",  opacity : "80%"}} src={`${process.env.PUBLIC_URL}/images/home1.jpg`} alt="image" />
-                    </div>
-
-                    <div style={{marginTop :"20px", position: "absolute", zIndex : "999", fontSize : "22px", marginLeft:"8px",
-                         borderRadius : "10px", padding : "0 10px", backgroundColor :"white", opacity : "70%"}}>
-                        <div style={{zIndex : "1000"}}>
-                             <p style={{fontSize :"20px"}}>
-                        <b>{name} </b> 님, </p>
-                       <p>건강한 하루 되세요!</p>
-                        </div>
-                       
-                    
-                    </div>
-
+                    <hr/>
                     <Row className="Temperature">
-                        <h5 style={{marginTop : "190px", marginLeft : "0.5em", fontSize : "1.3em"}}>오늘 날씨</h5>
+                        <h5 style={{marginLeft : "0.5em", fontSize : "1.3em", marginTop : "0px"}}>
+                            오늘 날씨
+                        </h5>
                         <Weather/>
                     </Row>
                     <hr />

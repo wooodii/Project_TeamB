@@ -41,7 +41,7 @@ const Weather = () => {
                     <div style={{fontSize : "0.7em", padding : "1em"}}>
                         <Row style={{marginTop : "1em"}}>
                         <Col xs={5}>      
-                            <h5 className="city"> 📍  {result.name}</h5>
+                            <h5 className="city"> {result.name}</h5>
                         </Col>
 
                         <Col xs={7} style={{display : "flex"}}>

@@ -38,13 +38,13 @@ const HealthInfo = () => {
                         padding : "5px", margin : "0px 10px", fontSize : "0.9em"}}>
                           <Row>
                           <Col xs={3}>
-                          <div style={{borderRadius : "20px", width : "80px", height : "100px", backgroundColor : "white", margin : "5px"}}>
+                          <div style={{borderRadius : "20px", width : "80px", height : "80px", backgroundColor : "white", margin : "5px"}}>
                            <p style={{fontSize : "20px", display : "flex", marginTop : "10px"}}>  
-                               <span style={{display : "absolute", margin : "30px auto"}}> {list.dissNm}  </span>
+                               <span style={{display : "absolute", margin : "25px auto"}}> {list.dissNm}  </span>
                           </p>
                           </div>
                           </Col>
-                          <Col xs={9} style={{marginTop : "15px", marginBottom : "5px", fontSize : "15px", padding : "10px 0"}}>
+                          <Col xs={9} style={{marginTop : "5px", marginBottom : "5px", fontSize : "15px", padding : "5px 0"}}>
                             <div style={{margin : "0 25px"}}>
                             {list.dissRiskXpln}
                             </div>
@@ -68,8 +68,7 @@ export default HealthInfo;
 // 이 컴포넌트는 styled-components 사용 권장
 // 슬릭 기본 화살표랑 dots 설정 제거
 const StyledSlider = styled(Slider)`
-margin-top :20px;
-height: 180px;
+height: 140px;
 width: 100%;
 position: relative;
 border-radius: 10px;
@@ -84,10 +83,8 @@ border-radius: 10px;
 
 .s-wrapper {
   color: black;
-  background-color: #fff;
   border-radius: 10px;
   max-width : 400px;
-
   text-align: center;
 }
 .s-title {
@@ -108,5 +105,13 @@ display: none;
 opacity: 0;
 display: none;
 
+.PYqND{width:100%;position:relative;border-radius:10px;}
+}
+.DagFr {
+  width: 100%;
+  position: relative;
+  border-radius: 10px;
+}
 
-}`
+
+`
