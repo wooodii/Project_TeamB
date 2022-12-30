@@ -64,7 +64,7 @@ const Home = () => {
                     
                     <Row style={{display : "flex", marginLeft : "3px", marginTop : "20px"}}>
                         <div style={{display : "relative",backgroundColor : "#eee", borderRadius : "10px", width : "80px", height : "70px", margin : "5px"}}>
-                            <p style={{margin : "25px 0 0 0", fontSize :"15px",}}>건강내역 </p>    
+                            <p style={{margin : "25px 0 0 0", fontSize :"15px",}}>건강피드</p>    
                         </div>
                         <div style={{display : "relative",backgroundColor : "#eee", borderRadius : "10px", width : "80px", height : "70px", margin : "5px"}}>
                             <p style={{margin : "25px 0 0 0", fontSize :"15px", }}>복약관리 </p>    
