@@ -23,22 +23,25 @@ const Review = () => {
         <hr />
 
             <Row style={{marginTop : "2vh"}}> 
-                <Col xs={3} style={{marginBottom : "2vh"}}>
+                <Col xs={4} style={{marginBottom : "2vh"}}>
                     <Row>
-                        <Col><h3 style={{marginLeft : "1em"}}>리뷰</h3></Col>
+                        <Col><h3 style={{marginLeft : "1em"}}>방문후기</h3></Col>
                     </Row>
                 </Col>
-                <Col xs={9}> 
-                <ReviewModal />
+                <Col xs={8}> 
+                <ReviewModal style={{marginLeft : "-10px"}}/>
                 </Col> 
             </Row>
             <Row style={{marginLeft : "55px"}}>
-                <div> 이 병원에 대해 {revisitCount} 명이 리뷰를 남겼어요 </div>
+                <div> 이 병원에 대해 {revisitCount} 명이 후기를 남겼어요 </div>
             </Row>
             <Row className="reviewBox">
-                <Row className='reviewBoxPrint' style={{ msOverflowStyle: "none",  border : "3px solid #1b4542", scrollbarWidth : "none", overflowY: "scroll", borderRadius : "10px", height : "500px", maxWidth : "340px", marginLeft : "40px", marginTop : "20px"}}>   
+                <Row className='reviewBoxPrint' 
+                    style={{ msOverflowStyle: "none",  border : "3px solid #1b4542", 
+                        scrollbarWidth : "none", overflowY: "scroll", borderRadius : "10px", 
+                            height : "500px", maxWidth : "340px", marginLeft : "35px", marginTop : "20px"}}>   
                     {data.state.comments.map((id) => (
-                        <div style={{backgroundColor : "#B7CFC6", borderRadius : "10px", marginTop : "10px", marginBottom : "10px", maxHeight : "200px"}}>
+                        <div style={{backgroundColor : "#B7CFC6", borderRadius : "10px", margin : "10px 10px 10px 10px", maxHeight : "200px"}}>
                             <Row>
                                 {
                                     id.countStar 
@@ -51,7 +54,7 @@ const Review = () => {
                                 }
                             </Row>
                             <Row style={{display : "flex"}}>
-                                <div>
+                                <div style={{marginLeft : "4px", marginBottom : "2px", marginTop : "4px", marginBottom : "1px"}}>
                                     {
                                         id.btn1 ? <span style={{padding : "0.2em 0.5em", 
                                                     fontSize : "0.7em", margin : "0.3em", 
@@ -64,7 +67,7 @@ const Review = () => {
                                                 </span> : null
                                     }
                                 </div>
-                                <div>
+                                <div  style={{marginLeft : "4px", marginBottom : "8px"}}>
                                     {
                                         id.btn3 ? <span style={{padding : "0.2em 0.5em", backgroundColor : "white", 
                                                 fontSize : "0.7em", margin : "0.3em", borderRadius : "10px"}}> 시설/장비 | {id.btn3} 

@@ -55,17 +55,7 @@ const DataProvider = ({ children }) => {
             btn3: "신규장비에요",
             review: "방문 후기를 20글자 이내로 작성해주세요",
             yesNo: "재방문할래요",
-        },
-        {
-            Id: 2,
-            name: "huiseong",
-            countStar: 5,
-            btn1: "효과좋아요",
-            btn2: "친절해요",
-            btn3: "신규장비에요",
-            review: "좋았습니다",
-            yesNo: "재방문할래요",
-        } 
+        }
     ]);
 
     const [treatmentDetail, setTreatmentDetail] = useState(); 
