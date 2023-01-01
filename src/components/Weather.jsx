@@ -1,6 +1,5 @@
 // 데이터 : openweathermap 사이트
-// 날씨 정보 주는 컴포넌트
-// 현재는 위치 입력받아 해당위치 출력중 
+// 현재 위치의 날씨 정보를 출력하는 컴포넌트
 import { useState } from "react";
 import { useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
@@ -14,13 +13,11 @@ const Weather = () => {
         navigator.geolocation.getCurrentPosition((positon) => {
             let lat = positon.coords.latitude;
             let lon = positon.coords.longitude;
-            console.log('현재위치',lat,lon);
+            //console.log('현재위치',lat,lon);
             getWeather(lat,lon);
             
         });
     }
-    // const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units
-    //         =&lang=kr&appid=${API_KEY}`;
 
     const getWeather = async (lat, lon) => {
         let url= `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
@@ -45,9 +42,9 @@ const Weather = () => {
                         </Col>
 
                         <Col xs={7} style={{display : "flex"}}>
-                         <h5 className="temperature">
-                            🌡  {result.main.temp}˚C
-                          </h5>  　 <h5 className="sky">
+                        <h5 className="temperature">
+                            🌡  {result.main.temp}˚C </h5>　
+                        <h5 className="sky">
                         {/* '즉시발동함수'로 jsx{}에서 중첩조건문 사용 */}
                             {
                                     (function () {
@@ -61,20 +58,16 @@ const Weather = () => {
                                             return (" ☁️ ")
                                         }
                                     })()
-                                }
-                                {result.weather[0].main}
+                            }
+                            {result.weather[0].main}
                         </h5>
                         </Col>
                         </Row>
-
-                        
                     </div>
                     )
                 }
-
         </Row>
         </div>
-     
     );
 }
 

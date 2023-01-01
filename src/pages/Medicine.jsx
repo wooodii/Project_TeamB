@@ -1,19 +1,20 @@
 /** 복약관리 페이지입니다 (서아)
-*로그인한 유저 > 유저정보와 연결해서 직접 약 이름과 투여량, 횟수를 입력 > 출력하는 페이지
+*로그인한 유저 > 직접 약 이름과 투여량, 횟수를 입력받아 출력하는 페이지
 *상태관리 리덕스(medicine.js)/firebase db에는 저장 안 함
 */
 import { useContext, useEffect, useState } from "react";
 import { FloatingLabel, Form, Card, ListGroup, Table } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { addMedicine } from "../modules/medicine";
+import { addMedicine, toggleCheck } from "../modules/medicine";
 import DataContext from "../data/DataContext";
 import { doc, getDoc } from "firebase/firestore"
 import { db } from "../Firebase";
-import "../css/Medicine.css";
 import { useNavigate } from "react-router-dom";
-// 뒤로가기 버튼
+// 뒤로가기 버튼 & 복약확인
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import "../css/Medicine.css";
 
 const Medicine = () => {
     const data = useContext(DataContext);
@@ -26,14 +27,21 @@ const Medicine = () => {
     const medicine = useSelector((state)=>(state.medicine));
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    // 복약정보 입력 모달창 관리 state입니다
+    // 복약확인 (check) 토글 관리 state
+    const [isChecked, setIsChecked] = useState();
+    // 복약정보 입력 모달창 관리 state
     const [modalOpen, setModalOpen] = useState(false);
+    // 날짜 출력을 위한 date객체
+    const date = new Date();
+
+
     // 복약정보 입력하기 버튼에 연결된 함수
     function openMedModal () {
         return (
             setModalOpen(!modalOpen)
         )
     }
+    
     // firestore db에서 로그인된 유저 정보를 들고온다
     const getSingleData = async () => {
         const docRef = doc(db, "users", user);
@@ -51,15 +59,29 @@ const Medicine = () => {
         }
     }, [user]);
 
+    // 복약확인 체크 > 날짜 변경 때마다 false로 초기화
+    useEffect(()=>{
+        setIsChecked(false);
+    },[date.getDate() ])
+
     return ( 
         <>
         <span className="goback" onClick={()=>{navigate("/mypage")}}><FontAwesomeIcon icon={faArrowLeft} /></span>
         <div className="med-form">
             <h3>복약 관리</h3>
-            <p>버튼을 클릭하여 복약정보를 등록하세요!</p>
+            <p>버튼을 클릭하여 복약정보를 등록하고 관리하세요!</p>
+            <br />
+            <div className="alarm">
+                <h6 className="confirm" onClick={()=>{setIsChecked(true)}}> 오늘의 복약 완료 기록 :
+                    {
+                        isChecked ? <span style={{fontSize:"2em"}}>👌</span> 
+                        : <p>오늘 약 복용을 잊지 마세요</p>
+                    }
+                </h6>
+            </div>
         </div>
-        <button className="addMed-btn med-form" onClick={openMedModal}>복약정보 추가</button>
         
+        <button className="addMed-btn med-form" onClick={openMedModal}>복약정보 추가</button>
         {modalOpen ? (
         <MedicineModal 
         name={name} pillsCount={pillsCount} setpillsCount={setpillsCount}
@@ -69,15 +91,20 @@ const Medicine = () => {
         ):(null)
         }
         <br />
-        <div className="print-medList med-form">
-        <b>{name}</b>{" "}님의 복약정보 <br />
+        <div className="med-form">
+        <h5 style={{textAlign:"center"}}>{name}{" "}님의 </h5>
+            <div className="intro-ment">
+                <div className="date">
+                <span>{date.getMonth()+1}월 {date.getDate()}일</span>{" "}복약정보
+                </div>
+            </div>
         <Table striped>
                 <thead>
                     <tr>
-                    <th>no.</th>
+                    <th><p>no.</p></th>
                     <th>이름</th>
-                    <th><p><b>투여량</b></p></th>
-                    <th><p><b>투여 횟수</b></p></th>
+                    <th><p>투여량/횟수</p></th>
+                    <th><p style={{color:"#1b4542"}}>복약확인</p></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -85,8 +112,14 @@ const Medicine = () => {
                     <tr key={med.pillId}>
                         <td>{med.pillId}</td>
                         <td>{med.pillsName}</td>
-                        <td>{med.pillsCount}</td>
-                        <td>{med.pillsDose}</td>
+                        <td>　{med.pillsCount}{" "}/{" "}{med.pillsDose}</td>
+                        <td onClick={()=>{setIsChecked(!isChecked)}}>
+                        　{
+                            isChecked
+                            ? <FontAwesomeIcon icon={faCheck} />
+                            : null
+                            }
+                        </td>
                     </tr>
                     ))}  
                 </tbody>
@@ -100,9 +133,9 @@ export default Medicine;
 
 
 
-// +추가
+
 // 복약 정보 등록전, 약 이름, 투여 수량과 횟수를 입력받는 모달창입니다
-// 상위 컴포넌트로부터 값을 넘겨받아 출력하기 위한 props들
+// 부모 컴포넌트로(Medicine)으로부터 props로 값을 넘겨받아 사용
 const MedicineModal =(props)=> {
     const {name, pillsName, setPillsName, pillsCount, setpillsCount, pillsDose, setPillsDose} = props;
     const {modalOpen, setModalOpen} = props;
@@ -110,13 +143,9 @@ const MedicineModal =(props)=> {
     const dispatch = useDispatch();
 
     return (
-        <>
-        <div className="med-form">
-            <p>
-            <b>{name}</b>{" "}님, <br/> 복용중인 약의 이름과 투여량, 횟수를 입력해주세요</p>
-        </div>
-        <hr/>
-        <div className="mx-5 mt-5">
+        <div>
+
+        <div className="mx-5 mt-2">
             <div>
                 <FloatingLabel controlId="floatingInput"
                     label="복용하는 약의 이름" className="mb-3">
@@ -124,8 +153,8 @@ const MedicineModal =(props)=> {
                     style={{border:"none", borderBottom:"1px solid lightgray"}}
                     onChange={(e)=>{setPillsName(e.target.value)}} />
                 </FloatingLabel>
-                　투여량: <input className="med-input" type="number" onChange={(e)=>{setpillsCount(e.target.value)}} /> 
-                　투여 횟수: <input className="med-input" type="number" min='10' max='30' onChange={(e)=>{setPillsDose(e.target.value)}} />
+                　투여량: <input className="med-input" type="number" min='10' max='30' onChange={(e)=>{setpillsCount(e.target.value)}} /> 
+                　횟수: <input className="med-input" type="number" min='10' max='30' onChange={(e)=>{setPillsDose(e.target.value)}} />
             </div>
             <br />
             <button className="addMed-btn"
@@ -141,6 +170,6 @@ const MedicineModal =(props)=> {
                     )
                 }>등록하기</button>
         </div>
-    </>
+    </div>
     )
 }
