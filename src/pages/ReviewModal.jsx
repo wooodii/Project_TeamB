@@ -70,7 +70,7 @@ const ReviewModal = () => {
   return (
     <div>
       <Button
-        style={{ backgroundColor : "#1b4542", color : "white", width : "5em" }}
+        style={{ backgroundColor : "#1b4542", color : "white", width : "5em" ,marginLeft:"55px"}}
         variant=""
         onClick={handleShow}>
         <p style={{fontSize : "13px"}}> 작성하기 </p>
