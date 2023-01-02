@@ -65,38 +65,38 @@ const Home = () => {
                             </Col>
                             <Col xs={4}>
                             {/* <img style={{ marginBottom : "35px"}} src={medical} width= "90px" height="100px" alt="" /> */}
-                            <img style={{marginLeft : "-10px", rotate : "5deg"}} src={medical2} width= "85px" height="105px" alt="" />
+                            <img style={{rotate : "5deg"}} src={medical2} width= "85px" height="105px" alt="" />
                             </Col>
                         </Row>
                     </div>
                         
                     
                     <Row style={{display : "flex", marginLeft : "3px", marginTop : "20px"}}>
-                        <div style={{display : "relative",backgroundColor : "#eee", borderRadius : "10px", width : "80px", height : "70px", margin : "5px 5px 5px 5px"}}>
+                        <div onClick={() => (navigate('/main'))} style={{display : "relative",backgroundColor : "#eee", borderRadius : "10px", width : "80px", height : "70px", margin : "5px 5px 5px 5px"}}>
                         <IconContext.Provider value={{ size : "2em" }}>
                             <div style={{margin : "0.5em 0 0 0.7em"}}><FcPuzzle/></div>
                         </IconContext.Provider>
                             <p style={{ fontSize :"13px", marginLeft : "3px"}}>건강내역</p>    
                         </div>
-                        <div style={{display : "relative",backgroundColor : "#eee", borderRadius : "10px", width : "80px", height : "70px", margin : "5px 5px 5px 5px"}}>
+                        <div onClick={() => (navigate('/medicine'))} style={{display : "relative",backgroundColor : "#eee", borderRadius : "10px", width : "80px", height : "70px", margin : "5px 5px 5px 5px"}}>
                         <IconContext.Provider value={{ size : "2em" }}>
                             <div style={{margin : "0.5em 0 0 0.7em"}}><FcBiomass/></div>
                         </IconContext.Provider>
                             <p style={{ fontSize :"13px", marginLeft : "3px"}}>복약관리 </p>    
 
                         </div>
-                        <div style={{display : "relative",backgroundColor : "#eee", borderRadius : "10px", width : "80px", height : "70px", margin : "5px 5px 5px 5px"}}>
+                        <div onClick={() => (navigate('/history'))} style={{display : "relative",backgroundColor : "#eee", borderRadius : "10px", width : "80px", height : "70px", margin : "5px 5px 5px 5px"}}>
                             <IconContext.Provider value={{ size : "2em" }}>
                             <div style={{margin : "0.5em 0 0 0.7em"}}><FcApproval/></div>
                         </IconContext.Provider>
                             <p style={{ fontSize :"13px", marginLeft : "3px"}}>예약내역 </p>    
                         </div>
-                        <div style={{display : "relative",backgroundColor : "#eee", borderRadius : "10px", width : "80px", height : "70px", margin : "5px 5px 5px 5px"}}>
+                        <a href="https://health.kdca.go.kr/healthinfo/index.jsp" style={{display : "relative",backgroundColor : "#eee", borderRadius : "10px", width : "80px", height : "70px", margin : "5px 5px 5px 5px"}}>
                             <IconContext.Provider value={{ size : "2em" }}>
                             <div style={{margin : "0.5em 0 0 0.7em"}}><FcPlus/></div>
                         </IconContext.Provider>
-                            <p style={{ fontSize :"13px", marginLeft : "3px"}}>건강정보 </p>    
-                        </div>
+                            <p style={{ fontSize :"13px", marginLeft : "3px", color : "black"}}>건강정보 </p>    
+                        </a>
                     </Row>
 
                     <hr/>
