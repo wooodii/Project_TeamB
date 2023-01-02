@@ -9,6 +9,10 @@ import { Col, Container, Row } from "react-bootstrap";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../Firebase";
 import mydoctor from '../../src/img/mydoctor.png'
+import { FcPuzzle, FcApproval,FcBiomass, FcPlus } from "react-icons/fc";
+import { IconContext } from "react-icons";
+import medical from '../img/medical.png';
+import medical2 from '../img/medical2.png';
 
 const Home = () => {
     const data = useContext(DataContext);
@@ -52,28 +56,46 @@ const Home = () => {
                             <SearchBar_Home/>
                         </Col>
                     </Row>
-                    <div style={{marginTop :"10px", fontSize : "22px", borderRadius : "10px", position : "relative", backgroundColor : "#B7CFC6", padding : "20px"}}>                        
-                       <div style={{marginLeft : "0px", borderRadius : "10px"}}>
-                            <p style={{ fontSize : "18px", marginTop : "0px"}}>
+                    <div style={{height : "120px", zIndex : "999", display : "absolute", marginTop :"10px", fontSize : "22px", borderRadius : "10px", position : "relative", backgroundColor : "#eee", padding : "20px"}}>                        
+                       <Row style={{marginLeft : "0px", borderRadius : "10px"}}>
+                            <Col xs={8}>
+                            <p style={{ fontSize : "18px", marginTop : "5px"}}>
                             <b>{name} </b> 님, <br/>
-                            <p style={{fontSize : "17px"}}>건강한 하루 되세요! </p>
-                            </p>
-                        </div>
+                            <p style={{fontSize : "17px"}}>건강한 하루 되세요! </p> </p>
+                            </Col>
+                            <Col xs={4}>
+                            {/* <img style={{ marginBottom : "35px"}} src={medical} width= "90px" height="100px" alt="" /> */}
+                            <img style={{marginLeft : "10px", rotate : "5deg"}} src={medical2} width= "85px" height="105px" alt="" />
+                            </Col>
+                        </Row>
                     </div>
                         
                     
                     <Row style={{display : "flex", marginLeft : "3px", marginTop : "20px"}}>
-                        <div style={{display : "relative",backgroundColor : "#eee", borderRadius : "10px", width : "80px", height : "70px", margin : "5px"}}>
-                            <p style={{margin : "25px 0 0 0", fontSize :"15px",}}>건강피드</p>    
+                        <div style={{display : "relative",backgroundColor : "#eee", borderRadius : "10px", width : "80px", height : "70px", margin : "5px 14px 5px 5px"}}>
+                        <IconContext.Provider value={{ size : "2em" }}>
+                            <div style={{margin : "0.5em 0 0 0.7em"}}><FcPuzzle/></div>
+                        </IconContext.Provider>
+                            <p style={{ fontSize :"13px", marginLeft : "3px"}}>건강내역</p>    
                         </div>
-                        <div style={{display : "relative",backgroundColor : "#eee", borderRadius : "10px", width : "80px", height : "70px", margin : "5px"}}>
-                            <p style={{margin : "25px 0 0 0", fontSize :"15px", }}>복약관리 </p>    
+                        <div style={{display : "relative",backgroundColor : "#eee", borderRadius : "10px", width : "80px", height : "70px", margin : "5px 14px 5px 5px"}}>
+                        <IconContext.Provider value={{ size : "2em" }}>
+                            <div style={{margin : "0.5em 0 0 0.7em"}}><FcBiomass/></div>
+                        </IconContext.Provider>
+                            <p style={{ fontSize :"13px", marginLeft : "3px"}}>복약관리 </p>    
+
                         </div>
-                        <div style={{display : "relative",backgroundColor : "#eee", borderRadius : "10px", width : "80px", height : "70px", margin : "5px"}}>
-                            <p style={{margin : "25px 0 0 0", fontSize :"15px", }}>예약내역 </p>    
+                        <div style={{display : "relative",backgroundColor : "#eee", borderRadius : "10px", width : "80px", height : "70px", margin : "5px 14px 5px 5px"}}>
+                            <IconContext.Provider value={{ size : "2em" }}>
+                            <div style={{margin : "0.5em 0 0 0.7em"}}><FcApproval/></div>
+                        </IconContext.Provider>
+                            <p style={{ fontSize :"13px", marginLeft : "3px"}}>예약내역 </p>    
                         </div>
-                        <div style={{display : "relative",backgroundColor : "#eee", borderRadius : "10px", width : "80px", height : "70px", margin : "5px"}}>
-                            <p style={{margin : "25px 0 0 0", fontSize :"15px", }}>건강정보 </p>    
+                        <div style={{display : "relative",backgroundColor : "#eee", borderRadius : "10px", width : "80px", height : "70px", margin : "5px 14px 5px 5px"}}>
+                            <IconContext.Provider value={{ size : "2em" }}>
+                            <div style={{margin : "0.5em 0 0 0.7em"}}><FcPlus/></div>
+                        </IconContext.Provider>
+                            <p style={{ fontSize :"13px", marginLeft : "3px"}}>건강정보 </p>    
                         </div>
                     </Row>
 
@@ -91,7 +113,7 @@ const Home = () => {
                         </Col>
                         <Col xs={4} style={{padding : "0", marginLeft : "-40px"}}>
                            <p style={{marginLeft :"-50px", display : "inline-block", marginLeft : "1em", borderRadius : "10px", padding : "4px 8px", fontSize : "0.6em", 
-                        backgroundColor : "#1b4542", color : "white"}}>{date.getFullYear()} {date.getMonth()+1} {date.getDate()} {days[date.getDay()]}</p>
+                        backgroundColor : "#1b4542", color : "white"}}>{date.getFullYear()}. {date.getMonth()+1}. {date.getDate()}</p>
                         </Col>
                         <Col xs={4}></Col>
                         <HealthInfo/>
