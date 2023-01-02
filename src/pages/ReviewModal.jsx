@@ -62,38 +62,18 @@ const ReviewModal = () => {
       yesNo : yesNo, 
   }]);
 
-  
-  // const test =  () => {
-  //   for(let i=0; i<data.state.comments.length; i++) {
-  //     if (data.state.comments[i].btn1 !== null ) {
-  //       return <Button
-  //         style={{width : "90%", marginLeft : "0.5em", marginTop : "10px"}}
-  //         className="submitButton"
-  //           variant="secondary"
-  //           onClick={AddReview}>
-  //           작성완료
-  //         </Button> 
-  //       }else {
-  //         return null;
-  //     }
-  //   }
-  // }
     setShow(false); 
   };
   const handleShow = () => setShow(true);
-
-  // useEffect(()=>{
-  //   console.log(data.state.comments[0].Id);
-  // }, [])
 
 
   return (
     <div>
       <Button
-        style={{marginLeft: "5em", backgroundColor : "#1b4542", color : "white" }}
+        style={{ backgroundColor : "#1b4542", color : "white", width : "5em" }}
         variant=""
         onClick={handleShow}>
-        리뷰작성
+        <p style={{fontSize : "13px"}}> 작성하기 </p>
       </Button>
 
       <Modal show={show} onHide={AddReview}>

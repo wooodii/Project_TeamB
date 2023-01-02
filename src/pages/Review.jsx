@@ -5,6 +5,8 @@ import Star from "../components/Star";
 import DataContext from "../data/DataContext";
 import ReviewModal from "./ReviewModal";
 import '../css/ReviewModal.css';
+import { IoIosStar } from "react-icons/io";
+import { IconContext } from "react-icons";
 
 const Review = () => {
     const data = useContext(DataContext);
@@ -21,22 +23,48 @@ const Review = () => {
         <>
         <div style={{ width: "390px", height: "400px", marginTop : "5em"}}>
         <hr />
-
             <Row style={{marginTop : "2vh"}}> 
-                <Col xs={4} style={{marginBottom : "2vh"}}>
-                    <Row>
-                        <Col><h4 style={{marginLeft : "0em"}}>방문후기</h4></Col>
-                    </Row>
-                </Col>
-                <Col xs={8}> 
-                <div>
-                <ReviewModal/>
-                </div>
-                </Col> 
+                <Row>
+                    <Col><h4 style={{margin : "0 auto", fontSize : "1.5em"}}> 방문후기</h4></Col>
+                </Row>
             </Row>
             <Row>
-                <div style={{textAlign : "center"}}> 이 병원에 대해 {revisitCount} 명이 후기를 남겼어요 </div>
+                <div style={{textAlign : "center", marginTop : "2em"}}> 이 병원에 대해 {revisitCount} 명이 후기를 남겼어요 </div>
             </Row>
+            <Row>
+                <div style={{width : "360px", backgroundColor : "#eee", borderRadius : "10px", margin : "5px 16px 5px 16px"}}>
+                            <div style={{padding : "2.3em 0 2em 0"}}>
+                    <Row>
+                        <Col xs={4}>
+                             <Row>
+                             <IconContext.Provider value={{ color: "#1b4542", size : "3.7em"}}>
+                                <IoIosStar/>
+                            </IconContext.Provider>
+                            </Row>
+                             <Row>
+                                <div style={{fontSize : "20px"}}> 4.9 </div>
+                            </Row>
+                        </Col>
+                        <Col xs={7} style={{backgroundColor:"white", borderRadius : "10px"}}>
+                            <Row  style={{fontSize: "14px", marginTop : "11px", marginLeft : "2px"}}>
+                            {" "}  진료결과 | 효과좋아요{" "}(89%)
+                            </Row> 
+                            <Row  style={{fontSize: "14px",marginLeft : "2px"}}>
+                            {" "} 서비스  {" "} | 친절해요{" "}(85%)
+                            </Row> 
+                            <Row  style={{fontSize: "14px", marginLeft : "2px"}}>
+                            {" "} 시설/장비 | 보통이에요{" "}(75%)
+                            </Row> 
+                        </Col>
+                        <Col xs={1}></Col>
+                    </Row>
+                            </div>
+                    <Row style={{marginBottom : "1em"}}>
+                        <ReviewModal/>
+                    </Row>
+                </div>
+            </Row>
+            
             <Row className="reviewBox">
                 <Row className='reviewBoxPrint' 
                     style={{ msOverflowStyle: "none",  border : "3px solid #1b4542", 
@@ -44,7 +72,7 @@ const Review = () => {
                             height : "500px", maxWidth : "350px", marginTop : "20px"}}>   
                     {data.state.comments.map((id) => (
                         <div style={{backgroundColor : "#B7CFC6", borderRadius : "10px", 
-                        margin : "10px 10px 10px 10px", maxHeight : "200px"}}>
+                        marginTop : "8px", maxHeight : "180px"}}>
                             <Row>
                                 {
                                     id.countStar 
@@ -91,7 +119,6 @@ const Review = () => {
                                                     padding : "5px", fontSize : "0.9em" }}>  {id.review} 
                                     </div>:null
                                     }
-                                    
                                 </div>
                             </Row>
                         </div>
