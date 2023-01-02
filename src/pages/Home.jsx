@@ -64,16 +64,16 @@ const Home = () => {
                     
                     <Row style={{display : "flex", marginLeft : "3px", marginTop : "20px"}}>
                         <div style={{display : "relative",backgroundColor : "#eee", borderRadius : "10px", width : "80px", height : "70px", margin : "5px"}}>
-                            <p style={{margin : "25px 0 0 0", fontSize :"15px",}}>건강피드</p>    
+                            <p style={{margin : "25px 0 0 0", fontSize :"15px",}} onClick={()=>{navigate('/main')}}>건강피드</p>    
                         </div>
                         <div style={{display : "relative",backgroundColor : "#eee", borderRadius : "10px", width : "80px", height : "70px", margin : "5px"}}>
-                            <p style={{margin : "25px 0 0 0", fontSize :"15px", }}>복약관리 </p>    
+                            <p style={{margin : "25px 0 0 0", fontSize :"15px", }} onClick={()=>{navigate('/medicine')}}>복약관리 </p>    
                         </div>
                         <div style={{display : "relative",backgroundColor : "#eee", borderRadius : "10px", width : "80px", height : "70px", margin : "5px"}}>
-                            <p style={{margin : "25px 0 0 0", fontSize :"15px", }}>예약내역 </p>    
+                            <p style={{margin : "25px 0 0 0", fontSize :"15px", }} onClick={()=>{navigate('/history')}}>예약내역 </p>    
                         </div>
                         <div style={{display : "relative",backgroundColor : "#eee", borderRadius : "10px", width : "80px", height : "70px", margin : "5px"}}>
-                            <p style={{margin : "25px 0 0 0", fontSize :"15px", }}>건강정보 </p>    
+                            <p style={{margin : "25px 0 0 0", fontSize :"15px", }} onClick={()=>{navigate('/home')}}>건강정보 </p>    
                         </div>
                     </Row>
 
