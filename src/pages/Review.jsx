@@ -69,7 +69,7 @@ const Review = () => {
                 <Row className='reviewBoxPrint' 
                     style={{ msOverflowStyle: "none",  border : "3px solid #1b4542", 
                         scrollbarWidth : "none", overflowY: "scroll", borderRadius : "10px", 
-                            height : "500px", maxWidth : "350px", marginTop : "20px"}}>   
+                            height : "500px", maxWidth : "350px", marginLeft : "16px",marginTop : "20px"}}>   
                     {data.state.comments.map((id) => (
                         <div style={{backgroundColor : "#B7CFC6", borderRadius : "10px", 
                         marginTop : "8px", maxHeight : "180px"}}>
