@@ -55,6 +55,26 @@ const DataProvider = ({ children }) => {
             btn3: "신규장비에요",
             review: "방문 후기를 20글자 이내로 작성해주세요",
             yesNo: "재방문할래요",
+        },
+         {
+            Id: 2,
+            name: "user",
+            countStar: 1,
+            btn1: "보통이에요",
+            btn2: "친절해요",
+            btn3: "노후되었어요",
+            review: "선생님이 친절하셨어요",
+            yesNo: "재방문할래요",
+        },
+        {
+            Id: 3,
+            name: "user",
+            countStar: 5,
+            btn1: "효과좋아요",
+            btn2: "친절해요",
+            btn3: "노후되었어요",
+            review: "꼼꼼하게 진단해주셨어요",
+            yesNo: "",
         }
     ]);
 

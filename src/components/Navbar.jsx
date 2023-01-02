@@ -11,9 +11,6 @@ import { Col, Container, Row } from "react-bootstrap";
 
 const NavbarComp = () => {
     const navigate = useNavigate();
-    const colorchange = () => {
-        
-    };
 
     return (
 
@@ -21,21 +18,16 @@ const NavbarComp = () => {
         <Container>
         <Row style={{backgroundColor : "#1b4542", padding : "1em"}}>
             <Col onClick={()=>{navigate('/history')}} className='menubox'>
-                    <FontAwesomeIcon icon={faList} style={{color : "white", width : "0.8em"}} size="2x" />
-                {/* <button style={{color : "white", fontSize : "0.8em"}} onClick={()=>{navigate('/history')}}>예약내역</button> */}
+                    <FontAwesomeIcon className="menuicon" icon={faList} style={{color : "#fff", width : "0.8em"}} size="2x" />
             </Col>
-
             <Col onClick={()=>{navigate('/home');}}>
-                <FontAwesomeIcon icon={faHouse} style={{color : "white", width : "0.8em"}} size="2x" /> 
-                {/* <button style={{color : "white"}} onClick={()=>{navigate('/home')}}>홈</button> */}
+                <FontAwesomeIcon className="menuicon"  icon={faHouse} style={{color : "#fff", width : "0.8em"}} size="2x" /> 
             </Col>
             <Col button onClick={()=>{navigate('/mypage')}}>
-                <FontAwesomeIcon icon={faUser} style={{color : "white", width : "0.8em"}} size="2x" />
-                {/* <button style={{color : "white"}} onClick={()=>{navigate('/mypage')}}>마이페이지</button> */}
+                <FontAwesomeIcon className="menuicon"  icon={faUser} style={{color : "#fff", width : "0.8em"}} size="2x" />
             </Col>
         </Row>
         </Container>
-
         </div>
     );
 }
