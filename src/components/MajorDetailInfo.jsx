@@ -4,6 +4,7 @@ import styles from "../css/DetailInfo.module.css"
 import DataContext from "../data/DataContext";
 import ReserveMap from "./Detail_map";
 import Review from "../pages/Review";
+import Review2 from "../pages/review2";
 
 
 const MajorDetailInfo = () => {
@@ -39,7 +40,7 @@ const MajorDetailInfo = () => {
             예약하기 
         </Link>
         </div>
-        <Review/>
+        <Review2/>
     </div>  
     );
 }

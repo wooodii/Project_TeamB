@@ -28,7 +28,7 @@ const Home = () => {
         }
     },[user]);
 
-    console.log(data.state.isLoginned);
+    
     const navigate = useNavigate();
     const navQustion = ()=>{
         navigate('/question');
