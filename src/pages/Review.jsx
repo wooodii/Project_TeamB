@@ -29,10 +29,10 @@ const Review = () => {
                 </Row>
             </Row>
             <Row>
-                <div style={{textAlign : "center", marginTop : "2em"}}> 이 병원에 대해 {revisitCount} 명이 후기를 남겼어요 </div>
+                <div style={{marginLeft:"-10px", marginTop : "2em"}}> 이 병원에 대해 {revisitCount} 명이 후기를 남겼어요 </div>
             </Row>
             <Row>
-                <div style={{width : "360px", backgroundColor : "#eee", borderRadius : "10px", margin : "5px 16px 5px 16px"}}>
+                <div style={{width : "345px", backgroundColor : "#eee", borderRadius : "10px", margin : "5px 16px 5px 16px"}}>
                             <div style={{padding : "2.3em 0 2em 0"}}>
                     <Row>
                         <Col xs={4}>
