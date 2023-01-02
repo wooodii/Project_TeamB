@@ -11,7 +11,7 @@ import { db } from "../Firebase";
 import mydoctor from '../../src/img/mydoctor.png'
 import { FcPuzzle, FcApproval,FcBiomass, FcPlus } from "react-icons/fc";
 import { IconContext } from "react-icons";
-import medical from '../img/medical.png';
+import medical3 from '../img/medical3.png';
 import medical2 from '../img/medical2.png';
 
 const Home = () => {
@@ -56,16 +56,19 @@ const Home = () => {
                             <SearchBar_Home/>
                         </Col>
                     </Row>
-                    <div style={{height : "120px", zIndex : "999", display : "absolute", marginTop :"10px", fontSize : "22px", borderRadius : "10px", position : "relative", backgroundColor : "#eee", padding : "20px"}}>                        
+                    <div style={{height : "120px", zIndex : "999", display : "relative", marginTop :"10px", fontSize : "22px", borderRadius : "10px", position : "relative", backgroundColor : "#eee", padding : "0px"}}>                        
                        <Row style={{marginLeft : "0px", borderRadius : "10px"}}>
-                            <Col xs={8}>
-                            <p style={{ fontSize : "18px", marginTop : "5px"}}>
+                            <Col xs={7}>
+                            <p style={{ fontSize : "20px", marginTop : "30px", marginLeft : "20px"}}>
                             <b>{name} </b> 님, <br/>
-                            <p style={{fontSize : "17px"}}>건강한 하루 되세요! </p> </p>
+                            <p style={{fontSize : "18px"}}>건강한 하루 되세요! </p> </p>
                             </Col>
-                            <Col xs={4}>
-                            {/* <img style={{ marginBottom : "35px"}} src={medical} width= "90px" height="100px" alt="" /> */}
-                            <img style={{rotate : "5deg"}} src={medical2} width= "85px" height="105px" alt="" />
+                            <Col xs={3}>
+                            {/* <img src={medical} width= "100px" height="110px" alt="" /> */}
+                            <img style={{zIndex :"2000", rotate : "0deg", marginTop : "10px", marginLeft : "-10px"}} src={medical3} width= "100px" height="110px" alt="" />
+                            </Col>
+                            <Col xs={2}>
+                            {/* <img style={{rotate : "0deg", marginTop : "20px", marginLeft : "-60px"}} src={medical2} width= "80px" height="100px" alt="" /> */}
                             </Col>
                         </Row>
                     </div>
@@ -78,6 +81,7 @@ const Home = () => {
                         </IconContext.Provider>
                             <p style={{ fontSize :"13px", marginLeft : "3px"}}>건강내역</p>    
                         </div>
+                        
                         <div onClick={() => (navigate('/medicine'))} style={{display : "relative",backgroundColor : "#eee", borderRadius : "10px", width : "80px", height : "70px", margin : "5px 5px 5px 5px"}}>
                         <IconContext.Provider value={{ size : "2em" }}>
                             <div style={{margin : "0.5em 0 0 0.7em"}}><FcBiomass/></div>
@@ -85,12 +89,14 @@ const Home = () => {
                             <p style={{ fontSize :"13px", marginLeft : "3px"}}>복약관리 </p>    
 
                         </div>
+                        
                         <div onClick={() => (navigate('/history'))} style={{display : "relative",backgroundColor : "#eee", borderRadius : "10px", width : "80px", height : "70px", margin : "5px 5px 5px 5px"}}>
                             <IconContext.Provider value={{ size : "2em" }}>
                             <div style={{margin : "0.5em 0 0 0.7em"}}><FcApproval/></div>
                         </IconContext.Provider>
                             <p style={{ fontSize :"13px", marginLeft : "3px"}}>예약내역 </p>    
                         </div>
+                        
                         <a href="https://health.kdca.go.kr/healthinfo/index.jsp" style={{display : "relative",backgroundColor : "#eee", borderRadius : "10px", width : "80px", height : "70px", margin : "5px 5px 5px 5px"}}>
                             <IconContext.Provider value={{ size : "2em" }}>
                             <div style={{margin : "0.5em 0 0 0.7em"}}><FcPlus/></div>
