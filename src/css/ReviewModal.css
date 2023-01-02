@@ -57,3 +57,8 @@
 .btn-check:checked+.btn{
     background-color: #1b4542 !important;
 }
+
+.btn-outline-success {
+    --bs-btn-color: #1b4542;
+    --bs-btn-border-color: #1b4542;
+}
