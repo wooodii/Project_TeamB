@@ -10,10 +10,11 @@ import DataContext from "../data/DataContext";
 const Reservation = () => {
     const {state,action}=useContext(DataContext);
 
-    const ReservationBtn = (e) => {        
+    const ReservationBtn = (e) => {
+            state.my_reserve++;
             alert('예약이 완료되었습니다');
-            alert('예약내역에서 확인해주세요'); 
-            action.setIsbook(true);                
+            alert('예약내역에서 확인해주세요');
+            action.setIsbook(true);
     }
     return ( 
         <div>

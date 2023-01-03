@@ -11,9 +11,36 @@ import { faTemperatureThreeQuarters } from "@fortawesome/free-solid-svg-icons";
 import { faPrescriptionBottleAlt } from '@fortawesome/free-solid-svg-icons';
 import { faGlassWater } from '@fortawesome/free-solid-svg-icons';
 import { faShirt } from '@fortawesome/free-solid-svg-icons';
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '../Firebase';
 
 
 const Notice = () => {
+    const infant = localStorage.getItem("currentInfant")
+    const docRef = doc(db, "infant", infant);
+    const [temp1,setTemp1] = useState("");
+    const [infant_name, setInfant_name] = useState("");
+    const getInfantName = async () => {
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+        setInfant_name(docSnap.data().name);
+        }
+    }
+    const getInfantTemp = async () => {
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+            setTemp1(docSnap.data().temperature);
+        }
+    }
+    useEffect(()=>{
+        getInfantName()
+    },[infant])
+    useEffect(()=>{
+        getInfantTemp()
+    },[temp1])
+
+
+
     const preview4 = useSelector((state)=>(state.temperature.preview4))
     const date = new Date();
 
@@ -22,11 +49,11 @@ const Notice = () => {
     const [name,setName] = useState("");
     const temp = data.state.measures.temperature;
     const fever = function() {
-        if(temp >= 39 ){
+        if(temp1 >= 39 ){
             setName("고열") 
-        } else if(temp >= 37.5 ){
+        } else if(temp1 >= 37.5 ){
             setName("미열")
-        } else if(temp >= 35.5){
+        } else if(temp1 >= 35.5){
             setName("정상")
         } else {
             setName("정상")
@@ -34,10 +61,10 @@ const Notice = () => {
     }
     useEffect(() => {
         fever()
-    },[temp])
+    },[temp1])
     return (  
         <>
-        {data.state.measures.temperature ? (
+        {temp1 ? (
             <div className='notice_box' style={name == "고열" ?  {background:"#ffb6b9"} : name == "정상" ? {background:"#ccd8fc"} : null}>                
                 <div className='today_date'>
                     {date.getFullYear()+"/"+(date.getMonth()+1)+"/"+date.getDate()}
@@ -49,7 +76,7 @@ const Notice = () => {
                                 <FontAwesomeIcon icon={faTemperatureThreeQuarters} style={{color:"#1b4542"}} />
                             </div>
                         </div>
-                    <h2 className='infant_temp'>{data.state.measures.temperature}°C</h2>
+                    <h2 className='infant_temp'>{temp1}°C</h2>
                     </div>
                 </div>
                 <p className='temp_name'>현재(최근): <span>{name} 상태</span></p>
@@ -167,7 +194,7 @@ const Notice = () => {
                 <div className='first_box'>
                     <div className='My_row'>
                         <ul>
-                            <li className='title'>{data.state.infant.name}의 현재체온을 등록해주세요</li>
+                            <li className='title'>{infant_name}의 현재체온을 등록해주세요</li>
                             <li>우측하단에 버튼을 누르면</li>
                             <li><strong className='bold' >현재 체온 </strong>을 등록할 수 있어요</li>
                         </ul>

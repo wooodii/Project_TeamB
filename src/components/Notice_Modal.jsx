@@ -1,8 +1,22 @@
 import { useContext, useState } from "react";
 import DataContext from "../data/DataContext";
 import '../css/Notice_Modal.css'
+import { doc, updateDoc } from "firebase/firestore";
+import { db } from "../Firebase";
 
 const Notice_Modal = (props) => {
+    const infant = localStorage.getItem("currentInfant")
+    const infantRef = doc(db, "infant", infant)
+    
+    const setMeasures = async (e) => {
+        await updateDoc(infantRef, {
+            [e.target.name]: input
+        });
+        props.setShow(false)
+    }
+
+
+
     const data = useContext(DataContext)
     const [input,setInput] = useState("");
     const inputDesc = (e) => {
@@ -24,7 +38,7 @@ const Notice_Modal = (props) => {
                     <input type="text" onChange={inputDesc} />
                     {input ? (
                         <>
-                            <button name="temperature" onClick={changeMeasures
+                            <button name="temperature" onClick={setMeasures
                             }>완료</button>
                         </>
                     ):(
