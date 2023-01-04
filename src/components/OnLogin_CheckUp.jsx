@@ -8,82 +8,104 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStethoscope } from "@fortawesome/free-solid-svg-icons";
 
 import '../css/OnLogin_CheckUp.css'
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../Firebase";
 
 const OnLogin_CheckUp = () => {
+    const infant = localStorage.getItem("currentInfant")
+    const [age,setAge] = useState("");
+    const getInfantData = async () => {
+        const docRef = doc(db, "infant", infant);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+            setAge(docSnap.data().age);
+        }
+    }
+    useEffect(()=>{
+        getInfantData()
+    },[infant])
+    const date1 = new Date(age);
+    const date2 = new Date();
+    const diffDate = date1.getTime() - date2.getTime();
+    const month = Math.floor(Math.abs(diffDate / (1000 * 60 * 60 * 24 * 30)));
+    console.log(month)
+
+
     const data = useContext(DataContext);
     const hchecks = useSelector((state)=>(state.checkUp.hchecks))  
     const [onHcheck,setOnHcheck] = useState("")
     const [btn,setBtn] = useState(true);
     const [dname,setDName] = useState("")
+    const date = new Date();
 
     const health_check = function(){
-        if(data.state.month >= 66){
+        if(month >= 66){
             data.action.setHcheck(7)
-        } else if(data.state.month > 60 ){
+        } else if(month > 60 ){
             data.action.setHcheck(7)
             setOnHcheck("현재 건강검진 기간이 아닙니다")
-        } else if(data.state.month >= 54 ){
+        } else if(month >= 54 ){
             data.action.setHcheck(6)
-        } else if(data.state.month > 48 ){
+        } else if(month > 48 ){
             data.action.setHcheck(6)
             setOnHcheck("현재 건강검진 기간이 아닙니다")
-        } else if(data.state.month >= 42 ){
+        } else if(month >= 42 ){
             data.action.setHcheck(5)
-        } else if(data.state.month > 36 ){
+        } else if(month > 36 ){
             data.action.setHcheck(5)
             setOnHcheck("현재 건강검진 기간이 아닙니다")
-        } else if(data.state.month >= 30){
+        } else if(month >= 30){
             data.action.setHcheck(4)
-        } else if(data.state.month > 24){
+        } else if(month > 24){
             data.action.setHcheck(4)
             setOnHcheck("현재 건강검진 기간이 아닙니다")
-        } else if(data.state.month >= 18){
+        } else if(month >= 18){
             data.action.setHcheck(3)
-        } else if(data.state.month > 12){
+        } else if(month > 12){
             data.action.setHcheck(3)
             setOnHcheck("현재 건강검진 기간이 아닙니다")
-        } else if(data.state.month >= 9){
+        } else if(month >= 9){
             data.action.setHcheck(2)
-        } else if(data.state.month > 6){
+        } else if(month > 6){
             data.action.setHcheck(2)
             setOnHcheck("현재 건강검진 기간이 아닙니다")
-        } else if(data.state.month >= 4){
+        } else if(month >= 4){
             data.action.setHcheck(1)
-        } else if(data.state.month >= 0){
+        } else if(month >= 0){
             data.action.setHcheck(1)
             setOnHcheck("현재 건강검진 기간이 아닙니다")
         }
         
     }
     const inoculation_check = function(){
-        if(data.state.month > 144) {
+        if(month > 144) {
             data.action.setIcheck(38);
             setDName("일본뇌염, 파상풍")
-        } else if(data.state.month > 72 ) {
+        } else if(month > 72 ) {
             data.action.setIcheck(34);
             setDName("파상풍, 폴리오, 홍역, 일본뇌염")
-        } else if(data.state.month > 35 ) {
+        } else if(month > 35 ) {
             data.action.setIcheck(32);
             setDName("일본뇌염, 사람유두종바이러스")
-        } else if(data.state.month > 23 ) {
+        } else if(month > 23 ) {
             data.action.setIcheck(29);
             setDName("A형간염, 일본뇌염, 사람유두종바이러스")
-        } else if(data.state.month > 18 ) {
+        } else if(month > 18 ) {
             data.action.setIcheck(25);
             setDName("b형레모필루스인플루엔자, 폐렴구균, 홍역, 수두")
-        } else if(data.state.month > 15 ) {
+        } else if(month > 15 ) {
             data.action.setIcheck(20);
             setDName(" B형간염, 파상풍, 폴리오, b형레모필루스인플루엔자, 폐렴구균,  로티바이러스RV5")
-        } else if(data.state.month > 6 ) {
+        } else if(month > 6 ) {
             data.action.setIcheck(15);
             setDName("파상풍, 폴리오, b형레모필루스인플루엔자, 폐렴구균, 로티바이러스RV1,로티바이러스RV5")
-        } else if(data.state.month > 4 ) {
+        } else if(month > 4 ) {
             data.action.setIcheck(9);
             setDName("파상풍, 폴리오, b형레모필루스인플루엔자, 폐렴구균, 로티바이러스RV1, 로티바이러스RV5")
-        } else if(data.state.month > 2 ) {
+        } else if(month > 2 ) {
             data.action.setIcheck(3);
             setDName("B형간염")
-        } else if(data.state.month > 1 ) {
+        } else if(month > 1 ) {
             data.action.setIcheck(2);
             setDName("결핵, B형간염")
         } 
@@ -91,11 +113,8 @@ const OnLogin_CheckUp = () => {
     
     useEffect(() => {
         health_check()
-    },[data.state.month])
-    useEffect(() => {
         inoculation_check()
-    },[dname])
-
+    },[month])
     // 탭메뉴
     const [content, setContent] = useState("first");
 
@@ -104,7 +123,6 @@ const OnLogin_CheckUp = () => {
         const { name } = e.target;
         setContent(name);
     };
-    const date = new Date();
     function getHcheck_date(h_month) {
         const i_date = new Date(data.state.infant.age)
         const Hcheck_date = new Date(

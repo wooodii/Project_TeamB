@@ -4,11 +4,10 @@ import DataContext from "../data/DataContext";
 import '../css/Login_C.css'
 
 import { db } from "../Firebase";
-import {setDoc,doc,collection,getDocs} from "firebase/firestore"
+import {setDoc,doc,collection,getDocs, Timestamp} from "firebase/firestore"
 
 
 const Login_C = () => {
-
     const {action} = useContext(DataContext)
     const data = useContext(DataContext)
     const [name,setName] = useState("");
@@ -51,12 +50,25 @@ const Login_C = () => {
         const day = ("0" + (date.getDate()+1)).slice(-2);
         return year + "-" + month + "-" + day;
     }
+
+
+    const user = localStorage.getItem("currentUser")
+    const infantCollectionRef = collection(db, "infant")
+
+
+    const createInfant = async (e) => {
+        e.preventDefault();
+        const data = await getDocs(infantCollectionRef);
+        await setDoc(doc(db, "infant", user),{...data.docs[0].data(), uid:user, name:name, age:age, gender:gender});
+        localStorage.setItem("currentInfant", user)
+        action.setLogin(true)
+        navigate("/main")
+    }
     return (  
         <div className="first_box">
             <h2 className="login_title">우리아이 등록</h2>
             <div className="ilogin_box">
                 <div className="login_form">
-                    <form onSubmit={()=>{loginInfant()}}>
                         <label >이름</label>
                         <input type="text" className="infant_name_input" placeholder="  이름" onChange={
                             (e)=>{
@@ -79,8 +91,7 @@ const Login_C = () => {
                             handleActiveF();
                             setGender("여")
                         }}>여성</button>
-                        <input className="infant_submit" type="submit" value="작성" />
-                    </form>
+                        <button className="infant_submit" onClick={createInfant}>작성</button>
                 </div>
             </div>
         </div>

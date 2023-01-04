@@ -8,6 +8,9 @@ const DataContext = createContext();
 const DataProvider = ({ children }) => {
     
     //창욱
+    const [mesureToggle,setMesureToggle]= useState(true);
+    // 마이페이지 예약 내역 숫자
+
     const [h_name,setH_name] = useState("");
     const [h_num,setH_num] = useState("");
     const [h_address,setH_address] = useState("");
@@ -85,11 +88,11 @@ const DataProvider = ({ children }) => {
     { 
 
 
-        state: {userpro,treatmentDetail, isbook,mypageData2,mypageData,location,startDate,h_major, h_name, h_num, h_address, comments,infant, login, hcheck, icheck, date, month, age, measures, ismeasures,category,hospitalData, isLoginned },
+        state: {mesureToggle,userpro,treatmentDetail, isbook,mypageData2,mypageData,location,startDate,h_major, h_name, h_num, h_address, comments,infant, login, hcheck, icheck, date, month, age, measures, ismeasures,category,hospitalData, isLoginned },
 
 
         
-        action: {setUserpro,setTreatmentDetail, setIsbook,setMypageData2,setMypageData,setStartDate,setH_major,setH_name, setH_num,setH_address,setInfant, setLogin, setHcheck, setIcheck, setMesures, setIsMeasures ,setCategory,setHospitalData, setIsLoginned,setComments}
+        action: {setMesureToggle,setUserpro,setTreatmentDetail, setIsbook,setMypageData2,setMypageData,setStartDate,setH_major,setH_name, setH_num,setH_address,setInfant, setLogin, setHcheck, setIcheck, setMesures, setIsMeasures ,setCategory,setHospitalData, setIsLoginned,setComments}
 
 
     };
