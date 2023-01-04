@@ -16,27 +16,30 @@ import { db } from '../Firebase';
 
 
 const Notice = () => {
+    const data = useContext(DataContext);
     const infant = localStorage.getItem("currentInfant")
     const docRef = doc(db, "infant", infant);
-    const data = useContext(DataContext);
 
     const [temp1,setTemp1] = useState("");
+
     const [temp1_name, setTemp1_name] = useState("");
+
     const getInfantName = async () => {
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
         setName(docSnap.data().name);
         }
     }
+    useEffect(()=>{
+        getInfantName()
+    },[infant])
+
     const getInfantTemp = async () => {
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
             setTemp1(docSnap.data().temperature);
         }
     }
-    useEffect(()=>{
-        getInfantName()
-    },[infant])
     useEffect(()=>{
         getInfantTemp()
     },[data.state.mesureToggle])
@@ -48,7 +51,6 @@ const Notice = () => {
 
     const [show,setShow] = useState(false);
     const [name,setName] = useState("");
-    const temp = data.state.measures.temperature;
     const fever = function() {
         if(temp1 >= 39 ){
             setTemp1_name("고열") 

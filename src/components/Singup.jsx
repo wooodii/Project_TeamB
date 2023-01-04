@@ -10,16 +10,7 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 const Singup_C = () => {
     const data = useContext(DataContext);
     const navigate = useNavigate();
-    const infant = localStorage.getItem("currentInfant")
-    
-    useEffect(()=>{
-        if(infant){
-            data.action.setLogin(true)
-        } else {
-            data.action.setLogin(false)
-        }
-    },[infant])
-
+    // 로그인 확인 useEffect
     const ischeckLogin = () => {
         const user = localStorage.getItem("currentUser")
         if(user){
@@ -29,6 +20,15 @@ const Singup_C = () => {
             navigate("/firebaselogin")
         }
     }
+    const infant = localStorage.getItem("currentInfant")
+    // 아이등록후 확인 useEffect
+    useEffect(()=>{
+        if(infant){
+            data.action.setLogin(true)
+        } else {
+            data.action.setLogin(false)
+        }
+    },[infant])
     return (  
         <header>
             <div className="container clearfix">

@@ -17,18 +17,9 @@ const Notice_Modal = (props) => {
         props.setShow(false)
     }
 
-
-
     const [input,setInput] = useState("");
     const inputDesc = (e) => {
         setInput(e.target.value)
-    }
-    const changeMeasures = (e) => {
-        data.action.setMesures({
-            ...data.state.measures, [e.target.name] : input
-        })
-        props.setShow(false)
-        data.action.setIsMeasures(true)
     }
     return (  
         <>
