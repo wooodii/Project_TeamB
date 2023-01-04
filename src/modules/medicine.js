@@ -27,6 +27,7 @@ function medicine (state=initialState, action) {
         const newPills = {...action.payload, pillId:pillId}
         pillId++;
         const newPillsArr = state.concat(newPills);
+        console.log(newPills);
             return newPillsArr; 
         // case "toggleCheck" :
         //     const toggle ={
