@@ -29,7 +29,7 @@ const Review2 = () => {
                 </Row>
             </Row>
             <Row>
-                <div style={{marginLeft:"0px", marginTop : "2em"}}> 이 병원에 대해 {revisitCount} 명이 후기를 남겼어요 </div>
+                <div style={{marginLeft:"0px", marginTop : "2em" ,marginLeft:"55px"}}> 이 병원에 대해 {revisitCount} 명이 후기를 남겼어요 </div>
             </Row>
             <Row>
                 <div style={{width : "345px", backgroundColor : "#eee", borderRadius : "10px", margin : "5px 16px 5px 16px"}}>
@@ -42,7 +42,7 @@ const Review2 = () => {
                             </IconContext.Provider>
                             </Row>
                              <Row>
-                                <div style={{fontSize : "20px"}}> 4.9 </div>
+                                <div style={{fontSize : "20px", marginLeft:"30px"}}> 4.9 </div>
                             </Row>
                         </Col>
                         <Col xs={7} style={{backgroundColor:"white", borderRadius : "10px"}}>
