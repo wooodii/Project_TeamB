@@ -24,7 +24,7 @@ const Medicine = () => {
     const [pillsCount, setpillsCount] = useState(0);
     const [pillsDose, setPillsDose] = useState(0);
     // 추가 01/04 희성
-    const [isChecked,setIsChecked] = useState(false);
+    const [isChecked, setIsChecked] = useState(false);
     // +리덕스로 medicine.js 값 가져와서 map으로 출력
     const medicine = useSelector((state) => (state.medicine));
     const dispatch = useDispatch();
@@ -66,8 +66,10 @@ const Medicine = () => {
     useEffect(() => {
         setAllChecked(false);
     }, [date.getDate()])
-    
-  
+
+    const checkedBtn = (a)=>{
+        dispatch(toggleCheck(a))
+    }
     return (
         <>
             <span className="goback" onClick={() => { navigate("/mypage") }}><FontAwesomeIcon icon={faArrowLeft} /></span>
@@ -86,14 +88,13 @@ const Medicine = () => {
                     </h6>
                 </div>
             </div>
-            
             <button className="addMed-btn med-form" onClick={openMedModal}>복약정보 추가</button>
             {modalOpen ? (
                 <MedicineModal
                     name={name} pillsCount={pillsCount} setpillsCount={setpillsCount}
                     pillsDose={pillsDose} setPillsDose={setPillsDose}
                     pillsName={pillsName} setPillsName={setPillsName}
-                    modalOpen={modalOpen} setModalOpen={setModalOpen} 
+                    modalOpen={modalOpen} setModalOpen={setModalOpen}
                     // isChecked 추가 
                     isChecked={isChecked} />
             ) : (null)
@@ -116,26 +117,24 @@ const Medicine = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {medicine.map((med) => (
+                        {medicine.map((med) => (    
                             <tr key={med.pillId}>
                                 <td>{med.pillId}</td>
                                 <td>{med.pillsName}</td>
-                                <td>　{med.pillsCount}{" "}/{" "}{med.pillsDose}</td>
-                                <td onClick={()=>setIsChecked(!med.isChecked)}>
-                                    {   
+                                <td>{med.pillsCount}{" "}/{" "}{med.pillsDose}</td>
+                                <td onClick={() => {checkedBtn(med.pillId)}}>
+                                    {
                                         // isChecked -> med.isChecked로 수정
                                         med.isChecked
                                             ? <FontAwesomeIcon icon={faCheck} />
                                             : null
                                     }
                                 </td>
-                                <button onClick={()=>console.log(med.isChecked)}>로그</button>
+                                <button onClick={() => console.log(med)}>로그</button>
                             </tr>
-                            
                         ))}
                     </tbody>
                 </Table>
-                
             </div>
         </>
     );
@@ -149,14 +148,13 @@ export default Medicine;
 // 복약 정보 등록전, 약 이름, 투여 수량과 횟수를 입력받는 모달창입니다
 // 부모 컴포넌트로(Medicine)으로부터 props로 값을 넘겨받아 사용
 const MedicineModal = (props) => {
-    const { name, pillsName, setPillsName, pillsCount, setpillsCount, pillsDose, setPillsDose ,isChecked} = props;
+    const { name, pillsName, setPillsName, pillsCount, setpillsCount, pillsDose, setPillsDose, isChecked } = props;
     const { modalOpen, setModalOpen } = props;
     //리덕스에서 값 가져오기 위함
     const dispatch = useDispatch();
 
     return (
         <div>
-
             <div className="mx-5 mt-2">
                 <div>
                     <FloatingLabel controlId="floatingInput"
@@ -176,7 +174,7 @@ const MedicineModal = (props) => {
                             : (
                                 () => {
                                     dispatch(addMedicine(
-                                        { pillsName: pillsName, pillsCount: pillsCount, pillsDose: pillsDose ,isChecked:isChecked}
+                                        { pillsName: pillsName, pillsCount: pillsCount, pillsDose: pillsDose, isChecked: isChecked }
                                     )); setModalOpen(!modalOpen); alert("등록 완료");
                                     setPillsName(""); setpillsCount(0); setPillsDose(0);
                                 }

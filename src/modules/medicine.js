@@ -16,7 +16,6 @@ const initialState = [
 // initialState 밖에, 값을 구분하기 위한 id 선언
 // (변해야 하는 값이므로 const대신 let)
 let pillId = 2;
-
 // 들어갈 리듀서함수 내용
 function medicine (state=initialState, action) {
     switch(action.type) {
@@ -29,23 +28,21 @@ function medicine (state=initialState, action) {
         const newPillsArr = state.concat(newPills);
         console.log(newPills);
             return newPillsArr; 
-        // case "toggleCheck" :
-        //     const toggle ={
-        //             ...state, 
-        //             medicine: state.medicine.map((med)=>(
-        //             med.id === action.payload.id
-        //             ? { ...med, isChecked: !med.isChecked }
-        //             : med ))
-        //         }
-        //     return toggle;
+        case "toggleCheck" :
+            console.log(action.payload);
+            const toggle =
+                    state.map((med)=>(
+                    med.pillId === action.payload
+                    ? { ...med, isChecked: !med.isChecked }
+                    : med ))
+            return toggle;
         default :
         return state;
     }
 }
-
 // 액션함수 생성 & 내보내기
 export const addMedicine =(pills)=> ({type:"addMedicine", payload:pills});
-//export const toggleCheck =(id)=> ({type:"toggleCheck", payload:id});
+export const toggleCheck =(id)=> ({type:"toggleCheck", payload:id});
 
 // 리듀서함수 내보내기 > modules/index.js에 추가
 export default medicine;
