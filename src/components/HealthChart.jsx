@@ -15,20 +15,23 @@ const HealthChart = () => {
     const [weight,setWeight] = useState("");
     const [temp1,setTemp1] = useState("");
     const [temp1_name, setTemp1_name] = useState("");
-    const docRef = doc(db, "infant", infant);
     const data = useContext(DataContext);
 
     const getInfantData = async () => {
+        const docRef = doc(db, "infant", infant);
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
         setName(docSnap.data().name);
         }
     }
     const getMeasures = async () => {
+        const docRef = doc(db, "infant", infant);   
         const docSnap = await getDoc(docRef);
-        setHeight(docSnap.data().height);
-        setWeight(docSnap.data().weight);
-        setTemp1(docSnap.data().temperature);
+        if (docSnap.exists()) {
+            setHeight(docSnap.data().height);
+            setWeight(docSnap.data().weight);
+            setTemp1(docSnap.data().temperature);
+            }
     }
 
     useEffect(()=>{
@@ -41,7 +44,9 @@ const HealthChart = () => {
     },[infant])
 
     useEffect(()=>{
+        if(data.state.ismeasures){
             getMeasures()
+        }
     },[data.state.mesureToggle])
 
     const preview1 = useSelector((state)=>(state.healthChart.preview1))
