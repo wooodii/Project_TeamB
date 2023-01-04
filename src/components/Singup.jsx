@@ -1,7 +1,7 @@
 import '../css/Singup.css'
 import { Link, useNavigate } from 'react-router-dom';
 import DataContext from "../data/DataContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import OnLogin_Singup from './OnLogin_Singup';
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
@@ -10,8 +10,15 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 const Singup_C = () => {
     const data = useContext(DataContext);
     const navigate = useNavigate();
+    const infant = localStorage.getItem("currentInfant")
     
-    
+    useEffect(()=>{
+        if(infant){
+            data.action.setLogin(true)
+        } else {
+            data.action.setLogin(false)
+        }
+    },[infant])
 
     const ischeckLogin = () => {
         const user = localStorage.getItem("currentUser")

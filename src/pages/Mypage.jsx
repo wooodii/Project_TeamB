@@ -39,9 +39,9 @@ const MyPage = () => {
       data.action.setIsLoginned(false)
     }
   }, [user])
-
+  
   const [show,setShow] = useState(false);
-
+  
   return (
 
     <div className="Mypage">

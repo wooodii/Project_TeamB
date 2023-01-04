@@ -2,9 +2,23 @@ import { useContext, useState } from "react";
 import DataContext from "../data/DataContext";
 
 import '../css/health_Modal.css'
+import { doc, updateDoc } from "firebase/firestore";
+import { db } from "../Firebase";
 
 const Health_Modal = (props) => {
+    const infant = localStorage.getItem("currentInfant")
+    const infantRef = doc(db, "infant", infant)
     const data = useContext(DataContext)
+
+    const setMeasures = async (e) => {
+        await updateDoc(infantRef, {
+            [e.target.name]: input
+        });
+        setShow(0)
+    }
+
+
+
     const [show,setShow] = useState(0);
     const [input,setInput] = useState("");
     const inputDesc = (e) => {
@@ -17,9 +31,9 @@ const Health_Modal = (props) => {
         setShow(0)
     }
     const infoObj = [
-        {name:"height", info:"키", id:1},
-        {name:"weight", info:"몸무게", id:2},
-        {name:"temperature", info:"체온", id:3},
+        {name:"height", info:"키", id:1,ex:"50cm"},
+        {name:"weight", info:"몸무게", id:2,ex:"30kg"},
+        {name:"temperature", info:"체온", id:3,ex:"36.5°C"},
         {name:"medicine", info:"처방전", id:4},
     ]
     return ( 
@@ -29,13 +43,14 @@ const Health_Modal = (props) => {
                         {
                             infoObj.map((info)=>(
                                 <>
+
                                     <li key={info.id}><a href="#" onClick={()=>{
                                         setShow(info.id)
                                     }}>{info.info} 등록</a></li>
                                     {show == info.id && 
                                             <div className="measure_box">
                                                 <input type="text"onChange={inputDesc}/>
-                                                <button name={info.name} onClick={changeMeasures}>{input ? "완료" : "취소"}</button>
+                                                <button name={info.name} onClick={setMeasures}>{input ? "완료" : "취소"}</button>
                                             </div>
                                     }
                                 </>
@@ -53,6 +68,7 @@ const Health_Modal = (props) => {
                                 if(input){
                                     props.setShow(false)
                                     data.action.setIsMeasures(true)
+                                    data.action.setMesureToggle(!data.state.mesureToggle)
                                 } else {
                                     props.setShow(false)
                                     data.action.setIsMeasures(false)

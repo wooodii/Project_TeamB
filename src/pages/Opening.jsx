@@ -2,10 +2,15 @@ import { useNavigate } from 'react-router-dom';
 import '../css/Opening.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { keyframes } from 'styled-components';
 
 const Opening = () => {
     const navigate = useNavigate()
-    return (  
+
+    
+
+    return (
+        <>
         <div className="opening_box">
             <div className='logo_box'>
                 <img className="logo" src={`${process.env.PUBLIC_URL}/images/logo.png`} />
@@ -15,8 +20,9 @@ const Opening = () => {
                 <a href='#' className='SingUp_a'>SignUp</a>
                 <div className='fontAwesom_box'><FontAwesomeIcon className='fontAwesom' icon={faArrowUpRightFromSquare} /></div>
             </div>
-            <p className='copyright'>Copyright2022.teamB All rights reserved.</p>         
+            <p className='copyright'>Copyright2022.teamB All rights reserved.</p>    
         </div>
+        </>
     );
 }
  
