@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { firebaseAuth,} from "../Firebase";
+import { db, firebaseAuth,} from "../Firebase";
 import { getAuth , createUserWithEmailAndPassword, signInWithEmailAndPassword,onAuthStateChanged } from "firebase/auth";
-import {setDoc, collection, doc, getDocs} from "firebase/firestore"
+import {setDoc, collection, doc, getDocs, getDoc} from "firebase/firestore"
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import DataContext from "../data/DataContext";
@@ -10,7 +10,6 @@ import '../css/FirebaseLogin.css'
 
 const FirebaseLogin = () => {
     const data = useContext(DataContext);
-    
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
@@ -20,6 +19,7 @@ const FirebaseLogin = () => {
             const newUser = await signInWithEmailAndPassword(firebaseAuth, email, password);
             const user = newUser.user;
             localStorage.setItem("currentUser", user.uid);
+            
             data.action.setIsLoginned(true);
             navigate("/home") 
         } catch(err) {
@@ -36,7 +36,6 @@ const FirebaseLogin = () => {
                 alert("가입되지 않은 이메일입니다")
             }
         }
-        
     }
 
     return (  

@@ -18,12 +18,14 @@ import { db } from '../Firebase';
 const Notice = () => {
     const infant = localStorage.getItem("currentInfant")
     const docRef = doc(db, "infant", infant);
+    const data = useContext(DataContext);
+
     const [temp1,setTemp1] = useState("");
-    const [infant_name, setInfant_name] = useState("");
+    const [temp1_name, setTemp1_name] = useState("");
     const getInfantName = async () => {
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
-        setInfant_name(docSnap.data().name);
+        setName(docSnap.data().name);
         }
     }
     const getInfantTemp = async () => {
@@ -37,26 +39,25 @@ const Notice = () => {
     },[infant])
     useEffect(()=>{
         getInfantTemp()
-    },[temp1])
+    },[data.state.mesureToggle])
 
 
 
     const preview4 = useSelector((state)=>(state.temperature.preview4))
     const date = new Date();
 
-    const data = useContext(DataContext);
     const [show,setShow] = useState(false);
     const [name,setName] = useState("");
     const temp = data.state.measures.temperature;
     const fever = function() {
         if(temp1 >= 39 ){
-            setName("고열") 
+            setTemp1_name("고열") 
         } else if(temp1 >= 37.5 ){
-            setName("미열")
+            setTemp1_name("미열")
         } else if(temp1 >= 35.5){
-            setName("정상")
+            setTemp1_name("정상")
         } else {
-            setName("정상")
+            setTemp1_name("정상")
         }
     }
     useEffect(() => {
@@ -65,7 +66,7 @@ const Notice = () => {
     return (  
         <>
         {temp1 ? (
-            <div className='notice_box' style={name == "고열" ?  {background:"#ffb6b9"} : name == "정상" ? {background:"#ccd8fc"} : null}>                
+            <div className='notice_box' style={temp1_name == "고열" ?  {background:"#ffb6b9"} : temp1_name == "정상" ? {background:"#ccd8fc"} : null}>                
                 <div className='today_date'>
                     {date.getFullYear()+"/"+(date.getMonth()+1)+"/"+date.getDate()}
                 </div>
@@ -79,11 +80,11 @@ const Notice = () => {
                     <h2 className='infant_temp'>{temp1}°C</h2>
                     </div>
                 </div>
-                <p className='temp_name'>현재(최근): <span>{name} 상태</span></p>
-                {name == "고열" ? 
+                <p className='temp_name'>현재(최근): <span>{temp1_name} 상태</span></p>
+                {temp1_name == "고열" ? 
                 (
                     <>
-                        <li className='temp_check'>{name} 상태로 병원 진료가 필요합니다.</li>
+                        <li className='temp_check'>{temp1_name} 상태로 병원 진료가 필요합니다.</li>
                         <div className='temp_desc_box'>
                             <ul>
                                 <li className='happycat_box'>
@@ -96,7 +97,7 @@ const Notice = () => {
                                         </div>
                                     </div>
                                     <div className='desc_box'>
-                                        {name}상태 입니다. <span>1시간 뒤</span>체온상태에 따라 <span>해열제 복용 여부를 다시 확인</span>해요.
+                                        {temp1_name}상태 입니다. <span>1시간 뒤</span>체온상태에 따라 <span>해열제 복용 여부를 다시 확인</span>해요.
                                     </div>
                                 </li>
                                 <li className='clearfix'>
@@ -134,11 +135,11 @@ const Notice = () => {
                     </>
                 ):(
                     <>
-                        <li className='temp_check'>{name} 상태로 병원 진료는 필요하지 않아요.</li>
+                        <li className='temp_check'>{temp1_name} 상태로 병원 진료는 필요하지 않아요.</li>
                         <div className='temp_desc_box'>
                             <ul>
                                 <li className='happycat_box'>
-                                    <img className='happycat' src={name == "정상" ? `${process.env.PUBLIC_URL}/images/happycat.jpg` : `${process.env.PUBLIC_URL}/images/unhappycat2.jpg`} alt="행복한 고양이" />
+                                    <img className='happycat' src={temp1_name == "정상" ? `${process.env.PUBLIC_URL}/images/happycat.jpg` : `${process.env.PUBLIC_URL}/images/unhappycat2.jpg`} alt="행복한 고양이" />
                                 </li>
                                 <li className='clearfix'>
                                     <div className='desc_font_box' style={{ background: "#ebfad9"}}>
@@ -147,7 +148,7 @@ const Notice = () => {
                                         </div>
                                     </div>
                                     <div className='desc_box'>
-                                        {name}상태 입니다. <span>1시간 뒤</span>체온상태에 따라 <span>해열제 복용 여부를 다시 확인</span>해요.
+                                        {temp1_name}상태 입니다. <span>1시간 뒤</span>체온상태에 따라 <span>해열제 복용 여부를 다시 확인</span>해요.
                                     </div>
                                 </li>
                                 <li className='clearfix'>
@@ -194,7 +195,7 @@ const Notice = () => {
                 <div className='first_box'>
                     <div className='My_row'>
                         <ul>
-                            <li className='title'>{infant_name}의 현재체온을 등록해주세요</li>
+                            <li className='title'>{name}의 현재체온을 등록해주세요</li>
                             <li>우측하단에 버튼을 누르면</li>
                             <li><strong className='bold' >현재 체온 </strong>을 등록할 수 있어요</li>
                         </ul>

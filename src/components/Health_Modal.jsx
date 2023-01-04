@@ -8,6 +8,8 @@ import { db } from "../Firebase";
 const Health_Modal = (props) => {
     const infant = localStorage.getItem("currentInfant")
     const infantRef = doc(db, "infant", infant)
+    const data = useContext(DataContext)
+
     const setMeasures = async (e) => {
         await updateDoc(infantRef, {
             [e.target.name]: input
@@ -17,7 +19,6 @@ const Health_Modal = (props) => {
 
 
 
-    const data = useContext(DataContext)
     const [show,setShow] = useState(0);
     const [input,setInput] = useState("");
     const inputDesc = (e) => {
@@ -67,6 +68,7 @@ const Health_Modal = (props) => {
                                 if(input){
                                     props.setShow(false)
                                     data.action.setIsMeasures(true)
+                                    data.action.setMesureToggle(!data.state.mesureToggle)
                                 } else {
                                     props.setShow(false)
                                     data.action.setIsMeasures(false)

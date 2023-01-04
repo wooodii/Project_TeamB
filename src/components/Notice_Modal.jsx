@@ -7,17 +7,18 @@ import { db } from "../Firebase";
 const Notice_Modal = (props) => {
     const infant = localStorage.getItem("currentInfant")
     const infantRef = doc(db, "infant", infant)
+    const data = useContext(DataContext)
     
     const setMeasures = async (e) => {
         await updateDoc(infantRef, {
             [e.target.name]: input
         });
+        data.action.setMesureToggle(!data.state.mesureToggle)
         props.setShow(false)
     }
 
 
 
-    const data = useContext(DataContext)
     const [input,setInput] = useState("");
     const inputDesc = (e) => {
         setInput(e.target.value)
