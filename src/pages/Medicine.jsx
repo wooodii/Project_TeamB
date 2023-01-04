@@ -62,24 +62,36 @@ const Medicine = () => {
         }
     }, [user]);
 
+    let checkFilter = medicine.filter(check => check.isChecked == true)
+    useEffect(()=>{
+        if (medicine.length == checkFilter.length){
+            setAllChecked(true)
+        }else{
+            setAllChecked(false)
+        }
+        
+    },[checkFilter])
+    
+    
     // 복약확인 체크 > 날짜 변경 때마다 false로 초기화
     useEffect(() => {
         setAllChecked(false);
     }, [date.getDate()])
-
     const checkedBtn = (a)=>{
         dispatch(toggleCheck(a))
     }
+    
     return (
         <>
             <span className="goback" onClick={() => { navigate("/mypage") }}><FontAwesomeIcon icon={faArrowLeft} /></span>
             <div className="med-form">
                 <h3>복약 관리</h3>
+                <button onClick={() => console.log(medicine)}>로그</button>
                 <p>버튼을 클릭하여 복약정보를 등록하고 관리하세요!</p>
                 <br />
                 <div className="alarm">
                     {/* setIsChecked -> setAllChecked로 수정  */}
-                    <h6 className="confirm" onClick={() => { setAllChecked(true) }}> 오늘의 복약 완료 기록 :
+                    <h6 className="confirm"> 오늘의 복약 완료 기록 :
                         {
                             // siChecked -> allChecked로 수정
                             allChecked ? <span style={{ fontSize: "2em" }}>👌</span>
@@ -130,7 +142,7 @@ const Medicine = () => {
                                             : null
                                     }
                                 </td>
-                                <button onClick={() => console.log(med)}>로그</button>
+                                
                             </tr>
                         ))}
                     </tbody>
