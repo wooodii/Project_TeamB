@@ -1,19 +1,20 @@
 import DataContext from "../data/DataContext";
 import { useState, useContext } from "react";
 import { useSelector } from 'react-redux';
-
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStethoscope } from "@fortawesome/free-solid-svg-icons";
-
 import '../css/OnLogin_CheckUp.css'
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../Firebase";
 
 const OnLogin_CheckUp = () => {
+    const data = useContext(DataContext);
     const infant = localStorage.getItem("currentInfant")
+    // 파이어베이스에서 받아온 age를 저장하는 state
     const [age,setAge] = useState("");
+    // 파이어베이스에서 age를 받아오는 함수
     const getInfantData = async () => {
         const docRef = doc(db, "infant", infant);
         const docSnap = await getDoc(docRef);
@@ -24,14 +25,14 @@ const OnLogin_CheckUp = () => {
     useEffect(()=>{
         getInfantData()
     },[infant])
+
+    // month를 계산하기위한 state
     const date1 = new Date(age);
     const date2 = new Date();
     const diffDate = date1.getTime() - date2.getTime();
     const month = Math.floor(Math.abs(diffDate / (1000 * 60 * 60 * 24 * 30)));
-    console.log(month)
 
-
-    const data = useContext(DataContext);
+    // 건강검진/접종을 위한 state
     const hchecks = useSelector((state)=>(state.checkUp.hchecks))  
     const [onHcheck,setOnHcheck] = useState("")
     const [btn,setBtn] = useState(true);

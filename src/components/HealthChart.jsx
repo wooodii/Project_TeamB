@@ -9,14 +9,19 @@ import '../css/HealthChart.css'
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../Firebase';
 const HealthChart = () => {
+    const data = useContext(DataContext);
     const infant = localStorage.getItem("currentInfant")
+    const preview1 = useSelector((state)=>(state.healthChart.preview1))
+    const [show,setShow] = useState(false)
+    const date = new Date()
+
+    // 비동기로 가져온 값을 저장하는 state
     const [name,setName] = useState("");
     const [height,setHeight] = useState("");
     const [weight,setWeight] = useState("");
     const [temp1,setTemp1] = useState("");
-    const [temp1_name, setTemp1_name] = useState("");
-    const data = useContext(DataContext);
-
+    
+    // 이름을 가져오는 함수
     const getInfantData = async () => {
         const docRef = doc(db, "infant", infant);
         const docSnap = await getDoc(docRef);
@@ -24,16 +29,7 @@ const HealthChart = () => {
         setName(docSnap.data().name);
         }
     }
-    const getMeasures = async () => {
-        const docRef = doc(db, "infant", infant);   
-        const docSnap = await getDoc(docRef);
-        if (docSnap.exists()) {
-            setHeight(docSnap.data().height);
-            setWeight(docSnap.data().weight);
-            setTemp1(docSnap.data().temperature);
-            }
-    }
-
+    // 이름을 가져오는 useEffect
     useEffect(()=>{
         if(infant){
             data.action.setLogin(true)
@@ -43,18 +39,27 @@ const HealthChart = () => {
         }
     },[infant])
 
+    // 파이어베이스에서 measures값을 가져오는 함수
+    const getMeasures = async () => {
+        const docRef = doc(db, "infant", infant);   
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+            setHeight(docSnap.data().height);
+            setWeight(docSnap.data().weight);
+            setTemp1(docSnap.data().temperature);
+            }
+    }
+    
+    // measures값이 변할때마다 마운트하는 useEffect
     useEffect(()=>{
         if(data.state.ismeasures){
             getMeasures()
         }
-    },[data.state.mesureToggle])
+    },[data.state.login,data.state.ismeasures,data.state.mesureToggle])
 
-    const preview1 = useSelector((state)=>(state.healthChart.preview1))
-    const [show,setShow] = useState(false)
-    const measures = data.state.measures;
-    const date = new Date()
-
-    const temp = data.state.measures.temperature;
+    // 정상 미열 고열 저장 state
+    const [temp1_name, setTemp1_name] = useState("");
+    // 정상 미열 고열 분별함수
     const fever = function() {
         if(temp1 >= 39 ){
             setTemp1_name("고열") 
@@ -69,13 +74,23 @@ const HealthChart = () => {
     useEffect(() => {
         fever()
     },[temp1])
-    useEffect(()=>{
-        if(height||weight||temp1){
+
+    const isCheckMeasures = async () => {
+        const docRef = doc(db,"infant",infant);
+        const measures = (await getDoc(docRef)).data()
+        if(measures.height||measures.weight||measures.temperature){
             data.action.setIsMeasures(true)
-        } else {
+        }else {
             data.action.setIsMeasures(false)
         }
-    },[height,weight,temp1])
+    }
+    // measures값이 있는지 확인하는 useEffect
+    useEffect(()=>{
+        if(data.state.login){
+            isCheckMeasures()
+        }
+    },[infant])
+
 
     return (  
             <div className='first_box'>

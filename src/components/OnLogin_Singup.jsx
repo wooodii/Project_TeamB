@@ -6,11 +6,13 @@ import { db } from "../Firebase";
 
 const OnLogin_Singup = () => {
     const data = useContext(DataContext)
+    const infant = localStorage.getItem("currentInfant")
+    // 비동기로 받아오는 값들 저장하는 state
     const [name,setName] = useState("");
     const [age,setAge] = useState("");
     const [gender,setGender] = useState("");
 
-    const infant = localStorage.getItem("currentInfant")
+    // 파이어베이스에서 아이정보 받아오는 함수
     const getInfantData = async () => {
         const docRef = doc(db, "infant", infant);
         const docSnap = await getDoc(docRef);
@@ -20,11 +22,11 @@ const OnLogin_Singup = () => {
         setGender(docSnap.data().gender);
         }
     }
-
     useEffect(()=>{
         getInfantData()
     },[infant])
     
+    // 개월수 일수 계산
     const date1 = new Date(age);
     const date2 = new Date();
     const diffDate = date1.getTime() - date2.getTime();

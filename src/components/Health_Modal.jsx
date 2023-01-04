@@ -6,10 +6,11 @@ import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../Firebase";
 
 const Health_Modal = (props) => {
+    const data = useContext(DataContext)
     const infant = localStorage.getItem("currentInfant")
     const infantRef = doc(db, "infant", infant)
-    const data = useContext(DataContext)
-
+    const [show,setShow] = useState(0);
+    const [input,setInput] = useState("");
     const setMeasures = async (e) => {
         await updateDoc(infantRef, {
             [e.target.name]: input
@@ -17,18 +18,8 @@ const Health_Modal = (props) => {
         setShow(0)
     }
 
-
-
-    const [show,setShow] = useState(0);
-    const [input,setInput] = useState("");
     const inputDesc = (e) => {
         setInput(e.target.value)
-    }
-    const changeMeasures = (e) => {
-        data.action.setMesures({
-            ...data.state.measures, [e.target.name] : input
-        })
-        setShow(0)
     }
     const infoObj = [
         {name:"height", info:"키", id:1,ex:"50cm"},
