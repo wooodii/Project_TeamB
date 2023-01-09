@@ -63,7 +63,7 @@ const Home = () => {
         animate={{opacity:1}}
         transition={{delay:0.4, duration:0.4}}
         >
-        <Container className="Home" style={{position: "relative", maxWidth : "420px", height : "100vh" , overflow:'hidden' /* 01/09 overflow 추가 - home에서 네브바 내려가던 현상 수정 */ }}>
+        <Container className="Home" style={{position: "relative", maxWidth : "420px", height : "100vh" , overflow:'hidden' /* 01/09 overflow 추가 - home */ }}>
                     <Row className="Search_box" style={{marginBottom : "1em", marginToxp : "2em", display : "flex"}}>
                         <Col xs={1}> 
                             <img style={{width : "33px", marginTop : "17px"}} src={mydoctor} alt="image"/>
