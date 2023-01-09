@@ -1,11 +1,9 @@
 ## MY DOCTOR
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-[GITHUB](https://github.com/sheepdog13)
-In the project directory, you can run:
-
+# Member
+공희성 - 
+조창욱 - [](https://github.com/sheepdog13)
+ [![React][React.js]][React-url]
 ### `npm start`
 
 Runs the app in the development mode.\
