@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import DataContext from "../data/DataContext";
 import styles from "../css/history.module.css"
 import Banner from "../components/Banner";
- 
+import {motion} from 'framer-motion'
 
 
 const History = () => {
@@ -23,7 +23,13 @@ const History = () => {
 
 
     return (
+<motion.div
+        initial={{opacity:0}}
+        
+        animate={{opacity:1}}
 
+        transition={{delay: 0.4,duration:0.4  }}
+        >
         <div className="History_Page">
 
             <div className={styles.box3}>                
@@ -100,6 +106,7 @@ const History = () => {
                 </>
             </div>
         </div>
+        </motion.div>
     );
 }
 export default History;

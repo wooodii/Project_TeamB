@@ -18,13 +18,13 @@ const NavbarComp = () => {
         <Container>
         <Row style={{backgroundColor : "#1b4542", padding : "1em"}}>
             <Col onClick={()=>{navigate('/history')}} className='menubox'>
-                    <FontAwesomeIcon className="menuicon" icon={faList} style={{color : "#fff", width : "0.8em"}} size="2x" />
+                <FontAwesomeIcon className="menuicon" icon={faList} style={{color : "#fff", width : "0.8em"}} size="2x" value=""/>
             </Col>
             <Col onClick={()=>{navigate('/home');}}>
-                <FontAwesomeIcon className="menuicon"  icon={faHouse} style={{color : "#fff", width : "0.8em"}} size="2x" /> 
+                <FontAwesomeIcon className="menuicon"  icon={faHouse} style={{color : "#fff", width : "0.8em"}} size="2x"  value=""/> 
             </Col>
             <Col button onClick={()=>{navigate('/mypage')}}>
-                <FontAwesomeIcon className="menuicon"  icon={faUser} style={{color : "#fff", width : "0.8em"}} size="2x" />
+                <FontAwesomeIcon className="menuicon"  icon={faUser} style={{color : "#fff", width : "0.8em"}} size="2x"  value=""/>
             </Col>
         </Row>
         </Container>
