@@ -3,7 +3,7 @@
 # Member
 공희성 - 
 조창욱 - [](https://github.com/sheepdog13)
- [![React][React.js]][React-url]
+*[![React][React.js]][React-url]
 ### `npm start`
 
 Runs the app in the development mode.\
