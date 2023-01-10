@@ -1,8 +1,9 @@
 ## MY DOCTOR
 
 # 멤버
-- [공희성](https://github.com/PigPenguinMan)
 ![github](./ReadMe_img/github.svg)
+- [공희성](https://github.com/PigPenguinMan)
+  -팀장 
 
 - [김지현](https://github.com/wooodii) 
 
