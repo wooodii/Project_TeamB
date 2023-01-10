@@ -2,9 +2,8 @@
 
 # 멤버
 ![github](./ReadMe_img/github.svg)
-- [공희성](https://github.com/PigPenguinMan)
-  -팀장 
-
+- [공희성(팀장)](https://github.com/PigPenguinMan)
+  
 - [김지현](https://github.com/wooodii) 
 
 - [박서아](https://github.com/sophy97)
