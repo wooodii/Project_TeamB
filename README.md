@@ -2,15 +2,21 @@
 
 # 멤버
 ![github](./ReadMe_img/github.svg)
-- [공희성(팀장)](https://github.com/PigPenguinMan)
-  
-- [김지현](https://github.com/wooodii) 
+- 공희성(bigpenguinman@naver.com) 팀장
+![github](https://github.com/PigPenguinMan)
 
-- [박서아](https://github.com/sophy97)
+- 김지현(jihyeonkim1@naver.com)
+![github](https://github.com/wooodii)
 
-- [박종헌](https://github.com/whdgjs7300)
+- 박서아(naeil_do@naver.com)
+![github]((https://github.com/sophy97)
 
-- [조창욱](https://github.com/sheepdog13)
+- 박종헌(whdgjs7300@naver.com)
+![github](https://github.com/whdgjs7300)
+
+- 조창욱(sheepdog13@naver.com)
+![github)(https://github.com/sheepdog13)
+
 
 # 사용기술
 
