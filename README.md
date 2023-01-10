@@ -2,7 +2,7 @@
 
 # 멤버
 - [공희성](https://github.com/PigPenguinMan)
-![github](./ReadMe_img/깃허브.svg)
+![github](./ReadMe_img/github.svg)
 
 - [김지현](https://github.com/wooodii) 
 
