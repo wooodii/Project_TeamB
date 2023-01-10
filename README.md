@@ -46,15 +46,16 @@ https://pigpenguinman.github.io/TeamB/
 -로그인 상태에 따라 페이지 구분 
 
 
-2.병원 찾기 , 예약 , 병원 별점 및 리뷰
-
-![search1](./ReadMe_img/4-1search.png){: width="100" height="100"}
-![search2](./ReadMe_img/4-2search.png){: width="100" height="100"}
+2.병원 찾기 , 예약, 병원 별점 및 리뷰
+<figure>
+<img src="./ReadMe_img/4-1search.png" width="40" height="120">
+<img src="./ReadMe_img/4-2search.png" width="40" height="120">
+</figure>
 
 -2가지 방법의 병원 찾기 
 
 ![hptpage1](./ReadMe_img/5-1hospital.png)
-![hptpage2](./ReadMe_img/5-2review.png)ㄱ
+![hptpage2](./ReadMe_img/5-2review.png)
 
 -각각의 병원정보에따라 페이지에 표시 , 지도 표시 
 -병원페이지별로 별점 및 후기 작성,표시   
