@@ -1,7 +1,7 @@
 ## MY DOCTOR
 
-# Member
-- [공희성](https://github.com/PigPenguinMan),![깃허브](./ReadMe_img/깃허브.svg)
+# 멤버
+- [공희성](https://github.com/PigPenguinMan)
 
 - [김지현](https://github.com/wooodii) 
 
@@ -11,3 +11,7 @@
 
 - [조창욱](https://github.com/sheepdog13)
 
+# 사용기술
+
+![HTML5](./ReadMe_img/html5.svg)![CSS3]((./ReadMe_img/css3.svg)![JAVASCRIPT]((./ReadMe_img/javascript.svg)
+![REACT]((./ReadMe_img/react.svg)![REDUX]((./ReadMe_img/redux.svg)![FIREBASE]((./ReadMe_img/firebase.svg)
