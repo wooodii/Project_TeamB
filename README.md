@@ -48,8 +48,8 @@ https://pigpenguinman.github.io/TeamB/
 
 2.병원 찾기 , 예약 , 병원 별점 및 리뷰
 
-![search1](./ReadMe_img/4-1search.png)
-![search2](./ReadMe_img/4-2search.png)
+![search1](./ReadMe_img/4-1search.png){: width="100" height="100"}
+![search2](./ReadMe_img/4-2search.png){: width="100" height="100"}
 
 -2가지 방법의 병원 찾기 
 
