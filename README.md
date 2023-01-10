@@ -1,8 +1,12 @@
 ## MY DOCTOR
+ **MY DOCTOR**는 
+ 핸드폰으로 병원예약 또는 관리 , 건강관리를 도와주는 모바일웹입니다
+ 모바일크기로 제작되어 일반 PC화면크기에는 적합하지않습니다 
+ 
 
 # 멤버
 ![github](./ReadMe_img/github.svg)
-- 공희성(bigpenguinman@naver.com) 팀장
+- 팀장 공희성(bigpenguinman@naver.com) 
 [![github](./ReadMe_img/github.svg)](https://github.com/PigPenguinMan)
 
 - 김지현(jihyeonkim1@naver.com)
