@@ -36,4 +36,46 @@
 # 링크 
 https://pigpenguinman.github.io/TeamB/
 
-#
+# 주요 기능 
+
+1.회원가입 , 로그인 
+
+![signup](./ReadMe_img/2-2signup.png)
+
+-Firebase를 이용해 회원가입 및 로그인 
+-로그인 상태에 따라 페이지 구분 
+
+
+2.병원 찾기 , 예약 , 병원 별점 및 리뷰
+
+![search1](./ReadMe_img/4-1search.png)
+![search2](./ReadMe_img/4-2search.png)
+
+-2가지 방법의 병원 찾기 
+
+![hptpage1](./ReadMe_img/5-1hospital.png)
+![hptpage2](./ReadMe_img/5-2review.png)ㄱ
+
+-각각의 병원정보에따라 페이지에 표시 , 지도 표시 
+-병원페이지별로 별점 및 후기 작성,표시   
+
+![reserve](./ReadMe_img/6reserve.png)
+
+-병원 예약시 예약내역표시
+
+3.복약 관리 
+
+![medicine](./ReadMe_img/8-1medicine.png)
+![medicine2](./ReadMe_img/8-2medicine.png)
+
+-현재 먹는 약 등록 각각 복용여부 체크 
+-전부 복용 체크시 오늘의 복약 완료 표새 
+
+4.건강 피드 
+
+![feed](./ReadMe_img/9-1feed.png)
+![feed2](./ReadMe_img/9-2feed.png)
+![feed3](./ReadMe_img/9-3feed.png)
+
+- 등록한 정보에 따라 간단한 건강 피드백
+ 
