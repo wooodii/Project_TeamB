@@ -1,7 +1,7 @@
 ## MY DOCTOR
 
 # Member
-- [공희성](https://github.com/PigPenguinMan)
+- [공희성](https://github.com/PigPenguinMan),![깃허브](./ReadMe_img/github-mark.png)
 
 - [김지현](https://github.com/wooodii) 
 
