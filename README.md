@@ -13,5 +13,9 @@
 
 # 사용기술
 
-![HTML5](./ReadMe_img/html5.svg),![CSS3]((./ReadMe_img/css3.svg),![JAVASCRIPT]((./ReadMe_img/javascript.svg)
-![REACT]((./ReadMe_img/react.svg),![REDUX]((./ReadMe_img/redux.svg),![FIREBASE]((./ReadMe_img/firebase.svg)
+![HTML5](./ReadMe_img/html5.svg)
+![CSS3]((./ReadMe_img/css3.svg)
+![JAVASCRIPT]((./ReadMe_img/javascript.svg)
+![REACT]((./ReadMe_img/react.svg)
+![REDUX]((./ReadMe_img/redux.svg)
+![FIREBASE]((./ReadMe_img/firebase.svg)
