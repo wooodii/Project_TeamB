@@ -9,7 +9,7 @@
 [![github](./ReadMe_img/github.svg)](https://github.com/wooodii)
 
 - 박서아(naeil_do@naver.com)
-[![github](./ReadMe_img/github.svg)]((https://github.com/sophy97)
+[![github](./ReadMe_img/github.svg)](https://github.com/sophy97)
 
 - 박종헌(whdgjs7300@naver.com)
 [![github](./ReadMe_img/github.svg)](https://github.com/whdgjs7300)
