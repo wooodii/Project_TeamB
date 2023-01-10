@@ -15,7 +15,7 @@
 [![github](./ReadMe_img/github.svg)](https://github.com/whdgjs7300)
 
 - 조창욱(sheepdog13@naver.com)
-[![github)(./ReadMe_img/github.svg)](https://github.com/sheepdog13)
+[![github](./ReadMe_img/github.svg)](https://github.com/sheepdog13)
 
 
 # 사용기술
