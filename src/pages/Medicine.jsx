@@ -69,7 +69,6 @@ const Medicine = () => {
         }else{
             setAllChecked(false)
         }
-        
     },[checkFilter])
     
     
@@ -86,7 +85,6 @@ const Medicine = () => {
             <span className="goback" onClick={() => { navigate("/mypage") }}><FontAwesomeIcon icon={faArrowLeft} /></span>
             <div className="med-form">
                 <h3>복약 관리</h3>
-                <button onClick={() => console.log(medicine)}>로그</button>
                 <p>버튼을 클릭하여 복약정보를 등록하고 관리하세요!</p>
                 <br />
                 <div className="alarm">
@@ -94,7 +92,7 @@ const Medicine = () => {
                     <h6 className="confirm"> 오늘의 복약 완료 기록 :
                         {
                             // siChecked -> allChecked로 수정
-                            allChecked ? <span style={{ fontSize: "2em" }}>👌</span>
+                            allChecked ? <span style={{ fontSize: "2em" }}>　👌</span>
                                 : <p>오늘 약 복용을 잊지 마세요</p>
                         }
                     </h6>
@@ -113,17 +111,17 @@ const Medicine = () => {
             }
             <br />
             <div className="med-form">
-                <h5 style={{ textAlign: "center" }}>{name}{" "}님의 </h5>
-                <div className="intro-ment">
-                    <div className="date">
-                        <span>{date.getMonth() + 1}월 {date.getDate()}일</span>{" "}복약정보
-                    </div>
-                </div>
+            <div>
+                <b className="date">
+                {date.getMonth() + 1}월 {date.getDate()}일 {" "}복약 정보
+                </b>
+                
+            </div>
                 <Table striped>
                     <thead>
                         <tr>
                             <th><p>no.</p></th>
-                            <th>이름</th>
+                            <th><p>이름</p></th>
                             <th><p>투여량/횟수</p></th>
                             <th><p style={{ color: "#1b4542" }}>복약확인</p></th>
                         </tr>
@@ -138,11 +136,10 @@ const Medicine = () => {
                                     {
                                         // isChecked -> med.isChecked로 수정
                                         med.isChecked
-                                            ? <FontAwesomeIcon icon={faCheck} />
+                                            ? 　<FontAwesomeIcon icon={faCheck} />
                                             : null
                                     }
                                 </td>
-                                
                             </tr>
                         ))}
                     </tbody>
