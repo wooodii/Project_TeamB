@@ -19,3 +19,8 @@ button {border: 0;}
 .menubox:focus{
     background-color : "red";
 }
+
+/*Navbar.css*/
+.menu-active{
+    border-bottom: 2px solid white; 
+}
