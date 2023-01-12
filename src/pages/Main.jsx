@@ -9,9 +9,10 @@ import { db } from "../Firebase";
 const Main = () => {
     const data = useContext(DataContext)
     const user = localStorage.getItem("currentUser")
-    const docRef = doc(db, "infant", user);
+    // 아이유무 함수
     const ischeckInfant = async () => {
         const docSnap = await getDoc(docRef);
+        const docRef = doc(db, "infant", user);
         if (docSnap.exists()) {
             data.action.setLogin(true)
             localStorage.setItem("currentInfant",user)
